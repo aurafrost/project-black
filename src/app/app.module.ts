@@ -11,6 +11,10 @@ import { SupportComponent } from './support/support.component';
 import { AccountComponent } from './account/account.component';
 import { TermsComponent } from './terms/terms.component';
 import { ContentComponent } from './content/content.component';
+import { RegisterComponent } from './register/register.component';
+import { FaqComponent } from './faq/faq.component';
+import { CustomersupportComponent } from './customersupport/customersupport.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ContentComponent } from './content/content.component';
     SupportComponent,
     AccountComponent,
     TermsComponent,
-    ContentComponent
+    ContentComponent,
+    RegisterComponent,
+    FaqComponent,
+    CustomersupportComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
