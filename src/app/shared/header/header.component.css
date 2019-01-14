@@ -3,7 +3,10 @@
   margin-left: .5rem;
 }
 a {
+    font-size: 80%;
     text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 mat-toolbar{
     background-color: sandybrown;
