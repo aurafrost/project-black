@@ -40,6 +40,8 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { ErrComponent } from './err/err.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { RegisterComponent } from './shared/forms/register/register.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ErrComponent } from './err/err.component';
     FaqComponent,
     ForgotpasswordComponent,
     SearchComponent,
-    ErrComponent
+    ErrComponent,
+    DialogComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

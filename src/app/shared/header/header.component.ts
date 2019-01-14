@@ -28,7 +28,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  logregister() {
-    this.router.navigate(['login-register']);
-  }
 }
