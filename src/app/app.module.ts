@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,22 @@ import { ContentComponent } from './pages/content/content.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { SearchComponent } from './shared/search/search.component';
+import {AuthGuard} from './core/guard/auth.guard';
+import {AuthService} from './core/services/auth/auth.service';
+import {UserService} from './core/services/user/user.service';
+import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {
+  MatButtonModule, MatCardModule,
+  MatDialogModule, MatExpansionModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule,
+  MatMenuModule, MatRadioModule,
+  MatSelectModule, MatSliderModule, MatSlideToggleModule, MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -49,8 +65,30 @@ import { SearchComponent } from './shared/search/search.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService,
+    UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
