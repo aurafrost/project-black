@@ -13,6 +13,7 @@ import { TermsComponent } from './terms/terms.component';
 import { ContentComponent } from './content/content.component';
 import { FaqComponent } from './faq/faq.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     TermsComponent,
     ContentComponent,
     FaqComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
