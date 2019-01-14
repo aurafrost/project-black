@@ -18,3 +18,22 @@ Initial Data to View
 Adding Content by Artist
 Content Filter
 Other Social Media Links/APIs
+User Database?{
+    first name/fname
+    last name/lname
+    display name/dname
+    email
+    password/pw
+    credit card number/cardnum
+    card expiration month/exmonth
+    card expiration year/exyear
+    cvv
+    subscriptions
+    subscribers
+}
+Content Database?{
+    Images
+    Video clips
+    stories
+    etc.
+}
