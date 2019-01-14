@@ -6,6 +6,8 @@ import { ContentComponent } from './pages/content/content.component';
 
 import { FaqComponent } from './pages/faq/faq.component';
 import { ErrComponent } from './err/err.component';
+import { SupportComponent } from './pages/support/support.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routes: Routes = [
 {path: '', component: AboutComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
 {path: 'account', component: AccountComponent},
 {path: 'content', component: ContentComponent},
 {path: 'faq', component: FaqComponent},
+{path: 'support', component: SupportComponent},
+{path: 'terms', component: TermsComponent},
 {path: '**', component: ErrComponent}
 ];
 

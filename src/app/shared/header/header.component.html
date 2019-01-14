@@ -1,17 +1,40 @@
-<div class="border border-top border-dark rounded" id="container">
-  <div id="logo-container">
-    <img src="../../assets/glossy-ball.jpg" alt="logo here"/>
+<mat-toolbar>IPU
+  <img class="logo" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
+  <button id="MenuBtn" *ngIf="(isMobile | async).matches" mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
+  <div id="MenuRight" *ngIf="!(isMobile | async).matches">
+    <button mat-raised-button>Register</button>
+    <button mat-raised-button>Subscribe</button>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+      <button mat-button>Search</button>
+    </form>
+    <button mat-icon-button [matMenuTriggerFor]="accountmenu">
+      <mat-icon svgIcon="account_circle"></mat-icon>
+    </button>
+    <mat-menu #accountmenu="matMenu">
+      <button mat-menu-item>Account</button>
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Sign Out</button>
+    </mat-menu>
   </div>
-  <div id="login-group">
-    <input id="email" class="form-control" type="text" placeholder="Email"/>
-    <input id="password" class="form-control" type="password" placeholder="Password"/>
-    <input class="btn" style="height: 100%" type="button" onclick="" value="Login"/>
-    <!-- <input class="btn btn-default" style="height: 100%" type="button" onclick="" value="Register"/> -->
-  </div>
-  <div id="search-group">
-    <input id="search-bar" class="form-control" type="text" placeholder="Search"/>
-    <input id="search-btn" class="btn" type="button" onclick="" value="Search"/>
-  </div>
-  <br><br>
-  <a href="forgot">Forgot your password?</a> | <a href="register">New user? Register here</a>
-</div>
+  <mat-menu style="padding-bottom: 0;" #menu="matMenu">
+    <form (click) = "$event.stopPropagation()" mat-menu-item class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Search">
+      </mat-form-field>
+      <button mat-flat-button>Search</button>
+    </form>
+    <button mat-menu-item (click) = "$event.stopPropagation()">Register</button>
+    <button mat-menu-item (click) = "$event.stopPropagation()">Subscribe</button>
+    <button (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
+      <mat-icon svgIcon="account_circle"></mat-icon>
+    </button>
+    <mat-menu #accountmenu="matMenu">
+      <button mat-menu-item>Account</button>
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Sign Out</button>
+    </mat-menu>
+  </mat-menu>
+</mat-toolbar>
