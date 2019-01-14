@@ -1,19 +1,136 @@
 img{
-    float:left;
     padding: 2px;
-    height:6%;
-    width:6%;
+    height:35px;
+    width:auto;
+    margin: 0 auto;
+    display: block;
 }
 a {
+    font-size: 80%;
     text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 div#container{
+    padding: 2px 2px;
+    margin-left: 1px;
+    margin-right: 1px;
     border: 2px solid;
-    float: right;
-    width: 100%;
+    border-radius: 15px;
+    align-items: center;
+    width: 99.80%;
     background-color: sandybrown;
 }
 input{
     float:left;
     padding: 2px 2px 2px 2px;
+}
+
+#logo-container {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+#login-group {
+    width: 60%;
+    height: 35px;
+    display: inline-block;
+}
+
+#login-group #email {
+    width: 55px;
+}
+
+#login-group #password {
+    width: 75px;
+}
+
+#search-group {
+    min-width: 100px;
+    float: right;
+    width: 30%;
+    height: 35px;
+    display: inline-block;
+}
+
+#search-group #search-bar {
+    float: right;
+    width: 50px;
+}
+
+#search-group #search-btn {
+    width: 50px;
+    float: right;
+    height: 100%;
+}
+
+@media (min-width: 600px)
+{
+    img{
+        float:left;
+        padding: 2px;
+        height:45px;
+        width:auto;
+        display: inline-block;
+    }
+    a {
+        text-decoration: none;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    div#container{
+        padding: 2px 2px;
+        margin-left: 1px;
+        margin-right: 1px;
+        align-items: center;
+        width: 99.80%;
+        background-color: sandybrown;
+    }
+    input{
+        float:left;
+        padding: 2px 2px 2px 2px;
+    }
+    
+    #logo-container {
+        width: 55px;
+        display: inline-block;
+    }
+    
+    #login-group {
+        width: 60%;
+        height: 40px;
+        display: inline-block;
+    }
+
+    #login-group #email {
+        width: 150px;
+        height: 100%;
+    }
+
+    #login-group #password {
+        width: 150px;
+        height: 100%;
+    }
+    
+    #search-group {
+        float: right;
+        width: 30%;
+        height: 40px;
+        display: inline-block;
+    }
+
+    #search-group #search-bar {
+        float: right;
+        width: 85%; 
+        max-width: 120px;
+        height: 100%;
+    }
+
+    #search-group #search-btn {
+        float: right;
+        height: 100%;
+        min-width: 50px;  
+        width: 15%
+    }
 }
