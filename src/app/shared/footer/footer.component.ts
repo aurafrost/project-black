@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   termprivate(){
     this.router.navigate(['terms'])
   }
-  custsopport(){
+  custsupport(){
     this.router.navigate(['support'])
   }
   faquestions(){

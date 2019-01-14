@@ -1,7 +1,14 @@
-<div class="btn-group" id="container">
+<!-- <div class="btn-group" id="container">
   <a class="btn" routerLink="/privacy" (click)='termprivate()' >Terms/Privacy</a>
   <a class="btn" routerLink="/customersupport" (click)='custsopport()'>Customer Support</a>
   <a class="btn" routerLink="/faq" (click)='faquestions()'>Frequently Asked Questions</a>
   <a class="btn" routerLink="/about" (click)= 'about()'>About Us</a>
   
-</div>
+</div> -->
+
+<mat-toolbar>
+  <button mat-raised-button (click) = "termprivate()">Terms/Privacy</button>
+  <button mat-raised-button (click) = "custsupport()">Customer Support</button>
+  <button mat-raised-button (click) = "faquestions()">FAQ</button>
+  <button mat-raised-button (click) = "about()">About Us</button>
+</mat-toolbar>

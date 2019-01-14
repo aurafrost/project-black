@@ -1,41 +1,8 @@
-a {
-    font-size: 60%;
-    text-decoration: none;
-    align-content: center;
-    border: 1.5px solid;
-    padding: 2px;
+button {
     width: 25%;
-    height: 100%;
-}
-div#container{
-    height: 100%;
-    width: 99.8%;
-    margin-left: 1px;
-    margin-right: 1px;
 }
 
-.btn {
-    background-color: sandybrown;
-}
-
-@media (min-width: 370px){
-    a {
-        font-size: 70%;
-        text-decoration: none;
-        align-content: center;
-        border: 1.5px solid;
-        padding: 2px;
-        width: 25%;
-        height: 100%;
-    }
-}
-
-@media (min-width: 510px){
-    a {
-        font-size: 100%;
-        text-decoration: none;
-        align-content: center;
-        border: 1.5px solid;
-        padding: 2px;
-    }
+button:hover,
+button.cdk-focused {
+    background-color: #ccc;
 }

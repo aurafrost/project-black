@@ -18,15 +18,16 @@ export class HeaderComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private router: Router
   ) {
     this.matIconRegistry.addSvgIcon('account_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
   }
-  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+  
   logregister(){
     this.router.navigate(['login-register'])
   }
