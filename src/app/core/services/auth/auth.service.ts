@@ -63,7 +63,7 @@ export class AuthService {
       .then(auth => {
         // TODO: Send Verification Email
         // TODO: redirect to login
-        this.userService.createUser(auth.user, user);
+        this.userService.createUser(user);
       }).catch(err => {
         window.alert(err.message);
       });
