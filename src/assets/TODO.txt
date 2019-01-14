@@ -1,0 +1,20 @@
+Footer{
+    Terms/Privacy
+    About us
+    Contact us
+}
+Header{
+    Search (Bar?)
+    Login
+    My Account
+    Subscribe?
+}
+Stories
+Statistics
+Event Calendars
+Notifications
+Content
+Initial Data to View
+Adding Content by Artist
+Content Filter
+Other Social Media Links/APIs
