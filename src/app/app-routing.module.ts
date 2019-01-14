@@ -8,6 +8,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ErrComponent } from './err/err.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TermsComponent } from './pages/terms/terms.component';
+import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 
 const routes: Routes = [
 {path: '', component: AboutComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path: 'faq', component: FaqComponent},
 {path: 'support', component: SupportComponent},
 {path: 'terms', component: TermsComponent},
+{path: 'login-register', component: LoginRegisterComponent},
 {path: '**', component: ErrComponent}
 ];
 
