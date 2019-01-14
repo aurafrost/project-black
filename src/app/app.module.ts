@@ -14,6 +14,7 @@ import { ContentComponent } from './content/content.component';
 import { FaqComponent } from './faq/faq.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegistrationComponent } from './registration/registration.component';
     ContentComponent,
     FaqComponent,
     ForgotpasswordComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
