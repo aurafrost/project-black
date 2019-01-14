@@ -1,6 +1,14 @@
-<div id="container">
-  <a routerLink="/privacy" (click)='termprivate()' >Terms/Privacy</a>
-  <a routerLink="/customersupport" (click)='custsopport()'>Customer Support</a>
-  <a routerLink="/faq" (click)='faquestions()'>Frequently Asked Questions</a>
-  <a routerLink="/about" (click)= 'about()'>About Us</a>
-</div>
+<!-- <div class="btn-group" id="container">
+  <a class="btn" routerLink="/privacy" (click)='termprivate()' >Terms/Privacy</a>
+  <a class="btn" routerLink="/customersupport" (click)='custsopport()'>Customer Support</a>
+  <a class="btn" routerLink="/faq" (click)='faquestions()'>Frequently Asked Questions</a>
+  <a class="btn" routerLink="/about" (click)= 'about()'>About Us</a>
+  
+</div> -->
+
+<mat-toolbar style="background-color: sandybrown;">
+  <button mat-raised-button routerLink="/terms">Terms/Privacy</button>
+  <button mat-raised-button routerLink="/support">Customer Support</button>
+  <button mat-raised-button routerLink="/faq">FAQ</button>
+  <button mat-raised-button routerLink="/about">About Us</button>
+</mat-toolbar>

@@ -1,12 +1,8 @@
-a {
-    text-decoration: none;
-    float: right;
-    border: 1.5px solid;
-    padding: 2px;
+button {
+    width: 25%;
 }
-div#container{
-    border: 2px solid;
-    float: left;
-    width: 100%;
-    background-color: sandybrown;
+
+button:hover,
+button.cdk-focused {
+    background-color: #ccc;
 }
