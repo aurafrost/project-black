@@ -2,7 +2,7 @@
   <img class="logo" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
   <button id="MenuBtn" *ngIf="(isMobile | async).matches" mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
   <div id="MenuRight" *ngIf="!(isMobile | async).matches">
-    <button mat-raised-button>Register</button>
+    <button mat-raised-button routerLink="/login-register" (click)="logregister()">Register</button>
     <button mat-raised-button>Subscribe</button>
     <form class="example-form">
       <mat-form-field class="example-full-width">
@@ -26,7 +26,7 @@
       </mat-form-field>
       <button mat-flat-button>Search</button>
     </form>
-    <button mat-menu-item (click) = "$event.stopPropagation()">Register</button>
+    <button mat-menu-item routerLink="/login-register" (click) = "logregister()">Register</button>
     <button mat-menu-item (click) = "$event.stopPropagation()">Subscribe</button>
     <button (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
