@@ -3,7 +3,6 @@ import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/lay
 import {Observable} from 'rxjs';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
-import { FilterService } from '../../core/services/filter.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isMobile: Observable<BreakpointState> = this.breakpointObserver
+  isHandset: Observable<BreakpointState> = this.breakpointObserver
     .observe(Breakpoints.Handset);
+  isMobile: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 500px)']);
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -27,8 +28,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  logregister(){
-    this.router.navigate(['login-register'])
+  logregister() {
+    this.router.navigate(['login-register']);
   }
 }
