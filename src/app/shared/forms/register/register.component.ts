@@ -46,11 +46,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  addUser(user) {
-    this.userService.createUser(user)
-      .subscribe(data => {
-        console.log(data);
-        alert('User Added!');
-      });
-  }
+  // addUser(user) {
+  //   this.userService.createUser(user)
+  //     .subscribe(data => {
+  //       console.log(data);
+  //       alert('User Added!');
+  //     });
+  // }
 }
