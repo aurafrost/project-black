@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    float: right;
+    border: 1.5px solid;
+    padding: 2px;
+}
+div#container{
+    border: 2px solid;
+    float: left;
+    width: 100%;
+    background-color: sandybrown;
+}

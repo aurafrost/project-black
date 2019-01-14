@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -15,6 +16,16 @@ import { LoginRegisterComponent } from './pages/login-register/login-register.co
 import {CoreModule} from './core/core.module';
 import {PagesModule} from './pages/pages.module';
 import {SharedModule} from './shared/shared.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { SupportComponent } from './support/support.component';
+import { AccountComponent } from './account/account.component';
+import { TermsComponent } from './terms/terms.component';
+import { ContentComponent } from './content/content.component';
+import { FaqComponent } from './faq/faq.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +33,16 @@ import {SharedModule} from './shared/shared.module';
     HomeComponent,
     ProfileComponent,
     LoginRegisterComponent
+    HeaderComponent,
+    FooterComponent,
+    AboutComponent,
+    SupportComponent,
+    AccountComponent,
+    TermsComponent,
+    ContentComponent,
+    FaqComponent,
+    ForgotpasswordComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
