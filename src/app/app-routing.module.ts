@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { AccountComponent } from './account/account.component';
-import { ContentComponent } from './content/content.component';
+import { AboutComponent } from './pages/about/about.component';
+import { AccountComponent } from './pages/account/account.component';
+import { ContentComponent } from './pages/content/content.component';
 import { RegisterComponent } from './register/register.component';
 import { FaqComponent } from './faq/faq.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
@@ -26,3 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
