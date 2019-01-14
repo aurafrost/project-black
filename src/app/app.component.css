@@ -1,15 +1,34 @@
-.img {
+#page {
+    height: 100vh;
+}
+
+#header {
+    height: 65px;
+    width: 100%
+}
+
+#footer {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
     width: 100%;
-    margin-bottom: 18%;
-  }
-  .card-picture {
-    width: 23%;
-    margin-bottom: 2%;
-  }
-  .container {
-    min-height: 100%;
-    width: 100%;
-  }
-  .search-form {
-    width: 90%;
-  }
+    height: 20px;
+}
+
+#body {
+    display: block;
+    height: 84%;
+}
+
+@media (min-width: 370px){
+    #footer{
+        height: 23px;
+    }
+}
+
+@media (min-width: 510px){
+    #footer{
+        height: 30px;
+    }
+}
+
