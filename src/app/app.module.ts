@@ -14,6 +14,9 @@ import { ContentComponent } from './content/content.component';
 import { FaqComponent } from './faq/faq.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,14 @@ import { RegistrationComponent } from './registration/registration.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
