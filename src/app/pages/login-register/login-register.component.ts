@@ -8,8 +8,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./login-register.component.css']
 })
 export class LoginRegisterComponent implements OnInit {
+  email:String;
 
   constructor(
+    private service: AuthService,
     private authService: AuthService,
     private router: Router
   ) { }
@@ -20,4 +22,7 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
+  register(email,password){
+    
+  }
 }
