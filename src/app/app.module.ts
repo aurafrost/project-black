@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { FaqComponent } from './faq/faq.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ErrComponent } from './err/err.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     RegisterComponent,
     FaqComponent,
     CustomersupportComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    ErrComponent
   ],
   imports: [
     BrowserModule,
