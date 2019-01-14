@@ -12,16 +12,5 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  termprivate(){
-    this.router.navigate(['terms'])
-  }
-  custsopport(){
-    this.router.navigate(['support'])
-  }
-  faquestions(){
-    this.router.navigate(['faq'])
-  }
-  about(){
-    this.router.navigate(['about'])
-  }
+  
 }
