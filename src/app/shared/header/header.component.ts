@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../../core/services/filter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header',
@@ -8,9 +9,11 @@ import { FilterService } from '../../core/services/filter.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  logregister(){
+this.router.navigate(['login-register'])
+  }
 }
