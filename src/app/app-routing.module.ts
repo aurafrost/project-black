@@ -16,7 +16,7 @@ const routes: Routes = [
 {path: 'content', component: ContentComponent},
 {path: 'register', component: RegisterComponent},
 {path: 'faq', component: FaqComponent},
-{path: 'customer support', component: CustomersupportComponent},
+{path: 'customersupport', component: CustomersupportComponent},
 {path: 'privacy', component: PrivacyComponent},
 {path: '**', component: ErrComponent}
 ];
