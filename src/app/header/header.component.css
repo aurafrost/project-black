@@ -1,0 +1,19 @@
+img{
+    float:left;
+    padding: 2px;
+    height:6%;
+    width:6%;
+}
+a {
+    text-decoration: none;
+}
+div#container{
+    border: 2px solid;
+    float: right;
+    width: 100%;
+    background-color: sandybrown;
+}
+input{
+    float:left;
+    padding: 2px 2px 2px 2px;
+}
