@@ -3,7 +3,7 @@ import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/lay
 import {Observable} from 'rxjs';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
-import { FilterService } from '../../core/services/filter.service';
+
 import { Router } from '@angular/router';
 
 @Component({
