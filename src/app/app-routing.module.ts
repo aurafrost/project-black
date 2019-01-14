@@ -9,17 +9,19 @@ import { ErrComponent } from './err/err.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
+import {HomeComponent} from './pages/home/home.component';
 
 const routes: Routes = [
-{path: '', component: AboutComponent},
-{path: 'about', component: AboutComponent},
-{path: 'account', component: AccountComponent},
-{path: 'content', component: ContentComponent},
-{path: 'faq', component: FaqComponent},
-{path: 'support', component: SupportComponent},
-{path: 'terms', component: TermsComponent},
-{path: 'login-register', component: LoginRegisterComponent},
-{path: '**', component: ErrComponent}
+  {path: '', component: AboutComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'account', component: AccountComponent},
+  {path: 'content', component: ContentComponent},
+  {path: 'faq', component: FaqComponent},
+  {path: 'support', component: SupportComponent},
+  {path: 'terms', component: TermsComponent},
+  {path: 'login-register', component: LoginRegisterComponent},
+  {path: '**', component: ErrComponent}
 ];
 
 @NgModule({
