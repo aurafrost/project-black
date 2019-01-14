@@ -4,6 +4,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
@@ -40,6 +41,8 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { ErrComponent } from './err/err.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { RegisterComponent } from './shared/forms/register/register.component';
 
 @NgModule({
   declarations: [
@@ -57,12 +60,21 @@ import { ErrComponent } from './err/err.component';
     FaqComponent,
     ForgotpasswordComponent,
     SearchComponent,
-    ErrComponent
+    ErrComponent,
+    DialogComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

@@ -1,0 +1,29 @@
+<form [formGroup]="formData" (submit)="handleOnSubmit()">
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="Email" formControlName="email"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="First Name" formControlName="fname"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="Last Name" formControlName="lname"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <textarea rows="3" matInput placeholder="Address" formControlName="address"></textarea>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <textarea rows="3" matInput placeholder="Phone" formControlName="phone"></textarea>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="Policy No" formControlName="policyNo"/>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button [disabled]="formData.pristine" mat-raised-button type="submit" mat-button>Add</button>
+  </div>
+</form>
