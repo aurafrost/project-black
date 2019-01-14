@@ -23,6 +23,7 @@ import { ContentComponent } from './pages/content/content.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { SearchComponent } from './shared/search/search.component';
+import { ErrComponent } from './err/err.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SearchComponent } from './shared/search/search.component';
     ContentComponent,
     FaqComponent,
     ForgotpasswordComponent,
-    SearchComponent
+    SearchComponent,
+    ErrComponent
   ],
   imports: [
     BrowserModule,
