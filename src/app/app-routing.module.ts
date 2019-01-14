@@ -8,6 +8,7 @@ import { ErrComponent } from './err/err.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
