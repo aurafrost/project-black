@@ -11,6 +11,8 @@ import { SupportComponent } from './support/support.component';
 import { AccountComponent } from './account/account.component';
 import { TermsComponent } from './terms/terms.component';
 import { ContentComponent } from './content/content.component';
+import { FaqComponent } from './faq/faq.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContentComponent } from './content/content.component';
     SupportComponent,
     AccountComponent,
     TermsComponent,
-    ContentComponent
+    ContentComponent,
+    FaqComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
