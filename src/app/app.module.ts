@@ -39,6 +39,7 @@ import {
   MatSelectModule, MatSliderModule, MatSlideToggleModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
+import { ErrComponent } from './err/err.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {
     ContentComponent,
     FaqComponent,
     ForgotpasswordComponent,
-    SearchComponent
+    SearchComponent,
+    ErrComponent
   ],
   imports: [
     BrowserModule,

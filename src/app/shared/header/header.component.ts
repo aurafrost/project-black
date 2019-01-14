@@ -3,6 +3,8 @@ import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/lay
 import {Observable} from 'rxjs';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import { FilterService } from '../../core/services/filter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header',
@@ -10,7 +12,6 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   isMobile: Observable<BreakpointState> = this.breakpointObserver
     .observe(Breakpoints.Handset);
 
@@ -22,8 +23,11 @@ export class HeaderComponent implements OnInit {
     this.matIconRegistry.addSvgIcon('account_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
   }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  logregister(){
+    this.router.navigate(['login-register'])
+  }
 }
