@@ -24,14 +24,11 @@ export class UserService {
     this.user = this.afDatabase.object(`Users/${userId}`);
   }
 
-  createUser(user) {
-    const pushId = this.afDatabase.createPushId();
-    console.log(pushId);
-    return this.afDatabase.object(`Users/${pushId}`).set(user);
+  createUser(uid, user) {
+    return this.afDatabase.object(`Users/${uid}`).set(user);
   }
 
-  deleteUser(user){
-    //double check later
+  deleteUser(user) {
     this.afDatabase.object(this.user).remove();
   }
 }

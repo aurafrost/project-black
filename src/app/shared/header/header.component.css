@@ -16,8 +16,8 @@ button {
   margin-right: .5rem;
 }
 
-button#styled:hover,
-button#styled.cdk-focused {
+button.styled:hover,
+button.styled.cdk-focused {
     background-color: #ccc;
 }
 
