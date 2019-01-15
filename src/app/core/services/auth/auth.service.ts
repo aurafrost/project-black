@@ -4,12 +4,14 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {UserService} from '../user/user.service';
 import {User} from '../../models/User';
+import {BehaviorSubject, Observable} from 'rxjs';
 
-@Injectable({
+  @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private auth: any;
+  private auth = new BehaviorSubject<>(null);
+  $auth = this.auth.asObservable();
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,14 +22,13 @@ export class AuthService {
   ) {
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
+      console.log(auth);
       if (auth) {
-        console.log(auth);
-        this.auth = auth;
-        localStorage.setItem('auth', JSON.stringify(this.auth));
-        console.log(JSON.parse(localStorage.getItem('auth')));
+        this.auth.next(auth);
+        localStorage.setItem('auth', JSON.stringify(auth));
       } else {
         localStorage.setItem('auth', null);
-        console.log(localStorage.getItem('auth'));
+        this.auth = null;
       }
     });
   }
@@ -36,19 +37,25 @@ export class AuthService {
     return this.auth != null;
   }
 
-  get currentUser(): any {
-    return this.authenticated ? this.auth.currentUser : null;
-  }
-
-  get userId(): string {
-    return this.authenticated ? this.auth.uid  : null;
-  }
+  // get currentUser(): any {
+  //   return this.authenticated ? this.auth.currentUser : null;
+  // }
+  //
+  // get userId(): string {
+  //   return this.authenticated ? this.auth.uid  : null;
+  // }
 
   signIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth.user.emailVerified) {
-          this.auth = auth.user;
+            if (auth) {
+              localStorage.setItem('auth', JSON.stringify(auth.user));
+              console.log(JSON.parse(localStorage.getItem('auth')));
+            } else {
+              localStorage.setItem('auth', null);
+              console.log(localStorage.getItem('auth'));
+            }
           this.ngZone.run(() => {
             this.router.navigate(['home']);
           });
@@ -80,6 +87,7 @@ export class AuthService {
     return this.afAuth.auth.signOut()
       .then(() => {
         localStorage.removeItem('auth');
+        // this.auth.next(null);
         this.router.navigate(['home']);
       });
   }
