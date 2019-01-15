@@ -8,7 +8,9 @@
     </mat-card>
   </div>
   <br>
-  <div style="padding: 0 !important;" class = "col-12 justify-content-center">
-    <pagination-controls (pageChange) = "p = $event"></pagination-controls>
+  <div class = "col-12 justify-content-center">
+    <div style="padding-right: 2.5rem;">
+      <pagination-controls class="my-pagination" (pageChange) = "p = $event"></pagination-controls>
+    </div>
   </div>
 </div>
