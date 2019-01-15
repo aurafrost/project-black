@@ -1,0 +1,30 @@
+<form [formGroup]="formData" (submit)="signUp()">
+  <h1>Sign Up</h1>
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="Username" formControlName="username"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="email" matInput placeholder="Email" formControlName="email"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="First Name" formControlName="fname"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input type="text" matInput placeholder="Last Name" formControlName="lname"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input matInput type="password" placeholder="Password" formControlName="password"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword"/>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button [disabled]="formData.pristine" mat-raised-button type="submit" mat-button>Sign Up</button>
+  </div>
+</form>

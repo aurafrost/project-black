@@ -41,7 +41,7 @@ import {
 } from '@angular/material';
 import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
-import { RegisterComponent } from './shared/forms/register/register.component';
+import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,7 @@ import { RegisterComponent } from './shared/forms/register/register.component';
     SearchComponent,
     ErrComponent,
     DialogComponent,
-    RegisterComponent
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
