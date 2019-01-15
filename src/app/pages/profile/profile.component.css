@@ -9,3 +9,8 @@ img#favatar,img#pavatar{
 h1{
     text-align: center;
 }
+button#deleteBtn{
+    float: right;
+    background-color: firebrick;
+    color: white;
+}

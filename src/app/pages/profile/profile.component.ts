@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
   user:User;
   profile:HTMLElement;
   editBlock:HTMLElement;
+  htmlele:HTMLElement;
 
   constructor(private service:UserService) {
     this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
@@ -39,5 +40,13 @@ export class ProfileComponent implements OnInit {
     this.profile.style.display="none";   
     this.editBlock=document.getElementById("editBlock") as HTMLElement;
     this.editBlock.style.display="block";
+  }
+
+  deletePost(id){
+    var r = confirm("Delete post?");
+    if (r == true) {
+      this.htmlele=document.getElementById(id) as HTMLElement;
+      this.htmlele.parentNode.removeChild(this.htmlele);
+    }    
   }
 }
