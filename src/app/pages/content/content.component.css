@@ -8,10 +8,12 @@ img#pavatar{
 }
 h1{
     text-align: center;
+    background-color: mediumaquamarine;
 }
 .list-group-item{
     background-color: blanchedalmond;
 }
-div#container,h1{
+div#container{
     background-color: mediumaquamarine;
+    overflow: auto;
 }
