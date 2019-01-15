@@ -1,5 +1,5 @@
 button{
-    background-color:greenyellow;
+    background-color:skyblue;
     float:right;
 }
 img#pavatar{
@@ -8,4 +8,10 @@ img#pavatar{
 }
 h1{
     text-align: center;
+}
+.list-group-item{
+    background-color: blanchedalmond;
+}
+div#container,h1{
+    background-color: mediumaquamarine;
 }

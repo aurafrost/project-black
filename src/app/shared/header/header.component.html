@@ -23,7 +23,7 @@
     <button *ngIf="!(isMobile | async).matches" routerLink="/" mat-menu-item>Home</button>
     <button *ngIf="!(isMobile | async).matches" routerLink="profile" mat-menu-item>Profile</button>
     <button *ngIf="!(isMobile | async).matches" routerLink="content" mat-menu-item>Content</button>
-    <button *ngIf="!(isMobile | async).matches" mat-menu-item>Explore</button>
+    <button *ngIf="!(isMobile | async).matches" routerLink="explore" mat-menu-item>Explore</button>
     <form (click) = "$event.stopPropagation()" mat-menu-item class="example-form">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Search">
@@ -44,7 +44,7 @@
   <mat-toolbar *ngIf="(isMobile | async).matches">
     <button mat-button routerLink="/">Home</button>
     <button mat-button routerLink="profile">Profile</button>
-    <button mat-button>Explore</button>
+    <button mat-button routerLink="explore">Explore</button>
     <button mat-button routerLink="content">Your Content</button>
   </mat-toolbar>
 </mat-toolbar>
