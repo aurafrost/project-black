@@ -18,12 +18,12 @@ export class AccountComponent implements OnInit {
   }
 
   edit(){
-    //not complete. doubt update will work as is
+    //doubt update will work as is
     this.service.setUser(this.user.uid);
   }
 
   deleteAccount(){
-    //need to add confirmation
+    //need to add confirmation alert for delete
     this.service.deleteUser(this.user.uid);
   }
 }
