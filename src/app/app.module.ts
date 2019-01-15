@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -41,8 +41,7 @@ import {
 import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
-import { RegisterComponent } from './shared/forms/register/register.component';
-import { FlexLayoutModule } from '@angular/flex-layout'
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -75,7 +74,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule, 
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
