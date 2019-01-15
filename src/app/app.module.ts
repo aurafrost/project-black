@@ -41,6 +41,7 @@ import {
 } from '@angular/material';
 import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
+import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { RegisterComponent } from './shared/forms/register/register.component';
 import { FlexLayoutModule } from '@angular/flex-layout'
 
@@ -62,7 +63,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     SearchComponent,
     ErrComponent,
     DialogComponent,
-    RegisterComponent
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

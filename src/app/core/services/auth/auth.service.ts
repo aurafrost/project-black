@@ -58,12 +58,18 @@ export class AuthService {
       });
   }
 
-  signUp(email, password, user: User) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  signUp(user: User, password) {
+    console.log(user);
+    return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
       .then(auth => {
         // TODO: Send Verification Email
         // TODO: redirect to login
-        this.userService.createUser(user);
+        this.userService.createUser(user)
+          .then(res => {
+            console.log('user Added!');
+          }).catch(err => {
+            console.log(err.message);
+        });
       }).catch(err => {
         window.alert(err.message);
       });
