@@ -1,49 +1,55 @@
 <div id="container">
     <h1>Registration</h1>
-    <form action="register(email,password)" method="POST">
+    <form [formGroup]="userFormData" (ngSubmit)="register()" method="POST">
       <h2>User Details</h2>
-      <table id="user-data">
-        <tr>
-          <td><input type="text" id="fname" placeholder="First Name"/></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="lname" placeholder="Last Name"/></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="dname" placeholder="Display Name(Name other users see)"/></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="email" placeholder="Email Address"/></td>
-        </tr>
-        <tr>
-          <td><input type="password" id="pw" placeholder="Password"/></td>
-        </tr>
-        <tr>
-          <td><input type="password" id="cpw" placeholder="Confirm Password"/></td>
-        </tr>
-      </table>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="text" id="fname" formControlName="fname" placeholder="First Name"/>
+        </mat-form-field><br>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="text" id="lname" formControlName="lname" placeholder="Last Name"/>
+        </mat-form-field><br>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="text" id="uname" formControlName="uname" placeholder="Username (Name other users see)"/>
+        </mat-form-field><br>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="email" id="email" formControlName="email" placeholder="Email Address"/>
+        </mat-form-field><br>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="password" id="password" formControlName="password" placeholder="Password"/>
+        </mat-form-field><br>
+        <mat-form-field style="width: 30%; min-width: 150px;">
+          <input matInput type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password"/>
+        </mat-form-field>
       <br>
       <h2>Card Information</h2>
-      Card Number: <input type="text" id="cardnum" placeholder=""/><br>
-      Expiration Date:
-      <select id="exmonth">
-        <option value=1 selected>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-        <option value=6>6</option>
-        <option value=7>7</option>
-        <option value=8>8</option>
-        <option value=9>9</option>
-        <option value=10>10</option>
-        <option value=11>11</option>
-        <option value=12>12</option>
-      </select>
-      <input type="number" id="exyear" placeholder="yy"/>
-      CVV: <input type="number" id="cvv" placeholder=""/><br>
-      Captcha: <br>
-      <input type="submit" value="Submit"/><br>
-      <input type="reset" value="Reset"/><br>
+      <mat-form-field style="width: 30%; min-width: 150px;">
+        <input matInput id="norm" type="text" id="cardnum" placeholder="Card Number"/>
+      </mat-form-field><br>
+      <mat-form-field style="width: 15%; min-width: 75px;">
+          <!-- <mat-select label="Month" id="exmonth" placeholder="Month" >
+            <mat-option value=1 selected>1</mat-option>
+            <mat-option value=2>2</mat-option>
+            <mat-option value=3>3</mat-option>
+            <mat-option value=4>4</mat-option>
+            <mat-option value=5>5</mat-option>
+            <mat-option value=6>6</mat-option>
+            <mat-option value=7>7</mat-option>
+            <mat-option value=8>8</mat-option>
+            <mat-option value=9>9</mat-option>
+            <mat-option value=10>10</mat-option>
+            <mat-option value=11>11</mat-option>
+            <mat-option value=12>12</mat-option>
+          </mat-select> -->
+          <input matInput type="number" id="exmonth" placeholder="Exp Month (mm)"/>
+      </mat-form-field>
+      <mat-form-field style="width: 15%; min-width: 75px;">
+          <input matInput type="number" id="exyear" placeholder="Exp Year (yyyy)">
+      </mat-form-field><br>
+      <mat-form-field style="width: 30%; min-width: 150px;">
+        <input matInput id="norm" type="number" id="cvv" placeholder="CVV"/>
+      </mat-form-field>
+      <br><br>
+      <button mat-raised-button id="controlBtn submit" type="submit" value="Submit" style="width: 75px; background-color: rgb(42, 180, 134);">Submit</button>
+      <button mat-raised-button id="controlBtn reset" type="reset" value="Reset" style="width: 75px;">Reset</button> <br>
     </form>
   </div>
