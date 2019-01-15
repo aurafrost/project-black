@@ -17,9 +17,9 @@ export class HeaderComponent implements OnInit {
 
   signInDialogRef: MatDialogRef<SignInComponent>;
   isHandset: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(max-width: 960px)']);
+    .observe(['(max-width: 1000px)']);
   isMobile: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(min-width: 500px)']);
+    .observe(['(min-width: 580px)']);
 
   constructor(
     private breakpointObserver: BreakpointObserver,
