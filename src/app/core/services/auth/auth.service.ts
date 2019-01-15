@@ -10,7 +10,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth = new BehaviorSubject<>(null);
+  private auth = new BehaviorSubject<Object>(null);
   $auth = this.auth.asObservable();
 
   constructor(
