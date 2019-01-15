@@ -53,9 +53,8 @@ export class SignUpComponent implements OnInit {
         this.formData.value.lname
     );
     console.log(user);
-
-    this.authService.signUp(user, this.formData.value.password);
-      // .then(res => console.log(res))
-      // .catch(err => console.log(err));
+    this.authService.signUp(user, this.formData.value.password)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   }
 }

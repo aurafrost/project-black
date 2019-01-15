@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import {AuthService} from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'header',
@@ -20,12 +21,17 @@ export class HeaderComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.matIconRegistry.addSvgIcon('account_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
   }
 
   ngOnInit() {
+  }
+
+  signOut() {
+    this.authService.signOut();
   }
 }
