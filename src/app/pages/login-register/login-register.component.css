@@ -4,21 +4,31 @@
     text-align: center;
 }
 
-#user-data {
+#user-data,
+#card-data {
     margin:1em auto;
 }
 
-#user-data td {
+#user-data td,
+#card-data td {
     width: 150px;
+    border-bottom: 1px solid darkgray;
 }
 
-#user-data td input {
-    width: 100%;
+#user-data td input,
+#card-data td input#norm {
+    width: 50%;
+}
+
+#card-data #exmonth,
+#card-data #exyear {
+    width: 15%;
 }
 
 @media (min-width: 350px)
 {
-    #user-data td {
+    #user-data td,
+    #card-data td {
         width: 30%;
     }
 }

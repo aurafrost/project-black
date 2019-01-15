@@ -4,44 +4,55 @@
       <h2>User Details</h2>
       <table id="user-data">
         <tr>
-          <td><input type="text" id="fname" placeholder="First Name"/></td>
+          <td><input matInput type="text" id="fname" placeholder="First Name"/></td>
         </tr>
         <tr>
-          <td><input type="text" id="lname" placeholder="Last Name"/></td>
+          <td><input matInput type="text" id="lname" placeholder="Last Name"/></td>
         </tr>
         <tr>
-          <td><input type="text" id="dname" placeholder="Display Name(Name other users see)"/></td>
+          <td><input matInput type="text" id="dname" placeholder="Display Name (Name other users see)"/></td>
         </tr>
         <tr>
-          <td><input type="text" id="email" placeholder="Email Address"/></td>
+          <td><input matInput type="text" id="email" placeholder="Email Address"/></td>
         </tr>
         <tr>
-          <td><input type="password" id="pw" placeholder="Password"/></td>
+          <td><input matInput type="password" id="pw" placeholder="Password"/></td>
         </tr>
         <tr>
-          <td><input type="password" id="cpw" placeholder="Confirm Password"/></td>
+          <td><input matInput type="password" id="cpw" placeholder="Confirm Password"/></td>
         </tr>
       </table>
       <br>
       <h2>Card Information</h2>
-      Card Number: <input type="text" id="cardnum" placeholder=""/><br>
-      Expiration Date: 
-      <select id="exmonth">
-        <option value=1 selected>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-        <option value=6>6</option>
-        <option value=7>7</option>
-        <option value=8>8</option>
-        <option value=9>9</option>
-        <option value=10>10</option>
-        <option value=11>11</option>
-        <option value=12>12</option>
-      </select>
-      <input type="number" id="exyear" placeholder="yy"/>
-      CVV: <input type="number" id="cvv" placeholder=""/><br>
+      <table id="card-data">
+      <tr>
+        <td><input matInput id="norm" type="text" id="cardnum" placeholder="Card Number"/></td>
+      </tr>
+      <tr>
+        <td>
+          <!-- <mat-select label="Month" id="exmonth" placeholder="Month" >
+            <mat-option value=1 selected>1</mat-option>
+            <mat-option value=2>2</mat-option>
+            <mat-option value=3>3</mat-option>
+            <mat-option value=4>4</mat-option>
+            <mat-option value=5>5</mat-option>
+            <mat-option value=6>6</mat-option>
+            <mat-option value=7>7</mat-option>
+            <mat-option value=8>8</mat-option>
+            <mat-option value=9>9</mat-option>
+            <mat-option value=10>10</mat-option>
+            <mat-option value=11>11</mat-option>
+            <mat-option value=12>12</mat-option>
+          </mat-select> -->
+          <input matInput type="number" id="exmonth" style="display: inline-block" placeholder="Exp Month (mm)"/>
+          <input matInput type="number" id="exyear" style="display: inline-block" placeholder="Exp Year (yyyy)"/>
+        </td>
+      </tr>
+      <tr>
+        <td><input matInput id="norm" type="number" id="cvv" placeholder="CVV"/></td>
+      </tr>
+      </table>
+      
       Captcha: <br>
       <input type="submit" value="Submit"/><br>
       <input type="reset" value="Reset"/><br>
