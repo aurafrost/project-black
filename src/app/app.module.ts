@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -42,6 +41,7 @@ import {
 import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { RegisterComponent } from './shared/forms/register/register.component';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 @NgModule({
   declarations: [
@@ -65,8 +65,16 @@ import { RegisterComponent } from './shared/forms/register/register.component';
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

@@ -16,6 +16,11 @@ button {
   margin-right: .5rem;
 }
 
+button#styled:hover,
+button#styled.cdk-focused {
+    background-color: #ccc;
+}
+
 form {
   display: inline-block;
 }
@@ -26,3 +31,6 @@ form {
   margin-right: 1rem;
 }
 
+#MenuBtn:hover {
+  background-color: #ccc;
+}
