@@ -17,7 +17,6 @@ export class UserService {
   }
 
   getUser() {
-    
     return this.user;
   }
 
@@ -28,6 +27,6 @@ export class UserService {
   createUser(user) {
     const pushId = this.afDatabase.createPushId();
     console.log(pushId);
-
+    return this.afDatabase.object(`Users/${pushId}`).set(user);
   }
 }
