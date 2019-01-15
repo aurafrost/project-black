@@ -17,5 +17,13 @@ export class AccountComponent implements OnInit {
     this.user=this.service.getUser();
   }
 
+  edit(){
+    //not complete. doubt update will work as is
+    this.service.setUser(this.user.uid);
+  }
 
+  deleteAccount(){
+    //need to add confirmation
+    this.service.deleteUser(this.user.uid);
+  }
 }

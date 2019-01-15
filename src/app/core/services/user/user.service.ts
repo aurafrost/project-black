@@ -30,4 +30,8 @@ export class UserService {
     console.log(pushId);
 
   }
+
+  deleteUser(userId){
+    //TODO
+  }
 }
