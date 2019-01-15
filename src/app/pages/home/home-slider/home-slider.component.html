@@ -1,3 +1,4 @@
+<h2>Featured Content Providers</h2>
 <div style="margin-top: 1rem" class="container">
   <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
     <mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: 3, currentPage: p}">
@@ -8,7 +9,9 @@
     </mat-card>
   </div>
   <br>
-  <div style="padding: 0 !important;" class = "col-12 justify-content-center">
-    <pagination-controls (pageChange) = "p = $event"></pagination-controls>
+  <div class = "col-12 justify-content-center">
+    <div style="padding-right: 2.5rem;">
+      <pagination-controls class="my-pagination" (pageChange) = "p = $event"></pagination-controls>
+    </div>
   </div>
 </div>
