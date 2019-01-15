@@ -58,12 +58,19 @@ export class AuthService {
       });
   }
 
-  signUp(email, password, user: User) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  signUp(user: User, password) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
       .then(auth => {
-        // TODO: Send Verification Email
-        // TODO: redirect to login
-        this.userService.createUser(user);
+        auth.user.sendEmailVerification().then(() => {
+          // TODO: open login model or redirect to login page
+        });
+        user.uid = auth.user.uid;
+        this.userService.createUser(auth.user.uid, user)
+          .then(res => {
+            console.log('user Added!');
+          }).catch(err => {
+            console.log(err.message);
+        });
       }).catch(err => {
         window.alert(err.message);
       });

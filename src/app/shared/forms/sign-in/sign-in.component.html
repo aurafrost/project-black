@@ -1,0 +1,14 @@
+<form (submit)="signIn()">
+  <h1>Sign In</h1>
+  <mat-form-field style="width: 100%">
+    <input type="email" [ngModel]="email" matInput placeholder="Email" formControlName="email"/>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%">
+    <input matInput [ngModel]="password" type="password" placeholder="Password" name="password"/>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button [disabled]="formData.pristine" mat-raised-button type="submit" mat-button>Sign In</button>
+  </div>
+</form>

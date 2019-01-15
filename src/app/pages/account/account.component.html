@@ -6,7 +6,17 @@
     Username: {{user.username}}<br>
     Email: {{user.email}}<br>
   </div>
-  <div id="">
-
+  <br>
+  <h1>Edit Account</h1>
+  <div id="edit" style="display: none">
+      First Name: <input type="text" value={{user.fname}}/><br>
+      Last Name: <input type="text" value={{user.lname}}/><br>
+      Username: <input type="text" value={{user.username}}/><br>
+      Email: <input type="text" value={{user.email}}/><br>
+      <button onclick="edit()">Submit</button>
+  </div>
+  <div id="buttons">
+    <button (click)="showEdit()">Edit</button> |
+    <button (click)="deleteAccount()">Delete</button>
   </div>
 </div>
