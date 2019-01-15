@@ -54,8 +54,8 @@ export class LoginRegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(8)
       ]))
-    }, {
-      validators: this.passwordsMatch('password', 'confirmPassword')
+    // }, {
+    //   validators: this.passwordsMatch('password', 'confirmPassword')
     });
   }
 
