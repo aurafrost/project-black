@@ -25,9 +25,9 @@ export class AccountComponent implements OnInit {
     this.ngOnInit();
   }
   showEdit(){
-    this.detailsBlock=document.getElementById("details")
+    this.detailsBlock=document.getElementById("details") as HTMLElement;
     this.detailsBlock.style.display="none";   
-    this.editBlock=document.getElementById("edit")
+    this.editBlock=document.getElementById("edit") as HTMLElement;
     this.editBlock.style.display="block";
   }
 
