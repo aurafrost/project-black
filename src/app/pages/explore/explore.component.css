@@ -1,0 +1,12 @@
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    height: 800px;
+    overflow: auto;
+}
