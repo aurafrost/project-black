@@ -2,8 +2,8 @@
   <img class="logo" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
   <button id="MenuBtn" *ngIf="(isHandset | async).matches" mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
   <div id="MenuRight" *ngIf="!(isHandset | async).matches">
-    <button id="styled" mat-raised-button routerLink="/login-register" (click)="logregister()">Register</button>
-    <button id="styled" mat-raised-button>Subscribe</button>
+    <button class="styled" mat-raised-button routerLink="/login-register">Register</button>
+    <button class="styled" mat-raised-button>Login</button>
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <input matInput>
@@ -16,12 +16,12 @@
     <mat-menu #accountmenu="matMenu">
       <button mat-menu-item routerLink="account">Account</button>
       <button mat-menu-item>Settings</button>
-      <button mat-menu-item>Sign Out</button>
+      <button (click)="signOut()" mat-menu-item>Sign Out</button>
     </mat-menu>
   </div>
   <mat-menu style="padding-bottom: 0;" #menu="matMenu">
     <button *ngIf="!(isMobile | async).matches" routerLink="/" mat-menu-item>Home</button>
-    <button *ngIf="!(isMobile | async).matches" mat-menu-item>Profile</button>
+    <button *ngIf="!(isMobile | async).matches" routerLink="profile" mat-menu-item>Profile</button>
     <button *ngIf="!(isMobile | async).matches" mat-menu-item>Explore</button>
     <form (click) = "$event.stopPropagation()" mat-menu-item class="example-form">
       <mat-form-field class="example-full-width">
@@ -29,20 +29,20 @@
       </mat-form-field>
       <button mat-flat-button style="margin: 0; padding: 0;">Search</button>
     </form>
-    <button id="styled" mat-menu-item routerLink="/login-register" (click) = "logregister()">Register</button>
-    <button id="styled" mat-menu-item (click) = "$event.stopPropagation()">Subscribe</button>
+    <button class="styled" mat-menu-item routerLink="/login-register">Register</button>
+    <button class="styled" mat-menu-item (click) = "$event.stopPropagation()">Login</button>
     <button (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
     </button>
     <mat-menu #accountmenu="matMenu">
       <button mat-menu-item routerLink="account">Account</button>
       <button mat-menu-item>Settings</button>
-      <button mat-menu-item>Sign Out</button>
+      <button (click)="signOut()" mat-menu-item>Sign Out</button>
     </mat-menu>
   </mat-menu>
   <mat-toolbar *ngIf="(isMobile | async).matches">
     <button mat-button routerLink="/">Home</button>
-    <button mat-button>Profile</button>
+    <button mat-button routerLink="profile">Profile</button>
     <button mat-button>Explore</button>
   </mat-toolbar>
 </mat-toolbar>

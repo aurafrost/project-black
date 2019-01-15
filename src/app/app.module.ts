@@ -42,6 +42,8 @@ import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
+import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SearchComponent,
     ErrComponent,
     DialogComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeAboutComponent,
+    HomeSliderComponent
   ],
   imports: [
     BrowserModule,

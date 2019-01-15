@@ -22,7 +22,7 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
-  register(email,password){
-    
+  register(email, password) {
+
   }
 }
