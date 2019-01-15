@@ -13,8 +13,10 @@
       Last Name: <input type="text" value={{user.lname}}/><br>
       Username: <input type="text" value={{user.username}}/><br>
       Email: <input type="text" value={{user.email}}/><br>
+      <button onclick="edit()">Submit</button>
   </div>
-  <button onclick="edit()">Edit</button><br>
-  <br><br>
-  <button onclick="deleteAccount()">Delete</button>
+  <div id="buttons">
+    <button onclick="showEdit()">Edit</button> |
+    <button onclick="deleteAccount()">Delete</button>
+  </div>
 </div>
