@@ -4,21 +4,8 @@
     text-align: center;
 }
 
-#user-data {
-    margin:1em auto;
-}
 
-#user-data td {
-    width: 150px;
-}
-
-#user-data td input {
-    width: 100%;
-}
-
-@media (min-width: 350px)
-{
-    #user-data td {
-        width: 30%;
-    }
+input.ng-untouched {
+    -webkit-tap-highlight-color: transparent;
+    caret-color: #3f51b5;
 }
