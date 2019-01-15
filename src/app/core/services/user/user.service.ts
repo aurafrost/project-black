@@ -34,4 +34,7 @@ export class UserService {
     //double check later
     this.afDatabase.object(this.user).remove();
   }
+  getUserById(userId){
+
+  }
 }
