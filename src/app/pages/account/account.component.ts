@@ -32,7 +32,6 @@ export class AccountComponent implements OnInit {
   }
 
   deleteAccount(){
-    //need to add confirmation alert for delete
     this.service.deleteUser(this.user.uid);
   }
 }
