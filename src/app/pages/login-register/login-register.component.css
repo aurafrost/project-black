@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+
+#user-data td input.ng-invalid.ng-touched {
+    background-color: coral;
+}
+
 #user-data,
 #card-data {
     margin:1em auto;
@@ -20,8 +25,8 @@
     width: 50%;
 }
 
-#card-data #exmonth,
-#card-data #exyear {
+#card-data td #exmonth,
+#card-data td #exyear {
     width: 15%;
 }
 

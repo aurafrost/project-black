@@ -1,25 +1,25 @@
 <div id="container">
     <h1>Registration</h1>
-    <form action="register(email,password)" method="POST">
+    <form [formGroup]="userFormData" (ngSubmit)="register()" method="POST">
       <h2>User Details</h2>
       <table id="user-data">
         <tr>
-          <td><input matInput type="text" id="fname" placeholder="First Name"/></td>
+          <td><input matInput type="text" id="fname" formControlName="fname" placeholder="First Name"/></td>
         </tr>
         <tr>
-          <td><input matInput type="text" id="lname" placeholder="Last Name"/></td>
+          <td><input matInput type="text" id="lname" formControlName="lname" placeholder="Last Name"/></td>
         </tr>
         <tr>
-          <td><input matInput type="text" id="dname" placeholder="Display Name (Name other users see)"/></td>
+          <td><input matInput type="text" id="uname" formControlName="uname" placeholder="Username (Name other users see)"/></td>
         </tr>
         <tr>
-          <td><input matInput type="text" id="email" placeholder="Email Address"/></td>
+          <td><input matInput type="email" id="email" formControlName="email" placeholder="Email Address"/></td>
         </tr>
         <tr>
-          <td><input matInput type="password" id="pw" placeholder="Password"/></td>
+          <td><input matInput type="password" id="password" formControlName="password" placeholder="Password"/></td>
         </tr>
         <tr>
-          <td><input matInput type="password" id="cpw" placeholder="Confirm Password"/></td>
+          <td><input matInput type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password"/></td>
         </tr>
       </table>
       <br>
@@ -52,9 +52,8 @@
         <td><input matInput id="norm" type="number" id="cvv" placeholder="CVV"/></td>
       </tr>
       </table>
-      
-      Captcha: <br>
-      <input type="submit" value="Submit"/><br>
-      <input type="reset" value="Reset"/><br>
+      <br><br>
+      <button mat-raised-button id="controlBtn submit" type="submit" value="Submit" style="width: 75px; background-color: rgb(42, 180, 134);">Submit</button><br>
+      <button mat-raised-button id="controlBtn reset" type="reset" value="Reset" style="width: 75px;">Reset</button> <br>
     </form>
   </div>
