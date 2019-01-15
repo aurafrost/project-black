@@ -1,3 +1,35 @@
-<p>
-  profile works!
-</p>
+<div id="container">
+  <h1>Your Profile</h1>
+  <div id="leftside">
+    <div id="details">
+      <img id="avatar" src="../../../assets/" alt="avatar here"><br>
+      First Name: {{user.fname}}<br>
+      Last Name: {{user.lname}}<br>
+      Username: {{user.username}}<br>
+      Email: {{user.email}}<br>
+    </div>
+    <div id="friends">
+      <h3>Friends List</h3>
+      <ul>
+        <li>friend 1</li>
+        <li>friend 2</li>
+        <li>friend 3</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="feed">
+    <h3>Feed</h3>
+    <ul>
+      <li>stuff from personality</li>
+    </ul>
+  </div>
+  <div id="sublist">
+    <h3>Subscriptions</h3>
+    <ul>
+      <li>personality 1</li>
+      <li>personality 2</li>
+      <li>personality 3</li>
+    </ul>
+  </div>
+</div>
