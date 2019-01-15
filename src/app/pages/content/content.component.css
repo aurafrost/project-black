@@ -1,0 +1,11 @@
+button{
+    background-color:greenyellow;
+    float:right;
+}
+img#pavatar{
+    height: 15%;
+    width: 15%;
+}
+h1{
+    text-align: center;
+}
