@@ -85,6 +85,7 @@ export class LoginRegisterComponent implements OnInit {
       return;
     }
     if (this.userFormData.value.password !== this.userFormData.value.confirmPassword) {
+      this.router.navigate(['profile'])
       document.getElementById('password').classList.add('ng-invalid');
       document.getElementById('confirmPassword').classList.add('ng-invalid');
       return;
