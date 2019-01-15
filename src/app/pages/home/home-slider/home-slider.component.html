@@ -2,9 +2,7 @@
   <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
     <mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: 3, currentPage: p}">
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-        <span fxFlex="">{{picture.title}}</span>
-        <mat-icon fxFlex="10%">mode_edit</mat-icon>
-        <mat-icon fxFlex="10%">delete</mat-icon>
+        <span fxFlex="" style="text-align: center">{{picture.title}}</span>
       </mat-card-title>
       <img mat-card-image [src]="picture.img">
     </mat-card>
