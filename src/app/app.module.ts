@@ -97,7 +97,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSlideToggleModule,
     MatTabsModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthGuard,
