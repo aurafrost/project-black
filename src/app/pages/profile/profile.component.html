@@ -1,35 +1,60 @@
-<div id="container">
-  <h1>Your Profile</h1>
-  <div id="leftside">
-    <div id="details">
-      <img id="avatar" src="../../../assets/" alt="avatar here"><br>
-      First Name: {{user.fname}}<br>
-      Last Name: {{user.lname}}<br>
-      Username: {{user.username}}<br>
-      Email: {{user.email}}<br>
-    </div>
-    <div id="friends">
-      <h3>Friends List</h3>
-      <ul>
-        <li>friend 1</li>
-        <li>friend 2</li>
-        <li>friend 3</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div id="feed">
-    <h3>Feed</h3>
-    <ul>
-      <li>stuff from personality</li>
-    </ul>
-  </div>
-  <div id="sublist">
-    <h3>Subscriptions</h3>
-    <ul>
-      <li>personality 1</li>
-      <li>personality 2</li>
-      <li>personality 3</li>
-    </ul>
-  </div>
-</div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello, world!</title>
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm" id="left">
+              <ul class="list-group" id="details">
+                  <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
+                  <li class="list-group-item">First Name: {{user.fname}}</li>
+                  <li class="list-group-item">Last Name: {{user.lname}}</li>
+                  <li class="list-group-item">Username: {{user.username}}</li>
+                  <li class="list-group-item">Email: {{user.email}}</li>
+                </ul>
+         
+                <div class="list-group" id="friends">
+                  <h3>Friends List</h3>
+                  <a href="#" class="list-group-item list-group-item-action">Friend 1</a>
+                  <a href="#" class="list-group-item list-group-item-action">Friend 2</a>
+                  <a href="#" class="list-group-item list-group-item-action">Friend 3</a>
+                  <a href="#" class="list-group-item list-group-item-action">Friend 4</a>
+                  <a href="#" class="list-group-item list-group-item-action">Friend 5</a>
+                </div>
+          </div>
+          <div class="col-sm" id="mid">
+              <div class="list-group" id="feed">
+                  <h3>Feed</h3>
+                  <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
+                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+              </div>
+          </div>
+          <div class="col-sm" id="right">
+              <div class="list-group" id="sublist">
+                  <h3>Subscriptions</h3>
+                  <a href="#" class="list-group-item list-group-item-action">Personality 1</a>
+                  <a href="#" class="list-group-item list-group-item-action">Personality 2</a>
+                  <a href="#" class="list-group-item list-group-item-action">Personality 3</a>
+                  <a href="#" class="list-group-item list-group-item-action">Personality 4</a>
+                  <a href="#" class="list-group-item list-group-item-action">Personality 5</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
