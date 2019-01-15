@@ -39,11 +39,11 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { ErrComponent } from './err/err.component';
-import { DialogComponent } from './shared/dialog/dialog.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
 import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
+import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +62,8 @@ import { HomeSliderComponent } from './pages/home/home-slider/home-slider.compon
     ForgotpasswordComponent,
     SearchComponent,
     ErrComponent,
-    DialogComponent,
     SignUpComponent,
+    SignInComponent,
     HomeAboutComponent,
     HomeSliderComponent
   ],
@@ -107,7 +107,9 @@ import { HomeSliderComponent } from './pages/home/home-slider/home-slider.compon
   providers: [
     AuthGuard,
     AuthService,
-    UserService],
+    UserService
+  ],
+  entryComponents: [SignInComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
