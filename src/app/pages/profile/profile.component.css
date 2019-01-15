@@ -8,12 +8,26 @@ img#favatar,img#pavatar{
 }
 h1{
     text-align: center;
+    background-color: mediumaquamarine;
 }
 button#deleteBtn{
     float: right;
     background-color: firebrick;
     color: white;
 }
-div#container,h1{
+div#container,div#posts{
     background-color: mediumaquamarine;
+    height: 80%;
+    overflow: auto;
+}
+div#posts{
+    height: 90%;
+}
+div#friends{
+    height: 48%;
+    overflow: auto;
+}
+div#sublist{
+    height: 80%;
+    overflow: auto;
 }
