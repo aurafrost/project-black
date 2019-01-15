@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   isHandset: Observable<BreakpointState> = this.breakpointObserver
-    .observe(Breakpoints.Handset);
+    .observe(['(max-width: 960px)']);
   isMobile: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(min-width: 500px)']);
 
