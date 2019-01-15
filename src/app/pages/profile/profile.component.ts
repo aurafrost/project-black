@@ -9,10 +9,24 @@ import { User } from 'src/app/core/models/User';
 })
 export class ProfileComponent implements OnInit {
   user:User;
+  profile:HTMLElement;
+  editBlock:HTMLElement;
 
-  constructor() { }
+  constructor(private service:UserService) { }
 
   ngOnInit() {
+    this.user=this.service.getUser();
   }
 
+  edit(){
+    //doubt update will work as is
+    this.service.setUser(this.user.uid);
+    this.ngOnInit();
+  }
+  showEdit(){
+    this.profile=document.getElementById("profile") as HTMLElement;
+    this.profile.style.display="none";   
+    this.editBlock=document.getElementById("editBlock") as HTMLElement;
+    this.editBlock.style.display="block";
+  }
 }

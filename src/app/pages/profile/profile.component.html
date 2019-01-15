@@ -1,47 +1,56 @@
-
-<div>
-    <h1>Your Profile</h1>
-    <hr>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm" id="left">
-              <ul class="list-group" id="details">
-                  <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
-                  <li class="list-group-item">First Name: </li>
-                  <li class="list-group-item">Last Name: </li>
-                  <li class="list-group-item">Username: </li>
-                  <li class="list-group-item">Email: </li>
-                </ul>
+<h1>Your Profile</h1>
+<hr>
+<div id="container" class="container">
+    <div id="profile" class="row">
+        <div class="col-sm" id="left">
+            <ul class="list-group" id="details">
+                <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
+                <li class="list-group-item">First Name: </li>
+                <li class="list-group-item">Last Name: </li>
+                <li class="list-group-item">Username: </li>
+                <li class="list-group-item">Email: </li>
+                <button (click)="showEdit()">Edit Profile</button>
+            </ul>
          
-                <div class="list-group" id="friends">
-                  <h3>Friends List</h3>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 1</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 2</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 3</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 4</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 5</a>
-                </div>
-          </div>
-          <div class="col-sm" id="mid">
-              <div class="list-group" id="feed">
-                  <h3>Feed</h3>
-                  <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
-                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-              </div>
-          </div>
-          <div class="col-sm" id="right">
-              <div class="list-group" id="sublist">
-                  <h3>Subscriptions</h3>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 1</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 2</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 3</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 4</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 5</a>
-              </div>
-          </div>
+            <div class="list-group" id="friends">
+                <h3>Friends List</h3>
+                    <a href="#" class="list-group-item list-group-item-action">Friend 1</a>
+                    <a href="#" class="list-group-item list-group-item-action">Friend 2</a>
+                    <a href="#" class="list-group-item list-group-item-action">Friend 3</a>
+                    <a href="#" class="list-group-item list-group-item-action">Friend 4</a>
+                    <a href="#" class="list-group-item list-group-item-action">Friend 5</a>
+            </div>
         </div>
-      </div>
+        <div class="col-sm" id="mid">
+            <div class="list-group" id="feed">
+                <h3>Feed</h3>
+                <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
+                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+            </div>
+        </div>
+        <div class="col-sm" id="right">
+            <div class="list-group" id="sublist">
+                <h3>Subscriptions</h3>
+                <a href="#" class="list-group-item list-group-item-action">Personality 1</a>
+                <a href="#" class="list-group-item list-group-item-action">Personality 2</a>
+                <a href="#" class="list-group-item list-group-item-action">Personality 3</a>
+                <a href="#" class="list-group-item list-group-item-action">Personality 4</a>
+                <a href="#" class="list-group-item list-group-item-action">Personality 5</a>
+            </div>
+        </div>
+    </div>
+    <div id="editBlock" class="card" style="width: 18rem; display:none;">
+        <img src="../../../assets/png/avatar.png" class="card-img-top" alt="avatar here">
+            <div class="card-body">
+                <h5 class="card-title">Editing Profile</h5>
+                <p class="card-text">First Name: <input type="text" value=""/></p>
+                <p class="card-text">Last Name: <input type="text" value=""/></p>
+                <p class="card-text">Username: <input type="text" value=""/></p>
+                <p class="card-text">Email: <input type="text" value=""/></p>
+                <button (click)="edit()">Submit</button>
+            </div>
+    </div>
 </div>
