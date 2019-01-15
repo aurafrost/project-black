@@ -1,9 +1,12 @@
 <div id="container">
   <h1>Email Customer Support:</h1>
-  <form action="" method="POST">
-    Your Email Address: <input type="text" name="email"/>
-    Issue Description:
-    <textarea rows="4" cols="50"></textarea><br>
-    <input type="submit" value="Submit"/><br>
+  <form [formGroup]="formData" id="support-form" method="POST">
+    <mat-form-field style="width: 30%; min-width: 150px">
+      <input matInput type="text" name="email" placeholder="Your email" formControlName="email"/>
+    </mat-form-field><br>
+    <mat-form-field style="width: 30%; min-width: 150px">
+      <textarea matInput rows="4" cols="50" placeholder="Enter your issue here" formControlName="message"></textarea>
+    </mat-form-field><br>
+    <button mat-raised-button type="button" (click)="postSupport()" value="Submit">Submit</button> <br>
   </form>
 </div>
