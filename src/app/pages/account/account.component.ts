@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../core/services/user/user.service';
+import { User } from 'src/app/core/models/User';
 
 @Component({
   selector: 'account',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-
-  constructor() { }
+  user:User;
+  detailsBlock:HTMLElement;
+  editBlock:HTMLElement;
+  constructor(
+    private service:UserService,
+  ) { }
 
   ngOnInit() {
+    this.user=this.service.getUser();
   }
 
+  edit(){
+    //doubt update will work as is
+    this.service.setUser(this.user.uid);
+    this.ngOnInit();
+  }
+  showEdit(){
+    this.detailsBlock=document.getElementById("details")
+    this.detailsBlock.style.display="none";   
+    this.editBlock=document.getElementById("edit")
+    this.editBlock.style.display="block";
+  }
+
+  deleteAccount(){
+    //need to add confirmation alert for delete
+    this.service.deleteUser(this.user.uid);
+  }
 }

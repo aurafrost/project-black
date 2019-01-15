@@ -1,0 +1,24 @@
+#container {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+#user-data {
+    margin:1em auto;
+}
+
+#user-data td {
+    width: 150px;
+}
+
+#user-data td input {
+    width: 100%;
+}
+
+@media (min-width: 350px)
+{
+    #user-data td {
+        width: 30%;
+    }
+}

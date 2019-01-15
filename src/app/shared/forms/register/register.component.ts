@@ -9,6 +9,7 @@ import {UserService} from '../../../core/services/user/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
   private user = new User();
   private formData: FormGroup;
   constructor(
@@ -45,6 +46,7 @@ export class RegisterComponent implements OnInit {
       ]))
     });
   }
+// hey this function searches google
 
   addUser(user) {
     this.userService.createUser(user)
