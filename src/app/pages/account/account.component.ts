@@ -9,6 +9,8 @@ import { User } from 'src/app/core/models/User';
 })
 export class AccountComponent implements OnInit {
   user:User;
+  detailsBlock:HTMLElement;
+  editBlock:HTMLElement;
   constructor(
     private service:UserService,
   ) { }
@@ -20,6 +22,13 @@ export class AccountComponent implements OnInit {
   edit(){
     //doubt update will work as is
     this.service.setUser(this.user.uid);
+    this.ngOnInit();
+  }
+  showEdit(){
+    this.detailsBlock=document.getElementById("details")
+    this.detailsBlock.style.display="none";   
+    this.editBlock=document.getElementById("edit")
+    this.editBlock.style.display="block";
   }
 
   deleteAccount(){
