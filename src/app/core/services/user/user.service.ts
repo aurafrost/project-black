@@ -6,7 +6,7 @@ import {User} from '../../models/User';
   providedIn: 'root'
 })
 export class UserService {
-  private user: User;
+  private user: any;
 
   constructor(
     private afDatabase: AngularFireDatabase
@@ -21,7 +21,7 @@ export class UserService {
   }
 
   setUser(userId) {
-    this.user = <User>this.afDatabase.object(`Users/${userId}`);
+    this.user = this.afDatabase.object(`Users/${userId}`);
   }
 
   createUser(userId, user) {
