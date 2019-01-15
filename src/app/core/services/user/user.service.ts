@@ -29,4 +29,9 @@ export class UserService {
     console.log(pushId);
     return this.afDatabase.object(`Users/${pushId}`).set(user);
   }
+
+  deleteUser(user){
+    //double check later
+    this.afDatabase.object(this.user).remove();
+  }
 }
