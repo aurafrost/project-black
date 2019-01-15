@@ -1,0 +1,26 @@
+div#container{
+    text-align: center;
+}
+div#friends{
+    border: 1px solid;
+    float:left;
+}
+div#sublist{
+    border: 1px solid;
+    float:right;
+}
+div#details{
+    border: 1px solid;
+    float:left;
+    text-align: left;
+}
+img#avatar{
+    border: 1px solid;
+    height:7%;
+    width:7%;
+}
+div#feed{
+    float:left;
+    width:fit-content;
+    border: 1px solid;
+}
