@@ -10,6 +10,7 @@ import { TermsComponent } from './pages/terms/terms.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from "./pages/profile/profile.component";
+import { ExploreComponent } from './pages/explore/explore.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
 {path: 'terms', component: TermsComponent},
 {path: 'login-register', component: LoginRegisterComponent},
 {path: 'profile', component: ProfileComponent},
+{path: 'explore', component: ExploreComponent},
 {path: '**', component: ErrComponent}
 ];
 
