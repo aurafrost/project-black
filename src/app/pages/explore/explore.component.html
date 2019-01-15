@@ -1,0 +1,19 @@
+<h2>Trending Profiles</h2>
+<div class="container">
+  <div class="card d-flex flex-row" *ngFor="let person of profiles">
+    <div class="d-flex justify-content-around">
+      <img src={{person.img}} alt="something"/>
+    </div>
+    <div class="flex-grow-1">
+      <div style="text-align: center"><strong>{{person.name}}</strong></div>
+      <ul>
+        <li>
+          Number of subscribers: {{person.numSubs}}
+        </li>
+        <li>
+          Posts made this month: {{person.postsMonth}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

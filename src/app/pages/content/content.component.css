@@ -1,0 +1,17 @@
+button{
+    background-color:skyblue;
+    float:right;
+}
+img#pavatar{
+    height: 15%;
+    width: 15%;
+}
+h1{
+    text-align: center;
+}
+.list-group-item{
+    background-color: blanchedalmond;
+}
+div#container,h1{
+    background-color: mediumaquamarine;
+}

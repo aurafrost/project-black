@@ -10,7 +10,7 @@ import { User } from 'src/app/core/models/User';
 export class AccountComponent implements OnInit {
   user:User;
   detailsBlock:HTMLElement;
-  editBlock:HTMLElement;
+  editDetails:HTMLElement;
   constructor(
     private service:UserService,
   ) { }
@@ -27,12 +27,11 @@ export class AccountComponent implements OnInit {
   showEdit(){
     this.detailsBlock=document.getElementById("details") as HTMLElement;
     this.detailsBlock.style.display="none";   
-    this.editBlock=document.getElementById("edit") as HTMLElement;
-    this.editBlock.style.display="block";
+    this.editDetails=document.getElementById("editDetails") as HTMLElement;
+    this.editDetails.style.display="block";
   }
 
   deleteAccount(){
-    //need to add confirmation alert for delete
     this.service.deleteUser(this.user.uid);
   }
 }

@@ -1,3 +1,9 @@
 h1{
     text-align: center;
 }
+
+#support-form {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}

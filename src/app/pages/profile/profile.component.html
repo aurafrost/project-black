@@ -1,60 +1,61 @@
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <title>Hello, world!</title>
-</head>
-<body>
-    <h1>Your Profile</h1>
-    <hr>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm" id="left">
-              <ul class="list-group" id="details">
-                  <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
-                  <li class="list-group-item">First Name: {{user.fname}}</li>
-                  <li class="list-group-item">Last Name: {{user.lname}}</li>
-                  <li class="list-group-item">Username: {{user.username}}</li>
-                  <li class="list-group-item">Email: {{user.email}}</li>
-                </ul>
+<div id="container" class="container">
+  <h1>Your Profile</h1>
+  <hr>
+    <div id="profile" class="row">
+        <div class="col-sm" id="left">
+            <ul class="list-group" id="details">
+                <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
+                <li class="list-group-item">First Name: {{user.fname}}</li>
+                <li class="list-group-item">Last Name: {{user.lname}}</li>
+                <li class="list-group-item">Username: {{user.username}} </li>
+                <li class="list-group-item">Email: {{user.email}}</li>
+                <button (click)="showEdit()">Edit Profile</button>
+            </ul>
          
-                <div class="list-group" id="friends">
-                  <h3>Friends List</h3>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 1</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 2</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 3</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 4</a>
-                  <a href="#" class="list-group-item list-group-item-action">Friend 5</a>
-                </div>
-          </div>
-          <div class="col-sm" id="mid">
-              <div class="list-group" id="feed">
-                  <h3>Feed</h3>
-                  <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
-                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-              </div>
-          </div>
-          <div class="col-sm" id="right">
-              <div class="list-group" id="sublist">
-                  <h3>Subscriptions</h3>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 1</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 2</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 3</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 4</a>
-                  <a href="#" class="list-group-item list-group-item-action">Personality 5</a>
-              </div>
-          </div>
+            <div class="list-group" id="friends">
+                <h3>Friends List</h3>
+                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 1</a>
+                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 2</a>
+                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 3</a>
+                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 4</a>
+                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 5</a>
+            </div>
         </div>
-      </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-</body>
+        <div class="col-sm-7" id="mid">
+            <div class="list-group" id="posts">
+                <h3>Posts</h3>
+                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button (click)="deletePost('post1')" id="deleteBtn">Delete Post</button></div>
+                <div id="post2" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button (click)="deletePost('post2')" id="deleteBtn">Delete Post</button></div>
+                <div id="post3" class="list-group-item list-group-item-action">Morbi leo risus<button (click)="deletePost('post3')" id="deleteBtn">Delete Post</button></div>
+                <div id="post4" class="list-group-item list-group-item-action">Porta ac consectetur ac<button (click)="deletePost('post4')" id="deleteBtn">Delete Post</button></div>
+                <div id="post5" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post5')" id="deleteBtn">Delete Post</button></div>
+                <div id="post6" class="list-group-item list-group-item-action">Cras justo odio<button (click)="deletePost('post6')" id="deleteBtn">Delete Post</button></div>
+                <div id="post7" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button (click)="deletePost('post7')" id="deleteBtn">Delete Post</button></div>
+                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button (click)="deletePost('post8')" id="deleteBtn">Delete Post</button></div>
+                <div id="post9" class="list-group-item list-group-item-action">Porta ac consectetur ac<button (click)="deletePost('post9')" id="deleteBtn">Delete Post</button></div>
+                <div id="post10" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post10')" id="deleteBtn">Delete Post</button></div>
+            </div>
+        </div>
+        <div class="col-sm" id="right">
+            <div class="list-group" id="sublist">
+                <h3>Subscriptions</h3>
+                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 1</a>
+                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 2</a>
+                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 3</a>
+                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 4</a>
+                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 5</a>
+            </div>
+        </div>
+    </div>
+    <div id="editBlock" class="card" style="width: 18rem; display:none;">
+        <img src="../../../assets/png/avatar.png" class="card-img-top" alt="avatar here">
+            <div class="card-body">
+                <h5 class="card-title">Editing Profile</h5>
+                <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
+                <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
+                <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
+                <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
+                <button (click)="edit()">Submit</button>
+            </div>
+    </div>
+</div>
