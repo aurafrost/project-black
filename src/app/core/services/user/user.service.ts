@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase, AngularFireObject} from '@angular/fire/database';
+import {AngularFireDatabase} from '@angular/fire/database';
 import {User} from '../../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private user: any;
+  private user: User;
 
   constructor(
     private afDatabase: AngularFireDatabase
@@ -21,14 +21,14 @@ export class UserService {
   }
 
   setUser(userId) {
-    this.user = this.afDatabase.object(`Users/${userId}`);
+    this.user = <User>this.afDatabase.object(`Users/${userId}`);
   }
 
-  createUser(uid, user) {
-    return this.afDatabase.object(`Users/${uid}`).set(user);
+  createUser(userId, user) {
+    return this.afDatabase.object(`Users/${userId}`).set(user);
   }
 
-  deleteUser(user) {
-    this.afDatabase.object(this.user).remove();
+  deleteUser(userId) {
+    this.afDatabase.object(`Users/${userId}`).remove();
   }
 }

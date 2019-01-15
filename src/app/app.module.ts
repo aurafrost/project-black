@@ -42,7 +42,8 @@ import { ErrComponent } from './err/err.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HomeAboutComponent } from './pages/HomePage/home-about/home-about.component';
+import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
+import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { HomeAboutComponent } from './pages/HomePage/home-about/home-about.compo
     ErrComponent,
     DialogComponent,
     SignUpComponent,
-    HomeAboutComponent
+    HomeAboutComponent,
+    HomeSliderComponent
   ],
   imports: [
     BrowserModule,
