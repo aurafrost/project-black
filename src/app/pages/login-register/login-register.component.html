@@ -1,31 +1,31 @@
-<div id="container">
+<div class="container" id="container">
     <h1>Registration</h1>
     <form [formGroup]="userFormData" (ngSubmit)="register()" method="POST">
       <h2>User Details</h2>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="text" id="fname" formControlName="fname" placeholder="First Name"/>
         </mat-form-field><br>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="text" id="lname" formControlName="lname" placeholder="Last Name"/>
         </mat-form-field><br>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="text" id="username" formControlName="username" placeholder="Username (Name other users see)"/>
         </mat-form-field><br>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="email" id="email" formControlName="email" placeholder="Email Address"/>
         </mat-form-field><br>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="password" id="password" formControlName="password" placeholder="Password"/>
         </mat-form-field><br>
-        <mat-form-field style="width: 30%; min-width: 150px;">
+        <mat-form-field>
           <input matInput type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password"/>
         </mat-form-field>
       <br>
       <h2>Card Information</h2>
-      <mat-form-field style="width: 30%; min-width: 150px;">
+      <mat-form-field>
         <input matInput id="norm" type="text" id="cardnum" placeholder="Card Number"/>
       </mat-form-field><br>
-      <mat-form-field style="width: 15%; min-width: 75px;">
+      <mat-form-field>
           <!-- <mat-select label="Month" id="exmonth" placeholder="Month" >
             <mat-option value=1 selected>1</mat-option>
             <mat-option value=2>2</mat-option>
@@ -42,10 +42,10 @@
           </mat-select> -->
           <input matInput type="number" id="exmonth" placeholder="Exp Month (mm)"/>
       </mat-form-field>
-      <mat-form-field style="width: 15%; min-width: 75px;">
+      <mat-form-field>
           <input matInput type="number" id="exyear" placeholder="Exp Year (yyyy)">
       </mat-form-field><br>
-      <mat-form-field style="width: 30%; min-width: 150px;">
+      <mat-form-field>
         <input matInput id="norm" type="number" id="cvv" placeholder="CVV"/>
       </mat-form-field>
       <br><br>
