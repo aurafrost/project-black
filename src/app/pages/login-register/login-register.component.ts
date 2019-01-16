@@ -100,8 +100,9 @@ export class LoginRegisterComponent implements OnInit {
 
     console.log(user);
     this.authService.signUp(user, this.userFormData.value.password)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    this.ngOnInit();
+      .then(res => {
+        console.log(res);
+        this.router.navigate(['']);
+      }).catch(err => console.log(err));
   }
 }
