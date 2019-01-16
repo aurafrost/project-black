@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "deploy": "ng build --prod --base-href https://socialappbeta111.github.io/project-black/ && ngh --dir dist/project-black-1",
+    "deploy": "ng build --prod --base-href https://socialappbeta111.github.io/project-black/ && ngh --dir dist/socialappbeta111",
     "e2e": "ng e2e"
   },
   "private": true,
