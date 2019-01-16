@@ -85,7 +85,6 @@ export class LoginRegisterComponent implements OnInit {
       return;
     }
     if (this.userFormData.value.password !== this.userFormData.value.confirmPassword) {
-      this.router.navigate(['profile'])
       document.getElementById('password').classList.add('ng-invalid');
       document.getElementById('confirmPassword').classList.add('ng-invalid');
       return;
@@ -103,6 +102,6 @@ export class LoginRegisterComponent implements OnInit {
     this.authService.signUp(user, this.userFormData.value.password)
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    this.ngOnInit();
+    //this.ngOnInit();
   }
 }
