@@ -9,10 +9,10 @@
                 <li class="list-group-item">Last Name: {{user.lname}}</li>
                 <li class="list-group-item">Username: {{user.username}} </li>
                 <li class="list-group-item">Email: {{user.email}}</li>
-                <button class="btn btn-primary" (click)="showEdit()">Edit Profile</button>
+                <button  mat-raised-button color="primary"  (click)="showEdit()" style="min-height: 40px;">Edit Profile</button>
             </ul>
             <br>
-            <h3>Friends List</h3>
+            <h3 style="margin-top: 15px;">Friends List</h3>
             <div class="list-group" id="friends">
                     <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 1</a>
                     <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 2</a>
@@ -81,7 +81,7 @@
                 <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
                 <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
                 <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
-                <button (click)="edit()">Submit</button>
+                <button mat-raised-button color="primary" (click)="edit()">Submit</button>
             </div>
     </div>
 </div>
