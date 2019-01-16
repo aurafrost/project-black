@@ -38,6 +38,11 @@ export class HomeSliderComponent implements OnInit {
       title: 'Willem Dafoe',
       img: '../../../assets/png/Willem_Dafoe_200x200.png'
     },
+    {
+      id: 7,
+      title: 'Evander Holyfield',
+      img: '../../../assets/png/holyfield_200x200.png'
+    }
   ];
   constructor() { }
 
