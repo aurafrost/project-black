@@ -1,0 +1,33 @@
+img#avatar{
+    width:50%;
+    height:50%;
+}
+img#favatar,img#pavatar{
+    width:15%;
+    height:15%;
+}
+h1{
+    text-align: center;
+}
+button#deleteBtn{
+    float: right;
+    /*background-color: firebrick;*/
+}
+div#container{
+    overflow: auto;
+}
+div#sublist,div#posts{
+    max-height: 90%;
+    overflow: auto;
+}
+ul#details{
+    max-height: 45%;
+}
+div#friends{
+    max-height: 45%;
+    overflow: auto;
+}
+.list-group-item,a{
+}
+h1,div#container{
+}
