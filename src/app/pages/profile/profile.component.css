@@ -11,7 +11,7 @@ h1{
 }
 button#deleteBtn{
     float: right;
-    background-color: firebrick;
+    /*background-color: firebrick;*/
 }
 div#container{
     overflow: auto;

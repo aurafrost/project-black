@@ -9,7 +9,7 @@
                 <li class="list-group-item">Last Name: {{user.lname}}</li>
                 <li class="list-group-item">Username: {{user.username}} </li>
                 <li class="list-group-item">Email: {{user.email}}</li>
-                <button (click)="showEdit()">Edit Profile</button>
+                <button class="btn btn-primary" (click)="showEdit()">Edit Profile</button>
             </ul>
             <br>
             <h3>Friends List</h3>
@@ -30,21 +30,21 @@
         <div class="col-sm-7" id="mid">
             <h3>Posts</h3>
             <div class="list-group" id="posts">
-                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button (click)="deletePost('post1')" id="deleteBtn">Delete Post</button></div>
-                <div id="post2" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button (click)="deletePost('post2')" id="deleteBtn">Delete Post</button></div>
-                <div id="post3" class="list-group-item list-group-item-action">Morbi leo risus<button (click)="deletePost('post3')" id="deleteBtn">Delete Post</button></div>
-                <div id="post4" class="list-group-item list-group-item-action">Porta ac consectetur ac<button (click)="deletePost('post4')" id="deleteBtn">Delete Post</button></div>
-                <div id="post5" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post5')" id="deleteBtn">Delete Post</button></div>
-                <div id="post6" class="list-group-item list-group-item-action">Cras justo odio<button (click)="deletePost('post6')" id="deleteBtn">Delete Post</button></div>
-                <div id="post7" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button (click)="deletePost('post7')" id="deleteBtn">Delete Post</button></div>
-                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button (click)="deletePost('post8')" id="deleteBtn">Delete Post</button></div>
-                <div id="post9" class="list-group-item list-group-item-action">Porta ac consectetur ac<button (click)="deletePost('post9')" id="deleteBtn">Delete Post</button></div>
-                <div id="post10" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post10')" id="deleteBtn">Delete Post</button></div>
-                <div id="post11" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post11')" id="deleteBtn">Delete Post</button></div>
-                <div id="post12" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post12')" id="deleteBtn">Delete Post</button></div>
-                <div id="post13" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post13')" id="deleteBtn">Delete Post</button></div>
-                <div id="post14" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post14')" id="deleteBtn">Delete Post</button></div>
-                <div id="post15" class="list-group-item list-group-item-action">Vestibulum at eros<button (click)="deletePost('post15')" id="deleteBtn">Delete Post</button></div>            
+                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-danger" (click)="deletePost('post1')" id="deleteBtn">Delete Post</button></div>
+                <div id="post2" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-danger" (click)="deletePost('post2')" id="deleteBtn">Delete Post</button></div>
+                <div id="post3" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-danger" (click)="deletePost('post3')" id="deleteBtn">Delete Post</button></div>
+                <div id="post4" class="list-group-item list-group-item-action">Porta ac consectetur ac<button class="btn btn-outline-danger" (click)="deletePost('post4')" id="deleteBtn">Delete Post</button></div>
+                <div id="post5" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post5')" id="deleteBtn">Delete Post</button></div>
+                <div id="post6" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-danger" (click)="deletePost('post6')" id="deleteBtn">Delete Post</button></div>
+                <div id="post7" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-danger" (click)="deletePost('post7')" id="deleteBtn">Delete Post</button></div>
+                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-danger" (click)="deletePost('post8')" id="deleteBtn">Delete Post</button></div>
+                <div id="post9" class="list-group-item list-group-item-action">Porta ac consectetur ac<button class="btn btn-outline-danger" (click)="deletePost('post9')" id="deleteBtn">Delete Post</button></div>
+                <div id="post10" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post10')" id="deleteBtn">Delete Post</button></div>
+                <div id="post11" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post11')" id="deleteBtn">Delete Post</button></div>
+                <div id="post12" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post12')" id="deleteBtn">Delete Post</button></div>
+                <div id="post13" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post13')" id="deleteBtn">Delete Post</button></div>
+                <div id="post14" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post14')" id="deleteBtn">Delete Post</button></div>
+                <div id="post15" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post15')" id="deleteBtn">Delete Post</button></div>
             </div>
         </div>
         <div class="col-sm" id="right">
