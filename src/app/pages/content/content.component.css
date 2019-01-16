@@ -13,6 +13,9 @@ h1{
     background-color: darkblue;
     color:greenyellow;
 }
+.list-group-item{
+    box-shadow: 0 2px 2px 2px chartreuse;
+}
 h1,div#container{
     background-color: black;
     color: greenyellow;

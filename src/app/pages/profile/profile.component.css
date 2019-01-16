@@ -20,14 +20,16 @@ div#container{
 div#sublist,div#posts{
     max-height: 90%;
     overflow: auto;
+    box-shadow: 0 2px 2px 2px chartreuse;
 }
-div#details{
-    height: 45%;
+ul#details{
     max-height: 45%;
+    box-shadow: 0 2px 2px 2px chartreuse;
 }
 div#friends{
     max-height: 45%;
     overflow: auto;
+    box-shadow: 0 2px 2px 2px chartreuse;
 }
 .list-group-item,a{
     background-color: darkblue;
