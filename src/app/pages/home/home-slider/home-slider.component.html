@@ -1,9 +1,9 @@
 <h2 class="jumbotron jumbotron-fluid">Featured Content Providers</h2>
 <div style="margin-top: 1rem" class="container">
-  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">
-    <mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: 3, currentPage: p}">
+  <div fxLayout="row" fxLayout.lt-sm="column"  fxLayoutGap="2.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: !(lxMd | async).matches ? 3 : 4, currentPage: p}">
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-        <span fxFlex="" style="text-align: center">{{picture.title}}</span>
+        <span fxFlex="" style="text-align: center; font-size: 14px">{{picture.title}}</span>
       </mat-card-title>
       <img mat-card-image (click)="move(picture.title)" [src]="picture.img">
     </mat-card>
@@ -15,3 +15,38 @@
     </div>
   </div>
 </div>
+
+
+<!--<div *ngIf="(lxMd | async).matches" style="margin-top: 1rem" class="container">-->
+  <!--<div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">-->
+    <!--<mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: 4, currentPage: p}">-->
+      <!--<mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">-->
+        <!--<span fxFlex="" style="text-align: center">{{picture.title}}</span>-->
+      <!--</mat-card-title>-->
+      <!--<img mat-card-image (click)="move(picture.title)" [src]="picture.img">-->
+    <!--</mat-card>-->
+  <!--</div>-->
+  <!--<br>-->
+  <!--<div class = "col-12 justify-content-center">-->
+    <!--<div style="padding-right: 2.5rem;">-->
+      <!--<pagination-controls class="my-pagination" (pageChange) = "p = $event"></pagination-controls>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div *ngIf="(lxLg | async).matches" style="margin-top: 1rem" class="container">-->
+  <!--<div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="2.5%" fxLayoutAlign="center">-->
+    <!--<mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: 4, currentPage: p}">-->
+      <!--<mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">-->
+        <!--<span fxFlex="" style="text-align: center">{{picture.title}}</span>-->
+      <!--</mat-card-title>-->
+      <!--<img mat-card-image (click)="move(picture.title)" [src]="picture.img">-->
+    <!--</mat-card>-->
+  <!--</div>-->
+  <!--<br>-->
+  <!--<div class = "col-12 justify-content-center">-->
+    <!--<div style="padding-right: 2.5rem;">-->
+      <!--<pagination-controls class="my-pagination" (pageChange) = "p = $event"></pagination-controls>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
