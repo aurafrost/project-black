@@ -2,16 +2,30 @@ h1{
     text-align: center;
 }
 .list-group-item,a{
-    background-color: darkblue;
-    color:greenyellow;
+    
     text-align: left;
 }
 h1,div#container,input{
-    background-color: black;
-    color: greenyellow;
+    background-color: #f5f5f5;
+    color: black;
     text-align: center;
 }
 input{
     width: 90%;
     text-align: left;
+}
+
+.card {
+    color: black;
+    background-color: #f5f5f5;
+    max-height: 150px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#row {
+    max-height: 600px;
+    overflow: auto;
 }

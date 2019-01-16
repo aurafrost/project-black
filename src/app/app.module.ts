@@ -45,6 +45,7 @@ import { HomeAboutComponent } from './pages/home/home-about/home-about.component
 import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
     MatTabsModule,
     MatExpansionModule,
     MatIconModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SlideshowModule
   ],
   providers: [
     AuthGuard,
