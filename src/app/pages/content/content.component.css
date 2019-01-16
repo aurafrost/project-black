@@ -9,9 +9,6 @@ img#pavatar{
 h1{
     text-align: center;
 }
-div#container{
-    overflow: auto;
-}
 .list-group-item,a{
     background-color: darkblue;
     color:greenyellow;
@@ -20,4 +17,3 @@ h1,div#container{
     background-color: black;
     color: greenyellow;
 }
-
