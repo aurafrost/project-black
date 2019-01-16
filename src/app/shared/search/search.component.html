@@ -9,11 +9,11 @@
           <div class="list-group">
             <div class="card d-flex flex-row" *ngFor="let person of profiles">
                 <div class="d-flex justify-content-around">
-                <img src={{person.img}} alt="something"/>
+                    <img *ngIf="person.img != ''" src={{person.img}} alt="something" (click)="showUser(person.name)" />
                 </div>
-                <div class="flex-grow-1">
+                <div class="flex-grow-1" (click)="showUser(person.name)">
                 <div style="text-align: center"><strong>{{person.name}}</strong></div>
-                    <ul>
+                    <ul *ngIf="person.numSubs != -1">
                         <li>
                         Number of subscribers: {{person.numSubs}}
                         </li>

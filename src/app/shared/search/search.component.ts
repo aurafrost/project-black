@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
   constructor(private activatedRoute_:ActivatedRoute) {
     activatedRoute_.params.subscribe(params => {
       this.term = params.term;
+      this.generateProfiles();
     });
   } 
 
@@ -40,29 +41,40 @@ export class SearchComponent implements OnInit {
   generateProfiles(){
     this.profiles = [];
     if(this.term == "") return;
+
+    //full match search
+    let exact:boolean = false;
+    for(let p of this.hiddenProfiles)
+    {
+      if(p.name.toLowerCase().includes(this.term.toLowerCase()))
+      {
+        console.log("hit exact");
+        this.profiles = [p, ...this.profiles];
+        exact = true;
+      }
+    }
     
     //partial match search.
-    //must run first to ensure the partial matches are shown last
     for(let p of this.hiddenProfiles)
     {
       if(p.name.toLowerCase().includes(this.term.substr(0,1).toLowerCase()))
       {
-        if(this.profiles.indexOf(p.name) == -1)
-          this.profiles.push(p);
+        if(!this.profiles.includes(p))
+          this.profiles = [p, ...this.profiles];
       }
     }
 
-    //full match search
-    for(let p of this.hiddenProfiles)
+    if(!exact)
     {
-      if(p.name === this.term)
-      {
-        this.profiles.push(p);
-      }
+      this.profiles = [{name:'No Exact Matches Found', numSubs:-1, postsMonth: -1, img: ""},
+                        ...this.profiles];
     }
-    this.profiles = this.profiles.reverse();
-
+    
     console.log(this.profiles);
+  }
+
+  showUser(name:string){
+    console.log(name);
   }
 
 }
