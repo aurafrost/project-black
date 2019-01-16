@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { generate } from 'rxjs';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
@@ -20,11 +22,18 @@ export class SearchComponent implements OnInit {
   ]
   profiles = [];
 
-  constructor(private activatedRoute_:ActivatedRoute) {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+    private activatedRoute_:ActivatedRoute) {
     activatedRoute_.params.subscribe(params => {
       this.term = params.term;
       this.generateProfiles();
     });
+    this.matIconRegistry.addSvgIcon('people_outline',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/sharp-people_outline-24px.svg'));
+    this.matIconRegistry.addSvgIcon('av_timer',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/outline-av_timer-24px.svg'));
   } 
 
   ngOnInit() {

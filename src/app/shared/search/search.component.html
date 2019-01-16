@@ -13,12 +13,12 @@
                 </div>
                 <div class="flex-grow-1" (click)="showUser(person.name)">
                   <div style="text-align: center"><strong>{{person.name}}</strong></div>
-                      <ul *ngIf="person.numSubs != -1">
+                      <ul style="text-align: end; margin-right: 1rem;" *ngIf="person.numSubs != -1">
                           <li>
-                          Number of subscribers: {{person.numSubs}}
+                            <mat-icon svgIcon="people_outline"></mat-icon> {{person.numSubs}}
                           </li>
                           <li>
-                          Posts made this month: {{person.postsMonth}}
+                            <mat-icon svgIcon="av_timer"></mat-icon> {{person.postsMonth}}
                           </li>
                       </ul>
                   <button class="subscribe-btn" mat-raised-button>Subscribe</button>
