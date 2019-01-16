@@ -1,4 +1,5 @@
 #container {
+    max-width: 500px;
     align-items: center;
     align-content: center;
     text-align: center;
@@ -8,4 +9,8 @@
 input.ng-untouched {
     -webkit-tap-highlight-color: transparent;
     caret-color: #3f51b5;
+}
+
+mat-form-field {
+  width: 100%;
 }
