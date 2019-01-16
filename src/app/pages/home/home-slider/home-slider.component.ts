@@ -16,7 +16,7 @@ export class HomeSliderComponent implements OnInit {
     },
     {
       id: 2,
-      title: 'Jay-Z',
+      title: 'jay-z',
       img: '../../../assets/png/jay-z_200x200.png'
     },
     {
