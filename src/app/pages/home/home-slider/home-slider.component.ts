@@ -11,7 +11,7 @@ export class HomeSliderComponent implements OnInit {
   pictures = [
     {
       id: 1,
-      title: 'Robert Downy Jr',
+      title: 'RobertDowneyJr',
       img: '../../../assets/png/rdj_200x200.png'
     },
     {
@@ -21,12 +21,12 @@ export class HomeSliderComponent implements OnInit {
     },
     {
       id: 3,
-      title: 'Kanye West',
+      title: 'KanyeWest',
       img: '../../../assets/png/kanye_200x200.png'
     },
     {
       id: 4,
-      title: 'Tom Cruise',
+      title: 'TomCruise',
       img: '../../../assets/png/cruise_200x200.png'
     },
     {
@@ -36,12 +36,12 @@ export class HomeSliderComponent implements OnInit {
     },
     {
       id: 6,
-      title: 'Willem Dafoe',
+      title: 'WillemDafoe',
       img: '../../../assets/png/Willem_Dafoe_200x200.png'
     },
     {
       id: 7,
-      title: 'Evander Holyfield',
+      title: 'EvanderHolyfield',
       img: '../../../assets/png/holyfield_200x200.png'
     }
   ];
@@ -50,8 +50,8 @@ export class HomeSliderComponent implements OnInit {
   ngOnInit() {
   }
   move(title:string){
-    //this.router.navigateByUrl('/robertdowneyjr')
-    console.log(title);
+  this.router.navigate([title.toLowerCase()])
+  //console.log(title);
   
   }
 
