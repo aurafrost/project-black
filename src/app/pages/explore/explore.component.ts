@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'explore',
@@ -22,14 +23,34 @@ export class ExploreComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
+     private router: Router
   ) {
     this.matIconRegistry.addSvgIcon('people_outline',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/sharp-people_outline-24px.svg'));
     this.matIconRegistry.addSvgIcon('av_timer',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/outline-av_timer-24px.svg'));
   }
-
+  
   ngOnInit() {
+  }
+
+  showProfile(name:string) {
+    console.log(name);
+    switch(name){
+      case('Tom Cruise'):
+        this.router.navigate(['tomcruise']);
+        break;
+      case('Willem Dafoe'):
+        this.router.navigate(['willemdafoe']);
+        break;
+      case('Jay-Z'):
+        this.router.navigate(['jay-z']);
+        break;
+      case('Beyonce'):
+        this.router.navigate(['beyonce']);
+        break;
+      
+    }
   }
 
 }

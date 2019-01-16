@@ -22,12 +22,29 @@ div#sublist,div#posts{
 }
 ul#details{
     max-height: 45%;
+    overflow: auto;
 }
 div#friends{
     max-height: 45%;
     overflow: auto;
 }
 .list-group-item,a{
+
 }
 h1,div#container{
+}
+
+@media (max-width: 990px)
+{
+    div#posts {
+        max-height: 690px;
+    }
+
+    div#friends {
+        max-height: 265px;
+    }
+
+    div#sublist {
+        max-height: 300px;
+    }
 }

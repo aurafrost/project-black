@@ -1,11 +1,11 @@
 <h1 class="jumbotron jumbotron-fluid">Trending Profiles</h1>
 <div class="container">
   <div class="card d-flex flex-row" *ngFor="let person of profiles">
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around" (click)="showProfile(person.name)">
       <img src={{person.img}} alt="something"/>
     </div>
     <div class="flex-grow-1">
-      <div style="text-align: left; margin-left: 1rem"><strong>{{person.name}}</strong></div>
+      <div style="text-align: left; margin-left: 1rem" (click)="showProfile(person.name)" ><strong>{{person.name}}</strong></div>
       <ul style="text-align: end; margin-right: 1rem;">
         <li>
           <mat-icon svgIcon="people_outline"></mat-icon> {{person.numSubs}}

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { generate } from 'rxjs';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
@@ -23,9 +25,11 @@ export class SearchComponent implements OnInit {
   profiles = [];
 
   constructor(
+    private activatedRoute_:ActivatedRoute, private router:Router,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private activatedRoute_:ActivatedRoute) {
+    
     activatedRoute_.params.subscribe(params => {
       this.term = params.term;
       this.generateProfiles();
@@ -86,6 +90,21 @@ export class SearchComponent implements OnInit {
 
   showUser(name:string){
     console.log(name);
+    switch(name){
+      case('Tom Cruise'):
+        this.router.navigate(['tomcruise']);
+        break;
+      case('Willem Dafoe'):
+        this.router.navigate(['willemdafoe']);
+        break;
+      case('Jay-Z'):
+        this.router.navigate(['jay-z']);
+        break;
+      case('Beyonce'):
+        this.router.navigate(['beyonce']);
+        break;
+      
+    }
   }
 
 }
