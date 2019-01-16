@@ -10,7 +10,7 @@ import {AuthService} from '../../../core/services/auth/auth.service';
 })
 export class SignUpComponent implements OnInit {
   private user = new User();
-  private formData: FormGroup;
+  public formData: FormGroup;
 
   constructor(
     private authService: AuthService
