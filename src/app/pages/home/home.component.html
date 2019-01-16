@@ -1,5 +1,6 @@
 <div style="background-color: black" [ngStyle]="{'padding': (isMinWidth | async).matches ? '0 5rem' : '0'}" >
   <slideshow
+    [backgroundPosition]="none"
     [autoPlay]="true"
     [minHeight]="(isHandset | async).matches ? '300px' : '500px'"
     [imageUrls]="imageArr">
