@@ -25,10 +25,11 @@ export class SearchComponent implements OnInit {
   profiles = [];
 
   constructor(
-    private activatedRoute_:ActivatedRoute, private router:Router,
+    private activatedRoute_:ActivatedRoute,
+    private router:Router,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer,
-    private activatedRoute_:ActivatedRoute) {
+    private domSanitizer: DomSanitizer
+    ) {
     
     activatedRoute_.params.subscribe(params => {
       this.term = params.term;
