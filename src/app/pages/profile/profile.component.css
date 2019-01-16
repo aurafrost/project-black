@@ -14,6 +14,26 @@ button#deleteBtn{
     background-color: firebrick;
     color: white;
 }
-div#container,h1{
-    background-color: mediumaquamarine;
+div#container,div#posts{
+    height: 80%;
+    overflow: auto;
+}
+div#posts{
+    height: 90%;
+}
+div#friends{
+    height: 48%;
+    overflow: auto;
+}
+div#sublist{
+    height: 80%;
+    overflow: auto;
+}
+.list-group-item,a{
+    background-color: darkblue;
+    color:greenyellow;
+}
+h1,div#container{
+    background-color: black;
+    color: greenyellow;
 }
