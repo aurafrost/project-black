@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 import { Router } from '@angular/router'
 
 @Component({
@@ -18,8 +20,17 @@ export class ExploreComponent implements OnInit {
     {name:'Willem Dafoe', numSubs: 12500, postsMonth: 12, img: "../../../assets/png/Willem_Dafoe_200x200.png"}
   ]
 
-  constructor(private router: Router) { }
-
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
+     private router: Router
+  ) {
+    this.matIconRegistry.addSvgIcon('people_outline',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/sharp-people_outline-24px.svg'));
+    this.matIconRegistry.addSvgIcon('av_timer',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/outline-av_timer-24px.svg'));
+  }
+  
   ngOnInit() {
   }
 
