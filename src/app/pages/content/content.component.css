@@ -12,13 +12,12 @@ h1{
 div#container{
     overflow: auto;
 }
-.list-group-item{
-    background-color: mediumseagreen;
+.list-group-item,a{
+    background-color: darkblue;
+    color:greenyellow;
 }
 h1,div#container{
     background-color: black;
-    color: lightyellow;
+    color: greenyellow;
 }
-a{
-    color: firebrick;
-}
+
