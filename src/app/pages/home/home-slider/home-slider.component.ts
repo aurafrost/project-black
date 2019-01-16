@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
+import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
 @Component({
   selector: 'home-slider',
@@ -7,26 +9,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-slider.component.css']
 })
 export class HomeSliderComponent implements OnInit {
+  lxSm: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(max-width: 599px)']);
+  lxMd: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 959px)']);
+  lxLg: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 1279px)']);
   title = 'socialappbeta111';
   pictures = [
     {
       id: 1,
-      title: 'Robert Downy Jr',
+      title: 'RobertDowneyJr',
       img: '../../../assets/png/rdj_200x200.png'
     },
     {
       id: 2,
-      title: 'Jay-Z',
+      title: 'jay-z',
       img: '../../../assets/png/jay-z_200x200.png'
     },
     {
       id: 3,
-      title: 'Kanye West',
+      title: 'KanyeWest',
       img: '../../../assets/png/kanye_200x200.png'
     },
     {
       id: 4,
-      title: 'Tom Cruise',
+      title: 'TomCruise',
       img: '../../../assets/png/cruise_200x200.png'
     },
     {
@@ -36,22 +44,24 @@ export class HomeSliderComponent implements OnInit {
     },
     {
       id: 6,
-      title: 'Willem Dafoe',
+      title: 'WillemDafoe',
       img: '../../../assets/png/Willem_Dafoe_200x200.png'
     },
     {
       id: 7,
-      title: 'Evander Holyfield',
+      title: 'EvanderHolyfield',
       img: '../../../assets/png/holyfield_200x200.png'
     }
   ];
-  constructor(private router: Router) { }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router) { }
 
   ngOnInit() {
   }
   move(title:string){
-    //this.router.navigateByUrl('/robertdowneyjr')
-    console.log(title);
+  this.router.navigate([title.toLowerCase()])
+  //console.log(title);
   
   }
 
