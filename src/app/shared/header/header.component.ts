@@ -14,7 +14,7 @@ import {SignInComponent} from '../dialog/sign-in/sign-in.component';
 })
 export class HeaderComponent implements OnInit {
   private auth = null;
-
+  term:string;
   signInDialogRef: MatDialogRef<SignInComponent>;
   isHandset: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(max-width: 1000px)']);
@@ -49,5 +49,15 @@ export class HeaderComponent implements OnInit {
   signOut() {
     this.authService.signOut();
     this.auth = null;
+  }
+
+  applyTerm(event){
+    var target = event.target as HTMLInputElement;
+    this.term = target.value;
+  }
+
+  doSearch(){
+    this.router.navigate(['search', {term: this.term}]);
+
   }
 }

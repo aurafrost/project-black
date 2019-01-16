@@ -6,9 +6,9 @@
     <button *ngIf="!auth" (click)="openDialog()" class="styled" mat-raised-button>Login</button>
     <form class="example-form">
       <mat-form-field class="example-full-width">
-        <input matInput>
+        <input matInput (keyup)="applyTerm($event)">
       </mat-form-field>
-      <button mat-button routerLink="search">Search</button>
+      <button mat-button (click)="doSearch()" >Search</button>
     </form>
     <button mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
@@ -26,9 +26,9 @@
     <button *ngIf="!(isMobile | async).matches" routerLink="explore" mat-menu-item>Explore</button>
     <form (click) = "$event.stopPropagation()" mat-menu-item class="example-form">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Search">
+        <input matInput placeholder="Search" (keyup)="applyTerm($event)">
       </mat-form-field>
-      <button mat-flat-button style="margin: 0; padding: 0;">Search</button>
+      <button mat-flat-button (click)="doSearch()" style="margin: 0; padding: 0;">Search</button>
     </form>
     <button *ngIf="!auth" class="styled" mat-menu-item routerLink="/login-register">Register</button>
     <button *ngIf="!auth" class="styled" mat-menu-item (click)="openDialog($event)">Login</button>
