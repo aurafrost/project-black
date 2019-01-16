@@ -12,7 +12,7 @@
                     <img *ngIf="person.img != ''" src={{person.img}} alt="something" (click)="showUser(person.name)" />
                 </div>
                 <div class="flex-grow-1" (click)="showUser(person.name)">
-                  <div style="text-align: center"><strong>{{person.name}}</strong></div>
+                  <div style="text-align: left; margin-left: 1rem"><strong>{{person.name}}</strong></div>
                       <ul style="text-align: end; margin-right: 1rem;" *ngIf="person.numSubs != -1">
                           <li>
                             <mat-icon svgIcon="people_outline"></mat-icon> {{person.numSubs}}
