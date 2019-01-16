@@ -22,6 +22,7 @@ div#sublist,div#posts{
 }
 ul#details{
     max-height: 45%;
+    overflow: auto;
 }
 div#friends{
     max-height: 45%;
