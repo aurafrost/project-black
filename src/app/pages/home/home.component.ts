@@ -8,6 +8,7 @@ import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  none = 'none';
   isHandset: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(max-width: 1000px)']);
   isMinWidth: Observable<BreakpointState> = this.breakpointObserver
