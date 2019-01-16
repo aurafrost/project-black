@@ -45,6 +45,7 @@ import { HomeAboutComponent } from './pages/home/home-about/home-about.component
 import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
+import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
     SignInComponent,
     HomeAboutComponent,
     HomeSliderComponent,
-    ExploreComponent
+    ExploreComponent,
+    RobertdowneyComponent
   ],
   imports: [
     BrowserModule,

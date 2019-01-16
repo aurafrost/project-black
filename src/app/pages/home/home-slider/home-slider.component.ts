@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home-slider',
@@ -39,9 +40,12 @@ export class HomeSliderComponent implements OnInit {
       img: '../../../assets/png/Willem_Dafoe_200x200.png'
     },
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  move(){
+    this.router.navigateByUrl('/robertdowneyjr')
   }
 
 }
