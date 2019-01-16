@@ -1,13 +1,29 @@
 <div id="container">
-  <h1>Search Results</h1>
-  Search: <input type="text"><br>
+  <h1 class="jumbotron jumbotron-fluid">Search Results</h1>
+  <mat-form-field style="width: 30%; min-width: 150px; color: #f5f5f5;">
+    <input matInput type="text" [(ngModel)]="term" (change)="changeTerm($event)" placeholder="Search">
+  </mat-form-field>
+  <br>
   <div id="row" class="row">
       <div class="col-sm-12" id="results">
           <div class="list-group">
-              <div id="" class="list-group-item list-group-item-action">Personality: Dapibus ac</div>
-              <div id="" class="list-group-item list-group-item-action">Personality: Dapiman</div>
-              <div id="" class="list-group-item list-group-item-action">Post: Ac facilisis dapi</div>
-              <div id="" class="list-group-item list-group-item-action">Post: Morbi leo dapipor risus</div>
+            <div class="card d-flex flex-row" *ngFor="let person of profiles">
+                <div class="d-flex justify-content-around">
+                    <img *ngIf="person.img != ''" src={{person.img}} alt="something" (click)="showUser(person.name)" />
+                </div>
+                <div class="flex-grow-1" (click)="showUser(person.name)">
+                <div style="text-align: center"><strong>{{person.name}}</strong></div>
+                    <ul *ngIf="person.numSubs != -1">
+                        <li>
+                        Number of subscribers: {{person.numSubs}}
+                        </li>
+                        <li>
+                        Posts made this month: {{person.postsMonth}}
+                        </li>
+                    </ul>
+                </div>
+                <button class="subscribe-btn" mat-raised-button>Subscribe</button>
+            </div>
           </div>
       </div>
   </div>

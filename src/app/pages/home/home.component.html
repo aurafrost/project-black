@@ -1,2 +1,11 @@
+<div style="background-color: black" [ngStyle]="{'padding': (isMinWidth | async).matches ? '0 5rem' : '0'}" >
+  <slideshow
+    [backgroundPosition]="none"
+    [autoPlay]="true"
+    [minHeight]="(isHandset | async).matches ? '300px' : '500px'"
+    [imageUrls]="imageArr">
+  </slideshow>
+</div>
+<!--<slideshow *ngIf="isHandset" [minHeight]="'560px'" [imageUrls]="imageArr"></slideshow>-->
 <home-slider></home-slider>
 <home-about></home-about>

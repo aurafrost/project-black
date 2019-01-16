@@ -1,76 +1,75 @@
-<div id="container" class=".container-fluid">
-    <h1>Your Content</h1>
-    <hr>
+<div id="container" class="container">
+    <h1 class="jumbotron jumbotron-fluid">Your Content</h1>
     <div id="header" class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <h3>Personality</h3>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-7">
             <h3>Feed</h3>
         </div>
     </div>
     <div id="row1" class="row">
-        <div class="col-sm-4" id="left">
+        <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"><a href="">Personality 1</a>
-                <button>Subscribe | +</button><button (click)="hide('row1')" id="hideBtn">Hide</button>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/beyonce_200x200.png" alt="avatar here"><a href="">Beyonce</a>
+                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row1')" id="hideBtn">Hide</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8" id="right">
+        <div class="col-sm-7" id="right">
             <div class="list-group" id="feed">
-                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button>Show More</button><button (click)="hide('post1')" id="hideBtn">Hide</button></div>
-                <div id="post2" class="list-group-item list-group-item-action">Morbi leo risus<button>Show More</button><button (click)="hide('post2')" id="hideBtn">Hide</button></div>
+                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post1')" id="hideBtn">Hide</button></div>
+                <div id="post2" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post2')" id="hideBtn">Hide</button></div>
             </div>
         </div>
     </div>
-    <br>
+    
     <div id="row2" class="row">
-        <div class="col-sm-4" id="left">
+        <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"><a href="">Personality 3</a>
-                <button>Subscribe | +</button><button (click)="hide('row2')" id="hideBtn">Hide</button>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/kanye_200x200.png" alt="avatar here"><a href="">Kanye West</a>
+                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row2')" id="hideBtn">Hide</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8" id="right">
+        <div class="col-sm-7" id="right">
             <div class="list-group" id="feed">
-                <div id="post3" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button>Show More</button><button (click)="hide('post3')" id="hideBtn">Hide</button></div>
-                <div id="post4" class="list-group-item list-group-item-action">Cras justo odio<button>Show More</button><button (click)="hide('post4')" id="hideBtn">Hide</button></div>
-                <div id="post5" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button>Show More</button><button (click)="hide('post5')" id="hideBtn">Hide</button></div>
-                <div id="post6" class="list-group-item list-group-item-action">Morbi leo risus<button>Show More</button><button (click)="hide('post6')" id="hideBtn">Hide</button></div>
+                <div id="post3" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post3')" id="hideBtn">Hide</button></div>
+                <div id="post4" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post4')" id="hideBtn">Hide</button></div>
+                <div id="post5" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post5')" id="hideBtn">Hide</button></div>
+                <div id="post6" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post6')" id="hideBtn">Hide</button></div>
             </div>
         </div>
     </div>
-    <br>
+
     <div id="row3" class="row">
-        <div class="col-sm-4" id="left">
+        <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"><a href="">Personality 4</a>
-                <button>Subscribe | +</button><button (click)="hide('row3')" id="hideBtn">Hide</button>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../assets/png/holyfield_200x200.png" alt="avatar here"><a href="">Evander Holyfield</a>
+                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row3')" id="hideBtn">Hide</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8" id="right">
+        <div class="col-sm-7" id="right">
             <div class="list-group" id="feed">
-                <div id="post7" class="list-group-item list-group-item-action">Cras justo odio<button>Show More</button><button (click)="hide('post7')" id="hideBtn">Hide</button></div>
+                <div id="post7" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post7')" id="hideBtn">Hide</button></div>
             </div>
         </div>
     </div>
-    <br>
+
     <div id="row4" class="row">
-        <div class="col-sm-4" id="left">
+        <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"><a href="">Personality 2</a>
-                <button>Subscribe | +</button><button (click)="hide('row4')" id="hideBtn">Hide</button>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/rdj_200x200.png" alt="avatar here"><a href="">Robert Downey Jr</a>
+                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row4')" id="hideBtn">Hide</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8" id="right">
+        <div class="col-sm-7" id="right">
             <div class="list-group" id="feed">
-                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button>Show More</button><button (click)="hide('post8')" id="hideBtn">Hide</button></div>
-                <div id="post9" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button>Show More</button><button (click)="hide('post9')" id="hideBtn">Hide</button></div>
-                <div id="post10" class="list-group-item list-group-item-action">Cras justo odio<button>Show More</button><button (click)="hide('post10')" id="hideBtn">Hide</button></div>
+                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post8')" id="hideBtn">Hide</button></div>
+                <div id="post9" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post9')" id="hideBtn">Hide</button></div>
+                <div id="post10" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post10')" id="hideBtn">Hide</button></div>
             </div>
         </div>
     </div>

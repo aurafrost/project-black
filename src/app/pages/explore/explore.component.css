@@ -1,4 +1,4 @@
-h2 {
+h1 {
     text-align: center;
 }
 
@@ -9,4 +9,13 @@ ul {
 .container {
     height: 800px;
     overflow: auto;
+}
+
+.sunbscribe-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: #F4A460;
 }

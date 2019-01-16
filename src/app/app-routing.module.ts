@@ -12,6 +12,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
+import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
+import { JayzComponent } from './celebrities/jayz/jayz.component';
+import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
+import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
+
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -25,6 +30,10 @@ const routes: Routes = [
 {path: 'profile', component: ProfileComponent},
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent},
+{path: 'beyonce', component: BeyonceComponent},
+{path: 'jay-z', component: JayzComponent},
+{path: 'tomcruise', component: TomcruiseComponent},
+{path: 'willemdafoe', component: WillemdafoeComponent},
 {path: '**', component: ErrComponent}
 ];
 

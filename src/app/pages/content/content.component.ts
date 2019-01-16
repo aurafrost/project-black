@@ -10,8 +10,13 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //get all subscribed posts
   }
 
+  subscribe(){
+    this.hide;
+  }
+  
   hide(id){
     this.htmlele=document.getElementById(id) as HTMLElement;
     this.htmlele.parentNode.removeChild(this.htmlele);

@@ -1,5 +1,4 @@
 button{
-    background-color:skyblue;
     float:right;
 }
 img#pavatar{
@@ -9,15 +8,11 @@ img#pavatar{
 h1{
     text-align: center;
 }
-div#container{
-    overflow: auto;
-}
 .list-group-item,a{
-    background-color: darkblue;
-    color:greenyellow;
+}
+.list-group-item{
+    /* background-color: #d5d5d5; */
 }
 h1,div#container{
-    background-color: black;
-    color: greenyellow;
+    /* background-color: #a5a5af; */
 }
-

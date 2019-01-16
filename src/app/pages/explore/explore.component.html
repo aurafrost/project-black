@@ -1,4 +1,4 @@
-<h2>Trending Profiles</h2>
+<h1 class="jumbotron jumbotron-fluid">Trending Profiles</h1>
 <div class="container">
   <div class="card d-flex flex-row" *ngFor="let person of profiles">
     <div class="d-flex justify-content-around">
@@ -14,6 +14,7 @@
           Posts made this month: {{person.postsMonth}}
         </li>
       </ul>
+      <button class="sunbscribe-btn" mat-raised-button="">Subscribe</button>
     </div>
   </div>
 </div>
