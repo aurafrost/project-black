@@ -49,8 +49,10 @@ export class HomeSliderComponent implements OnInit {
 
   ngOnInit() {
   }
-  move(){
-    this.router.navigateByUrl('/robertdowneyjr')
+  move(title:string){
+    //this.router.navigateByUrl('/robertdowneyjr')
+    console.log(title);
+  
   }
 
 }
