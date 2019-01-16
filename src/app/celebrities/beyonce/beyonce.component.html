@@ -1,15 +1,14 @@
 <div id="container" class="container">
-    <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
+    <h1 class="jumbotron jumbotron-fluid">Personality Profile</h1>
       <div id="profile" class="row">
           <div class="col-sm" id="left">
-              <h3>You</h3>
+              <h3>Bio</h3>
               <ul class="list-group" id="details">
                   <li class="list-group-item"><img id="avatar" src="../../../assets/png/beyonce_200x200.png" alt="avatar here"></li>
                   <li class="list-group-item">First Name: {{user.fname}}</li>
                   <li class="list-group-item">Last Name: {{user.lname}}</li>
                   <li class="list-group-item">Username: {{user.username}} </li>
                   <li class="list-group-item">Email: {{user.email}}</li>
-                  <button class="btn btn-primary" (click)="showEdit()">Edit Profile</button>
               </ul>
               <br>
               <h3>Friends List</h3>
