@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
+import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
 @Component({
   selector: 'home-slider',
@@ -7,6 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-slider.component.css']
 })
 export class HomeSliderComponent implements OnInit {
+  lxSm: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(max-width: 599px)']);
+  lxMd: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 959px)']);
+  lxLg: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 1279px)']);
   title = 'socialappbeta111';
   pictures = [
     {
@@ -45,7 +53,9 @@ export class HomeSliderComponent implements OnInit {
       img: '../../../assets/png/holyfield_200x200.png'
     }
   ];
-  constructor(private router: Router) { }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router) { }
 
   ngOnInit() {
   }
