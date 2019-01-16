@@ -12,7 +12,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
-import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
+import { RobertdowneyComponent } from './celebrities/robertdowney/robertdowney.component';
+import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
+import { EvandorholyfieldComponent } from './celebrities/evandorholyfield/evandorholyfield.component';
+import { JayzComponent } from './celebrities/jayz/jayz.component';
+import { KanyewestComponent } from './celebrities/kanyewest/kanyewest.component';
+import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
+import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
+
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -27,6 +34,12 @@ const routes: Routes = [
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent},
 {path: 'robertdowneyjr', component: RobertdowneyComponent},
+{path: 'beyonce', component: BeyonceComponent},
+{path: 'evandorholy', component: EvandorholyfieldComponent},
+{path: 'jayz', component: JayzComponent},
+{path: 'kanyewest', component: KanyewestComponent},
+{path: 'tomcruise', component: TomcruiseComponent},
+{path: 'willemdafoe', component: WillemdafoeComponent},
 {path: '**', component: ErrComponent}
 ];
 
