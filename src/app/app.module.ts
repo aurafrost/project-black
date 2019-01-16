@@ -45,7 +45,9 @@ import { HomeAboutComponent } from './pages/home/home-about/home-about.component
 import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
 import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
+import { JayzComponent } from './jayz/jayz.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
     HomeAboutComponent,
     HomeSliderComponent,
     ExploreComponent,
-    RobertdowneyComponent
+    RobertdowneyComponent,
+    JayzComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +109,8 @@ import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
     MatTabsModule,
     MatExpansionModule,
     MatIconModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SlideshowModule
   ],
   providers: [
     AuthGuard,

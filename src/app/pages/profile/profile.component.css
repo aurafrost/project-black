@@ -1,6 +1,6 @@
 img#avatar{
-    width:40%;
-    height:40%;
+    width:50%;
+    height:50%;
 }
 img#favatar,img#pavatar{
     width:15%;
@@ -11,29 +11,23 @@ h1{
 }
 button#deleteBtn{
     float: right;
-    background-color: firebrick;
-    color: white;
+    /*background-color: firebrick;*/
 }
-div#container,div#posts{
-    height: 80%;
+div#container{
     overflow: auto;
 }
-div#posts{
-    height: 90%;
+div#sublist,div#posts{
+    max-height: 90%;
+    overflow: auto;
+}
+ul#details{
+    max-height: 45%;
 }
 div#friends{
-    height: 48%;
-    overflow: auto;
-}
-div#sublist{
-    height: 80%;
+    max-height: 45%;
     overflow: auto;
 }
 .list-group-item,a{
-    background-color: darkblue;
-    color:greenyellow;
 }
 h1,div#container{
-    background-color: black;
-    color: greenyellow;
 }

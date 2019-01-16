@@ -10,6 +10,7 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //get all subscribed posts
   }
 
   hide(id){
