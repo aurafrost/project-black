@@ -6,12 +6,12 @@
     </div>
     <div class="flex-grow-1">
       <div style="text-align: center"><strong>{{person.name}}</strong></div>
-      <ul>
+      <ul style="text-align: end; margin-right: 1rem;">
         <li>
-          Number of subscribers: {{person.numSubs}}
+          <mat-icon svgIcon="people_outline"></mat-icon> {{person.numSubs}}
         </li>
         <li>
-          Posts made this month: {{person.postsMonth}}
+          <mat-icon svgIcon="av_timer"></mat-icon> {{person.postsMonth}}
         </li>
       </ul>
       <div>
