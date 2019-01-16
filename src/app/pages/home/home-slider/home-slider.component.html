@@ -1,6 +1,6 @@
 <h2 class="jumbotron jumbotron-fluid">Featured Content Providers</h2>
 <div style="margin-top: 1rem" class="container">
-  <div fxLayout="row" fxLayout.lt-sm="column"  fxLayoutGap="2.5%" fxLayoutAlign="center">
+  <div fxLayout="row"  fxLayoutGap="2.5%" fxLayoutAlign="center">
     <mat-card class="card-picture" *ngFor="let picture of pictures | paginate: {itemsPerPage: !(lxMd | async).matches ? 3 : 4, currentPage: p}">
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
         <span fxFlex="" style="text-align: center; font-size: 14px">{{picture.title}}</span>

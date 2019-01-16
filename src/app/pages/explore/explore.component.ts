@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'explore',
@@ -17,9 +18,28 @@ export class ExploreComponent implements OnInit {
     {name:'Willem Dafoe', numSubs: 12500, postsMonth: 12, img: "../../../assets/png/Willem_Dafoe_200x200.png"}
   ]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  showProfile(name:string) {
+    console.log(name);
+    switch(name){
+      case('Tom Cruise'):
+        this.router.navigate(['tomcruise']);
+        break;
+      case('Willem Dafoe'):
+        this.router.navigate(['willemdafoe']);
+        break;
+      case('Jay-Z'):
+        this.router.navigate(['jay-z']);
+        break;
+      case('Beyonce'):
+        this.router.navigate(['beyonce']);
+        break;
+      
+    }
   }
 
 }
