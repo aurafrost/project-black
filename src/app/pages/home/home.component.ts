@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
 @Component({
   selector: 'home',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  isHandset: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(max-width: 1000px)']);
+  isMinWidth: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 1200px)']);
+
   title = 'socialappbeta111';
   pictures = [
     {
@@ -40,8 +47,17 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  imageArr = [
+    'http://a.espncdn.com/media/motion/2016/0605/evc_ACTN_20160604_X_Games__Austin__FASTCLIPPER__X_102/evc_ACTN_20160604_X_Games__Austin__FASTCLIPPER__X_102.jpg',
+    'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5bdb142c032be4a79cbbde04/1541084208729/?format=2500w',
+    'https://cdn.wallpapersafari.com/70/17/3sOg9y.jpg',
+    'https://atlanta-mp7static.mlsdigital.net/elfinderimages/ATL%20UTD/Wallpaper%20Downloads/2017/V4-Desktop.png',
+    'http://images.performgroup.com/di/library/GOAL/52/3b/arthur-blank-michael-parkhurst-atlanta-united-mls-cup-2018_12mdfg1cq51km19bhfzl152t0o.jpg?t=-1860011841',
+  ];
 
+  constructor(
+    private breakpointObserver: BreakpointObserver
+  ) { }
   ngOnInit() {
   }
 
