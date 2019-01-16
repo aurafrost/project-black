@@ -46,6 +46,8 @@ import { HomeSliderComponent } from './pages/home/home-slider/home-slider.compon
 import { ExploreComponent } from './pages/explore/explore.component';
 import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
+import { JayzComponent } from './jayz/jayz.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     SignInComponent,
     HomeAboutComponent,
     HomeSliderComponent,
-    ExploreComponent
+    ExploreComponent,
+    RobertdowneyComponent,
+    JayzComponent
   ],
   imports: [
     BrowserModule,

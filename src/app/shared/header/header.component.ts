@@ -14,7 +14,7 @@ import {SignInComponent} from '../dialog/sign-in/sign-in.component';
 })
 export class HeaderComponent implements OnInit {
   private auth = null;
-  term:string;
+  term:string = "";
   signInDialogRef: MatDialogRef<SignInComponent>;
   isHandset: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(max-width: 1000px)']);

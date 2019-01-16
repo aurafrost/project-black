@@ -5,7 +5,7 @@
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
         <span fxFlex="" style="text-align: center">{{picture.title}}</span>
       </mat-card-title>
-      <img mat-card-image [src]="picture.img">
+      <img mat-card-image (click)="move(picture.title)" [src]="picture.img">
     </mat-card>
   </div>
   <br>

@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
+import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
 {path: 'profile', component: ProfileComponent},
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent},
+{path: 'robertdowneyjr', component: RobertdowneyComponent},
 {path: '**', component: ErrComponent}
 ];
 
