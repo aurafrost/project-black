@@ -8,7 +8,6 @@ img#favatar,img#pavatar{
 }
 h1{
     text-align: center;
-    background-color: mediumaquamarine;
 }
 button#deleteBtn{
     float: right;
@@ -16,7 +15,6 @@ button#deleteBtn{
     color: white;
 }
 div#container,div#posts{
-    background-color: mediumaquamarine;
     height: 80%;
     overflow: auto;
 }
@@ -30,4 +28,12 @@ div#friends{
 div#sublist{
     height: 80%;
     overflow: auto;
+}
+.list-group-item,a{
+    background-color: darkblue;
+    color:greenyellow;
+}
+h1,div#container{
+    background-color: black;
+    color: greenyellow;
 }
