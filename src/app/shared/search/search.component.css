@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+}
+.list-group-item,a{
+    background-color: darkblue;
+    color:greenyellow;
+    text-align: left;
+}
+h1,div#container,input{
+    background-color: black;
+    color: greenyellow;
+    text-align: center;
+}
+input{
+    width: 90%;
+    text-align: left;
+}
