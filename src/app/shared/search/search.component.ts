@@ -63,6 +63,8 @@ export class SearchComponent implements OnInit {
           this.profiles = [p, ...this.profiles];
       }
     }
+    
+    this.profiles = this.profiles.reverse();
 
     if(!exact)
     {
