@@ -46,8 +46,13 @@ import { HomeSliderComponent } from './pages/home/home-slider/home-slider.compon
 import { ExploreComponent } from './pages/explore/explore.component';
 import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
-import { RobertdowneyComponent } from './robertdowney/robertdowney.component';
-import { JayzComponent } from './jayz/jayz.component';
+import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
+import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
+import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
+import { EvandorholyfieldComponent } from './celebrities/evandorholyfield/evandorholyfield.component';
+import { KanyewestComponent } from './celebrities/kanyewest/kanyewest.component';
+import { JayzComponent } from './celebrities/jayz/jayz.component';
+import { RobertdowneyComponent } from './celebrities/robertdowney/robertdowney.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +77,12 @@ import { JayzComponent } from './jayz/jayz.component';
     HomeSliderComponent,
     ExploreComponent,
     RobertdowneyComponent,
-    JayzComponent
+    JayzComponent,
+    KanyewestComponent,
+    TomcruiseComponent,
+    BeyonceComponent,
+    WillemdafoeComponent,
+    EvandorholyfieldComponent
   ],
   imports: [
     BrowserModule,
