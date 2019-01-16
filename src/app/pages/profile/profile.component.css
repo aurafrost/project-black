@@ -16,18 +16,17 @@ button#deleteBtn{
 }
 div#container{
     overflow: auto;
-    max-height: 900px;
 }
 div#sublist,div#posts{
-    max-height: 70%;
+    max-height: 90%;
     overflow: auto;
 }
 div#details{
-    height: 35%;
-    max-height: 35%;
+    height: 45%;
+    max-height: 45%;
 }
 div#friends{
-    max-height: 35%;
+    max-height: 45%;
     overflow: auto;
 }
 .list-group-item,a{
