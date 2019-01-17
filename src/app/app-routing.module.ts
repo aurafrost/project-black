@@ -16,6 +16,7 @@ import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
 {path: 'jay-z', component: JayzComponent},
 {path: 'tomcruise', component: TomcruiseComponent},
 {path: 'willemdafoe', component: WillemdafoeComponent},
+{path: 'forgotpassword', component: ForgotpasswordComponent},
 {path: '**', component: ErrComponent}
 ];
 
