@@ -6,8 +6,9 @@ img#favatar,img#pavatar{
     width:15%;
     height:15%;
 }
-h1{
+h1,h3{
     text-align: center;
+    box-shadow: 0px 0px 0px 0px dimgray;
 }
 button#deleteBtn{
     float: right;
@@ -15,6 +16,7 @@ button#deleteBtn{
 }
 div#container{
     overflow: auto;
+    box-shadow: 0 0 0 0 white;
 }
 div#sublist,div#posts{
     max-height: 90%;
@@ -28,10 +30,8 @@ div#friends{
     max-height: 45%;
     overflow: auto;
 }
-.list-group-item,a{
-
-}
-h1,div#container{
+*:hover{
+    box-shadow: 0px 2px 2px 2px dimgray;
 }
 
 @media (max-width: 990px)

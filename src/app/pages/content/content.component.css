@@ -8,11 +8,12 @@ img#pavatar{
 h1{
     text-align: center;
 }
-.list-group-item,a{
+*:hover{
+    box-shadow: 0px 2px 2px 2px dimgray;
 }
-.list-group-item{
-    /* background-color: #d5d5d5; */
+div#container{
+    box-shadow: 0px 0px 0px 0px dimgray;
 }
-h1,div#container{
-    /* background-color: #a5a5af; */
+.row,div#left,div#right,h1,{
+    box-shadow: 0px 0px 0px 0px dimgray;    
 }

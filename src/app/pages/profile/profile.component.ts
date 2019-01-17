@@ -49,4 +49,6 @@ export class ProfileComponent implements OnInit {
       this.htmlele.parentNode.removeChild(this.htmlele);
     }    
   }
+
+  
 }
