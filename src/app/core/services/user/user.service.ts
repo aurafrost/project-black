@@ -20,6 +20,13 @@ export class UserService {
     return this.user;
   }
 
+  getUsers(){
+    var list:any;
+    this.afDatabase.list<User>(`/Users/`).snapshotChanges().subscribe(data=>{list=data;});
+    console.log(list);
+    return list;
+  }
+
   setUser(userId) {
     this.user = this.afDatabase.object(`Users/${userId}`);
   }
