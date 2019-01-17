@@ -14,6 +14,6 @@ h1{
 div#container{
     box-shadow: 0px 0px 0px 0px dimgray;
 }
-.row,div#left,div#right,h1,{
+.row,div#left,div#right,h1{
     box-shadow: 0px 0px 0px 0px dimgray;    
 }
