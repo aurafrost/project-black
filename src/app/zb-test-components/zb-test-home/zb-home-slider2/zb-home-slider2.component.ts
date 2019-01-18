@@ -1,11 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface, SwiperFadeEffectInterface, SwiperCubeEffectInterface } from 'ngx-swiper-wrapper';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
-import {animate, state, style, transition, trigger, query, stagger} from '@angular/animations';
+import {animate, state, style, transition, trigger, query, stagger, keyframes} from '@angular/animations';
+import {AnimationBuilder} from '@angular/animations';
+
+function myInlineMatcherFn(fromState: string, toState: string, element: any, params: {[key:
+    string]: any}): boolean {
+  // notice that `element` and `params` are also available here
+  return toState == 'yes-please-animate';
+}
+
 
 @Component({
   selector: 'zb-home-slider2',
@@ -17,15 +25,16 @@ import {animate, state, style, transition, trigger, query, stagger} from '@angul
         borderRadius: '5rem',
         border: '3px solid #DA4453',
         boxShadow: 'inset 0 0 10px #000000',
+        transform: 'rotate(360deg)'
       })),
       state('unhover', style({
         borderRadius: '0',
         border: 'none',
-        boxShadow: 'none',
+        boxShadow: 'none'
       })),
       transition('hover => unhover', [
         animate('.3s')
-        ]),
+      ]),
       transition('unhover => hover', [
         animate('.3s')
       ])
@@ -45,6 +54,7 @@ import {animate, state, style, transition, trigger, query, stagger} from '@angul
 //   transition('rotated => default', animate('400ms ease-out')),
 //   transition('default => rotated', animate('400ms ease-in'))
 export class ZbHomeSlider2Component implements OnInit {
+  @ViewChild('flip') swiperRef: ElementRef;
   isHover = false;
   currentCategory = 1;
   isHandset: Observable<BreakpointState> = this.breakpointObserver
@@ -94,6 +104,7 @@ export class ZbHomeSlider2Component implements OnInit {
   };
 
   constructor(
+    private _builder: AnimationBuilder,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver
@@ -112,9 +123,31 @@ export class ZbHomeSlider2Component implements OnInit {
   ngOnInit() {
   }
 
-  public toggleHover(e) {
+  makeAnimation(element: any) {
+    // first define a reusable animation
+    const myAnimation = this._builder.build([
+      style({ transform: 'rotateY(-360deg)' }),
+      query(':self', stagger('.1s', [
+        animate('1s')
+      ]))
+    ]);
+      // style({ transform: 'rotateY(-360deg)' }),
+      // query(':child', stagger('.1s', [ animate('1s')]))
+
+    // use the returned factory object to create a player
+    // const player =
+    myAnimation.create(element).play();
+
+    // player.play();
+  }
+
+  public hover(e) {
     console.log(e);
     this.currentCategory = e.index;
+  }
+
+  public unHover() {
+    this.currentCategory = null;
   }
 
   public onIndexChange(index: number): void {
@@ -123,6 +156,7 @@ export class ZbHomeSlider2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
+    this.makeAnimation(this.swiperRef.nativeElement);
   }
 
   // public toggleDirection(): void {
