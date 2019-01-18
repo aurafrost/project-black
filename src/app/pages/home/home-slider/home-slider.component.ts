@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'home-slider',
@@ -16,6 +17,7 @@ export class HomeSliderComponent implements OnInit {
   lxLg: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(min-width: 1279px)']);
   title = 'socialappbeta111';
+  list: any;
   pictures = [
     {
       id: 1,
@@ -55,14 +57,21 @@ export class HomeSliderComponent implements OnInit {
   ];
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router) { }
+    private router: Router, private userService: UserService ) { }
 
   ngOnInit() {
+    this.getAllUsers();
   }
   move(title:string){
   this.router.navigate([title.toLowerCase()])
   //console.log(title);
   
+  }
+  getAllUsers(){
+    this.list = this.userService.getAllUsers().subscribe((data => {
+      console.log(data)
+    }));
+    console.log(this.list)
   }
 
 }

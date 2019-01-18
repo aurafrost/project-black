@@ -35,4 +35,10 @@ export class UserService {
   deleteUser(userId) {
     this.afDatabase.object(`Users/${userId}`).remove();
   }
+  getUserById(userId){
+
+  }
+  getAllUsers(){
+    return this.afDatabase.object(`Users`).snapshotChanges();
+  }
 }
