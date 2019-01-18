@@ -3,7 +3,7 @@ div#page{
     height: auto;
 }
 iframe{
-    display: none;
+    display: block;
 }
 img#bg{
     opacity: .2;
