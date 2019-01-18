@@ -1,5 +1,5 @@
 <mat-toolbar id="header-toolbar">
-  <img class="logo" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
+  <img class="logo animated flip" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
   <button id="MenuBtn" *ngIf="(isHandset | async).matches" mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
   <div id="MenuRight" *ngIf="!(isHandset | async).matches">
     <button *ngIf="!auth" class="primary-btn" mat-raised-button routerLink="/login-register">Register</button>
