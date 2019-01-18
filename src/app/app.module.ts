@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,8 +50,24 @@ import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component'
 import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
+
+import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
+import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
+import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
+import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
+import { HomeSlideshowComponent } from './zb-test-components/zb-test-home/home-slideshow/home-slideshow.component';
+import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
+import { ZbHomeSliderComponent } from './zb-test-components/zb-test-home/zb-home-slider/zb-home-slider.component';
+import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/zb-home-slider2/zb-home-slider2.component';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
+
 import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +94,14 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
     TomcruiseComponent,
     BeyonceComponent,
     WillemdafoeComponent,
+    ZbTestHomeComponent,
+    ZbTestGenreComponent,
+    PageNavComponent,
+    HomeTopSectionComponent,
+    HomeSlideshowComponent,
+    ZbTestGenrePageComponent,
+    ZbHomeSliderComponent,
+    ZbHomeSlider2Component,
     VerifyEmailComponent,
   ],
   imports: [
@@ -115,14 +140,21 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
     MatExpansionModule,
     MatIconModule,
     NgxPaginationModule,
-    SlideshowModule
+    SlideshowModule,
+    SwiperModule
+
   ],
   providers: [
     AuthGuard,
     AuthService,
-    UserService
+    UserService,
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
   ],
   entryComponents: [SignInComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
