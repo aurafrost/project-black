@@ -1,0 +1,61 @@
+/*------------------------------------*\
+     #TYPOGRAPHY
+ \*------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
+$font-primary: 'Roboto',
+sans-serif;
+$font-condensed: 'Roboto Condensed',
+sans-serif;
+
+/**
+ * Primary Colors
+ * 1) Brand=specific colors
+ */
+
+$color-brand-primary: #DA4453;
+$color-brand-primary-transparent: rgba(218,68,83,.7);
+$color-brand-secondary: #363636;
+
+/**
+ Text Colors
+ **/
+
+$txt-invert: #F8F8FF;
+$txt-black: #000000;
+
+
+
+/** Accent Colors **/
+
+$prs-ocean: #00aaa8;
+$prs-jungle: #0d8240;
+$prs-meadow: #82c250;
+$prs-plum: #8c1d58;
+$prs-gold: #ffc20e;
+$prs-scarlet-dark: #902b00;
+$prs-scarlet: #c33a00;
+$secondary: $prs-gold;
+
+/**
+  * Neutral Colors
+  * 1) Neutral colors are grayscale values used throughout the UI
+  */
+
+$prs-white: #ffffff;
+$prs-ash: #eeeeee;
+$prs-smoke: #BABCBE;
+$prs-charcoal: #4a4a4a;
+$prs-black: #000000;
+$prs-white: #FFFFFF;
+$color-white: #FFFFFF;
+$color-neutral-01: #444444;
+$color-neutral-02: #595959;
+$color-neutral-03: #999999;
+$color-neutral-04: #b5b5b5;
+$color-neutral-05: #d9d9d9;
+$color-neutral-06: #f2f2f2;
+$color-neutral-07: #f8f9fb;
+$color-black: #000;
+$prs-placeholder: rgba(0, 0, 0, 0.5);
