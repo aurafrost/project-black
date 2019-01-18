@@ -1,3 +1,5 @@
+/*Swiper*/
+
 .app-title {
   font-size: 24px;
 }
@@ -88,4 +90,31 @@
 .swiper-slide-active {
   color: #fff;
   background-color: #aaa;
+}
+
+/*Card*/
+mat-card {
+  width: 100%;
+  text-align: center;
+  border-radius: 0 !important;
+}
+
+mat-icon {
+  height: auto;
+  width: auto;
+/*@include md-icon-size(20px);*/
+}
+
+.swiper-container {
+  height: auto;
+  min-height: auto;
+}
+
+.swiper-slide, .swiper {
+  height: fit-content !important;
+}
+
+.swiper-wrapper, .card-container {
+  height: fit-content!important;
+  min-height: fit-content !important;
 }
