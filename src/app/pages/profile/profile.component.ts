@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { UserService } from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
 import { Observable } from 'rxjs';
@@ -19,7 +19,25 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
             animate('500ms 400ms cubic-bezier(0.35, 0, 0.25, 1)',
               style({ opacity: 1, transform: 'none' }))
           ])
-        ]),
+        ], { optional: false }),
+        // query(':leave', [
+        //   style({ opacity: 1, transform: 'none' }),
+        //   stagger(-100, [
+        //     animate('10ms cubic-bezier(0.35, 0, 0.25, 1)',
+        //       style({ opacity: 0, transform: 'translateY(+200px)' }))
+        //   ])
+        // ])
+      ])
+    ]),
+    trigger('itemFallAnimation', [
+      transition('*<=>*', [
+        
+          style({ opacity: 0, transform: 'translateY(-200px)' }),
+
+          animate('500ms 400ms cubic-bezier(0.35, 0, 0.25, 1)',
+            style({ opacity: 1, transform: 'none' }))
+
+        ,
         // query(':leave', [
         //   style({ opacity: 1, transform: 'none' }),
         //   stagger(-100, [
@@ -31,7 +49,7 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
     ]),
   ]
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
   user: User;
   profile: HTMLElement;
   editBlock: HTMLElement;
@@ -39,6 +57,7 @@ export class ProfileComponent implements OnInit {
   list: AngularFireList<any[]>;
   friendsList;
   posts;
+  state = 'loading';
 
   constructor(private service: UserService) {
     this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
@@ -54,6 +73,10 @@ export class ProfileComponent implements OnInit {
     //get from server
     this.getFromServer();
 
+  }
+
+  ngAfterViewInit() {
+    this.state = 'loaded';
   }
 
   getFromServer() {
@@ -78,31 +101,31 @@ export class ProfileComponent implements OnInit {
   }
 
 
-edit() {
-  this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
-  this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-  this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
-  this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
-  //this.service.setUser(this.user.uid);
-  this.ngOnInit();
-}
-
-showEdit() {
-  this.profile = document.getElementById("profile") as HTMLElement;
-  this.profile.style.display = "none";
-  this.editBlock = document.getElementById("editBlock") as HTMLElement;
-  this.editBlock.style.display = "block";
-}
-
-deletePost(id) {
-
-  console.log(id);
-  var r = confirm("Delete post?");
-  if (r == true) {
-    this.htmlele = document.getElementById(id) as HTMLElement;
-    this.htmlele.parentNode.removeChild(this.htmlele);
+  edit() {
+    this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
+    this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
+    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
+    this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
+    //this.service.setUser(this.user.uid);
+    this.ngOnInit();
   }
-}
+
+  showEdit() {
+    this.profile = document.getElementById("profile") as HTMLElement;
+    this.profile.style.display = "none";
+    this.editBlock = document.getElementById("editBlock") as HTMLElement;
+    this.editBlock.style.display = "block";
+  }
+
+  deletePost(id) {
+
+    console.log(id);
+    var r = confirm("Delete post?");
+    if (r == true) {
+      this.htmlele = document.getElementById(id) as HTMLElement;
+      this.htmlele.parentNode.removeChild(this.htmlele);
+    }
+  }
 
 
 }

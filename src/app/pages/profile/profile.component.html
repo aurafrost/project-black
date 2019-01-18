@@ -3,7 +3,7 @@
     <div id="container" class="container">
         <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
         <div id="profile" class="row">
-            <div class="col-sm shadow-inset-lr" id="left">
+            <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="left">
                 <h3>You</h3>
                 <ul class="list-group" id="details">
                     <div id="overlay" class="overlay">
@@ -28,17 +28,17 @@
                 </div>
             </div>
             <div class="col-sm-7" id="mid">
-                <h3>Posts</h3>
+                <h3 [@itemFallAnimation]='state' >Posts</h3>
                 <div [@listAnimation]=posts.length class="list-group" id="posts">
-                    <div *ngFor="let post of posts; let i = index"
-                    [attr.data-index]="i">
-                    <div  id="{{'post' + i}}" class="list-group-item list-group-item-action">
-                        {{post}}<button
-                            class="btn btn-outline-danger" (click)="deletePost('post' + (i + 1))" id="deleteBtn">Delete Post</button></div>
+                    <div *ngFor="let post of posts; let i = index" [attr.data-index]="i">
+                        <div id="{{'post' + i}}" class="list-group-item list-group-item-action">
+                            {{post}}<button class="btn btn-outline-danger" (click)="deletePost('post' + (i + 1))" id="deleteBtn">Delete
+                                Post</button>
                         </div>
+                    </div>
 
                 </div>
-                <div class="col-sm shadow-inset-lr" id="right">
+                <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="right">
                     <h3>Subscriptions</h3>
                     <div class="list-group" id="sublist">
                         <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
