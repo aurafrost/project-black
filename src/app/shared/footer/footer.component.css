@@ -20,3 +20,7 @@ span {
     /* font-size: 2em; */
     margin: 10px 15px;
 }
+div#contact{
+    background-color: #363636;
+    color: ghostwhite;
+}
