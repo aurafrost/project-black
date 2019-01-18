@@ -8,6 +8,8 @@ a {
 
 ul {
     list-style: none;
+    padding: 0;
+    text-align: center;
 }
 
 .block {
@@ -24,8 +26,10 @@ ul {
 }
 
 .view {
+    max-width: 100%;
     height: 450px;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .view-content {
@@ -36,13 +40,16 @@ ul {
     height: auto;
     padding-left: 15px;
     padding-right: 15px;
+    flex-wrap: wrap;
 }
 
 .views-row {
     z-index: 1;
     width: 16.66666667%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+    min-width: 80px;
+    max-height: 220px;
 }
 
 .views-field-title {
@@ -53,14 +60,15 @@ ul {
 }
 
 .views-row-even {
-    padding-top: 90px;
+    padding-top: 0px;
 }
 
 .img-responsive {
     background-color: #f5f5f5;
     width: 100%;
     height: auto;
-    max-height: 220px;
+    max-height: 110px;
+    min-height: 110px;
 }
 
 .views-field-field-sub-chapters {
@@ -69,4 +77,31 @@ ul {
 
 .views-row:hover .views-field-field-sub-chapters {
     visibility: visible;
+}
+
+@media (min-width: 530px) {
+    .view {
+        height: 450px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width:770px)
+{
+    .img-responsive {
+        max-height: 220px;
+        min-height: 220px;
+    }
+
+    .views-row {
+        z-index: 1;
+        width: 16.66666667%;
+        padding-right: 15px;
+        padding-left: 15px;
+        min-width: 80px;
+    }
+
+    .views-row-even {
+        padding-top: 90px;
+    }
 }
