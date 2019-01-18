@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
 import { Observable } from 'rxjs';
-import { listChanges } from '@angular/fire/database';
+import { listChanges,AngularFireList } from '@angular/fire/database';
 
 @Component({
   selector: 'profile',
@@ -14,10 +14,9 @@ export class ProfileComponent implements OnInit {
   profile:HTMLElement;
   editBlock:HTMLElement;
   htmlele:HTMLElement;
-  list:Observable<any[]>;
+  list:AngularFireList<any[]>;
   constructor(private service:UserService) {
     this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
-    console.log(service.getUsers());
    }
 
   ngOnInit() {

@@ -21,10 +21,7 @@ export class UserService {
   }
 
   getUsers(){
-    var list:any;
-    this.afDatabase.list<User>(`/Users/`).snapshotChanges().subscribe(data=>{list=data;});
-    console.log(list);
-    return list;
+    return this.afDatabase.list(`/Users/`);
   }
 
   setUser(userId) {
