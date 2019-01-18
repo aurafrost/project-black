@@ -34,4 +34,7 @@ export class UserService {
   getUserById(userId){
 
   }
+  getAllUsers(){
+    return this.afDatabase.object(`Users`).snapshotChanges();
+  }
 }
