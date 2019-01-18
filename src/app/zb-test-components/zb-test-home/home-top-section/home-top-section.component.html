@@ -1,0 +1,34 @@
+<div class="flexslider">
+  <ul class="slides">
+    <li *ngFor="let item of imageUrls" class="flex-active-slide" data-thumb-alt=""
+        style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+      <a>
+        <img
+          src="{{item.url}}"
+          class="attachment-activello-slider size-activello-slider wp-post-image"
+          alt=""/>
+        <div class="flex-caption"><h2 class="entry-title">{{item.title}}</h2>
+          <div class="excerpt">
+            {{item.caption}}
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <ol class="flex-control-nav flex-control-paging">
+    <li><a href="#" class="flex-active">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+  </ol>
+  <ul class="flex-direction-nav">
+    <li class="flex-nav-prev"><a class="flex-prev" href="#"></a></li>
+    <li class="flex-nav-next"><a class="flex-next" href="#"></a></li>
+  </ul>
+</div>
+<div class="cfa">
+  <div class="container">
+    <!--<div class="col-sm-8"><span class="cfa-text">Do you like this awesome and completely free WordPress theme?</span></div>-->
+    <!--<div class="col-sm-4"><a class="btn btn-lg cfa-button" href="https://colorlib.com/wp/themes/sparkling/">Download Now!</a></div>-->
+
+  </div>
+</div>

@@ -8,9 +8,9 @@ import {AuthService} from '../../core/services/auth/auth.service';
 import {SignInComponent} from '../dialog/sign-in/sign-in.component';
 
 @Component({
-  selector: 'header',
+  selector: 'header-comp',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   private auth = null;
