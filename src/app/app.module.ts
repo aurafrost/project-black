@@ -51,6 +51,13 @@ import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.comp
 import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+import { NascarComponent } from './pages/categories/nascar/nascar.component';
+import { TravelComponent } from './pages/categories/travel/travel.component';
+import { EducationComponent } from './pages/categories/education/education.component';
+import { FoodComponent } from './pages/categories/food/food.component';
+import { MusicComponent } from './pages/categories/music/music.component';
+import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
+import { FootballComponent } from './pages/categories/football/football.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +85,13 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
     BeyonceComponent,
     WillemdafoeComponent,
     VerifyEmailComponent,
+    NascarComponent,
+    TravelComponent,
+    EducationComponent,
+    FoodComponent,
+    MusicComponent,
+    MoviestvComponent,
+    FootballComponent,
   ],
   imports: [
     BrowserModule,

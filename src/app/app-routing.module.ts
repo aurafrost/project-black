@@ -17,7 +17,13 @@ import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
-
+import { NascarComponent } from './pages/categories/nascar/nascar.component';
+import { TravelComponent } from './pages/categories/travel/travel.component';
+import { EducationComponent } from './pages/categories/education/education.component';
+import { FoodComponent } from './pages/categories/food/food.component';
+import { MusicComponent } from './pages/categories/music/music.component';
+import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
+import { FootballComponent } from './pages/categories/football/football.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -36,6 +42,13 @@ const routes: Routes = [
 {path: 'tomcruise', component: TomcruiseComponent},
 {path: 'willemdafoe', component: WillemdafoeComponent},
 {path: 'forgotpassword', component: ForgotpasswordComponent},
+{path: 'nascar', component: NascarComponent},
+{path: 'travel', component: TravelComponent},
+{path: 'education', component: EducationComponent},
+{path: 'food', component: FoodComponent},
+{path: 'music', component: MusicComponent},
+{path: 'moviestv', component: MoviestvComponent},
+{path: 'football', component: FootballComponent},
 {path: '**', component: ErrComponent}
 ];
 
