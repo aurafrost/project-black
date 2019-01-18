@@ -1,0 +1,23 @@
+div#page{
+    width:100%;
+    height: auto;
+}
+iframe{
+    display: block;
+}
+img#bg{
+    opacity: .2;
+    width:100%;
+    height: auto;
+}
+div#textSpace{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+h1{
+    opacity:.5;
+    color: black;
+}
