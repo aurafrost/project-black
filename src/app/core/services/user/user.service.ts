@@ -20,6 +20,10 @@ export class UserService {
     return this.user;
   }
 
+  getUsers(){
+    return this.afDatabase.list(`/Users/`);
+  }
+
   setUser(userId) {
     this.user = this.afDatabase.object(`Users/${userId}`);
   }

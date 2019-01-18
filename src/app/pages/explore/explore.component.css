@@ -2,20 +2,106 @@ h1 {
     text-align: center;
 }
 
+a {
+    color: black;
+}
+
 ul {
-    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
 
-.container {
-    height: 800px;
-    overflow: auto;
+.block {
+    height: 520px;
+    width: 95%;
+    display: block;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
 }
 
-.sunbscribe-btn {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  background-color: #F4A460;
+.block-title {
+    text-align: center;
+}
+
+.view {
+    max-width: 100%;
+    height: 450px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.view-content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-wrap: wrap;
+}
+
+.views-row {
+    z-index: 1;
+    width: 16.66666667%;
+    padding-right: 5px;
+    padding-left: 5px;
+    min-width: 80px;
+    max-height: 220px;
+}
+
+.views-field-title {
+    background-color: #E9ECEF;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.views-row-even {
+    padding-top: 0px;
+}
+
+.img-responsive {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: auto;
+    max-height: 110px;
+    min-height: 110px;
+}
+
+.views-field-field-sub-chapters {
+    visibility: hidden;
+}
+
+.views-row:hover .views-field-field-sub-chapters {
+    visibility: visible;
+}
+
+@media (min-width: 530px) {
+    .view {
+        height: 450px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width:770px)
+{
+    .img-responsive {
+        max-height: 220px;
+        min-height: 220px;
+    }
+
+    .views-row {
+        z-index: 1;
+        width: 16.66666667%;
+        padding-right: 15px;
+        padding-left: 15px;
+        min-width: 80px;
+    }
+
+    .views-row-even {
+        padding-top: 90px;
+    }
 }

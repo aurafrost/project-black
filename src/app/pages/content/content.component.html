@@ -1,17 +1,19 @@
+<!-- Mockup -->
+<div id="back">
 <div id="container" class="container">
-    <h1 class="jumbotron jumbotron-fluid">Content From Your Subscriptions</h1>
+    <h1 class="jumbotron jumbotron-fluid color-change-2x">Content From Your Subscriptions</h1>
     <div id="header" class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-5" id="left">
             <h3>Personality</h3>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-7" id="right">
             <h3>Feed</h3>
         </div>
     </div>
     <div id="row1" class="row">
         <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/beyonce_200x200.png" alt="avatar here"><a href="">Beyonce</a>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/beyonce_200x200.png" alt="avatar here"><a href="">Beyonce</a>
                 <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row1')" id="hideBtn">Hide</button>
                 </div>
             </div>
@@ -27,7 +29,7 @@
     <div id="row2" class="row">
         <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/kanye_200x200.png" alt="avatar here"><a href="">Kanye West</a>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/kanye_200x200.png" alt="avatar here"><a href="">Kanye West</a>
                 <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row2')" id="hideBtn">Hide</button>
                 </div>
             </div>
@@ -45,7 +47,7 @@
     <div id="row3" class="row">
         <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../assets/png/holyfield_200x200.png" alt="avatar here"><a href="">Evander Holyfield</a>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/holyfield_200x200.png" alt="avatar here"><a href="">Evander Holyfield</a>
                 <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row3')" id="hideBtn">Hide</button>
                 </div>
             </div>
@@ -60,7 +62,7 @@
     <div id="row4" class="row">
         <div class="col-sm-5" id="left">
             <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/rdj_200x200.png" alt="avatar here"><a href="">Robert Downey Jr</a>
+                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/rdj_200x200.png" alt="avatar here"><a href="">Robert Downey Jr</a>
                 <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row4')" id="hideBtn">Hide</button>
                 </div>
             </div>
@@ -74,3 +76,35 @@
         </div>
     </div>
 </div>
+</div>
+<!-- Actual code -->
+<!--
+<div id="container" class="container">
+    <h1 class="jumbotron jumbotron-fluid">Content From Your Subscriptions</h1>
+    <div id="header" class="row">
+        <div class="col-sm-5" id="left">
+            <h3>Personality</h3>
+        </div>
+        <div class="col-sm-7" id="right">
+            <h3>Feed</h3>
+        </div>
+    </div>
+
+    <div id="feed">
+        <table>
+            <tr>
+                <th>Personality</th>
+                <th>Feed</th>
+            </tr>
+            <tr *ngFor="let item of items">
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="nodata" class=".container-fluid">
+        <p>You have no content in your feed.</p>
+    </div>
+</div>
+-->

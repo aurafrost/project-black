@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'footer',
+  selector: 'footer-comp',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
@@ -12,5 +12,4 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  
 }

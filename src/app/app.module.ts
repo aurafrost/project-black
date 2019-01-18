@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../environments/environment';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
@@ -20,15 +21,14 @@ import { AccountComponent } from './pages/account/account.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { ContentComponent } from './pages/content/content.component';
 import { FaqComponent } from './pages/faq/faq.component';
-import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { SearchComponent } from './shared/search/search.component';
-import {AuthGuard} from './core/guard/auth.guard';
-import {AuthService} from './core/services/auth/auth.service';
-import {UserService} from './core/services/user/user.service';
-import {HttpClientModule} from '@angular/common/http';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { AuthGuard } from './core/guard/auth.guard';
+import { AuthService } from './core/services/auth/auth.service';
+import { UserService } from './core/services/user/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import {
   MatButtonModule, MatCardModule,
   MatDialogModule, MatExpansionModule,
@@ -44,8 +44,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
 import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 import { ExploreComponent } from './pages/explore/explore.component';
-import {SignInComponent} from './shared/dialog/sign-in/sign-in.component';
-import {SlideshowModule} from 'ng-simple-slideshow';
+import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
+import { SlideshowModule } from 'ng-simple-slideshow';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
 import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
@@ -53,6 +53,30 @@ import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+
+import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
+import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
+import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
+import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
+import { HomeSlideshowComponent } from './zb-test-components/zb-test-home/home-slideshow/home-slideshow.component';
+import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
+import { ZbHomeSliderComponent } from './zb-test-components/zb-test-home/zb-home-slider/zb-home-slider.component';
+import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/zb-home-slider2/zb-home-slider2.component';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
+
+import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
+import { NascarComponent } from './pages/categories/nascar/nascar.component';
+import { TravelComponent } from './pages/categories/travel/travel.component';
+import { EducationComponent } from './pages/categories/education/education.component';
+import { FoodComponent } from './pages/categories/food/food.component';
+import { MusicComponent } from './pages/categories/music/music.component';
+import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
+import { FootballComponent } from './pages/categories/football/football.component';
 
 @NgModule({
   declarations: [
@@ -80,9 +104,22 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
     TomcruiseComponent,
     BeyonceComponent,
     WillemdafoeComponent,
-    FormUploadComponent,
-    ListUploadComponent,
-    DetailsUploadComponent,
+    ZbTestHomeComponent,
+    ZbTestGenreComponent,
+    PageNavComponent,
+    HomeTopSectionComponent,
+    HomeSlideshowComponent,
+    ZbTestGenrePageComponent,
+    ZbHomeSliderComponent,
+    ZbHomeSlider2Component,
+    VerifyEmailComponent,
+    NascarComponent,
+    TravelComponent,
+    EducationComponent,
+    FoodComponent,
+    MusicComponent,
+    MoviestvComponent,
+    FootballComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,14 +157,21 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
     MatExpansionModule,
     MatIconModule,
     NgxPaginationModule,
-    SlideshowModule
+    SlideshowModule,
+    SwiperModule
+
   ],
   providers: [
     AuthGuard,
     AuthService,
-    UserService
+    UserService,
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
   ],
   entryComponents: [SignInComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

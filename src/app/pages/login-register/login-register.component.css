@@ -14,3 +14,6 @@ input.ng-untouched {
 mat-form-field {
   width: 100%;
 }
+mat-form-field:hover{
+    box-shadow: 0px 2px 2px 2px dimgray;
+}
