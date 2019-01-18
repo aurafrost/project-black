@@ -13,7 +13,7 @@ import {SignInComponent} from '../dialog/sign-in/sign-in.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private auth = null;
+  public auth = null;
   term:string = "";
   signInDialogRef: MatDialogRef<SignInComponent>;
   isHandset: Observable<BreakpointState> = this.breakpointObserver

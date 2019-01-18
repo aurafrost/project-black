@@ -5,14 +5,24 @@ img#pavatar{
     height: 15%;
     width: 15%;
 }
-h1{
+h1,a{
     text-align: center;
+    box-shadow: 0px 0px 0px 0px dimgray;
 }
-.list-group-item,a{
+*:hover{
+    box-shadow: 0px 2px 2px 2px dimgray;
 }
-.list-group-item{
-    /* background-color: #d5d5d5; */
+div#container,div#left,div#right{
+    box-shadow: 0px 0px 0px 0px dimgray;
 }
-h1,div#container{
-    /* background-color: #a5a5af; */
+.row{
+    box-shadow: 0px 0px 0px 0px dimgray;
 }
+div#back{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d3eefb+0,e9f6fd+100 */
+    background: #d3eefb; /* Old browsers */
+    background: -moz-linear-gradient(top, #d3eefb 0%, #e9f6fd 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d3eefb 0%,#e9f6fd 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d3eefb 0%,#e9f6fd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3eefb', endColorstr='#e9f6fd',GradientType=0 ); /* IE6-9 */
+    }

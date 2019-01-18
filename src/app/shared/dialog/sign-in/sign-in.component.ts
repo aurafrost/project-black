@@ -8,8 +8,8 @@ import {AuthService} from '../../../core/services/auth/auth.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  private email = '';
-  private password = '';
+  public email = '';
+  public password = '';
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private authService: AuthService
