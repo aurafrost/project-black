@@ -1,87 +1,140 @@
+<!-- Mockup -->
+<div id="back">
+    <div id="container" class="container">
+        <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
+        <div id="profile" class="row">
+            <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="left">
+                <h3>You</h3>
+                <ul class="list-group" id="details">
+                    <div id="overlay" class="overlay">
+                        <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
+
+                        <li id="dtext" class="list-group-item">First Name: {{user.fname}}</li>
+                        <li id="dtext" class="list-group-item">Last Name: {{user.lname}}</li>
+                        <li id="dtext" class="list-group-item">Username: {{user.username}} </li>
+                        <li id="dtext" class="list-group-item">Email: {{user.email}}</li>
+                    </div>
+                    <button class="hvr-radial-out" mat-raised-button color="primary" (click)="showEdit()" style="min-height: 40px;">Edit
+                        Profile</button>
+                </ul>
+                <br>
+                <h3 style="margin-top: 15px;">Friends List</h3>
+                <div [@listAnimation]=friendsList.length>
+                    <div class="list-group" id="friends" *ngFor="let friend of friendsList; let i = index"
+                        [attr.data-index]="i">
+                        <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Friend {{i + 1}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="mid">
+                <h3 [@itemFallAnimation]='state' >Posts</h3>
+                <div [@listAnimation]=posts.length class="list-group" id="posts">
+                    <div *ngFor="let post of posts; let i = index" [attr.data-index]="i">
+                        <div id="{{'post' + i}}" class="list-group-item list-group-item-action">
+                            {{post}}<button class="btn btn-outline-danger" (click)="deletePost('post' + (i + 1))" id="deleteBtn">Delete
+                                Post</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="right">
+                    <h3>Subscriptions</h3>
+                    <div class="list-group" id="sublist">
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 1</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 2</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 3</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 4</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 5</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 6</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 7</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 8</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 9</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality 10</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality a</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality b</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality c</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality d</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality e</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality f</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality g</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality h</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality i</a>
+                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png"
+                                alt="avatar here"> Personality j</a>
+                    </div>
+                </div>
+            </div>
+            <div id="editBlock" class="card" style="width: 18rem; display:none;">
+                <img src="../../../assets/png/avatar.png" class="card-img-top" alt="avatar here">
+                <div class="card-body">
+                    <h5 class="card-title">Editing Profile</h5>
+                    <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
+                    <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname" /></p>
+                    <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname" /></p>
+                    <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email" /></p>
+                    <button mat-raised-button color="primary" (click)="edit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actual code -->
+    <!--
 <div id="container" class="container">
-  <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
+    <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
     <div id="profile" class="row">
         <div class="col-sm" id="left">
             <h3>You</h3>
-            <ul class="list-group" id="details">
-                <li class="list-group-item"><img id="avatar" src="../../../assets/png/avatar.png" alt="avatar here"></li>
-                <li class="list-group-item">First Name: {{user.fname}}</li>
-                <li class="list-group-item">Last Name: {{user.lname}}</li>
-                <li class="list-group-item">Username: {{user.username}} </li>
-                <li class="list-group-item">Email: {{user.email}}</li>
-                <button  mat-raised-button color="primary"  (click)="showEdit()" style="min-height: 40px;">Edit Profile</button>
-            </ul>
+                Profile details
             <br>
             <h3 style="margin-top: 15px;">Friends List</h3>
             <div class="list-group" id="friends">
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 1</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 2</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 3</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 4</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 5</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 6</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 7</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 8</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 9</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 10</a>
-                    <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="../../../assets/png/avatar.png" alt="avatar here"> Friend 11</a>
+                Friends list here
             </div>
         </div>
         <div class="col-sm-7" id="mid">
             <h3>Posts</h3>
             <div class="list-group" id="posts">
-                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-danger" (click)="deletePost('post1')" id="deleteBtn">Delete Post</button></div>
-                <div id="post2" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-danger" (click)="deletePost('post2')" id="deleteBtn">Delete Post</button></div>
-                <div id="post3" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-danger" (click)="deletePost('post3')" id="deleteBtn">Delete Post</button></div>
-                <div id="post4" class="list-group-item list-group-item-action">Porta ac consectetur ac<button class="btn btn-outline-danger" (click)="deletePost('post4')" id="deleteBtn">Delete Post</button></div>
-                <div id="post5" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post5')" id="deleteBtn">Delete Post</button></div>
-                <div id="post6" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-danger" (click)="deletePost('post6')" id="deleteBtn">Delete Post</button></div>
-                <div id="post7" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-danger" (click)="deletePost('post7')" id="deleteBtn">Delete Post</button></div>
-                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-danger" (click)="deletePost('post8')" id="deleteBtn">Delete Post</button></div>
-                <div id="post9" class="list-group-item list-group-item-action">Porta ac consectetur ac<button class="btn btn-outline-danger" (click)="deletePost('post9')" id="deleteBtn">Delete Post</button></div>
-                <div id="post10" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post10')" id="deleteBtn">Delete Post</button></div>
-                <div id="post11" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post11')" id="deleteBtn">Delete Post</button></div>
-                <div id="post12" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post12')" id="deleteBtn">Delete Post</button></div>
-                <div id="post13" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post13')" id="deleteBtn">Delete Post</button></div>
-                <div id="post14" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post14')" id="deleteBtn">Delete Post</button></div>
-                <div id="post15" class="list-group-item list-group-item-action">Vestibulum at eros<button class="btn btn-outline-danger" (click)="deletePost('post15')" id="deleteBtn">Delete Post</button></div>
+                Posts here
             </div>
         </div>
         <div class="col-sm" id="right">
             <h3>Subscriptions</h3>
             <div class="list-group" id="sublist">
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 1</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 2</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 3</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 4</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 5</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 6</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 7</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 8</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 9</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality 10</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality a</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality b</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality c</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality d</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality e</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality f</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality g</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality h</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality i</a>
-                <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="../../../assets/png/avatar.png" alt="avatar here"> Personality j</a>
+                Sub list here
             </div>
         </div>
     </div>
     <div id="editBlock" class="card" style="width: 18rem; display:none;">
-        <img src="../../../assets/png/avatar.png" class="card-img-top" alt="avatar here">
-            <div class="card-body">
-                <h5 class="card-title">Editing Profile</h5>
-                <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
-                <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
-                <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
-                <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
-                <button mat-raised-button color="primary" (click)="edit()">Submit</button>
-            </div>
+        <img src="" class="card-img-top" alt="avatar here">
+        <div class="card-body">
+            <h5 class="card-title">Editing Profile</h5>
+            <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
+            <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
+            <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
+            <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
+            <button mat-raised-button color="primary" (click)="edit()">Submit</button>
+        </div>
     </div>
 </div>
+-->

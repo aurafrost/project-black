@@ -1,9 +1,9 @@
-<mat-toolbar>IPU
+<mat-toolbar id="header-toolbar">
   <img class="logo" src="../../../assets/glossy-ball.jpg" alt="logo here"/>
   <button id="MenuBtn" *ngIf="(isHandset | async).matches" mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
   <div id="MenuRight" *ngIf="!(isHandset | async).matches">
-    <button *ngIf="!auth" class="styled" mat-raised-button routerLink="/login-register">Register</button>
-    <button *ngIf="!auth" (click)="openDialog()" class="styled" mat-raised-button>Login</button>
+    <button *ngIf="!auth" class="primary-btn" mat-raised-button routerLink="/login-register">Register</button>
+    <button *ngIf="!auth" (click)="openDialog()" class="primary-btn" mat-raised-button>Login</button>
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <input matInput (keyup)="applyTerm($event)">
@@ -40,9 +40,9 @@
     </mat-menu>
   </mat-menu>
   <mat-toolbar *ngIf="(isMobile | async).matches">
-    <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="profile">Profile</button>
-    <button mat-button routerLink="explore">Explore</button>
-    <button mat-button routerLink="content">Feed</button>
+    <button class="secondary-btn"  mat-button routerLink="/">Home</button>
+    <button class="secondary-btn"  mat-button routerLink="profile">Profile</button>
+    <button class="secondary-btn"  mat-button routerLink="explore">Explore</button>
+    <button class="secondary-btn"  mat-button routerLink="content">Feed</button>
   </mat-toolbar>
 </mat-toolbar>

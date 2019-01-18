@@ -1,0 +1,48 @@
+#header-toolbar {
+  color: ghostwhite;
+  background-color: #363636;
+  .logo {
+    height: 80%;
+    margin-left: .5rem;
+    border-radius: 1rem;
+  }
+
+  mat-toolbar{
+    color: ghostwhite;
+    background-color: #363636;
+  }
+
+  .primary-btn {
+    background-color: #DA4453;
+    color: ghostwhite;
+    margin-right: .5rem;
+  }
+
+  .primary-btn:hover,
+  .primary-btn.hover {
+    background-color: rgba(218,68,83,.7);
+  }
+
+  .secondary-btn {
+
+  }
+
+  .secondary-btn.hover,
+  .secondary-btn:hover {
+    color: #DA4453;
+  }
+
+  form {
+    display: inline-block;
+  }
+
+  #MenuRight, #MenuBtn {
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+  }
+
+  #MenuBtn:hover {
+    background-color: #ccc;
+  }
+}
