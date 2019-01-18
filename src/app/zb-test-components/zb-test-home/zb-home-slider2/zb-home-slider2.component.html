@@ -1,13 +1,20 @@
 <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
-  <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
-    <div *ngFor="let slide of slides" class="swiper-slide">
-      <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-        {{slide}}
+  <swiper [@onSwipe]="slides.length"  *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="!(isMobile | async).matches ? mobileConfig : handsetConfig"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+    <div *ngFor="let slide of slides; let i of index" class="swiper-slide">
+      <div class="card-container" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+        <mat-card>
+          <h6>{{slide.title}}</h6>
+          <mat-card-content style="perspective: 800px;">
+            <mat-card style="position: relative;transform-style: preserve-3d;transition: transform 1s;">
+              <mat-icon style="padding: 8px;" id="{{i}}" (mouseenter)="this.toggleHover(i)" [@onHover]="currentCategory == slide.index ? 'hover' : 'unhover'" svgIcon="{{slide.svg}}"></mat-icon>
+            </mat-card>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </swiper>
 
-  <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="config" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+  <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="!(isMobile | async).matches ? mobileConfig : handsetConfig" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div class="swiper-wrapper">
       <div *ngFor="let slide of slides" class="swiper-slide">
         <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>

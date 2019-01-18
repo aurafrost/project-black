@@ -7,3 +7,10 @@
   display: flex !important;
   justify-content: center !important;
 }
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
