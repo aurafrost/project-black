@@ -3,7 +3,8 @@ div#page{
     height: auto;
 }
 iframe{
-    display: none;
+    height:100%;
+    width: 100%;
 }
 img#bg{
     opacity: .2;
@@ -20,4 +21,9 @@ div#textSpace{
 span{
     color: white;
     position: absolute;
+}
+span#hvrtxt{
+    color:indigo;
+    text-shadow: 2px 2px red;
+    font-size: 22px;
 }
