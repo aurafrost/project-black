@@ -53,8 +53,8 @@ export class ContentComponent implements OnInit {
   addPost() {
     let randomName = faker.name.findName();
     let paragraph = faker.lorem.paragraph();
-    let profileUrl = faker.internet.avatar();
-    let postType = faker.random.number() % 2 == 0 ? 'text' : 'img';
+    let profileUrl = faker.random.number() % 5 === 0 ?  'https://i.imgur.com/y45bKaJl.jpg' : faker.internet.avatar();
+    let postType = faker.random.number() % 2 === 0 ? 'text' : 'img';
     console.log(profileUrl);
     console.log(randomName);
     console.log(paragraph);
