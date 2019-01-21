@@ -80,6 +80,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -116,4 +117,5 @@ mat-icon {
 .swiper-wrapper, .card-container {
   height: fit-content!important;
   min-height: fit-content !important;
+  overflow: hidden;
 }
