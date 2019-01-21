@@ -1,140 +1,85 @@
-<!-- Mockup -->
-<div id="back">
-    <div id="container" class="container">
-        <h1 [@itemFallAnimation]='state' class="jumbotron jumbotron-fluid">Your Profile</h1>
-        <div #profile id="profile" class="row">
-            <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="left">
-                <h3>You</h3>
-                <ul class="list-group" id="details">
-                    <div id="overlay" class="overlay">
-                        <li class="list-group-item"><img id="avatar" src="assets/png/avatar.png" alt="avatar here"></li>
-
-                        <li id="dtext" class="list-group-item">First Name: {{user.fname}}</li>
-                        <li id="dtext" class="list-group-item">Last Name: {{user.lname}}</li>
-                        <li id="dtext" class="list-group-item">Username: {{user.username}} </li>
-                        <li id="dtext" class="list-group-item">Email: {{user.email}}</li>
-                    </div>
-                    <button class="hvr-radial-out" mat-raised-button color="primary" (click)="showEdit()" style="min-height: 40px;">Edit
-                        Profile</button>
-                </ul>
-                <br>
-                <h3 style="margin-top: 15px;">Friends List</h3>
-                <div [@listAnimation]=friendsList.length>
-                    <div class="list-group" id="friends" *ngFor="let friend of friendsList; let i = index"
-                        [attr.data-index]="i">
-                        <a href="#" class="list-group-item list-group-item-action"><img id="favatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Friend {{i + 1}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-7" id="mid">
-                <h3 [@itemFallAnimation]='state' >Posts</h3>
-                <div [@listAnimation]=posts.length class="list-group" id="posts">
-                    <div *ngFor="let post of posts; let i = index" [attr.data-index]="i">
-                        <div id="{{'post' + i}}" class="list-group-item list-group-item-action">
-                            {{post}}<button class="btn btn-outline-danger" (click)="deletePost('post' + (i + 1))" id="deleteBtn">Delete
-                                Post</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="right">
-                    <h3>Subscriptions</h3>
-                    <div class="list-group" id="sublist">
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 1</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 2</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 3</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 4</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 5</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 6</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 7</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 8</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 9</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality 10</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality a</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality b</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality c</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality d</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality e</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality f</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality g</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality h</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality i</a>
-                        <a href="#" class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/avatar.png"
-                                alt="avatar here"> Personality j</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div #editBlock id="editBlock" class="card" style="width: 18rem; display:none;">
-                <img src="assets/png/avatar.png" class="card-img-top" alt="avatar here">
-                <div class="card-body">
-                    <h5 class="card-title">Editing Profile</h5>
-                    <p class="card-text">First Name: <input type="text" [(ngModel)]="user.fname" id="edit-fname" /></p>
-                    <p class="card-text">Last Name: <input type="text" [(ngModel)]="user.lname" id="edit-lname" /></p>
-                    <p class="card-text">Username: <input type="text" [(ngModel)]="user.username" id="edit-uname" /></p>
-                    <p class="card-text">Email: <input type="text" [(ngModel)]="user.email" id="edit-email" /></p>
-                    <button mat-raised-button color="primary" (click)="edit()">Submit</button>
-                </div>
-            </div>
+<html>
+<head>
+    <title>Model Agency</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    </head>
+    <body>
+    <div id="page_header">
+      <div id="logo">
+        <h1><span>My Profile</span></h1>
+      </div>
+      <div id="page_menu">
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/menu_home.gif" width="37" height="7" alt="HOME" /></a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/menu_aboutus.gif" width="69" height="7" alt="ABOUT US" /></a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/menu_portfolio.gif" width="74" height="7" alt="PORTFOLIO" /></a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/menu_gallery.gif" width="62" height="7" alt="GALLERY" /></a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/menu_contacts.gif" width="72" height="7" alt="CONTACTS" /></a></li>
+        </ul>
+      </div>
+      <div class="clearthis">.</div>
     </div>
-
-    <!-- Actual code -->
-    <!--
-<div id="container" class="container">
-    <h1 class="jumbotron jumbotron-fluid">Your Profile</h1>
-    <div id="profile" class="row">
-        <div class="col-sm" id="left">
-            <h3>You</h3>
-                Profile details
-            <br>
-            <h3 style="margin-top: 15px;">Friends List</h3>
-            <div class="list-group" id="friends">
-                Friends list here
+    <div id="page_bodybox">
+      <div id="leftborder">
+        <div id="top">&nbsp;</div>
+        <div id="bot">&nbsp;</div>
+      </div>
+      <div id="bodyborder">
+        <div id="page_content">
+          <!-- BEGIN LEFT COLUMN -->
+          <div id="leftcol">
+            <h2><span>Optional Header</span></h2>
+            <span> <img src="assets/gif/main_img.gif" width="300" height="399" alt="Model Name" /> </span>
+            <div id="nav"> <strong><span><a href="http://all-free-download.com/free-website-templates/">1</a></span></strong> <strong><span><a href="http://all-free-download.com/free-website-templates/">2</a></span></strong> <strong><span><a href="http://all-free-download.com/free-website-templates/">3</a></span></strong> <strong><span><a href="http://all-free-download.com/free-website-templates/">4</a></span></strong> <strong><span><a href="http://all-free-download.com/free-website-templates/">5</a></span></strong> <strong><span><a href="http://all-free-download.com/free-website-templates/">6</a></span></strong>
+              <div class="clearthis">.</div>
             </div>
-        </div>
-        <div class="col-sm-7" id="mid">
-            <h3>Posts</h3>
-            <div class="list-group" id="posts">
-                Posts here
+          </div>
+          <!--// END LEFT COLUMN -->
+          <!-- BEGIN MAIN COLUMN -->
+          <div id="maincol">
+            <h3>About the gallery</h3>
+            <p> This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. </p>
+            <p> This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. This is a demo text. It will be replaced by the original. </p>
+            <h3>Special features</h3>
+            <ul>
+              <li><a href="http://all-free-download.com/free-website-templates/">This is a demo text.</a></li>
+              <li><a href="http://all-free-download.com/free-website-templates/">You can replace it by your own text.</a></li>
+              <li><a href="http://all-free-download.com/free-website-templates/">Some links can go here.</a></li>
+              <li><a href="http://all-free-download.com/free-website-templates/">This text can be replaced.</a></li>
+              <li><a href="http://all-free-download.com/free-website-templates/">Put your content here by replacing.</a></li>
+            </ul>
+            <div id="maincol_nav">
+              <h3><span>Navigate</span></h3>
+              <a href="http://all-free-download.com/free-website-templates/">Prev</a> <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/arrow_left.gif" width="3" height="5" alt="Previous" /></a> &nbsp; <a href="http://all-free-download.com/free-website-templates/">3</a> | <a href="http://all-free-download.com/free-website-templates/">4</a> &nbsp; <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/arrow_right.gif" width="3" height="5" alt="Next" /></a> <a href="http://all-free-download.com/free-website-templates/">Next</a> </div>
+            <div class="clearthis">.</div>
+          </div>
+          <!--// END MAIN COLUMN -->
+          <!-- BEGIN RIGHT COLUMN -->
+          <div id="rightcol">
+            <h2><span>Optional Header</span></h2>
+            <div id="rightcol_top">
+              <div class="arrow"> <a href="http://www.freewebsitetemplates.com/"><img src="assets/gif/arrow_up.gif" width="5" height="3" alt="Up" /></a> </div>
             </div>
-        </div>
-        <div class="col-sm" id="right">
-            <h3>Subscriptions</h3>
-            <div class="list-group" id="sublist">
-                Sub list here
+            <div id="rightcol_main">
+              <div class="model_thumbnail"> <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/model01.gif" width="130" height="107" alt="Model Name" /></a> </div>
+              <div class="model_nametag"> <a href="http://all-free-download.com/free-website-templates/">Sophia Jones</a> </div>
+              <div class="model_thumbnail"> <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/model02.gif" width="130" height="107" alt="Model Name" /></a> </div>
+              <div class="model_nametag"> <a href="http://all-free-download.com/free-website-templates/">Anna Stone</a> </div>
+              <div class="model_thumbnail"> <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/model03.gif" width="130" height="107" alt="Model Name" /></a> </div>
+              <div class="model_nametag_bot"> <a href="http://all-free-download.com/free-website-templates/">Rick Stuart</a> </div>
             </div>
+            <div id="rightcol_bot">
+              <div class="arrow"> <a href="http://all-free-download.com/free-website-templates/"><img src="assets/gif/arrow_down.gif" width="5" height="3" alt="Down" /></a> </div>
+            </div>
+          </div>
+          <!--// END RIGHT COLUMN -->
+          <div class="clearthis">.</div>
         </div>
+      </div>
+      <div class="clearthis">.</div>
     </div>
-    <div id="editBlock" class="card" style="width: 18rem; display:none;">
-        <img src="" class="card-img-top" alt="avatar here">
-        <div class="card-body">
-            <h5 class="card-title">Editing Profile</h5>
-            <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
-            <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
-            <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
-            <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
-            <button mat-raised-button color="primary" (click)="edit()">Submit</button>
-        </div>
-    </div>
-</div>
--->
+    <div id="page_footer"> <br />
+      Powered by <a href="http://www.freewebsitetemplates.com">Free Website Templates</a> </div>
+    <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+    </html>
