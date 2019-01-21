@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+
+
+import { UploadimageService } from 'src/app/core/services/image/uploadimage.service';
 
 @Component({
   selector: 'list-upload',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUploadComponent implements OnInit {
 
-  constructor() { }
-
+  fileUploads: any[];
+ 
+  constructor(private uploadService: UploadimageService) { }
+ 
   ngOnInit() {
+    this.uploadService.getFileUploads(6).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    ).subscribe(fileUploads => {
+      this.fileUploads = fileUploads;
+      console.log(fileUploads);
+    });
   }
-
 }
