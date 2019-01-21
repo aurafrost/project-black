@@ -23,6 +23,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
           left: '100%',
           width: '20rem',
           opacity: '.2',
+          display: 'none'
         }),
       ),
       transition('begin <=> end', [
@@ -43,7 +44,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
           width: '50rem',
           marginRight: 'auto',
           marginLeft: 'auto',
-          opacity: '0'
+          opacity: '0',
+          display: 'none'
         }),
       ),
       transition('begin <=> end', [
@@ -67,6 +69,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
           right: '100%',
           width: '20rem',
           opacity: '.2',
+          display: 'none'
         }),
       ),
       transition('begin <=> end', [

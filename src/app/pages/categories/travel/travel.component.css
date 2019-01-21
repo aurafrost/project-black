@@ -11,30 +11,11 @@ iframe{
     /*height: auto;*/
 /*}*/
 div#textSpace{
+  overflow: hidden;
   text-align: center;
   height: inherit;
   background-image: url('../../../../assets/travel.jpg')
 }
-
-/*#plane-left {*/
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*width: 5rem;*/
-/*}*/
-
-/*#plane-middle {*/
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  /*width: 5rem;*/
-/*}*/
-
-/*#plane-right {*/
-  /*position: absolute;*/
-  /*right: 0;*/
-  /*bottom: 0;*/
-  /*width: 5rem;*/
-/*}*/
 
 h1{
     opacity:.5;
