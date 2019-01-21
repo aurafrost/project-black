@@ -94,36 +94,36 @@
 }
 
 /*Card*/
-mat-card {
-  width: 100%;
-  text-align: center;
-  border-radius: 0 !important;
-}
+/*mat-card {*/
+  /*width: 100%;*/
+  /*text-align: center;*/
+  /*border-radius: 0 !important;*/
+/*}*/
 
-/*Implemented by Jacob*/
-mat-card-content {
-  overflow: hidden !important;
-}
+/*!*Implemented by Jacob*!*/
+/*mat-card-content {*/
+  /*overflow: hidden !important;*/
+/*}*/
 
-mat-icon {
-  height: auto;
-  width: auto;
-  /*@include md-icon-size(20px);*/
-}
+/*mat-icon {*/
+  /*height: auto;*/
+  /*width: auto;*/
+  /*!*@include md-icon-size(20px);*!*/
+/*}*/
 
-.swiper-container {
-  min-height: auto;
-  overflow: hidden;
-}
+/*.swiper-container {*/
+  /*min-height: auto;*/
+  /*overflow: hidden;*/
+/*}*/
 
-.swiper-slide, .swiper {
-  height: fit-content !important;
-  overflow: hidden!important;
-}
+/*.swiper-slide, .swiper {*/
+  /*height: fit-content !important;*/
+  /*overflow: hidden!important;*/
+/*}*/
 
-.swiper-wrapper, .card-container {
-  height: fit-content!important;
-  min-height: fit-content !important;
-  overflow: hidden;
-}
+/*.swiper-wrapper, .card-container {*/
+  /*height: fit-content!important;*/
+  /*min-height: fit-content !important;*/
+  /*overflow: hidden;*/
+/*}*/
 

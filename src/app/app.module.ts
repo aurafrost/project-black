@@ -121,7 +121,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     FootballComponent,
     DetailsUploadComponent,
     FormUploadComponent,
-    ListUploadComponent,
+    ListUploadComponent
   ],
   imports: [
     BrowserModule,
