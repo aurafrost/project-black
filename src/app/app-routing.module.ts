@@ -47,7 +47,7 @@ const routes: Routes = [
 {path: 'education', component: EducationComponent},
 {path: 'food', component: FoodComponent},
 {path: 'music', component: MusicComponent},
-{path: 'moviestv', component: MoviestvComponent},
+{path: 'movies', component: MoviestvComponent},
 {path: 'football', component: FootballComponent},
 {path: '**', component: ErrComponent}
 ];
