@@ -122,7 +122,7 @@ import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-
     MoviestvComponent,
     FootballComponent,
     FormUploadComponent,
-    ListUploadComponent
+    ListUploadComponent,
     HomeSlideshow2Component,
     ImageComponent,
     DetailsUploadComponent
