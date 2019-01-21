@@ -50,9 +50,6 @@ import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component'
 import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
-import { FormUploadComponent } from './upload/form-upload/form-upload.component';
-import { ListUploadComponent } from './upload/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 
 import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
 import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
@@ -77,6 +74,10 @@ import { FoodComponent } from './pages/categories/food/food.component';
 import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
+import {DetailsUploadComponent} from './upload/details-upload/details-upload.component';
+import {FormUploadComponent} from './upload/form-upload/form-upload.component';
+import {ListUploadComponent} from './upload/list-upload/list-upload.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,9 @@ import { FootballComponent } from './pages/categories/football/football.componen
     MusicComponent,
     MoviestvComponent,
     FootballComponent,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    ListUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -158,6 +162,7 @@ import { FootballComponent } from './pages/categories/football/football.componen
     MatIconModule,
     NgxPaginationModule,
     SlideshowModule,
+    ScrollingModule,
     SwiperModule
 
   ],
