@@ -1,17 +1,23 @@
-export class Note {
+export class Post {
     // noteId: number;
-    title: string;
-    note: string;
-    stickydate: string;
-    status: string;
+    name: string;
+    profileUrl: string;
+    date: string;
+    post: string;
+    img: string;
+    postType: string;
     color: string;
 
-    constructor( title: string, note: string, stickydate: string, status: string, color: string) {
-        // this.noteId = noteId;
-        this.title = title;
-        this.note = note;
-        this.stickydate = stickydate;
-        this.status = status;
+    constructor(name: string, profileUrl: string, date: string, post: string, img: string, postType: string, color: string) {
+        this.name = name;
+        this.profileUrl = profileUrl;
+        this.date = date;
+        this.post = post;
+        this.img = img;
+        this.postType = postType;
         this.color = color;
+
     }
+
+    // this.noteId = noteId;
 }
