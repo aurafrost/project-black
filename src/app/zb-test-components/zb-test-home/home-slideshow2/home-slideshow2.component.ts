@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
-import { SwiperConfigInterface} from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface, SwiperCoverflowEffectInterface} from 'ngx-swiper-wrapper';
 
 
 @Component({
@@ -44,42 +44,55 @@ import { SwiperConfigInterface} from 'ngx-swiper-wrapper';
 export class HomeSlideshow2Component implements OnInit {
   isMobile: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(min-width: 580px)']);
-  public slides = [
-    {index: 1, title: 'Business', svg: 'business'},
-    {index: 2, title: 'Sports', svg: 'sports'},
-    {index: 3, title: 'Travel', svg: 'travel'},
-    {index: 4, title: 'Education', svg: 'education'},
-    {index: 5, title: 'Food', svg: 'food'},
-    {index: 6, title: 'Living', svg: 'living'},
-    {index: 7, title: 'News', svg: 'news'},
-    {index: 8, title: 'Music', svg: 'music'},
-    {index: 9, title: 'Movies', svg: 'movies'}
-  ];
+  // public categories = {
+   public business = [
+      {index: 1, title: '', img: 'assets/png/avatar.png'},
+      {index: 2, title: '', img: 'assets/png/avatar.png'},
+      {index: 3, title: '', img: 'assets/png/avatar.png'},
+      {index: 4, title: '', img: 'assets/png/avatar.png'},
+      {index: 5, title: '', img: 'assets/png/avatar.png'},
+    ];
+    sports = [
+      {index: 1, title: '', img: 'assets/png/avatar.png'},
+      {index: 2, title: '', img: 'assets/png/avatar.png'},
+      {index: 3, title: '', img: 'assets/png/avatar.png'},
+      {index: 4, title: '', img: 'assets/png/avatar.png'},
+      {index: 5, title: '', img: 'assets/png/avatar.png'},
+    ];
+    travel = [
+      {index: 1, title: '', img: 'assets/png/avatar.png'},
+      {index: 2, title: '', img: 'assets/png/avatar.png'},
+      {index: 3, title: '', img: 'assets/png/avatar.png'},
+      {index: 4, title: '', img: 'assets/png/avatar.png'},
+      {index: 5, title: '', img: 'assets/png/avatar.png'},
+    ];
+  // };
   public type: string = 'component';
   public disabled: boolean = false;
+  public show: boolean = true;
 
   public mobileConfig: SwiperConfigInterface = {
-    a11y: false,
-    direction: 'horizontal',
-    slidesPerView: 3,
-    keyboard: true,
-    mousewheel: true,
-    scrollbar: true,
-    navigation: true,
     pagination: true,
+    threshold: 50,
+    spaceBetween: 5,
+    centeredSlides: true,
+    speed: 3000,
     autoplay: false,
+    slidesPerView: 1,
+    preventClicks: false,
   };
 
   public handsetConfig: SwiperConfigInterface = {
-    a11y: false,
-    direction: 'horizontal',
-    slidesPerView: 5,
-    keyboard: true,
-    mousewheel: true,
-    scrollbar: true,
-    navigation: true,
     pagination: true,
+    threshold: 50,
+    spaceBetween: 5,
+    centeredSlides: true,
+    speed: 3000,
     autoplay: false,
+    slidesPerView: 1,
+    preventClicks: false,
+    // effect: 'slide', // cube, flip, fade,
+    // coverflowEffect: 'coverflow'
   };
   constructor(
     private _builder: AnimationBuilder,
@@ -97,7 +110,6 @@ export class HomeSlideshow2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
-    // this.makeAnimation(this.swiperRef.nativeElement);
   }
 
 }
