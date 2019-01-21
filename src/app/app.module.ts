@@ -78,7 +78,6 @@ import {DetailsUploadComponent} from './upload/details-upload/details-upload.com
 import {FormUploadComponent} from './upload/form-upload/form-upload.component';
 import {ListUploadComponent} from './upload/list-upload/list-upload.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +124,6 @@ import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-
     DetailsUploadComponent,
     FormUploadComponent,
     ListUploadComponent,
-    HomeSlideshow2Component
   ],
   imports: [
     BrowserModule,
