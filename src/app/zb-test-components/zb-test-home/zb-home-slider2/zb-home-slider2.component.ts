@@ -146,7 +146,7 @@ export class ZbHomeSlider2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
-    this.makeAnimation(this.swiperRef.nativeElement);
+    // this.makeAnimation(this.swiperRef.nativeElement);
   }
 
   // public toggleDirection(): void {

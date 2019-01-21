@@ -1,22 +1,41 @@
-div#page{
-    width:100%;
-    height: auto;
+#page {
+  height: 30rem;
 }
+
 iframe{
     display: none;
 }
-img#bg{
-    opacity: .2;
-    width:100%;
-    height: auto;
-}
+/*img#bg{*/
+    /*opacity: .2;*/
+    /*width:100%;*/
+    /*height: auto;*/
+/*}*/
 div#textSpace{
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
+  text-align: center;
+  height: inherit;
+  background-image: url('../../../../assets/travel.jpg')
 }
+
+/*#plane-left {*/
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*width: 5rem;*/
+/*}*/
+
+/*#plane-middle {*/
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*width: 5rem;*/
+/*}*/
+
+/*#plane-right {*/
+  /*position: absolute;*/
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*width: 5rem;*/
+/*}*/
+
 h1{
     opacity:.5;
     color: black;
