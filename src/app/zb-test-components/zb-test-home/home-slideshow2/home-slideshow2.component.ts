@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import { SwiperConfigInterface} from 'ngx-swiper-wrapper';
+
 
 @Component({
   selector: 'home-slideshow2',
