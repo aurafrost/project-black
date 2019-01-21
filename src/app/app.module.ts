@@ -77,6 +77,7 @@ import { FoodComponent } from './pages/categories/food/food.component';
 import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
+import { ImageComponent } from './upload/image/image.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,11 @@ import { FootballComponent } from './pages/categories/football/football.componen
     MusicComponent,
     MoviestvComponent,
     FootballComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    DetailsUploadComponent,
+    ImageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -158,8 +164,7 @@ import { FootballComponent } from './pages/categories/football/football.componen
     MatIconModule,
     NgxPaginationModule,
     SlideshowModule,
-    SwiperModule
-
+    SwiperModule,
   ],
   providers: [
     AuthGuard,

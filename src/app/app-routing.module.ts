@@ -24,6 +24,8 @@ import { FoodComponent } from './pages/categories/food/food.component';
 import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
+import { FormUploadComponent } from './upload/form-upload/form-upload.component';
+import { ImageComponent } from './upload/image/image.component'
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -32,7 +34,7 @@ const routes: Routes = [
 {path: 'content', component: ContentComponent},
 {path: 'faq', component: FaqComponent},
 {path: 'support', component: SupportComponent},
-{path: 'terms', component: TermsComponent},
+{path: 'terms', component: ImageComponent},
 {path: 'login-register', component: LoginRegisterComponent},
 {path: 'profile', component: ProfileComponent},
 {path: 'explore', component: ExploreComponent},
