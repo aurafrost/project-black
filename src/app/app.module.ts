@@ -164,7 +164,7 @@ import { ImageComponent } from './upload/image/image.component';
     MatIconModule,
     NgxPaginationModule,
     SlideshowModule,
-   // ScrollingModule,
+    ScrollingModule,
     SwiperModule
 
   ],
