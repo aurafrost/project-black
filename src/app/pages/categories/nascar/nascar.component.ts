@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Player } from '@angular/core/src/render3/interfaces/player';
 
 
 
@@ -35,10 +36,23 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ]
 })
 export class NascarComponent implements OnInit {
-state: string ='begin' 
+state: string ='begin';
+@ViewChild('gif') gif: ElementRef;
+@ViewChild('video') video:ElementRef;
+player:Player;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.player);
+
+    setTimeout(() => {
+      this.gif.nativeElement.style.display = 'none';
+      this.video.nativeElement.autoplay = 1;
+    }, 9000);
   }
 
+  someFunc(){
+    
+  }
+  
 }
