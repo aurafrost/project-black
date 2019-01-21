@@ -1,11 +1,13 @@
-<div id="page">
+<video #video src="/assets/vid/nascar-vid.mp4" controls style="width: 100%"></video>
+<div id="page" #page style="display: none;">
   <div id='gif' #gif></div>
    <img id="bg" src="assets/nascar.jpg" alt="failed to load bg">
 
-  <iframe #video width="420" height="315" style="display:block; position: relative; float:left; width:33%;"
+  <!--
+  <iframe #video width="420" height="315" style="display:flex; position: relative; float:left; width:33%;"
   src="https://www.youtube.com/embed/OhzCd5RJTOQ?autoplay=1" allow="autoplay; encrypted-media">
   </iframe>
-  <!--
+  
   <iframe width="420" height="315" style="display:block; width:33%"
   src="https://i.gifer.com/O2st.gif" allow="autoplay; encrypted-media">
   </iframe>
@@ -21,6 +23,6 @@
 
   <div id="textSpace">
     <h1 class="jumbotron jumbotron-fluid">Nascar</h1>
-    <p>Placeholder text to fill space</p>
   </div>
+  
 </div>
