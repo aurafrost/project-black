@@ -96,16 +96,17 @@
     </div>
 
     <!-- <div class="container d-flex outerContainer justify-content-around"> -->
-    <cdk-virtual-scroll-viewport itemSize="100" class="d-flexalign-items-center" style='border: dotted 2px blue;'>
+    <cdk-virtual-scroll-viewport itemSize="100" class="" style='border: dotted 2px blue;'>
         <button (click)="addNote()" class="btn btn-success float-right mr-5 mt-3">New Post</button>
 
         <!-- [ngStyle]="{'background-color': note.color}" -->
         <!-- <div class="col"> -->
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center"> -->
+                <div class="d-flex flex-column justify-content-center" style="padding: 3px; border: 2px dashed green">
                 <li (click)=displayId(i) *cdkVirtualFor="let note of notes | async; let i = index; trackBy: trackByIdx"
-                    class="animated flipInX feedPost justify-content-around d-flex" style='border: solid 2px red;'>
+                    class="animated flipInX feedPost d-flex" style='border: solid 2px red; margin: 0% 33% 5%;'>
 
-
+                    <!-- post footer -->
                     <div class="container d-flex justify-content-around align-self-end mb-2">
                         <div class="row align-self-end">
                             <div class="col">
