@@ -70,7 +70,6 @@ export class HomeSlideshow2Component implements OnInit {
   // };
   public type: string = 'component';
   public disabled: boolean = false;
-  public show: boolean = true;
 
   public mobileConfig: SwiperConfigInterface = {
     pagination: true,
