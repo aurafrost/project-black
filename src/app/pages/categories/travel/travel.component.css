@@ -14,10 +14,12 @@ div#textSpace{
   overflow: hidden;
   text-align: center;
   height: inherit;
-  background-image: url('../../../../assets/travel.jpg')
+  background-image:  url('../../../../assets/vid/world.gif');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1{
-    opacity:.5;
-    color: black;
+  background-color: transparent;
+    color: ghostwhite;
 }
