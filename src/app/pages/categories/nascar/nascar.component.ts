@@ -37,7 +37,7 @@ import { Player } from '@angular/core/src/render3/interfaces/player';
 })
 export class NascarComponent implements OnInit {
 state: string ='begin';
-@ViewChild('gif') gif: ElementRef;
+@ViewChild('page') page: ElementRef;
 @ViewChild('video') video:ElementRef;
 player:Player;
   constructor() { }
@@ -46,8 +46,10 @@ player:Player;
     console.log(this.player);
 
     setTimeout(() => {
-      this.gif.nativeElement.style.display = 'none';
-      this.video.nativeElement.autoplay = 1;
+      
+      this.video.nativeElement.style.display = 'none';
+      this.page.nativeElement.style.display = 'block';
+
     }, 9000);
   }
 
