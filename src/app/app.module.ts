@@ -60,7 +60,6 @@ import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/pag
 import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
 import { HomeSlideshowComponent } from './zb-test-components/zb-test-home/home-slideshow/home-slideshow.component';
 import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
-import { ZbHomeSliderComponent } from './zb-test-components/zb-test-home/zb-home-slider/zb-home-slider.component';
 import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/zb-home-slider2/zb-home-slider2.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -111,7 +110,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     HomeTopSectionComponent,
     HomeSlideshowComponent,
     ZbTestGenrePageComponent,
-    ZbHomeSliderComponent,
     ZbHomeSlider2Component,
     VerifyEmailComponent,
     NascarComponent,
