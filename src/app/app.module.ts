@@ -124,7 +124,8 @@ import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-
     FormUploadComponent,
     ListUploadComponent,
     HomeSlideshow2Component,
-    ImageComponent
+    ImageComponent,
+    DetailsUploadComponent
   ],
   imports: [
     BrowserModule,

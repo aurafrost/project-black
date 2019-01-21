@@ -42,6 +42,7 @@ import { SwiperConfigInterface} from 'ngx-swiper-wrapper';
   ]
 })
 export class HomeSlideshow2Component implements OnInit {
+  show = true;
   isMobile: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(min-width: 580px)']);
   public slides = [

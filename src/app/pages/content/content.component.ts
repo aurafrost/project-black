@@ -53,7 +53,8 @@ export class ContentComponent implements OnInit {
   addPost() {
     let randomName = faker.name.findName();
     let paragraph = faker.lorem.paragraph();
-    let profileUrl = faker.random.number() % 5 === 0 ?  'https://i.imgur.com/y45bKaJl.jpg' : faker.internet.avatar();
+    let profileUrl: string = faker.random.number() % 5 === 0 ?  'https://i.imgur.com/y45bKaJl.jpg' : faker.internet.avatar();
+    profileUrl = 'https' + profileUrl.substring(5);
     let postType = faker.random.number() % 2 === 0 ? 'text' : 'img';
     console.log(profileUrl);
     console.log(randomName);
@@ -74,13 +75,13 @@ export class ContentComponent implements OnInit {
   changeColor(index, color) {
     // get noteRef at this id
     let id = this.snapshot[index].payload.doc.id;
-    this.postDoc = this.db.doc('notes/' + id);
+    this.postDoc = this.db.doc('posts/' + id);
     // subscribe to this note, cast it as a new one, and update it
-    let newNote: Post;
+    let newPost: Post;
     this.postsCollection.doc(id).get().subscribe(res => {
-      newNote = res.data() as Post;
-      newNote.color = color;
-      this.postDoc.set(newNote);
+      newPost = res.data() as Post;
+      newPost.color = color;
+      this.postDoc.set(newPost);
     });
   }
   deleteNote(index) {
