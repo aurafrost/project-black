@@ -1,6 +1,9 @@
-div#page{
+#page{
     width:100%;
     height: auto;
+    background-image: url("../../../../assets/O2st.gif");
+    background-repeat: no-repeat;
+    background-position:top;
 }
 iframe{
     display: none;
