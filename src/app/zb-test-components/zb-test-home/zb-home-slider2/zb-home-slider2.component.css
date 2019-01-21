@@ -80,6 +80,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -99,6 +100,11 @@ mat-card {
   border-radius: 0 !important;
 }
 
+/*Implemented by Jacob*/
+mat-card-content {
+  overflow: hidden !important;
+}
+
 mat-icon {
   height: auto;
   width: auto;
@@ -106,15 +112,18 @@ mat-icon {
 }
 
 .swiper-container {
-  height: auto;
   min-height: auto;
+  overflow: hidden;
 }
 
 .swiper-slide, .swiper {
   height: fit-content !important;
+  overflow: hidden!important;
 }
 
 .swiper-wrapper, .card-container {
   height: fit-content!important;
   min-height: fit-content !important;
+  overflow: hidden;
 }
+

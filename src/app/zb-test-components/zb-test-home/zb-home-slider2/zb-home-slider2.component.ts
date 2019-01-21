@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface, SwiperFadeEffectInterface, SwiperCubeEffectInterface } from 'ngx-swiper-wrapper';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
-import {animate, state, style, transition, trigger, query, stagger} from '@angular/animations';
+import {animate, state, style, transition, trigger, query, stagger, keyframes, AnimationFactory} from '@angular/animations';
+import {AnimationBuilder} from '@angular/animations';
 
 @Component({
   selector: 'zb-home-slider2',
@@ -17,15 +18,16 @@ import {animate, state, style, transition, trigger, query, stagger} from '@angul
         borderRadius: '5rem',
         border: '3px solid #DA4453',
         boxShadow: 'inset 0 0 10px #000000',
+        transform: 'rotate(360deg)'
       })),
       state('unhover', style({
-        borderRadius: '0',
-        border: 'none',
-        boxShadow: 'none',
+        borderRadius: '5px',
+        border: '3px solid #DA4453',
+        boxShadow: 'inset 0 0 10px #000000',
       })),
       transition('hover => unhover', [
         animate('.3s')
-        ]),
+      ]),
       transition('unhover => hover', [
         animate('.3s')
       ])
@@ -45,6 +47,9 @@ import {animate, state, style, transition, trigger, query, stagger} from '@angul
 //   transition('rotated => default', animate('400ms ease-out')),
 //   transition('default => rotated', animate('400ms ease-in'))
 export class ZbHomeSlider2Component implements OnInit {
+  @ViewChild('swiper') swiperRef: ElementRef;
+  private closeAnimation: AnimationFactory;
+  private openAnimation: AnimationFactory;
   isHover = false;
   currentCategory = 1;
   isHandset: Observable<BreakpointState> = this.breakpointObserver
@@ -94,6 +99,7 @@ export class ZbHomeSlider2Component implements OnInit {
   };
 
   constructor(
+    private _builder: AnimationBuilder,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver
@@ -107,14 +113,31 @@ export class ZbHomeSlider2Component implements OnInit {
     this.matIconRegistry.addSvgIcon('news', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/news.svg'));
     this.matIconRegistry.addSvgIcon('music', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/music.svg'));
     this.matIconRegistry.addSvgIcon('movies', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/movies.svg'));
+    this.openAnimation = this._builder.build([
+      style({ transform: 'rotateY(-360deg)' }),
+      animate('1s')
+    ]);
+    console.log(this.isMobile);
   }
 
   ngOnInit() {
   }
 
-  public toggleHover(e) {
+  makeAnimation(element: any) {
+    const myAnimation = this._builder.build([
+      style({ transform: 'rotateY(-360deg)' }),
+      animate('1s')
+    ]);
+    myAnimation.create(element).play();
+  }
+
+  public hover(e) {
     console.log(e);
     this.currentCategory = e.index;
+  }
+
+  public unHover() {
+    this.currentCategory = null;
   }
 
   public onIndexChange(index: number): void {
@@ -123,6 +146,7 @@ export class ZbHomeSlider2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
+    // this.makeAnimation(this.swiperRef.nativeElement);
   }
 
   // public toggleDirection(): void {

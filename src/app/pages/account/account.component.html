@@ -1,23 +1,39 @@
 <div id="container" class="container">
-  <h1 class="jumbotron jumbotron-fluid">My Account</h1>
-      <div id="details" class="card" style="width: 18rem;">
+  <h1 class="jumbotron jumbotron-fluid animated bounceIn">My Account</h1>
+      <div #displayDetails id="details" class="card animated fadeInDown">
           <div class="card-body">
             <h5 class="card-title">Card Details</h5>
-            <p class="card-text">Card Number: </p>
-            <p class="card-text">CVV: </p>
-            <p class="card-text">Username: </p>
-            <p class="card-text">Email: </p>
+            <p class="card-text">Card Number: {{cardNum}}</p>
+            <p class="card-text">Card CVV: {{cardCVV}}</p>
+            <p class="card-text">Name on Card: {{cardName}}</p>
+            <p class="card-text">Email: {{email}}</p>
             <button class="btn btn-outline-info btn-sm" (click)="showEdit()">Edit Account</button>
           </div>
       </div>
 
-      <div id="editDetails" class="card" style="width: 18rem; display: none;">
+      <div #editDetails id="editDetails" class="card">
           <div class="card-body">
             <h5 class="card-title">Card Details</h5>
-            <p class="card-text">Card Number: <input type="number" value=""/></p>
-            <p class="card-text">CVV: <input type="number" value=""/></p>
-            <p class="card-text">Username: <input type="text" value=""/></p>
-            <p class="card-text">Email: <input type="email" value=""/></p>
+            <p class="card-text">
+              <mat-form-field>
+                <input matInput type="number" id="cardNum" [(ngModel)]="cardNum" placeholder="Card Number" maxlength="16"/>
+              </mat-form-field>
+            </p>
+            <p class="card-text">
+              <mat-form-field>
+                <input matInput [(ngModel)]="cardCVV" type="number" placeholder="Card CVV" maxlength="3" />
+              </mat-form-field>
+            </p>
+            <p class="card-text">
+              <mat-form-field>
+                <input matInput [(ngModel)]="cardName" type="text" placeholder="Name on Card"/>
+              </mat-form-field>
+            </p>
+            <p class="card-text">
+              <mat-form-field>
+                <input matInput [(ngModel)]="email" type="email" placeholder="Email Address"/>
+              </mat-form-field>
+            </p>
             <button class="btn btn-outline-primary btn-sm" (click)="edit()">Confirm</button> |
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
