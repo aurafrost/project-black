@@ -77,7 +77,8 @@ import { FoodComponent } from './pages/categories/food/food.component';
 import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
-import { ImageComponent } from './upload/image/image.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
 
 @NgModule({
   declarations: [
@@ -123,9 +124,7 @@ import { ImageComponent } from './upload/image/image.component';
     FootballComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent,
-    ImageComponent,
-    
+    HomeSlideshow2Component
   ],
   imports: [
     BrowserModule,
