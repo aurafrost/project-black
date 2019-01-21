@@ -1,0 +1,7 @@
+#nav-bar {
+  display: none!important;
+}
+
+#hoverExplore:hover #nav-bar{
+    display: block!important;
+}
