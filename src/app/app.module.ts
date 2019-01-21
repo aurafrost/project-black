@@ -77,6 +77,7 @@ import { FootballComponent } from './pages/categories/football/football.componen
 import {DetailsUploadComponent} from './upload/details-upload/details-upload.component';
 import {FormUploadComponent} from './upload/form-upload/form-upload.component';
 import {ListUploadComponent} from './upload/list-upload/list-upload.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -161,6 +162,7 @@ import {ListUploadComponent} from './upload/list-upload/list-upload.component';
     MatIconModule,
     NgxPaginationModule,
     SlideshowModule,
+    ScrollingModule,
     SwiperModule
 
   ],
