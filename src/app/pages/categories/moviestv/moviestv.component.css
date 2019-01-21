@@ -3,12 +3,15 @@ div#page{
     height: auto;
 }
 iframe{
-    display: none;
+    height:100%;
+    width: 100%;
 }
 img#bg{
     opacity: .2;
     width:100%;
     height: auto;
+    position: absolute; 
+    z-index: -1;
 }
 div#textSpace{
     position: absolute;
@@ -17,7 +20,15 @@ div#textSpace{
     text-align: center;
     font-size: 18px;
 }
-h1{
-    opacity:.5;
-    color: black;
+span{
+    color: white;
+    position: absolute;
+}
+span#hvrtxt{
+    color:indigo;
+    text-shadow: 2px 2px red;
+    font-size: 22px;
+}
+a,span#hvrtxt{
+    padding: 10px 10px 10px 10px;
 }
