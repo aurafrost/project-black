@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Note } from './note';
+import { Note } from './post';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 

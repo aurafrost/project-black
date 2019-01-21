@@ -1,91 +1,128 @@
 <!-- Mockup -->
 <div id="back">
-<div id="container" class="container">
-    <h1 class="jumbotron jumbotron-fluid animated bounceIn">Content From Your Subscriptions</h1>
-    <div id="header" class="row animated fadeInDown">
-        <div class="col-sm-5" id="left">
-            <h3>Personality</h3>
+    <div id="container" class="container">
+        <h1 class="jumbotron jumbotron-fluid animated bounceIn">Content From Your Subscriptions</h1>
+        <div id="header" class="row animated fadeInDown">
+            <div class="col-sm-5" id="left">
+                <h3>Personality</h3>
+            </div>
+            <div class="col-sm-7" id="right">
+                <h3>Feed</h3>
+            </div>
         </div>
-        <div class="col-sm-7" id="right">
-            <h3>Feed</h3>
-        </div>
-    </div>
-    <div id="row1" class="row animated fadeInDown">
-        <div class="col-sm-5" id="left">
-            <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/beyonce_200x200.png" alt="avatar here"><a href="">Beyonce</a>
-                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row1')" id="hideBtn">Hide</button>
+        <div id="row1" class="row animated fadeInDown">
+            <div class="col-sm-5" id="left">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/beyonce_200x200.png"
+                            alt="avatar here"><a href="">Beyonce</a>
+                        <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm"
+                            (click)="hide('row1')" id="hideBtn">Hide</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="right">
+                <div class="list-group" id="feed">
+                    <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post1')" id="hideBtn">Hide</button></div>
+                    <div id="post2" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post2')" id="hideBtn">Hide</button></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-7" id="right">
-            <div class="list-group" id="feed">
-                <div id="post1" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post1')" id="hideBtn">Hide</button></div>
-                <div id="post2" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post2')" id="hideBtn">Hide</button></div>
+
+        <div id="row2" class="row animated fadeInDown">
+            <div class="col-sm-5" id="left">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/kanye_200x200.png"
+                            alt="avatar here"><a href="">Kanye West</a>
+                        <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm"
+                            (click)="hide('row2')" id="hideBtn">Hide</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div id="row2" class="row animated fadeInDown">
-        <div class="col-sm-5" id="left">
-            <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/kanye_200x200.png" alt="avatar here"><a href="">Kanye West</a>
-                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row2')" id="hideBtn">Hide</button>
+            <div class="col-sm-7" id="right">
+                <div class="list-group" id="feed">
+                    <div id="post3" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post3')" id="hideBtn">Hide</button></div>
+                    <div id="post4" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post4')" id="hideBtn">Hide</button></div>
+                    <div id="post5" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post5')" id="hideBtn">Hide</button></div>
+                    <div id="post6" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post6')" id="hideBtn">Hide</button></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-7" id="right">
-            <div class="list-group" id="feed">
-                <div id="post3" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post3')" id="hideBtn">Hide</button></div>
-                <div id="post4" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post4')" id="hideBtn">Hide</button></div>
-                <div id="post5" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post5')" id="hideBtn">Hide</button></div>
-                <div id="post6" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post6')" id="hideBtn">Hide</button></div>
-            </div>
-        </div>
-    </div>
 
-    <div id="row3" class="row animated fadeInDown">
-        <div class="col-sm-5" id="left">
-            <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/holyfield_200x200.png" alt="avatar here"><a href="">Evander Holyfield</a>
-                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row3')" id="hideBtn">Hide</button>
+        <div id="row3" class="row animated fadeInDown">
+            <div class="col-sm-5" id="left">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/holyfield_200x200.png"
+                            alt="avatar here"><a href="">Evander Holyfield</a>
+                        <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm"
+                            (click)="hide('row3')" id="hideBtn">Hide</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="right">
+                <div class="list-group" id="feed">
+                    <div id="post7" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post7')" id="hideBtn">Hide</button></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-7" id="right">
-            <div class="list-group" id="feed">
-                <div id="post7" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post7')" id="hideBtn">Hide</button></div>
-            </div>
-        </div>
-    </div>
 
-    <div id="row4" class="row animated fadeInDown">
-        <div class="col-sm-5" id="left">
-            <div class="list-group">
-                <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/rdj_200x200.png" alt="avatar here"><a href="">Robert Downey Jr</a>
-                <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('row4')" id="hideBtn">Hide</button>
+        <div id="row4" class="row animated fadeInDown">
+            <div class="col-sm-5" id="left">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action"><img id="pavatar" src="assets/png/rdj_200x200.png"
+                            alt="avatar here"><a href="">Robert Downey Jr</a>
+                        <button class="btn btn-outline-danger btn-sm">Unsubscribe</button><button class="btn btn-outline-secondary btn-sm"
+                            (click)="hide('row4')" id="hideBtn">Hide</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="right">
+                <div class="list-group" id="feed">
+                    <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post8')" id="hideBtn">Hide</button></div>
+                    <div id="post9" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post9')" id="hideBtn">Hide</button></div>
+                    <div id="post10" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show
+                            More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post10')" id="hideBtn">Hide</button></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-7" id="right">
-            <div class="list-group" id="feed">
-                <div id="post8" class="list-group-item list-group-item-action">Morbi leo risus<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post8')" id="hideBtn">Hide</button></div>
-                <div id="post9" class="list-group-item list-group-item-action">Dapibus ac facilisis in<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post9')" id="hideBtn">Hide</button></div>
-                <div id="post10" class="list-group-item list-group-item-action">Cras justo odio<button class="btn btn-outline-info btn-sm">Show More</button><button class="btn btn-outline-secondary btn-sm" (click)="hide('post10')" id="hideBtn">Hide</button></div>
-            </div>
-        </div>
     </div>
-</div>
-</div>
 
-<div class="container outerContainer justify-content-around">
-  <cdk-virtual-scroll-viewport itemSize="100">
-    <button (click)="addNote()" class="btn btn-success float-right mr-5 mt-3">New Note</button>
+    <!-- <div class="container d-flex outerContainer justify-content-around"> -->
+    <cdk-virtual-scroll-viewport itemSize="100" class="d-flexalign-items-center" style='border: dotted 2px blue;'>
+        <button (click)="addNote()" class="btn btn-success float-right mr-5 mt-3">New Post</button>
+
+        <!-- [ngStyle]="{'background-color': note.color}" -->
+        <!-- <div class="col"> -->
+            <div class="row justify-content-center">
+                <li (click)=displayId(i) *cdkVirtualFor="let note of notes | async; let i = index; trackBy: trackByIdx"
+                    class="animated flipInX feedPost justify-content-around d-flex" style='border: solid 2px red;'>
 
 
-    <li [ngStyle]="{'background-color': note.color}" (click)=displayId(i) *cdkVirtualFor="let note of notes | async; let i = index; trackBy: trackByIdx"
-      class="animated flipInX sticky">
-      <div class="container-fluid d-flex">
+                    <div class="container d-flex justify-content-around align-self-end mb-2">
+                        <div class="row align-self-end">
+                            <div class="col">
+                                Like <i class="far fa-heart fa-1x"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"> Share <i class="fas fa-share fa-1x"></i></div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="container-fluid d-flex">
         <div class="row stickyRow d-block">
           <div class="dropdown float-right mr-2 mt-2 colorIcon">
             <i class="fas fa-bars fa-2x"></i>
@@ -114,11 +151,15 @@
           <i (click)=deleteNote(i) class="fas fa-trash-alt fa-2x mt-3 ml-2"></i>
 
         </div>
-      </div>
-    </li>
+      </div> -->
+                </li>
+            </div>
+        <!-- </div> -->
+    </cdk-virtual-scroll-viewport>
+    <!-- </div> -->
 
-  </cdk-virtual-scroll-viewport>
 </div>
+
 
 
 <!-- Actual code -->
