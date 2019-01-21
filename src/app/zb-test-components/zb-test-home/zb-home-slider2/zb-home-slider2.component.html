@@ -1,5 +1,6 @@
 <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
-  <swiper [@onSwipe]="slides.length"  *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="!(isMobile | async).matches ? mobileConfig : handsetConfig"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+
+  <swiper #swiper [@onSwipe]="slides.length"  *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="!(isMobile | async)?.matches ? mobileConfig : handsetConfig"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div *ngFor="let slide of slides; let i of index" class="swiper-slide">
       <div class="card-container" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
         <mat-card style="perspective: 800px;" >

@@ -117,6 +117,7 @@ export class ZbHomeSlider2Component implements OnInit {
       style({ transform: 'rotateY(-360deg)' }),
       animate('1s')
     ]);
+    console.log(this.isMobile);
   }
 
   ngOnInit() {
