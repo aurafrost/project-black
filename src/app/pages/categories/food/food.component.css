@@ -17,7 +17,7 @@ div#textSpace{
     text-align: center;
     font-size: 18px;
 }
-h1{
-    opacity:.5;
-    color: black;
+span{
+    color: white;
+    position: absolute;
 }
