@@ -10,6 +10,8 @@ img#bg{
     opacity: .2;
     width:100%;
     height: auto;
+    position: absolute; 
+    z-index: -1;
 }
 div#textSpace{
     position: absolute;
