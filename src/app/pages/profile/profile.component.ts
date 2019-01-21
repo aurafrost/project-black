@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { UserService } from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
 import { Observable } from 'rxjs';
@@ -51,13 +51,13 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
   user: User;
-  profile: HTMLElement;
-  editBlock: HTMLElement;
   htmlele: HTMLElement;
   list: AngularFireList<any[]>;
   friendsList;
   posts;
   state = 'loading';
+  @ViewChild('profile') profileBlock: ElementRef;
+  @ViewChild('editBlock') editBlock: ElementRef;
 
   constructor(private service: UserService) {
     this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
@@ -65,10 +65,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     //this.user=this.service.getUser();
-    this.profile = document.getElementById("profile") as HTMLElement;
-    this.profile.style.display = "flex";
-    this.editBlock = document.getElementById("editBlock") as HTMLElement;
-    this.editBlock.style.display = "none";
+    
+    this.profileBlock.nativeElement.style.display = "flex";
+    this.editBlock.nativeElement.style.display = "none";
 
     //get from server
     this.getFromServer();
@@ -102,21 +101,17 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
 
   edit() {
-    this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
-    this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
-    this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
+    
     //this.service.setUser(this.user.uid);
     this.ngOnInit();
   }
 
   showEdit() {
-    this.profile = document.getElementById("profile") as HTMLElement;
-    this.profile.style.display = "none";
-    this.editBlock = document.getElementById("editBlock") as HTMLElement;
-    this.editBlock.style.display = "block";
+    this.profileBlock.nativeElement.style.display = "none";
+    this.editBlock.nativeElement.style.display = "block";
   }
 
+  //will need refactoring
   deletePost(id) {
 
     console.log(id);

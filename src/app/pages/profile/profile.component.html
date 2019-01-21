@@ -2,7 +2,7 @@
 <div id="back">
     <div id="container" class="container">
         <h1 [@itemFallAnimation]='state' class="jumbotron jumbotron-fluid">Your Profile</h1>
-        <div id="profile" class="row">
+        <div #profile id="profile" class="row">
             <div  [@itemFallAnimation]='state' class="col-sm shadow-inset-lr" id="left">
                 <h3>You</h3>
                 <ul class="list-group" id="details">
@@ -84,18 +84,18 @@
                     </div>
                 </div>
             </div>
-            <div id="editBlock" class="card" style="width: 18rem; display:none;">
+        </div>
+        <div #editBlock id="editBlock" class="card" style="width: 18rem; display:none;">
                 <img src="assets/png/avatar.png" class="card-img-top" alt="avatar here">
                 <div class="card-body">
                     <h5 class="card-title">Editing Profile</h5>
-                    <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
-                    <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname" /></p>
-                    <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname" /></p>
-                    <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email" /></p>
+                    <p class="card-text">First Name: <input type="text" [(ngModel)]="user.fname" id="edit-fname" /></p>
+                    <p class="card-text">Last Name: <input type="text" [(ngModel)]="user.lname" id="edit-lname" /></p>
+                    <p class="card-text">Username: <input type="text" [(ngModel)]="user.username" id="edit-uname" /></p>
+                    <p class="card-text">Email: <input type="text" [(ngModel)]="user.email" id="edit-email" /></p>
                     <button mat-raised-button color="primary" (click)="edit()">Submit</button>
                 </div>
             </div>
-        </div>
     </div>
 
     <!-- Actual code -->
