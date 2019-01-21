@@ -27,3 +27,6 @@ span#hvrtxt{
     text-shadow: 2px 2px red;
     font-size: 22px;
 }
+a,span#hvrtxt{
+    padding: 10px 10px 10px 10px;
+}
