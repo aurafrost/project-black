@@ -96,7 +96,7 @@
     </div>
 
     <!-- <div class="container d-flex outerContainer justify-content-around"> -->
-    <cdk-virtual-scroll-viewport itemSize="100" class="" >
+    <cdk-virtual-scroll-viewport itemSize="100" class="">
         <button (click)="addPost()" class="btn btn-success float-right mr-5 mt-3">New Post</button>
 
         <!-- [ngStyle]="{'background-color': note.color}" -->
@@ -112,14 +112,13 @@
 
 
                 <!-- Post Header -->
-                <div class="container d-flex justify-content-between" >
+                <div class="container d-flex justify-content-between">
                     <div class="row justify-content-between">
                         <div class="col justify-content-between">
-                                <img src={{post.profileUrl}}>
-                             <span id=profileName> 
-                                    {{post.name}}
+                            <img class="mt-2" src={{post.profileUrl}} style="max-width: 70px; max-height: 70px;">
+                            <span id='profileName'>
+                                {{post.name}}
                             </span>
-                                
                         </div>
                     </div>
 
@@ -135,18 +134,32 @@
 
                 <div class="container d-flex mt-2 ">
                     <div class="row">
-                            {{post.post}}
-                            {{post.img}}
-                            
-                            <!-- {{post.postType}} -->
-                            <!-- {{post.color}} -->
-                    </div>
-                    <img src={{post.img}} style="height: 35%; width: 35%;">
+                        {{post.post}}
+                        {{post.img}}
 
+                        <!-- {{post.postType}} -->
+                        <!-- {{post.color}} -->
+                        
+                    </div>
+                   
+                    
                 </div>
 
+                <div class="container d-flex justify-content-around mt-auto mb-2">
+                        <div class="row align-self-end">
+                <div class="row ml-2">
+                        <img src={{post.img}} class="" style="  width: auto;
+                        max-width: 300px;
+                        height: auto;
+                        max-height: 150px;">
+
+                    <!-- {{post.postType}} -->
+                    <!-- {{post.color}} -->
+                    </div>
+                    </div>
+                </div>
                 <!-- post footer -->
-                <div class="container d-flex justify-content-around mt-auto mb-2" >
+                <div class="container d-flex justify-content-around mt-auto mb-2">
                     <div class="row align-self-end">
                         <div class="col">
                             Like <i class="far fa-heart fa-1x"></i>
@@ -158,6 +171,10 @@
                     </div>
                     <div class="row">
                         <div class="col"> Share <i class="fas fa-share fa-1x"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"> <a (click)=deleteNote(i)>Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+                        </div>
                     </div>
                 </div>
                 <!-- </div>
@@ -191,7 +208,6 @@
             <br/>
             
           <div class="float-right stickyDate">{{note.stickydate | date:'short'}}</div>
-          <i (click)=deleteNote(i) class="fas fa-trash-alt fa-2x mt-3 ml-2"></i>
 
         </div>
       </div> -->
