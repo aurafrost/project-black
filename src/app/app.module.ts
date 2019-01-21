@@ -50,6 +50,10 @@ import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component'
 import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
+import { FormUploadComponent } from './upload/form-upload/form-upload.component'; 
+import { ListUploadComponent } from './upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './upload/details-upload/details-upload.component'
+import { ImageComponent } from './upload/image/image.component'
 
 import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
 import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
@@ -73,10 +77,8 @@ import { FoodComponent } from './pages/categories/food/food.component';
 import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
-import {DetailsUploadComponent} from './upload/details-upload/details-upload.component';
-import {FormUploadComponent} from './upload/form-upload/form-upload.component';
-import {ListUploadComponent} from './upload/list-upload/list-upload.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
 
 @NgModule({
   declarations: [
@@ -119,9 +121,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MusicComponent,
     MoviestvComponent,
     FootballComponent,
-    DetailsUploadComponent,
     FormUploadComponent,
     ListUploadComponent
+    ListUploadComponent,
+    HomeSlideshow2Component,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -161,8 +165,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     NgxPaginationModule,
     SlideshowModule,
     ScrollingModule,
-    SwiperModule
-
+    SwiperModule,
+    
   ],
   providers: [
     AuthGuard,
