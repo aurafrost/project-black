@@ -96,34 +96,74 @@
     </div>
 
     <!-- <div class="container d-flex outerContainer justify-content-around"> -->
-    <cdk-virtual-scroll-viewport itemSize="100" class="" style='border: dotted 2px blue;'>
-        <button (click)="addNote()" class="btn btn-success float-right mr-5 mt-3">New Post</button>
+    <cdk-virtual-scroll-viewport itemSize="100" class="" >
+        <button (click)="addPost()" class="btn btn-success float-right mr-5 mt-3">New Post</button>
 
         <!-- [ngStyle]="{'background-color': note.color}" -->
         <!-- <div class="col"> -->
-            <!-- <div class="row justify-content-center"> -->
-                <div class="d-flex flex-column justify-content-center" style="padding: 3px; border: 2px dashed green">
-                <li (click)=displayId(i) *cdkVirtualFor="let note of notes | async; let i = index; trackBy: trackByIdx"
-                    class="animated flipInX feedPost d-flex" style='border: solid 2px red; margin: 0% 33% 5%;'>
+        <!-- <div class="row justify-content-center"> -->
+        <div class="d-flex flex-column justify-content-center" style="padding: 3px;">
+            <li (click)=displayId(i) *cdkVirtualFor="let post of posts | async; let i = index; trackBy: trackByIdx"
+                class="animated flipInX feedPost d-flex align-items-end flex-column" style=' margin: 0% 33% 5%;'>
 
-                    <!-- post footer -->
-                    <div class="container d-flex justify-content-around align-self-end mb-2">
-                        <div class="row align-self-end">
-                            <div class="col">
-                                Like <i class="far fa-heart fa-1x"></i>
-                            </div>
-                        </div>
+                <!-- <div class="container d-flex justify-content-center" style="border: 1px solid red;">
+                        <div class="row"  style="border: 1px solid green; width: 100%;">
+                            <div class="col"  style="border: 1px solid blue;"> -->
 
-                        <div class="row">
-                            <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"> Share <i class="fas fa-share fa-1x"></i></div>
+
+                <!-- Post Header -->
+                <div class="container d-flex justify-content-between" >
+                    <div class="row justify-content-between">
+                        <div class="col justify-content-between">
+                                <img src={{post.profileUrl}}>
+                             <span id=profileName> 
+                                    {{post.name}}
+                            </span>
+                                
                         </div>
                     </div>
 
+                    <div class="row ml-auto">
+                        <div class="col ml-auto mr-3"> {{post.date | date:'short'}}</div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col"> Share <i class="fas fa-share fa-1x"></i></div> -->
+                    </div>
+                </div>
 
-                    <!-- <div class="container-fluid d-flex">
+                <!-- POST CONTENT -->
+
+                <div class="container d-flex ">
+                    <div class="row ">
+                            {{post.post}}
+                            {{post.img}}
+                            <!-- <img src={{post.img}}> -->
+                            <!-- {{post.postType}} -->
+                            <!-- {{post.color}} -->
+                    </div>
+                </div>
+
+                <!-- post footer -->
+                <div class="container d-flex justify-content-around mt-auto mb-2" >
+                    <div class="row align-self-end">
+                        <div class="col">
+                            Like <i class="far fa-heart fa-1x"></i>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"> Share <i class="fas fa-share fa-1x"></i></div>
+                    </div>
+                </div>
+                <!-- </div>
+                </div>
+                </div> -->
+
+
+                <!-- <div class="container-fluid d-flex">
         <div class="row stickyRow d-block">
           <div class="dropdown float-right mr-2 mt-2 colorIcon">
             <i class="fas fa-bars fa-2x"></i>
@@ -153,8 +193,8 @@
 
         </div>
       </div> -->
-                </li>
-            </div>
+            </li>
+        </div>
         <!-- </div> -->
     </cdk-virtual-scroll-viewport>
     <!-- </div> -->
