@@ -101,7 +101,7 @@ mat-card {
 
 /*Implemented by Jacob*/
 mat-card-content {
-  overflow: hidden
+  overflow: hidden !important;
 }
 
 mat-icon {

@@ -20,7 +20,7 @@ export class UserService {
     return this.user;
   }
 
-  getUsers(){
+  getUsers() {
     return this.afDatabase.list(`/Users/`);
   }
 
