@@ -102,7 +102,7 @@ mat-card {
 
 /*Implemented by Jacob*/
 mat-card-content {
-  overflow: hidden
+  overflow: hidden!important;
 }
 
 mat-icon {
@@ -113,10 +113,12 @@ mat-icon {
 
 .swiper-container {
   min-height: auto;
+  overflow: hidden;
 }
 
 .swiper-slide, .swiper {
   height: fit-content !important;
+  overflow: hidden!important;
 }
 
 .swiper-wrapper, .card-container {
@@ -124,3 +126,4 @@ mat-icon {
   min-height: fit-content !important;
   overflow: hidden;
 }
+
