@@ -78,7 +78,6 @@ import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +123,6 @@ import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-
     FootballComponent,
     FormUploadComponent,
     ListUploadComponent,
-    HomeSlideshow2Component
   ],
   imports: [
     BrowserModule,
