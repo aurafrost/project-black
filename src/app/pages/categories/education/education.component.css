@@ -3,9 +3,10 @@ div#page{
     min-height: 1200px;
     max-height: 4000px;
     opacity: .2;
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/f/f4/Middletown_High_School_North_Hall.jpg");
+    background-image: url("https://cdn-s3.si.com/images/florida-best-colleges.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

@@ -1,27 +1,34 @@
-Footer{
-    Terms/Privacy
-    About us
-    Contact us
-}
 Header{
-    Search (Bar?)
-    Login
-    My Account
-    Subscribe?
+    Search - need to finish
+    Login and authentication - leave for last
+    My Account - might need more?
 }
-Stories
-Statistics
-Event Calendars
-Notifications
-Content
-Initial Data to View
-Adding Content by Artist
-Content Filter
-Other Social Media Links/APIs
-User Database?{
+
+Personality Page{
+    Add/remove Content
+    Subscribe - 4 tiers(Bronze, Silver, Gold - discounted tickets, Platinum - possible backstage passes)
+    Shopping section/database connection. Tie to payment page of sorts (Paypal maybe?).
+}
+
+Pages to do{
+    Beyonce - needs profile layout
+    Bollywood - skeleton done
+    Cricket - skeleton done
+    Discovery (and Oprah Winfrey Network) - skeleton done. Some additional layout also added. Most complete so far.
+    Formula One - skeleton done
+    Jackie Chan - same as beyonce
+    Live Nation - skeleton done
+    MLB - skeleton done
+    MLS - skeleton done
+    NBA - skeleton done
+    NFL - skeleton done
+    Event Calendar - left to Michael
+    Statistics - left to Chris
+}
+
+User Database{ - Jacob?
     first name/fname
     last name/lname
-    display name/dname
     email
     password/pw
     credit card number/cardnum
@@ -31,9 +38,13 @@ User Database?{
     subscriptions
     subscribers
 }
-Content Database?{
+
+Content Database?{ - Jacob?
     Images
     Video clips
     stories
     etc.
 }
+
+Notes:
+-Data should be all mock

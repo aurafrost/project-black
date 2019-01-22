@@ -36,8 +36,8 @@
   position: relative;
 
   overflow: auto;
-  height: 300px;
-  min-height: 0;
+  /*height: 13rem;*/
+  min-height: 160px;
   margin: 8px 16px;
   border-radius: 4px;
 
@@ -74,6 +74,10 @@
   background-color: #555;
 }
 
+.s-wrapper, swiper {
+  background-color: #F2F2F2;
+}
+
 .swiper-container {
   position: absolute;
   top: 0;
@@ -83,9 +87,9 @@
   overflow: hidden;
 }
 
-.swiper-slide {
+.swiper-slide, .swiper-slide:active {
   color: #aaa;
-  background-color: #eee;
+  background-color: #F2F2F2;
 }
 
 .swiper-slide-active {
@@ -93,37 +97,38 @@
   background-color: #aaa;
 }
 
+.card-container {
+  background-color: #F2F2F2;
+}
+
 /*Card*/
 mat-card {
-  width: 100%;
   text-align: center;
-  border-radius: 0 !important;
+  background-color: #F2F2F2;
 }
 
 /*Implemented by Jacob*/
-mat-card-content {
-  overflow: hidden !important;
-}
+/*mat-card-content {*/
+  /*overflow: hidden !important;*/
+/*}*/
 
 mat-icon {
   height: auto;
   width: auto;
-/*@include md-icon-size(20px);*/
 }
 
-.swiper-container {
-  min-height: auto;
-  overflow: hidden;
-}
+/*.swiper-container {*/
+  /*overflow: hidden;*/
+/*}*/
 
 .swiper-slide, .swiper {
-  height: fit-content !important;
+  /*height: fit-content !important;*/
   overflow: hidden!important;
 }
 
-.swiper-wrapper, .card-container {
-  height: fit-content!important;
-  min-height: fit-content !important;
-  overflow: hidden;
-}
+/*.swiper-wrapper, .card-container {*/
+  /*height: fit-content!important;*/
+  /*min-height: fit-content !important;*/
+  /*overflow: hidden;*/
+/*}*/
 

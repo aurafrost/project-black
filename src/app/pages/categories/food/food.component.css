@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg");
     background-repeat: space;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     height:100%;

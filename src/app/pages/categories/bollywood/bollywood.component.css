@@ -1,0 +1,41 @@
+div#page{
+    width:100%;
+    min-height: 1200px;
+    max-height: 4000px;
+    opacity: .2;
+    background-image: url("https://www.espectalium.com/wp-content/uploads/2014/12/bollywood-para-eventos-1.jpg");
+    background-repeat: round;
+    position: absolute;
+    z-index: -1;
+}
+iframe{
+    display: none;
+    height:100%;
+    width: 100%;
+}
+img#bg{
+    opacity: .2;
+    width:100%;
+    height: auto;
+    position: absolute; 
+    z-index: -1;
+}
+div#textSpace{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+span{
+    color: white;
+    position: absolute;
+}
+span#hvrtxt{
+    color:indigo;
+    text-shadow: 2px 2px red;
+    font-size: 22px;
+}
+a,span#hvrtxt{
+    padding: 10px 10px 10px 10px;
+}

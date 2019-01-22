@@ -35,7 +35,6 @@ import { LivenationComponent } from './pages/categories/livenation/livenation.co
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
-import { NflComponent } from './pages/categories/nfl/nfl.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component'
@@ -74,7 +73,6 @@ const routes: Routes = [
 {path: 'mlb', component: MlbComponent},
 {path: 'mls', component: MlsComponent},
 {path: 'nba', component: NbaComponent},
-{path: 'nfl', component: NflComponent},
 {path: 'stats', component: StatsComponent},
 {path: 'calendar', component: CalendarComponent},
 {path: 'testDisplay', component: TestDisplayComponent},

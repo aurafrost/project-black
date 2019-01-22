@@ -59,9 +59,8 @@ import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-h
 import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
 import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
 import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
-import { HomeSlideshowComponent } from './zb-test-components/zb-test-home/home-slideshow/home-slideshow.component';
 import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
-import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/zb-home-slider2/zb-home-slider2.component';
+import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -83,7 +82,6 @@ import { LivenationComponent } from './pages/categories/livenation/livenation.co
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
-import { NflComponent } from './pages/categories/nfl/nfl.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
@@ -123,7 +121,6 @@ import { TestDisplayComponent } from './test-firebase-subactivity/test-display/t
     ZbTestGenreComponent,
     PageNavComponent,
     HomeTopSectionComponent,
-    HomeSlideshowComponent,
     ZbTestGenrePageComponent,
     ZbHomeSlider2Component,
     VerifyEmailComponent,
@@ -143,7 +140,6 @@ import { TestDisplayComponent } from './test-firebase-subactivity/test-display/t
     DiscoveryComponent,
     MlbComponent,
     NbaComponent,
-    NflComponent,
     MlsComponent,
     FormulaoneComponent,
     BollywoodComponent,
