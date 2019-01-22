@@ -42,7 +42,8 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     this.signInDialogRef = this.dialog.open(SignInComponent, {
-      data: {}
+      data: {},
+      height:'350px'
     });
   }
 
