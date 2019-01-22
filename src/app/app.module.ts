@@ -83,7 +83,6 @@ import { LivenationComponent } from './pages/categories/livenation/livenation.co
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
-import { NflComponent } from './pages/categories/nfl/nfl.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
@@ -142,7 +141,6 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     DiscoveryComponent,
     MlbComponent,
     NbaComponent,
-    NflComponent,
     MlsComponent,
     FormulaoneComponent,
     BollywoodComponent,
