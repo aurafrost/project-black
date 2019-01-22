@@ -1,6 +1,8 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {AuthService} from '../../../core/services/auth/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'sign-in',
@@ -10,9 +12,11 @@ import {AuthService} from '../../../core/services/auth/auth.service';
 export class SignInComponent implements OnInit {
   public email = '';
   public password = '';
+  
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -20,7 +24,11 @@ export class SignInComponent implements OnInit {
 
   login() {
     this.authService.signIn(this.email, this.password)
-      .then(res => console.log('Logged in!'))
+      .then(res => {
+        
+        this.router.navigate(['']);
+
+      })
       .catch(err => console.log(err.message));
   }
 }
