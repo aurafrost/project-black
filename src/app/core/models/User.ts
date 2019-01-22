@@ -1,15 +1,15 @@
 export class User {
-  public uid;
-  public username;
-  public fname;
-  public lname;
-  public email;
+  public uid?;
+  public fname?;
+  public lname?;
+  public email?;
+  public subscriptions?:any[];
 
-  constructor(uid?, username?, email?, fname?, lname?) {
+  constructor(uid?, email?, fname?, lname?, subscriptions?) {
     this.uid = uid;
-    this.username = username;
     this.fname = fname;
     this.lname = lname;
     this.email = email;
+    this.subscriptions = subscriptions;
   }
 }

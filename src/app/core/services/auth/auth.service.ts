@@ -72,12 +72,7 @@ export class AuthService {
           // TODO: open login model or redirect to login page
         });
         user.uid = auth.user.uid;
-        this.userService.createUser(auth.user.uid, user)
-          .then(res => {
-            console.log('user Added!');
-          }).catch(err => {
-            console.log(err.message);
-        });
+        this.userService.createUser(auth.user.uid, user);
       }).catch(err => {
         window.alert(err.message);
       });
@@ -88,7 +83,7 @@ export class AuthService {
       .then(() => {
         localStorage.removeItem('auth');
         // this.auth.next(null);
-        this.router.navigate(['home']);
+        this.router.navigate(['']);
       });
   }
 }
