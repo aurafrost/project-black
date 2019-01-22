@@ -60,7 +60,6 @@ import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test
 import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
 import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
 import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
-import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -90,6 +89,13 @@ import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.co
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
+
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -122,7 +128,6 @@ import { TestDisplayComponent } from './test-firebase-subactivity/test-display/t
     PageNavComponent,
     HomeTopSectionComponent,
     ZbTestGenrePageComponent,
-    ZbHomeSlider2Component,
     VerifyEmailComponent,
     NascarComponent,
     TravelComponent,
@@ -188,7 +193,13 @@ import { TestDisplayComponent } from './test-firebase-subactivity/test-display/t
     SlideshowModule,
     ScrollingModule,
     SwiperModule,
-    
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    FlatpickrModule.forRoot(),
+    NgbModalModule,
+
   ],
   providers: [
     AuthGuard,
