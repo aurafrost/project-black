@@ -15,7 +15,7 @@ import {AnimationBuilder} from '@angular/animations';
   animations: [
     trigger('onHover', [
       state('hover', style({
-        borderRadius: '5rem',
+        borderRadius: '100%',
         border: '3px solid #DA4453',
         boxShadow: 'inset 0 0 10px #000000',
         transform: 'rotate(360deg)'
@@ -52,11 +52,6 @@ export class ZbHomeSlider2Component implements OnInit {
   private openAnimation: AnimationFactory;
   isHover = false;
   currentCategory = 1;
-  isHandset: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(max-width: 1000px)']);
-  isMobile: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(min-width: 580px)']);
-
   public show: boolean = true;
 
   public slides = [
@@ -74,28 +69,38 @@ export class ZbHomeSlider2Component implements OnInit {
 
   public disabled: boolean = false;
 
-  public mobileConfig: SwiperConfigInterface = {
+  public config: SwiperConfigInterface = {
+    autoHeight: true,
     a11y: false,
     direction: 'horizontal',
-    slidesPerView: 3,
     keyboard: true,
     mousewheel: true,
     scrollbar: true,
-    navigation: true,
-    pagination: true,
     autoplay: false,
-  };
-
-  public handsetConfig: SwiperConfigInterface = {
-    a11y: false,
-    direction: 'horizontal',
-    slidesPerView: 5,
-    keyboard: true,
-    mousewheel: true,
-    scrollbar: true,
-    navigation: true,
-    pagination: true,
-    autoplay: false,
+    breakpoints: {
+      1080: {
+        slidesPerView: 7
+      },
+      1024: {
+        slidesPerView: 6,
+        // spaceBetween: 40,
+      },
+      840: {
+        slidesPerView: 5,
+        // spaceBetween: 30,
+      },
+      640: {
+        slidesPerView: 4,
+        // spaceBetween: 20,
+      },
+      540: {
+        slidesPerView: 3
+      },
+      420: {
+        slidesPerView: 2,
+        // spaceBetween: 10,
+      }
+    }
   };
 
   constructor(
@@ -117,7 +122,6 @@ export class ZbHomeSlider2Component implements OnInit {
       style({ transform: 'rotateY(-360deg)' }),
       animate('1s')
     ]);
-    console.log(this.isMobile);
   }
 
   ngOnInit() {
