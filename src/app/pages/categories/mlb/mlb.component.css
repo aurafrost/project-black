@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F869221440%2F960x0.jpg%3Ffit%3Dscale");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

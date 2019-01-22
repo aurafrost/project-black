@@ -6,6 +6,7 @@ div#page{
     background-image: url("http://www.sswpa.org/uploads/2/2/8/5/22850408/1366325_orig.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     height:100%;

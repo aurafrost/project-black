@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://icc-static-files.s3.amazonaws.com/ICC/photo/2018/08/24/01d9e9d0-61d3-4836-bdcb-8c05296c6dd8/GettyImages-977007372.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

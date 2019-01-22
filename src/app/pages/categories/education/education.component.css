@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://cdn-s3.si.com/images/florida-best-colleges.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://i.ytimg.com/vi/eOMnnlA0how/maxresdefault.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

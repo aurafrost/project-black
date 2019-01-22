@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,h_645,q_50,w_1024/v1/clients/denver/red-rocks-winter-concert-1_567ca252-f0ae-5102-065b6b925d495a29.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     height:100%;

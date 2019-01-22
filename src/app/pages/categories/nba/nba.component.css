@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://image.roku.com/blog/wp-content/uploads/2018/04/NBAApp-Playoffs18-Roku-1200x628.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;

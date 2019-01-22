@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://www.screenafrica.com/wp-content/uploads/2018/07/Discovery.jpg");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 img#bg{
     opacity: .2;

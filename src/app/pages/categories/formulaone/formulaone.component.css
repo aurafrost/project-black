@@ -6,6 +6,7 @@ div#page{
     background-image: url("https://s1.reutersmedia.net/resources/r/?m=02&d=20170821&t=2&i=1197916914&r=LYNXNPED7K0M1&w=1280");
     background-repeat: round;
     position: absolute;
+    z-index: -1;
 }
 iframe{
     display: none;
