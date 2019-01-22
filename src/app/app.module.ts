@@ -60,7 +60,6 @@ import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test
 import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
 import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
 import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
-import { ZbHomeSlider2Component } from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -128,7 +127,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     PageNavComponent,
     HomeTopSectionComponent,
     ZbTestGenrePageComponent,
-    ZbHomeSlider2Component,
     VerifyEmailComponent,
     NascarComponent,
     TravelComponent,
