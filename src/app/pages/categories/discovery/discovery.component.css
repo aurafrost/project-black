@@ -7,13 +7,6 @@ div#page{
     position: absolute;
     z-index: -1;
 }
-img#bg{
-    opacity: .2;
-    width:100%;
-    height: auto;
-    position: absolute; 
-    z-index: -1;
-}
 div#textSpace{
     position: absolute;
     top: 10%;
@@ -31,7 +24,7 @@ span#hvrtxt{
     font-size: 22px;
     left: 2%;
 }
-a,span#hvrtxt{
+a.animated,span#hvrtxt{
     padding: 10px 10px 10px 10px;
 }
 h3,h5{
