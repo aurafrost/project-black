@@ -63,6 +63,19 @@ div#video{
     margin-left: 2%; 
     margin-right: 2%;
 }
+div#undervideo{
+    color: white;
+    position: relative;
+    float:left;
+    width: 71%;
+    margin-left: 2%; 
+    margin-right: 2%;
+    height: 10%;
+    background-color: #363636;
+    border: 2px 2px 2px 2px #da4453;
+    border-style: solid;
+    text-align: center;
+}
 a#item{
     color: white;
 }
