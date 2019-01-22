@@ -72,6 +72,7 @@ export class ZbHomeSlider2Component implements OnInit {
   public config: SwiperConfigInterface = {
     autoHeight: true,
     a11y: false,
+    slidesPerView: 9,
     direction: 'horizontal',
     keyboard: true,
     mousewheel: true,
@@ -96,10 +97,6 @@ export class ZbHomeSlider2Component implements OnInit {
       540: {
         slidesPerView: 3
       },
-      420: {
-        slidesPerView: 2,
-        // spaceBetween: 10,
-      }
     }
   };
 
