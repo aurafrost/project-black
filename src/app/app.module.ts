@@ -79,6 +79,18 @@ import { MoviestvComponent } from './pages/categories/moviestv/moviestv.componen
 import { FootballComponent } from './pages/categories/football/football.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
+import { LivenationComponent } from './pages/categories/livenation/livenation.component';
+import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
+import { MlbComponent } from './pages/categories/mlb/mlb.component';
+import { NbaComponent } from './pages/categories/nba/nba.component';
+import { NflComponent } from './pages/categories/nfl/nfl.component';
+import { MlsComponent } from './pages/categories/mls/mls.component';
+import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
+import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
+import { CricketComponent } from './pages/categories/cricket/cricket.component';
+import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +137,19 @@ import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-
     ListUploadComponent,
     HomeSlideshow2Component,
     ImageComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    LivenationComponent,
+    DiscoveryComponent,
+    MlbComponent,
+    NbaComponent,
+    NflComponent,
+    MlsComponent,
+    FormulaoneComponent,
+    BollywoodComponent,
+    CricketComponent,
+    JackiechanComponent,
+    StatsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

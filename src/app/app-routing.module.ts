@@ -26,6 +26,18 @@ import { MoviestvComponent } from './pages/categories/moviestv/moviestv.componen
 import { FootballComponent } from './pages/categories/football/football.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ImageComponent } from './upload/image/image.component'
+import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
+import { CricketComponent } from './pages/categories/cricket/cricket.component';
+import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
+import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
+import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
+import { LivenationComponent } from './pages/categories/livenation/livenation.component';
+import { MlbComponent } from './pages/categories/mlb/mlb.component';
+import { MlsComponent } from './pages/categories/mls/mls.component';
+import { NbaComponent } from './pages/categories/nba/nba.component';
+import { NflComponent } from './pages/categories/nfl/nfl.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -51,6 +63,19 @@ const routes: Routes = [
 {path: 'music', component: MusicComponent},
 {path: 'movies', component: MoviestvComponent},
 {path: 'football', component: FootballComponent},
+{path: 'beyonce', component: BeyonceComponent},
+{path: 'bollywood', component: BollywoodComponent},
+{path: 'cricket', component: CricketComponent},
+{path: 'discovery', component: DiscoveryComponent},
+{path: 'formulaone', component: FormulaoneComponent},
+{path: 'jackiechan', component: JackiechanComponent},
+{path: 'livenation', component: LivenationComponent},
+{path: 'mlb', component: MlbComponent},
+{path: 'mls', component: MlsComponent},
+{path: 'nba', component: NbaComponent},
+{path: 'nfl', component: NflComponent},
+{path: 'stats', component: StatsComponent},
+{path: 'calendar', component: CalendarComponent},
 {path: '**', component: ErrComponent}
 ];
 
