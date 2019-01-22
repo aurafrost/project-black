@@ -1,15 +1,29 @@
-<div class="content-container" [ngStyle]="{height: !(isMobile | async)?.matches ? '300px' : '27rem'}" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto"  style="margin-left: 0; margin-right: 0; margin-top: 0">
-  <swiper [ngStyle]="{height: !(isMobile | async)?.matches ? '300px' : '27rem'}" class="swiper-container" *ngIf="type == 'component' && show" [userSwiperClass] fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+  <swiper class="swiper-container" *ngIf="type == 'component' && show" [userSwiperClass] fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div *ngFor="let slide of business; let i of index" class="swiper-slide">
-      <div class="card-container" [style.background-image]="'url('+slide.img+')'" fxLayout="column" fxFlexFill fxLayoutAlign="center center">
-        <!--<mat-card [style.background-image]="'url('+slide.img+')'" >-->
-         <!--<h6>{{slide.title}}</h6>-->
-          <!--<mat-card-content>-->
-            <!--<mat-card id="{{i}}" style="background-image: url('{{slide.img}}')">-->
-              <!--&lt;!&ndash;<img id="{{i}}" src="{{slide.img}}"/>&ndash;&gt;-->
-            <!--</mat-card>-->
-          <!--</mat-card-content>-->
-        <!--</mat-card>-->
+      <div class="h-100" style="width: 100%">
+        <div class="row h-100" style="width: inherit; margin: 0">
+          <div  [style.background-image]="'url('+slide.img+')'" class="card-container col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <div class="row h-50">
+              <div class="col-sm-6">
+                row-1 col-2 row 1 col-1
+              </div>
+              <div class="col-sm-6">
+                row-1 col-2 row 1 col-2
+              </div>
+            </div>
+            <div class="row h-50">
+              <div class="col-sm-6">
+                row-1 col-2 row 2 col-1
+              </div>
+              <div class="col-sm-6">
+                row-1 col-2 row 2 col-2
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </swiper>

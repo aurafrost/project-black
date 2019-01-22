@@ -43,10 +43,6 @@ import { SwiperConfigInterface, SwiperCoverflowEffectInterface} from 'ngx-swiper
 })
 export class HomeSlideshow2Component implements OnInit {
   show = true;
-  isHandset: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(max-width: 1000px)']);
-  isMobile: Observable<BreakpointState> = this.breakpointObserver
-    .observe(['(min-width: 580px)']);
   // public categories = {
   public business = [
     {index: 1, title: '', img: 'http://a.espncdn.com/media/motion/2016/0605/evc_ACTN_20160604_X_Games__Austin__FASTCLIPPER__X_102/evc_ACTN_20160604_X_Games__Austin__FASTCLIPPER__X_102.jpg'},
