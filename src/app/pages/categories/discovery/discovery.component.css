@@ -1,0 +1,84 @@
+div#page{
+    width:100%;
+    min-height: 1200px;
+    opacity: .2;
+    background-image: url("https://www.screenafrica.com/wp-content/uploads/2018/07/Discovery.jpg");
+    background-repeat: round;
+    position: absolute;
+    z-index: -1;
+}
+div#textSpace{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+span{
+    color: white;
+    position: absolute;
+}
+span#hvrtxt{
+    color:indigo;
+    text-shadow: 2px 2px red;
+    font-size: 22px;
+    left: 2%;
+}
+a.animated,span#hvrtxt{
+    padding: 10px 10px 10px 10px;
+}
+h3,h5{
+    color: white;
+}
+div#shop{
+    float:right; 
+    height: 50%; 
+    width: 23%; 
+    right: 2%; 
+    position: relative; 
+    background-color: #363636;
+    border: 2px 2px 2px 2px #da4453;
+    border-style: solid;
+    text-align: center;
+}
+div#item-container{
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px #da4453;
+    border-top: 2px #da4453;
+    border-style: solid;
+    border-collapse: collapse;
+    max-width: 100%;
+}
+img#item-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+div#video{
+    position: relative;
+    float: left; 
+    width: 71%; 
+    height:500px;
+    min-height:40%; 
+    max-height:50%; 
+    margin-left: 2%; 
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+div#undervideo{
+    color: white;
+    position: relative;
+    float:left;
+    width: 71%;
+    margin-left: 2%; 
+    margin-right: 2%;
+    max-height: 300px;
+    background-color: #363636;
+    border: 2px 2px 2px 2px #da4453;
+    border-style: solid;
+    text-align: center;
+    overflow: auto;
+}
+a#item{
+    color: white;
+}

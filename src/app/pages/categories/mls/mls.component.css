@@ -1,0 +1,40 @@
+div#page{
+    width:100%;
+    min-height: 1200px;
+    max-height: 4000px;
+    opacity: .2;
+    background-image: url("https://cdn.vox-cdn.com/thumbor/iuwLNgxnbVIv3sj6ND0ha0sG_xo=/0x0:3867x2703/1200x800/filters:focal(1598x934:2216x1552)/cdn.vox-cdn.com/uploads/chorus_image/image/57285971/usa_today_9744943.0.jpg");
+    background-repeat: round;
+    position: absolute;
+}
+iframe{
+    display: none;
+    height:100%;
+    width: 100%;
+}
+img#bg{
+    opacity: .2;
+    width:100%;
+    height: auto;
+    position: absolute; 
+    z-index: -1;
+}
+div#textSpace{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+span{
+    color: white;
+    position: absolute;
+}
+span#hvrtxt{
+    color:indigo;
+    text-shadow: 2px 2px red;
+    font-size: 22px;
+}
+a,span#hvrtxt{
+    padding: 10px 10px 10px 10px;
+}

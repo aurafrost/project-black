@@ -34,10 +34,8 @@
 .action-container,
 .content-container {
   position: relative;
-
   overflow: auto;
-  height: 300px;
-  min-height: 0;
+  height: 27rem;
   margin: 8px 16px;
   border-radius: 4px;
 
@@ -80,17 +78,30 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .swiper-slide {
   color: #aaa;
   background-color: #eee;
+  /*height: 100% !important;*/
 }
 
 .swiper-slide-active {
   color: #fff;
   background-color: #aaa;
+}
+
+.card-container {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(218,68,83,.5);
+  border: 1px solid #363636;
+  box-shadow: rgb(0, 0, 0) 0 0 10px inset;
+}
+
+.swiper-wrapper {
 }
 
 /*Card*/
@@ -127,3 +138,15 @@
   /*overflow: hidden;*/
 /*}*/
 
+/*Cover Flow*/
+/*.swiper-container {*/
+  /*width: 100%;*/
+  /*padding-top: 50px;*/
+  /*padding-bottom: 50px;*/
+/*}*/
+/*.swiper-slide {*/
+  /*background-position: center;*/
+  /*background-size: cover;*/
+  /*width: 300px;*/
+  /*height: 300px;*/
+/*}*/

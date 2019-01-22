@@ -73,6 +73,8 @@ export class ContentComponent implements OnInit {
   }
 
   changeColor(index, color) {
+  
+
     // get noteRef at this id
     let id = this.snapshot[index].payload.doc.id;
     this.postDoc = this.db.doc('posts/' + id);
@@ -82,12 +84,26 @@ export class ContentComponent implements OnInit {
       newPost = res.data() as Post;
       newPost.color = color;
       this.postDoc.set(newPost);
+
     });
+
+
   }
   deleteNote(index) {
     // get noteRef at this id
     let id = this.snapshot[index].payload.doc.id;
     this.postsCollection.doc(id).delete();
+  }
+
+  liked(index) {
+    let id = this.snapshot[index].payload.doc.id;
+    this.postDoc = this.db.doc('posts/' + id);
+    this.postsCollection.doc(id).get().subscribe(res => {
+      let post: Post = { ...res.data() } as Post;
+      post.liked = !post.liked;
+      this.postDoc.set(post);
+    }
+    );
   }
 
   updateNote(index, note: Post) {
