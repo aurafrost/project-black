@@ -1,6 +1,11 @@
 div#page{
     width:100%;
-    height: auto;
+    min-height: 1200px;
+    max-height: 4000px;
+    opacity: .2;
+    background-image: url("http://www.sswpa.org/uploads/2/2/8/5/22850408/1366325_orig.jpg");
+    background-repeat: round;
+    position: absolute;
 }
 iframe{
     height:100%;

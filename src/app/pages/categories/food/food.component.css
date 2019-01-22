@@ -1,6 +1,11 @@
 div#page{
     width:100%;
-    height: auto;
+    min-height: 1200px;
+    max-height: 4000px;
+    opacity: .2;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg");
+    background-repeat: space;
+    position: absolute;
 }
 iframe{
     height:100%;
