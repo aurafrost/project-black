@@ -7,11 +7,6 @@ div#page{
     background-repeat: round;
     position: absolute;
 }
-iframe{
-    display: none;
-    height:100%;
-    width: 100%;
-}
 img#bg{
     opacity: .2;
     width:100%;
@@ -37,4 +32,44 @@ span#hvrtxt{
 }
 a,span#hvrtxt{
     padding: 10px 10px 10px 10px;
+}
+h3{
+    color: white;
+}
+div#shop{
+    float:right; 
+    height: 50%; 
+    width: 25%; 
+    right: 0%; 
+    position: relative; 
+    background-color: #363636;
+    border: 2px 2px 2px 2px #da4453;
+    border-style: solid;
+    text-align: center;
+}
+div#item-container{
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px #da4453;
+    border-top: 2px #da4453;
+    border-style: solid;
+    border-collapse: collapse;
+}
+img#item-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+div#video{
+    position: relative;
+    float: left; 
+    width: 65%; 
+    height:500px; 
+    min-height: 300px; 
+    max-height:600px; 
+    margin-left: 5%; 
+    margin-right: 5%;
+}
+a#item{
+    color: white;
 }
