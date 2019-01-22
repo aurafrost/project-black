@@ -12,4 +12,7 @@ export class DiscoveryComponent implements OnInit {
   ngOnInit() {
   }
 
+  purchase(id){
+    
+  }
 }
