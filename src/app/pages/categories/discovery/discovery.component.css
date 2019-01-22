@@ -1,7 +1,6 @@
 div#page{
     width:100%;
     min-height: 1200px;
-    max-height: 4000px;
     opacity: .2;
     background-image: url("https://www.screenafrica.com/wp-content/uploads/2018/07/Discovery.jpg");
     background-repeat: round;
@@ -30,18 +29,19 @@ span#hvrtxt{
     color:indigo;
     text-shadow: 2px 2px red;
     font-size: 22px;
+    left: 2%;
 }
 a,span#hvrtxt{
     padding: 10px 10px 10px 10px;
 }
-h3{
+h3,h5{
     color: white;
 }
 div#shop{
     float:right; 
     height: 50%; 
-    width: 25%; 
-    right: 0%; 
+    width: 23%; 
+    right: 2%; 
     position: relative; 
     background-color: #363636;
     border: 2px 2px 2px 2px #da4453;
@@ -63,12 +63,12 @@ img#item-img{
 div#video{
     position: relative;
     float: left; 
-    width: 65%; 
+    width: 71%; 
     height:500px; 
     min-height: 300px; 
     max-height:600px; 
-    margin-left: 5%; 
-    margin-right: 5%;
+    margin-left: 2%; 
+    margin-right: 2%;
 }
 a#item{
     color: white;

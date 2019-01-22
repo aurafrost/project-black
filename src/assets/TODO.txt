@@ -11,22 +11,22 @@ Personality Page{
 }
 
 Pages to do{
-    Beyonce - yes it's a separate page
-    Bollywood
-    Cricket
-    Discovery (and Oprah Winfrey Network) - these are one page. I think.
-    Formula One
+    Beyonce - needs profile layout
+    Bollywood - skeleton done
+    Cricket - skeleton done
+    Discovery (and Oprah Winfrey Network) - skeleton done. Some additional layout also added. Most complete so far.
+    Formula One - skeleton done
     Jackie Chan - same as beyonce
-    Live Nation
-    MLB
-    MLS
-    NBA
-    NFL
-    Event Calendar
-    Statistics
+    Live Nation - skeleton done
+    MLB - skeleton done
+    MLS - skeleton done
+    NBA - skeleton done
+    NFL - skeleton done
+    Event Calendar - left to Michael
+    Statistics - left to Chris
 }
 
-User Database{
+User Database{ - Jacob?
     first name/fname
     last name/lname
     email
@@ -39,7 +39,7 @@ User Database{
     subscribers
 }
 
-Content Database?{
+Content Database?{ - Jacob?
     Images
     Video clips
     stories
