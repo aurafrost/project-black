@@ -7,33 +7,7 @@ import { Player } from '@angular/core/src/render3/interfaces/player';
 @Component({
   selector: 'nascar',
   templateUrl: './nascar.component.html',
-  styleUrls: ['./nascar.component.css'],
-  animations: [
-    trigger('countdown', [
-      state('begin',
-        style({
-          width: '26rem',
-          height: '13rem',
-          margin:'0 auto',
-          position: 'absolute',
-          opacity: '5'
-        })
-      ),
-      state('end',
-        style({
-          width: '26rem',
-          height: '13rem',
-          margin:'0 auto',
-          position: 'absolute',
-          opacity: '0.0'
-        
-        }),
-      ),
-      transition('begin <=> end', [
-        animate('5s ease-in')
-      ]),
-    ]),
-  ]
+  styleUrls: ['./nascar.component.css']
 })
 export class NascarComponent implements OnInit {
 state: string ='begin';
@@ -50,7 +24,7 @@ player:Player;
       this.video.nativeElement.style.display = 'none';
       this.page.nativeElement.style.display = 'block';
 
-    }, 9000);
+    }, 9500);
   }
 
   someFunc(){
