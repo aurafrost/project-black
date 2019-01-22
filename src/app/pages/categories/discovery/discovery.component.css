@@ -47,6 +47,7 @@ div#item-container{
     border-top: 2px #da4453;
     border-style: solid;
     border-collapse: collapse;
+    max-width: 100%;
 }
 img#item-img{
     display: block;
@@ -57,11 +58,12 @@ div#video{
     position: relative;
     float: left; 
     width: 71%; 
-    height:500px; 
-    min-height: 300px; 
-    max-height:600px; 
+    height:500px;
+    min-height:40%; 
+    max-height:50%; 
     margin-left: 2%; 
     margin-right: 2%;
+    margin-bottom: 2%;
 }
 div#undervideo{
     color: white;
@@ -70,11 +72,12 @@ div#undervideo{
     width: 71%;
     margin-left: 2%; 
     margin-right: 2%;
-    height: 10%;
+    max-height: 300px;
     background-color: #363636;
     border: 2px 2px 2px 2px #da4453;
     border-style: solid;
     text-align: center;
+    overflow: auto;
 }
 a#item{
     color: white;
