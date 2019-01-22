@@ -92,6 +92,13 @@ import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.co
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -149,7 +156,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     CricketComponent,
     JackiechanComponent,
     StatsComponent,
-    CalendarComponent
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -190,7 +197,13 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     SlideshowModule,
     ScrollingModule,
     SwiperModule,
-    
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    FlatpickrModule.forRoot(),
+    NgbModalModule,
+
   ],
   providers: [
     AuthGuard,

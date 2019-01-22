@@ -66,8 +66,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     //this.user=this.service.getUser();
     
-    this.profileBlock.nativeElement.style.display = "flex";
-    this.editBlock.nativeElement.style.display = "none";
+   // this.profileBlock.nativeElement.style.display = "flex";
+   // this.editBlock.nativeElement.style.display = "none";
 
     //get from server
     this.getFromServer();

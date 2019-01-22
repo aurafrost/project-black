@@ -8,23 +8,16 @@ body {
 	color : #CECEC2;
 	text-align : center;
 	font-family : tahoma, sans-serif;
-	font-size : 9px;
+    font-size : 9px;
 }  
 
 
 /* PAGE HEADER & MENU */
 
 #page_header {
-	margin : 40px auto 0px;
+	margin : 0px auto 0px;
 	width : 689px;
 	height : 24px;
-}
-
-#page_header #logo {
-	width : 200px;
-	height : 24px;
-	background : url('/assets/gif/companylogo.gif') no-repeat 20px 0px;
-	float : left;
 }
 
 #page_menu {
@@ -270,7 +263,7 @@ body {
 #page_footer {
 	margin : 2px auto 0px;
 	width : 689px;
-	height : 20px;
+	height : 0px;
 	color : #6C6C69;
 	font-weight : bold;
 }
