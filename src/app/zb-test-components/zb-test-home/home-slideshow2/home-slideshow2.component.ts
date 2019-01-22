@@ -79,6 +79,8 @@ export class HomeSlideshow2Component implements OnInit {
   };
 
   public config: SwiperConfigInterface = {
+    mousewheel: true,
+    scrollbar: true,
     autoHeight: true,
     pagination: true,
     grabCursor: true,
