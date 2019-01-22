@@ -1,0 +1,28 @@
+<div class="content-container" fxLayout="column" fxFlex="auto">
+  <swiper #swiper [@onSwipe]="slides.length"  class="swiper-container" *ngIf="type == 'component' && show" fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+    <div *ngFor="let slide of slides; let i of index" class="swiper-slide">
+      <div class="card-container" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card style="box-shadow: none">
+          <h6>{{slide.title}}</h6>
+          <mat-icon (mouseenter)="this.hover(i)" (mouseleave)="this.unHover(i)" [@onHover]="currentCategory == slide.index ? 'hover' : 'unhover'" style="width: 80%; padding: 10px;" id="{{i}}" svgIcon="{{slide.svg}}"></mat-icon>
+        </mat-card>
+      </div>
+    </div>
+  </swiper>
+
+  <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="config" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+    <div class="swiper-wrapper">
+      <div *ngFor="let slide of slides" class="swiper-slide">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          {{slide}}
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+    <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+    <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+    <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+  </div>
+</div>
