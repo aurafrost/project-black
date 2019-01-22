@@ -1,4 +1,4 @@
-<div class="content-container" [ngStyle]="{height: !(isMobile | async)?.matches ? '300px' : '27rem'}" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto"  style="margin-left: 0; margin-right: 0;">
+<div class="content-container" [ngStyle]="{height: !(isMobile | async)?.matches ? '300px' : '27rem'}" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto"  style="margin-left: 0; margin-right: 0; margin-top: 0">
   <swiper [ngStyle]="{height: !(isMobile | async)?.matches ? '300px' : '27rem'}" class="swiper-container" *ngIf="type == 'component' && show" [userSwiperClass] fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div *ngFor="let slide of business; let i of index" class="swiper-slide">
       <div class="card-container" [style.background-image]="'url('+slide.img+')'" fxLayout="column" fxFlexFill fxLayoutAlign="center center">
