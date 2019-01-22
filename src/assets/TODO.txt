@@ -6,17 +6,17 @@ Header{
 
 Personality Page{
     Add/remove Content
-    Subscribe - 4 tiers(Bronze, Silver, Gold, Platinum)
+    Subscribe - 4 tiers(Bronze, Silver, Gold - discounted tickets, Platinum - possible backstage passes)
     Shopping section/database connection. Tie to payment page of sorts (Paypal maybe?).
 }
 
 Pages to do{
-    Beyonce
+    Beyonce - yes it's a separate page
     Bollywood
     Cricket
     Discovery (and Oprah Winfrey Network) - these are one page. I think.
     Formula One
-    Jackie Chan
+    Jackie Chan - same as beyonce
     Live Nation
     MLB
     MLS
@@ -45,3 +45,6 @@ Content Database?{
     stories
     etc.
 }
+
+Notes:
+-Data should be all mock
