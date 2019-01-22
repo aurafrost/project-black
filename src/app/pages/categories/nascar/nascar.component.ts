@@ -13,6 +13,7 @@ export class NascarComponent implements OnInit {
 state: string ='begin';
 @ViewChild('page') page: ElementRef;
 @ViewChild('video') video:ElementRef;
+
 player:Player;
   constructor() { }
 

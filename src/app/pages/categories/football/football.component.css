@@ -3,10 +3,10 @@ div#page{
     height: auto;
 }
 iframe{
-    display: none;
+    display: block;
 }
 img#bg{
-    opacity: .2;
+    
     width:100%;
     height: auto;
 }
