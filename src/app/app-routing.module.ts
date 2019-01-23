@@ -36,7 +36,7 @@ import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
 import { StatsComponent } from './pages/stats/stats.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
+import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component'
 
 const routes: Routes = [

@@ -87,7 +87,7 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { StatsComponent } from './pages/stats/stats.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
+import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 
 
@@ -96,6 +96,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
+import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
 
 
 @NgModule({
@@ -154,7 +155,8 @@ import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-sli
     StatsComponent,
     CalendarComponent,
     ZbHomeSlider2Component,
-    TestDisplayComponent
+    TestDisplayComponent,
+    ProfileContentComponent
   ],
   imports: [
     BrowserModule,
