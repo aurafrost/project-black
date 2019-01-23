@@ -43,7 +43,8 @@
 
   <!-- Welcome text -->
   <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
-    <h1 style="color: white;" class="animated bounceIn">MLB <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
+    <h1 class="animated bounceIn"><img src="https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Fmaurybrown%2Ffiles%2F2014%2F08%2Fmajor_league_baseball-e1393527574757.png"
+        alt="MLB" height="80px;">|<button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
         | +</button></h1><br>
   </span>
 
@@ -61,6 +62,7 @@
       <button class="tablinks" (click)="openCity(event, 'Facebook')">Facebook</button>
       <button class="tablinks" (click)="openCity(event, 'Twitter')">Twitter</button>
       <button class="tablinks" (click)="openCity(event, 'Twitter2')">Twitter (MLB Network)</button>
+      <button class="tablinks" (click)="openCity(event, '')">X</button>
     </div>
     <!-- Facebook API -->
     <div id="Facebook" class="tabcontent" style="float:left; width: 100%">
@@ -82,9 +84,9 @@
 
   <!-- Shop - under sidevideo container -->
   <div class="animated bounceIn" id="shop">
-    <h3><a href="https://www.mlbshop.com/?_s=bm-mlbcom-hp">
+    <a href="https://www.mlbshop.com/?_s=bm-mlbcom-hp">
       <img src="https://www.mlbshop.com/content/ws/all/ba60664d-e1d2-4462-bbc7-59f86d006441.svg" alt="Shop" height="40px">
-    </a></h3>
+    </a>
     <div id="item-container">
       <h5 id="item-txt">MLB T-Shirt - $99.99 <a href="https://www.mlbshop.com/boston-red-sox/mens-boston-red-sox-majestic-white-home-cool-base-team-jersey/t-25008520+p-7854147645077+z-9-1139381859"><button
             class="btn btn-success" id="buy" (click)="purchase(id)">Purchase</button></a></h5>

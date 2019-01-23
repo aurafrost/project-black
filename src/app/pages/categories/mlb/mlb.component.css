@@ -24,7 +24,7 @@ span#hvrtxt{
 a.animated,span#hvrtxt{
     padding: 10px 10px 10px 10px;
 }
-h3,h5{
+h5{
     color: white;
 }
 div#shop{
@@ -103,6 +103,7 @@ a#item{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #363636;
+    width: 100%;
   }
   
   /* Style the buttons that are used to open the tab content */
@@ -112,7 +113,7 @@ a#item{
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 14px 14px;
     transition: 0.3s;
     color: white;
   }
