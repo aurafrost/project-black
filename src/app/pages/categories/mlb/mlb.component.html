@@ -12,11 +12,32 @@
         alt="pic" height="40px"> Season Schedule</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://www.mlb.com/tickets?partnerId=54P3ZB91-222T"><img id="i3" src="http://www.ticketexchange.site/wp-content/uploads/2016/02/MLB-1.jpg"
+    <a class="nav-link" href="https://www.mlb.com/standings"><img id="i3" src="https://sports.cbsimg.net/images//visual/whatshot/Stand-AL-072415.png"
+        alt="pic" height="40px"> Standings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.mlb.com/team"><img id="i4" src="https://securea.mlb.com/assets/images/2/0/8/267951208/cuts/320x180/cut.jpg"
+        alt="pic" height="40px"> Teams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.mlb.com/player-search?tcid=nav_mlb_players"><img id="i5" src="https://securea.mlb.com/images/players/action_shots/543135.jpg"
+        alt="pic" height="40px"> Players</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.mlb.com/tickets?partnerId=54P3ZB91-222T"><img id="i6" src="http://www.ticketexchange.site/wp-content/uploads/2016/02/MLB-1.jpg"
         alt="pic" height="40px"> Purchase Tickets</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://www.mlbshop.com/?_s=bm-mlbcom-hp"><img id="i4" src="https://www.mlbshop.com/content/ws/all/ba60664d-e1d2-4462-bbc7-59f86d006441.svg"
+    <a class="nav-link" href="https://www.mlb.com/fantasy"><img id="i7" src="https://securea.mlb.com/assets/images/2/1/2/296906212/cuts/320x180/cut.png"
+        alt="pic" height="40px"> Fantasy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.mlb.com/live-stream-games/subscribe/offseason?affiliateid=megamenu"><img id="i8"
+        src="https://www.mlbstatic.com/mlb.com/builds/site-core/f92106dac9829f9903af5fbb600632aa13936d68_1547149022/images/logos/product-on-dark/mlb-tv.svg"
+        alt="pic" height="40px"> MLB TV</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.mlbshop.com/?_s=bm-mlbcom-hp"><img id="i9" src="https://www.mlbshop.com/content/ws/all/ba60664d-e1d2-4462-bbc7-59f86d006441.svg"
         alt="pic" height="40px"> Online Store</a>
   </li>
 </ul>
@@ -39,7 +60,7 @@
 </div>
 
 <!-- Container beside video -->
-<div id="sidevideo">
+<div class="animated bounceIn" id="sidevideo">
   <div class="tab">
     <button class="tablinks" (click)="openCity(event, 'Facebook')">Facebook</button>
     <button class="tablinks" (click)="openCity(event, 'Twitter')">Twitter</button>
@@ -52,7 +73,8 @@
   </div>
   <!-- Twitter API -->
   <div id="Twitter" class="tabcontent" style="float:right; width: 100%">
-    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/MLB?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by MLB</a>
+    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/MLB?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets
+      by MLB</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <!-- Twitter API 2 -->
@@ -66,38 +88,64 @@
 <div class="animated bounceIn" id="shop">
   <h3>Shop</h3>
   <div id="item-container">
-    <h5 id="item-txt">MLB T-Shirt - $99.99 <a href=""><button
+    <h5 id="item-txt">MLB T-Shirt - $99.99 <a href="https://www.mlbshop.com/boston-red-sox/mens-boston-red-sox-majestic-white-home-cool-base-team-jersey/t-25008520+p-7854147645077+z-9-1139381859"><button
           class="btn btn-success" id="buy" (click)="purchase(id)">Purchase</button></a></h5>
-    <a id="item" href="">
+    <a id="item" href="https://www.mlbshop.com/boston-red-sox/mens-boston-red-sox-majestic-white-home-cool-base-team-jersey/t-25008520+p-7854147645077+z-9-1139381859">
       <img id="item-img" src="https://fanatics.frgimages.com/FFImage/thumb.aspx?ans=v1&i=/productimages/_1939000/altimages/FF_1939175ALT1_full.jpg&w=600"
         alt="n/a" height="" width="100%">
     </a>
   </div>
   <div id="item-container">
-    <h5 id="item-txt">MLB T-Shirt 2 - $8.95 <a href=""><button
+    <h5 id="item-txt">MLB T-Shirt 2 - $8.95 <a href="https://www.mlbshop.com/boston-red-sox/mens-boston-red-sox-majestic-white-home-cool-base-team-jersey/t-25008520+p-7854147645077+z-9-1139381859"><button
           class="btn btn-success" id="buy" (click)="purchase(id)">Purchase</button></a></h5>
-    <a id="item" href="">
-      <img id="item-img" src="https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3144000/ff_3144222_full.jpg&w=340" alt="n/a"
-        height="" width="100%">
+    <a id="item" href="https://www.mlbshop.com/boston-red-sox/mens-boston-red-sox-majestic-white-home-cool-base-team-jersey/t-25008520+p-7854147645077+z-9-1139381859">
+      <img id="item-img" src="https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3144000/ff_3144222_full.jpg&w=340"
+        alt="n/a" height="" width="100%">
     </a>
   </div>
 </div>
 
 <!-- Container under video -->
-<div class="animated bounceIn" id="undervideo">
-  <div id="item-container">
-    placeholder for container title
-  </div>
-  <div id="item-container">
-    placeholder
-  </div>
-  <div id="item-container">
-    placeholder
-  </div>
-  <div id="item-container">
-    placeholder
-  </div>
-</div>
+<table class="animated bounceIn" id="undervideo">
+  <tr>
+    <td colspan="3">
+      <h5>Sample Player Statistics</h5>
+    </td>
+  </tr>
+  <tr>
+    <th>Vladimir Guerrero Jr.</th>
+    <th>Fernando Tatis Jr.</th>
+    <th>Eloy Jimenez</th>
+  </tr>
+  <tr style="width: 100%">
+    <td><img src="http://m.mlb.com/assets/images/7/1/2/289449712/cuts/180x218/cut.jpg" alt="player photo"></td>
+    <td><img src="http://m.mlb.com/assets/images/0/2/2/275230022/cuts/180x218/cut.jpg" alt="player photo"></td>
+    <td><img src="http://m.mlb.com/assets/images/3/6/6/283204366/cuts/180x218/cut.jpg" alt="player photo"></td>
+  </tr>
+  <tr>
+    <td>
+      Team: Buffalo Bisons (AAA)<br>
+      Position: 3B<br>
+      Scouting grades: Hit: 80 | Power: 65 | Run: 45 | Arm: 55 | Field: 45 | Overall: 70<br>
+      Signed: July 2, 2015 - TOR
+    </td>
+    <td>
+      Team: Amarillo Sod Poodles (AA)<br>
+      Position: SS<br>
+      Scouting grades: Hit: 60 | Power: 60 | Run: 50 | Arm: 60 | Field: 55 | Overall: 70<br>
+      Signed: July 2, 2015 - CWS
+    </td>
+    <td>
+      Team: Chicago White Sox<br>
+      Position: OF<br>
+      Scouting grades: Hit: 60 | Power: 70 | Run: 40 | Arm: 50 | Field: 45 | Overall: 65<br>
+      Signed: Aug. 1, 2013 - CHC
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"><a href="http://m.mlb.com/prospects/2018">MLB.com for more statistics</a></td>
+  </tr>
+</table>
 
 <!-- Below line separates page styling to prevent issues. Forces footer down. -->
 <div style="clear:both;"></div>

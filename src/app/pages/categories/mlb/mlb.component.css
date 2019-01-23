@@ -65,7 +65,7 @@ div#video{
     margin-right: 2%;
     margin-bottom: 2%;
 }
-div#undervideo{
+#undervideo{
     color: white;
     position: relative;
     float: left;
@@ -78,6 +78,11 @@ div#undervideo{
     overflow: auto;
     margin-left: 2%; 
     margin-right: 2%;
+}
+tr,td,th{
+    border: 1px solid;
+    border-style: solid;
+    border-collapse: collapse;
 }
 div#sidevideo{
     color: white;
