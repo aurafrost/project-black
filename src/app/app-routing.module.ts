@@ -37,6 +37,7 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component'
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -74,6 +75,7 @@ const routes: Routes = [
 {path: 'nba', component: NbaComponent},
 {path: 'stats', component: StatsComponent},
 {path: 'calendar', component: CalendarComponent},
+{path: 'testDisplay', component: TestDisplayComponent},
 {path: '**', component: ErrComponent}
 ];
 

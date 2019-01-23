@@ -14,7 +14,7 @@ export class WillemdafoeComponent implements OnInit {
   htmlele:HTMLElement;
 
   constructor(private service:UserService) {
-    this.user = new User(null, 'Will', 'willemdafoe@test.com', 'Willem', 'Dafoe');
+    this.user = new User(null, 'willemdafoe@test.com', 'Willem', 'Dafoe');
    }
 
   ngOnInit() {
@@ -29,7 +29,6 @@ export class WillemdafoeComponent implements OnInit {
   edit(){
     this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
     this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
     this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
     //this.service.setUser(this.user.uid);
     this.ngOnInit();

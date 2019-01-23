@@ -60,7 +60,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   @ViewChild('editBlock') editBlock: ElementRef;
 
   constructor(private service: UserService) {
-    this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
+    this.user = new User(null, 'test@test.com', 'Test', 'User');
   }
 
   ngOnInit() {

@@ -10,8 +10,8 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth = new BehaviorSubject<Object>(null);
-  $auth = this.auth.asObservable();
+  private auth;
+  $auth;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,10 +20,13 @@ export class AuthService {
     private ngZone: NgZone, // service to remove outside scope warning
     private userService: UserService
   ) {
+    this.auth = new BehaviorSubject<Object>({});
+    this.$auth = this.auth.asObservable();
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      console.log(auth);
-      if (auth) {
+      console.log("auth");
+      console.log(this.auth);
+      if (this.auth.next) {
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
       } else {
@@ -72,12 +75,7 @@ export class AuthService {
           // TODO: open login model or redirect to login page
         });
         user.uid = auth.user.uid;
-        this.userService.createUser(auth.user.uid, user)
-          .then(res => {
-            console.log('user Added!');
-          }).catch(err => {
-            console.log(err.message);
-        });
+        this.userService.createUser(auth.user.uid, user);
       }).catch(err => {
         window.alert(err.message);
       });
@@ -88,7 +86,7 @@ export class AuthService {
       .then(() => {
         localStorage.removeItem('auth');
         // this.auth.next(null);
-        this.router.navigate(['home']);
+        this.router.navigate(['']);
       });
   }
 }
