@@ -1,10 +1,8 @@
 div#page{
     width:100%;
-    min-height: 1200px;
-    opacity: .2;
     background-image: url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F869221440%2F960x0.jpg%3Ffit%3Dscale");
-    background-repeat: round;
-    position: absolute;
+    background-repeat: repeat;
+    background-blend-mode: hard-light;
     z-index: -1;
 }
 div#textSpace{
@@ -70,7 +68,6 @@ div#video{
     position: relative;
     float: left;
     width: 66%;
-    max-height:50%; 
     background-color: #363636;
     border: 2px 2px 2px 2px #da4453;
     border-style: solid;
