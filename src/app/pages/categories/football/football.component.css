@@ -1,6 +1,12 @@
-div#page{
+#page{
     width:100%;
-    height: auto;
+    overflow: hidden;
+    height: 40rem;
+    background-image: url('/assets/nfl.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100%;
+    z-index: -1;
 }
 iframe{
     display: block;

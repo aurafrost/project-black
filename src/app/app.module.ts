@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -88,6 +88,7 @@ import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -153,6 +154,7 @@ import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-sli
     StatsComponent,
     CalendarComponent,
     ZbHomeSlider2Component
+    TestDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -166,7 +168,7 @@ import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-sli
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'socialapp'),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
