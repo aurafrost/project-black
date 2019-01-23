@@ -49,18 +49,18 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
     ]),
   ]
 })
-export class ProfileComponent implements OnInit, AfterViewInit {
-  user: User;
-  htmlele: HTMLElement;
-  list: AngularFireList<any[]>;
-  friendsList;
-  posts;
-  state = 'loading';
-  @ViewChild('profile') profileBlock: ElementRef;
-  @ViewChild('editBlock') editBlock: ElementRef;
+export class ProfileComponent implements OnInit {
+  // user: User;
+  // htmlele: HTMLElement;
+  // list: AngularFireList<any[]>;
+  // friendsList;
+  // posts;
+  // state = 'loading';
+  // @ViewChild('profile') profileBlock: ElementRef;
+  // @ViewChild('editBlock') editBlock: ElementRef;
 
   constructor(private service: UserService) {
-    this.user = new User(null, 'test@test.com', 'Test', 'User');
+    // this.user = new User(null, 'test@test.com', 'Test', 'User');
   }
 
   ngOnInit() {
@@ -70,57 +70,55 @@ export class ProfileComponent implements OnInit, AfterViewInit {
    // this.editBlock.nativeElement.style.display = "none";
 
     //get from server
-    this.getFromServer();
+    // this.getFromServer();
 
   }
 
-  ngAfterViewInit() {
-    this.state = 'loaded';
-  }
+  // ngAfterViewInit() {
+    // this.state = 'loaded';
+  // }
 
-  getFromServer() {
-    this.friendsList = ['../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png'];
+  // getFromServer() {
+  //   this.friendsList = ['../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png'];
+  //
+  //   this.posts = ['Cras justo odio'
+  //     , 'Dapibus ac facilisis'
+  //     , 'Morbi leo risus'
+  //     , 'Porta ac consectetur '
+  //     , 'Vestibulum at eros'
+  //     , 'Cras justo odio']
+  // }
 
-    this.posts = ['Cras justo odio'
-      , 'Dapibus ac facilisis'
-      , 'Morbi leo risus'
-      , 'Porta ac consectetur '
-      , 'Vestibulum at eros'
-      , 'Cras justo odio']
-  }
 
+  // edit() {
 
-  edit() {
-    
     //this.categories.setUser(this.user.uid);
-    this.ngOnInit();
-  }
+    // this.ngOnInit();
+  // }
 
-  showEdit() {
-    this.profileBlock.nativeElement.style.display = "none";
-    this.editBlock.nativeElement.style.display = "block";
-  }
+  // showEdit() {
+  //   this.profileBlock.nativeElement.style.display = "none";
+  //   this.editBlock.nativeElement.style.display = "block";
+  // }
 
   //will need refactoring
-  deletePost(id) {
-
-    console.log(id);
-    var r = confirm("Delete post?");
-    if (r == true) {
-      this.htmlele = document.getElementById(id) as HTMLElement;
-      this.htmlele.parentNode.removeChild(this.htmlele);
-    }
-  }
-
-
+  // deletePost(id) {
+  //
+  //   console.log(id);
+  //   var r = confirm("Delete post?");
+  //   if (r == true) {
+  //     this.htmlele = document.getElementById(id) as HTMLElement;
+  //     this.htmlele.parentNode.removeChild(this.htmlele);
+  //   }
+  // }
 }
