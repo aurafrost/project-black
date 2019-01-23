@@ -50,10 +50,10 @@ import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component'
 import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
-import { FormUploadComponent } from './upload/form-upload/form-upload.component'; 
+import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './upload/details-upload/details-upload.component'
-import { ImageComponent } from './upload/image/image.component'
+import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+import { ImageComponent } from './upload/image/image.component';
 
 import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
 import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
@@ -153,7 +153,7 @@ import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-sli
     JackiechanComponent,
     StatsComponent,
     CalendarComponent,
-    ZbHomeSlider2Component
+    ZbHomeSlider2Component,
     TestDisplayComponent
   ],
   imports: [
