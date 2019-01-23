@@ -18,7 +18,7 @@ export class JayzComponent implements OnInit {
    }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
+    //this.user=this.categories.getUser();
     this.profile=document.getElementById("profile") as HTMLElement;
     this.profile.style.display="flex";   
     this.editBlock=document.getElementById("editBlock") as HTMLElement;
@@ -30,7 +30,7 @@ export class JayzComponent implements OnInit {
     this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
     this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
     this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
-    //this.service.setUser(this.user.uid);
+    //this.categories.setUser(this.user.uid);
     this.ngOnInit();
   }
 

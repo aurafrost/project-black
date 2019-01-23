@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
+    //this.user=this.categories.getUser();
     
    // this.profileBlock.nativeElement.style.display = "flex";
    // this.editBlock.nativeElement.style.display = "none";
@@ -102,7 +102,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   edit() {
     
-    //this.service.setUser(this.user.uid);
+    //this.categories.setUser(this.user.uid);
     this.ngOnInit();
   }
 
