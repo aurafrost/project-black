@@ -17,7 +17,7 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
     private router: Router,
-    private ngZone: NgZone, // service to remove outside scope warning
+    private ngZone: NgZone, // categories to remove outside scope warning
     private userService: UserService
   ) {
     this.auth = new BehaviorSubject<Object>({});

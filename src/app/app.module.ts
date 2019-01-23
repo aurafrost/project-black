@@ -95,6 +95,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 
 
 @NgModule({
@@ -152,6 +153,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     JackiechanComponent,
     StatsComponent,
     CalendarComponent,
+    ZbHomeSlider2Component
     TestDisplayComponent
   ],
   imports: [
@@ -199,7 +201,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     }),
     FlatpickrModule.forRoot(),
     NgbModalModule,
-
   ],
   providers: [
     AuthGuard,
