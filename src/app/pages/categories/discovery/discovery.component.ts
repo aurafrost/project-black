@@ -12,6 +12,9 @@ export class DiscoveryComponent implements OnInit {
   ngOnInit() {
   }
 
+  subscribe(name){
+
+  }
   purchase(id) {
 
   }

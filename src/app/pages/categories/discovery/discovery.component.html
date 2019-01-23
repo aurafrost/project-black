@@ -1,60 +1,32 @@
 <!-- Background image -->
 <div id="page"></div>
 
-<!-- First set of image links -->
-<!-- <nav class="nav nav-pills nav-justified" style="position: relative;">
-  <a class="nav-item nav-link" href="https://www.discovery.com/"><img id="i1" src="https://www.broadcastingcable.com/.image/t_share/MTU2MDc2MTgyMTAwNTE4NjQw/discovery-channel-logo_resized_bc.png"
-    alt="pic" height="1%;">Discovery Channel</a>
-  <a class="nav-item nav-link" href="#">Link</a>
-  <a class="nav-item nav-link" href="#">Link</a>
-  <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-</nav> -->
+<!-- Nav bar links -->
 <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
   <li class="nav-item">
     <a class="nav-link" href="https://www.discovery.com/"><img id="i1" src="https://www.broadcastingcable.com/.image/t_share/MTU2MDc2MTgyMTAwNTE4NjQw/discovery-channel-logo_resized_bc.png"
-        alt="pic" height="20px"> Discovery Channel</a>
+        alt="pic" height="40px"> Discovery Channel</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="http://www.oprah.com/app/own-tv.html"><img id="i2" src="https://vignette.wikia.nocookie.net/logopedia/images/6/66/Oprah_Winfrey_Network_2010b.png/revision/latest?cb=20101029115211"
-        alt="pic" height="20px"> Oprah Winfrey Network</a>
+        alt="pic" height="40px"> Oprah Winfrey Network</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="http://www.oprah.com/app/own-tv-shows.html"><img id="i3" src="https://static.oprah.com/2018/10/readytolove-2560x1440.jpg"
-        alt="pic" height="20px"> OWN Shows</a>
+        alt="pic" height="40px"> OWN Shows</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="https://store.discovery.com/"><img id="i4" src="http://www.discoverykidslv.org/wp-content/uploads/2013/02/Panoramic.jpg"
-        alt="pic" height="20px"> Online Store</a>
+        alt="pic" height="40px"> Online Store</a>
   </li>
 </ul>
-<!-- <span id="content" style="position: relative; width: 100%; height: 20%;">
-  <a class="animated bounceIn" href="https://www.discovery.com/" style="position: relative; float:left; width:25%;">
-    <img id="i1" src="https://www.broadcastingcable.com/.image/t_share/MTU2MDc2MTgyMTAwNTE4NjQw/discovery-channel-logo_resized_bc.png"
-      alt="pic" height="100%" width="100%">
-    <span id="hvrtxt" style="float:left; height:100%; width: 100%;"></span>
-  </a>
-  <a class="animated bounceIn" href="http://www.oprah.com/app/own-tv.html" style="position: relative; float:left; width:25%;">
-    <img id="i2" src="https://vignette.wikia.nocookie.net/logopedia/images/6/66/Oprah_Winfrey_Network_2010b.png/revision/latest?cb=20101029115211"
-      alt="pic" height="100%" width="100%">
-    <span id="hvrtxt" style="float:left; height:100%; width: 100%;"></span>
-  </a>
-  <a class="animated bounceIn" href="http://www.oprah.com/app/own-tv-shows.html" style="position: relative; float:left; width:25%;">
-    <img id="i3" src="https://static.oprah.com/2018/10/readytolove-2560x1440.jpg" alt="pic" height="100%" width="100%">
-    <span id="hvrtxt" style="float:left; height:100%; width: 100%;">OWN Shows</span>
-  </a>
-  <a class="animated bounceIn" href="https://store.discovery.com/" style="position: relative; float:left; width:25%;">
-    <img id="i4" src="http://www.discoverykidslv.org/wp-content/uploads/2013/02/Panoramic.jpg" alt="pic" height="100%"
-      width="100%">
-    <span id="hvrtxt" style="float:left; height:100%; width: 100%;">Online Store</span>
-  </a>
-</span> -->
 
 <!-- Below line separates page styling to prevent issues -->
 <div style="clear:both;"></div>
 
 <!-- Welcome text -->
 <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
-  <h1 class="animated bounceIn">Discovery Channel</h1><br>
+  <h1 class="animated bounceIn">Discovery Channel  <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe | +</button></h1><br>
 </span>
 
 <!-- Below line separates page styling to prevent issues -->
@@ -86,7 +58,7 @@
   </div>
 </div>
 
-<!-- Shop - should be on right of page under store -->
+<!-- Shop - under sidevideo container -->
 <div class="animated bounceIn" id="shop">
   <h3>Shop</h3>
   <div id="item-container">
