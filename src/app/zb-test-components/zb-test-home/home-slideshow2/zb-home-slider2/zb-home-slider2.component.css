@@ -40,8 +40,7 @@
   min-height: 160px;
   margin: 8px 16px;
   border-radius: 4px;
-
-  background-color: #fff;
+  background-color: #7f7f7f !important;
 }
 
 .action-container {
@@ -107,28 +106,13 @@ mat-card {
   background-color: #F2F2F2;
 }
 
-/*Implemented by Jacob*/
-/*mat-card-content {*/
-  /*overflow: hidden !important;*/
-/*}*/
-
 mat-icon {
   height: auto;
   width: auto;
+  cursor: pointer;
 }
-
-/*.swiper-container {*/
-  /*overflow: hidden;*/
-/*}*/
 
 .swiper-slide, .swiper {
   /*height: fit-content !important;*/
   overflow: hidden!important;
 }
-
-/*.swiper-wrapper, .card-container {*/
-  /*height: fit-content!important;*/
-  /*min-height: fit-content !important;*/
-  /*overflow: hidden;*/
-/*}*/
-

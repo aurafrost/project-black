@@ -1,11 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
-  SwiperScrollbarInterface, SwiperPaginationInterface, SwiperFadeEffectInterface, SwiperCubeEffectInterface } from 'ngx-swiper-wrapper';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { SwiperConfigInterface, } from 'ngx-swiper-wrapper';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Observable} from 'rxjs';
-import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
-import {animate, state, style, transition, trigger, query, stagger, keyframes, AnimationFactory} from '@angular/animations';
+import {animate, state, style, transition, trigger, query, stagger} from '@angular/animations';
 import {AnimationBuilder} from '@angular/animations';
 
 @Component({
@@ -42,17 +39,12 @@ import {AnimationBuilder} from '@angular/animations';
     ])
   ]
 })
-// state('default', style({ transform: 'rotate(0)' })),
-//   state('rotated', style({ transform: 'rotate(-360deg)' })),
-//   transition('rotated => default', animate('400ms ease-out')),
-//   transition('default => rotated', animate('400ms ease-in'))
+
 export class ZbHomeSlider2Component implements OnInit {
-  @ViewChild('swiper') swiperRef: ElementRef;
-  private closeAnimation: AnimationFactory;
-  private openAnimation: AnimationFactory;
-  isHover = false;
+  @Output() onCategorySelect: EventEmitter<any> = new EventEmitter<any>();
+  @Input() init;
   currentCategory = 1;
-  public show: boolean = true;
+  public show = true;
 
   public slides = [
     {index: 1, title: 'Business', svg: 'business'},
@@ -65,9 +57,9 @@ export class ZbHomeSlider2Component implements OnInit {
     {index: 8, title: 'Music', svg: 'music'},
     {index: 9, title: 'Movies', svg: 'movies'}
   ];
-  public type: string = 'component';
+  public type = 'component';
 
-  public disabled: boolean = false;
+  public disabled = false;
 
   public config: SwiperConfigInterface = {
     autoHeight: true,
@@ -79,24 +71,11 @@ export class ZbHomeSlider2Component implements OnInit {
     scrollbar: true,
     autoplay: false,
     breakpoints: {
-      1080: {
-        slidesPerView: 7
-      },
-      1024: {
-        slidesPerView: 6,
-        // spaceBetween: 40,
-      },
-      840: {
-        slidesPerView: 5,
-        // spaceBetween: 30,
-      },
-      640: {
-        slidesPerView: 4,
-        // spaceBetween: 20,
-      },
-      540: {
-        slidesPerView: 3
-      },
+      1080: {slidesPerView: 7},
+      1024: {slidesPerView: 6},
+      840: {slidesPerView: 5},
+      640: {slidesPerView: 4},
+      540: {slidesPerView: 3},
     }
   };
 
@@ -104,7 +83,6 @@ export class ZbHomeSlider2Component implements OnInit {
     private _builder: AnimationBuilder,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private breakpointObserver: BreakpointObserver
   ) {
     this.matIconRegistry.addSvgIcon('business', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/business.svg'));
     this.matIconRegistry.addSvgIcon('sports', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/sports.svg'));
@@ -115,21 +93,9 @@ export class ZbHomeSlider2Component implements OnInit {
     this.matIconRegistry.addSvgIcon('news', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/news.svg'));
     this.matIconRegistry.addSvgIcon('music', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/music.svg'));
     this.matIconRegistry.addSvgIcon('movies', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/category_icons/movies.svg'));
-    this.openAnimation = this._builder.build([
-      style({ transform: 'rotateY(-360deg)' }),
-      animate('1s')
-    ]);
   }
 
   ngOnInit() {
-  }
-
-  makeAnimation(element: any) {
-    const myAnimation = this._builder.build([
-      style({ transform: 'rotateY(-360deg)' }),
-      animate('1s')
-    ]);
-    myAnimation.create(element).play();
   }
 
   public hover(e) {
@@ -147,26 +113,10 @@ export class ZbHomeSlider2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
-    // this.makeAnimation(this.swiperRef.nativeElement);
   }
 
-  // public toggleDirection(): void {
-  //   this.config.direction = (this.config.direction === 'horizontal') ? 'vertical' : 'horizontal';
-  // }
-  //
-  // public toggleSlidesPerView(): void {
-  //   if (this.config.slidesPerView !== 1) {
-  //     this.config.slidesPerView = 1;
-  //   } else {
-  //     this.config.slidesPerView = 2;
-  //   }
-  // }
-  //
-  // public toggleKeyboardControl(): void {
-  //   this.config.keyboard = !this.config.keyboard;
-  // }
-  //
-  // public toggleMouseWheelControl(): void {
-  //   this.config.mousewheel = !this.config.mousewheel;
-  // }
+  onCategoryClick(category) {
+    console.log(category);
+    this.onCategorySelect.emit(category);
+  }
 }

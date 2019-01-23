@@ -30,14 +30,14 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
+    //this.user=this.categories.getUser();
     this.displayBlock.nativeElement.style.display = "block";
     this.editBlock.nativeElement.style.display = "none";
   }
 
   edit(){
     //this currently changes the default values, but in reality should hit the db, update the table, then display the updated info
-    //this.service.setUser(this.user.uid);
+    //this.categories.setUser(this.user.uid);
     this.user.cardNum = this.cardNum;
     this.user.cardCVV = this.cardCVV;
     this.user.cardName = this.cardName;
@@ -55,6 +55,6 @@ export class AccountComponent implements OnInit {
   }
 
   deleteAccount(){
-    //this.service.deleteUser(this.user.uid);
+    //this.categories.deleteUser(this.user.uid);
   }
 }

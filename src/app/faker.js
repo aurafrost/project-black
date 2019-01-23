@@ -14209,7 +14209,7 @@ module["exports"] = [
   "projection",
   "protocol",
   "secured line",
-  "service-desk",
+  "categories-desk",
   "software",
   "solution",
   "standardization",
