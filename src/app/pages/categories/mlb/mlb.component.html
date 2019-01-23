@@ -48,8 +48,7 @@
   <!-- Welcome text -->
   <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
     <h1 style="color: white;" class="animated bounceIn">MLB <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
-        |
-        +</button></h1><br>
+        | +</button></h1><br>
   </span>
 
   <!-- Below line separates page styling to prevent issues -->
@@ -107,58 +106,56 @@
   </div>
 
   <!-- Container under video -->
-  <div class="table-responsive" id="undervideo">
-    <table class="table table-hover animated bounceIn">
-      <thead>
-        <tr>
-          <td colspan="4">
-            <h5>Sample Player Statistics</h5>
-          </td>
-        </tr>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Vladimir Guerrero Jr.</th>
-          <th scope="col">Fernando Tatis Jr.</th>
-          <th scope="col">Eloy Jimenez</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Photo</th>
-          <td><img src="http://m.mlb.com/assets/images/7/1/2/289449712/cuts/180x218/cut.jpg" alt="player photo"></td>
-          <td><img src="http://m.mlb.com/assets/images/0/2/2/275230022/cuts/180x218/cut.jpg" alt="player photo"></td>
-          <td><img src="http://m.mlb.com/assets/images/3/6/6/283204366/cuts/180x218/cut.jpg" alt="player photo"></td>
-        </tr>
-        <tr>
-          <th scope="row">Team</th>
-          <td>Buffalo Bisons (AAA)</td>
-          <td>Amarillo Sod Poodles (AA)</td>
-          <td>Chicago White Sox</td>
-        </tr>
-        <tr>
-          <th scope="row">Position</th>
-          <td>3B</td>
-          <td>SS</td>
-          <td>OF</td>
-        </tr>
-        <tr>
-          <th scope="row">Scouting Grades</th>
-          <td>Scouting grades: Hit: 80 | Power: 65 | Run: 45 | Arm: 55 | Field: 45 | Overall: 70</td>
-          <td>Scouting grades: Hit: 60 | Power: 60 | Run: 50 | Arm: 60 | Field: 55 | Overall: 70</td>
-          <td>Scouting grades: Hit: 60 | Power: 70 | Run: 40 | Arm: 50 | Field: 45 | Overall: 65</td>
-        </tr>
-        <tr>
-          <th scope="row">Signed</th>
-          <td>July 2, 2015 - TOR</td>
-          <td>July 2, 2015 - CWS</td>
-          <td>Aug. 1, 2013 - CHC</td>
-        </tr>
-      </tbody>
+  <table class="table table-hover table-responsive animated bounceIn" id="undervideo">
+    <thead>
+      <tr>
+        <td colspan="4">
+          <h5>Sample Player Statistics</h5>
+        </td>
+      </tr>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Vladimir Guerrero Jr.</th>
+        <th scope="col">Fernando Tatis Jr.</th>
+        <th scope="col">Eloy Jimenez</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Photo</th>
+        <td><img src="http://m.mlb.com/assets/images/7/1/2/289449712/cuts/180x218/cut.jpg" alt="player photo"></td>
+        <td><img src="http://m.mlb.com/assets/images/0/2/2/275230022/cuts/180x218/cut.jpg" alt="player photo"></td>
+        <td><img src="http://m.mlb.com/assets/images/3/6/6/283204366/cuts/180x218/cut.jpg" alt="player photo"></td>
+      </tr>
+      <tr>
+        <th scope="row">Team</th>
+        <td>Buffalo Bisons (AAA)</td>
+        <td>Amarillo Sod Poodles (AA)</td>
+        <td>Chicago White Sox</td>
+      </tr>
+      <tr>
+        <th scope="row">Position</th>
+        <td>3B</td>
+        <td>SS</td>
+        <td>OF</td>
+      </tr>
+      <tr>
+        <th scope="row">Scouting Grades</th>
+        <td>Hit: 80 | Power: 65 | Run: 45 | Arm: 55 | Field: 45 | Overall: 70</td>
+        <td>Hit: 60 | Power: 60 | Run: 50 | Arm: 60 | Field: 55 | Overall: 70</td>
+        <td>Hit: 60 | Power: 70 | Run: 40 | Arm: 50 | Field: 45 | Overall: 65</td>
+      </tr>
+      <tr>
+        <th scope="row">Signed</th>
+        <td>July 2, 2015 - TOR</td>
+        <td>July 2, 2015 - CWS</td>
+        <td>Aug. 1, 2013 - CHC</td>
+      </tr>
       <tr>
         <td colspan="4"><a href="http://m.mlb.com/prospects/2018">MLB.com for more statistics</a></td>
       </tr>
-    </table>
-  </div>
+    </tbody>
+  </table>
   <!-- Below line separates page styling to prevent issues. Forces footer down. -->
   <div style="clear:both;"></div>
 </div>
