@@ -67,6 +67,25 @@
   <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/u-SOkIoeCuQ?autoplay=1" allow="autoplay; encrypted-media"></iframe> -->
 </div>
 
+<!-- Container beside video -->
+<div id="sidevideo">
+  <div class="tab">
+    <button class="tablinks" (click)="openCity(event, 'Facebook')">Facebook</button>
+    <button class="tablinks" (click)="openCity(event, 'Twitter')">Twitter</button>
+  </div>
+  <!-- Facebook API -->
+  <div id="Facebook" class="tabcontent" style="float:left; width: 100%">
+    <div style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/Discovery/"
+      data-hide-cover="false"></div>
+  </div>
+  <!-- Twitter API -->
+  <div id="Twitter" class="tabcontent" style="float:right; width: 100%">
+    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/Discovery?ref_src=twsrc%5Etfw">Tweets by
+      Discovery</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+
 <!-- Shop - should be on right of page under store -->
 <div class="animated bounceIn" id="shop">
   <h3>Shop</h3>
@@ -88,8 +107,7 @@
   </div>
 </div>
 
-<!-- Container under video -->
-<div class="animated bounceIn" id="undervideo">
+<!-- <div class="animated bounceIn" id="undervideo">
   <div id="item-container">
     placeholder for container title
   </div>
@@ -102,6 +120,7 @@
   <div id="item-container">
     placeholder
   </div>
-</div>
+</div> -->
+
 <!-- Below line separates page styling to prevent issues. Forces footer down. -->
 <div style="clear:both;"></div>
