@@ -25,6 +25,7 @@ import { SearchComponent } from './shared/search/search.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { AuthService } from './core/services/auth/auth.service';
 import { UserService } from './core/services/user/user.service';
+import { ImageService } from './core/services/image/image.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -208,6 +209,7 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     AuthGuard,
     AuthService,
     UserService,
+    ImageService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
