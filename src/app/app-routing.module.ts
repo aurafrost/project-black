@@ -38,6 +38,7 @@ import { NbaComponent } from './pages/categories/nba/nba.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component'
+import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 
@@ -79,6 +80,7 @@ const routes: Routes = [
 {path: 'stats', component: StatsComponent},
 {path: 'calendar', component: CalendarComponent},
 {path: 'testDisplay', component: TestDisplayComponent},
+{path: 'sports', component: SportsComponent},
 {path: 'organization', component: OrganizationComponent},
 {path: '**', component: ErrComponent}
 ];

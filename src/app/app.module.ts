@@ -98,6 +98,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
+import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
@@ -161,6 +162,7 @@ import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.com
     ZbHomeSlider2Component,
     TestDisplayComponent,
     ProfileContentComponent,
+    SportsComponent,
     OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent

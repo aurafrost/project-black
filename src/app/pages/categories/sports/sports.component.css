@@ -1,0 +1,41 @@
+#page {
+    height: 30rem;
+  }
+  
+  iframe{
+      display: none;
+  }
+  /*img#bg{*/
+      /*opacity: .2;*/
+      /*width:100%;*/
+      /*height: auto;*/
+  /*}*/
+  div#textSpace{
+    overflow: hidden;
+    text-align: center;
+    height: inherit;
+    background-color: black;
+  }
+  
+  h1{
+    background-color: transparent;
+      color: ghostwhite;
+  }
+  
+  .ball {
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+  }
+
+  #Basketball {
+    height: 275px;
+    width: auto;
+    left: 0;
+  }
+
+  #Baseball {
+      height: 75px;
+      width: auto;
+      left: 250px;
+  }

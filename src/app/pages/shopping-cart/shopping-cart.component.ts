@@ -27,6 +27,6 @@ export class ShoppingCartComponent implements OnInit {
           };
         });
       });
-    console.log(this.cartData);
+    
   }
 }

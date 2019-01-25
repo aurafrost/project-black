@@ -1,0 +1,14 @@
+<div id="page" style="position: relative">
+  <div id="textSpace" style="background-color: black; position: relative;transform-style: preserve-3d;transition: transform 1s;">
+    <h1 class="jumbotron jumbotron-fluid">{{title}}</h1>
+    
+      <img (mouseenter)="changeTitle($event)" (mouseleave)="setNormTitle()" routerLink="/mlb" class="ball" id="Basketball" src="/assets/png/basketball.jpg" alt="basketball">
+      <img (mouseenter)="changeTitle($event)" (mouseleave)="setNormTitle()" routerLink="/nba" class="ball" id="Baseball" src="/assets/png/baseball.png" alt="baseball">
+    
+    <!-- <img [@flyRight]='state' id="plane-left" src="assets/png/plane-left.png">
+    <img [@flyMiddle]='state' id="plane-middle" src="assets/png/plane-middle.png"/>
+    <img [@flyLeft]='state' id="plane-right" src="assets/png/plane-right.png"/> -->
+  </div>
+  <!--<img id="bg" src="../../../../assets/travel.jpg" alt="failed to load bg">-->
+
+</div>
