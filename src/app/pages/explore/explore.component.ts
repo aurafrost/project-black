@@ -3,6 +3,7 @@ import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { transition, trigger, query, style, stagger, animate, keyframes, sequence } from '@angular/animations';
+import { ImageService } from 'src/app/core/services/image/image.service';
 
 @Component({
   selector: 'explore',
@@ -46,7 +47,7 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
   ]
 })
 export class ExploreComponent implements OnInit {
-
+  topic:string;
   profiles = [
     { name: 'Kanye West', numSubs: 23111, postsMonth: 25, img: "../../../assets/png/kanye_200x200.png" },
     { name: 'Tom Cruise', numSubs: 17263, postsMonth: 10, img: "../../../assets/png/cruise_200x200.png" },
@@ -60,7 +61,8 @@ export class ExploreComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private service: ImageService
   ) {
     this.matIconRegistry.addSvgIcon('people_outline',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/sharp-people_outline-24px.svg'));
@@ -92,6 +94,11 @@ export class ExploreComponent implements OnInit {
 
   testFunc() {
     console.log(ViewChild.name)
+  }
+
+  setTopic(name){
+    this.service.setTopic(name);
+    this.router.navigate(['organization']);
   }
 
 }
