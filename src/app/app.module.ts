@@ -161,7 +161,7 @@ import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.com
     ZbHomeSlider2Component,
     TestDisplayComponent,
     ProfileContentComponent,
-    OrganizationComponent
+    OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent
   ],
