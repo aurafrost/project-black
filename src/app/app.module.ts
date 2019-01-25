@@ -98,6 +98,8 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
+import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
+import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 
 
 @NgModule({
@@ -157,7 +159,9 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     CalendarComponent,
     ZbHomeSlider2Component,
     TestDisplayComponent,
-    ProfileContentComponent
+    ProfileContentComponent,
+    ShoppingCartComponent,
+    TestShopComponent
   ],
   imports: [
     BrowserModule,
