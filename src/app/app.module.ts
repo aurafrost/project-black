@@ -97,6 +97,10 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
+import { ShoppingListComponent } from './pages/profile/shopping-list/shopping-list.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import {CartService} from './core/services/cart/cart.service';
+import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.component';
 
 
 @NgModule({
@@ -156,7 +160,10 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     CalendarComponent,
     ZbHomeSlider2Component,
     TestDisplayComponent,
-    ProfileContentComponent
+    ProfileContentComponent,
+    ShoppingListComponent,
+    ShoppingCartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
@@ -208,6 +215,7 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     AuthGuard,
     AuthService,
     UserService,
+    CartService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG

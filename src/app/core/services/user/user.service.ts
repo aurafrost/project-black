@@ -9,7 +9,7 @@ import {User} from '../../models/User';
   providedIn: 'root'
 })
 export class UserService {
-  private userCollection:AngularFirestoreCollection<User>;
+  private userCollection: AngularFirestoreCollection<User>;
   private users: Observable<User[]>;
   private userArr: User[];
   private userDoc: AngularFirestoreDocument<User>;
@@ -17,15 +17,15 @@ export class UserService {
 
   constructor(
     private afstore: AngularFirestore
-  ) { 
-    this.userCollection = this.afstore.collection('test-users');
+  ) {
+    this.userCollection = this.afstore.collection('Users');
 
     this.users = this.userCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as User;
         data.uid = a.payload.doc.id;
         return data;
-      })
+      });
     })
 
     this.users.subscribe(u => {
@@ -36,7 +36,7 @@ export class UserService {
   }
 
   getUser() {
-    //return this.user;
+    // return this.user;
   }
 
   getUsers() {
