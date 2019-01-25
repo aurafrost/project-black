@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
 import { getNativeByIndex } from '@angular/core/src/render3/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'organization',
@@ -10,14 +11,16 @@ import { getNativeByIndex } from '@angular/core/src/render3/util';
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
   topic: string;
-  constructor(private service: ImageService) {
+  constructor(private service: ImageService, private router: Router) {
   }
 
   ngOnInit() {
     //check topic
     console.log(this.service.getTopic());
     this.topic = this.service.getTopic();
-
+    if(this.topic==null){
+      this.router.navigate(['/']);
+    }
     this.getBaseElements();
 
     //nav elements
