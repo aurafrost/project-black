@@ -21,6 +21,14 @@
     background-color: transparent;
       color: ghostwhite;
   }
+
+  #ballrow {
+      position: relative;
+      height: 55%;
+      min-height: 275px;
+      margin-left: 12%;
+      margin-right: 12%;
+  }
   
   .ball {
       background-color: transparent;
@@ -32,10 +40,33 @@
     height: 275px;
     width: auto;
     left: 0;
+    z-index: 1;
   }
 
   #Baseball {
       height: 75px;
       width: auto;
       left: 250px;
+      z-index: 3;
+  }
+
+  #Football {
+      height: 230px;
+      width: auto;
+      left: 320px;
+      z-index: 2;
+  }
+
+  #Soccer {
+      height: 275px;
+      width: auto;
+      left: 550px;
+      z-index: 1;
+  }
+
+  #Cricket {
+      height: 275px;
+      width: auto;
+      left: 750px;
+      z-index: 0;
   }
