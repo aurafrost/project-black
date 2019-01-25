@@ -8,11 +8,14 @@ import { Image } from 'src/app/core/models/Image';
   styleUrls: ['./livenation.component.css']
 })
 export class LivenationComponent implements OnInit {
-  image:any;
+  temp:HTMLElement;
   constructor(private service:ImageService) { 
-    this.image=service.getImage();
-    console.log("Document? "+service.getImage());
-    console.log("Image object: "+this.image.toString());
+    service.getImage().subscribe(data=>{
+      this.temp=document.getElementById('i1');
+      this.temp.setAttribute('src',data.url);
+    });
+    // console.log("Document? "+service.getImage());
+    // console.log("Image object: "+this.image);
   }
 
   ngOnInit() {

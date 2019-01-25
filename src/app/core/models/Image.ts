@@ -1,6 +1,6 @@
 export class Image{
     id:number;
-    url:String;
+    url:string;
     constructor(id?,url?){
         this.id=id;
         this.url=url;

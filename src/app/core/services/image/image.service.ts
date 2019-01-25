@@ -12,7 +12,7 @@ export class ImageService {
   constructor(private db: AngularFirestore) { }
 
   getImage(){
-    var collection=this.db.collection('image');
-    return collection.doc<Image>('livenation').valueChanges();
+    // var collection=this.db.doc('image');
+    return this.db.doc<Image>('image/livenation').valueChanges();
   }
 }
