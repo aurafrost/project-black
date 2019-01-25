@@ -1,8 +1,12 @@
 export class Image{
     id:number;
-    url:string;
-    constructor(id?,url?){
+    image:string;
+    href:string;
+    text:string;
+    constructor(id?,image?,href?,text?){
         this.id=id;
-        this.url=url;
+        this.image=image;
+        this.href=href;
+        this.text=text;
     }
 }
