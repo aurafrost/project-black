@@ -6,12 +6,12 @@
         <div class="view-content">
           <div class="views-row views-row-1 views-row-odd views-row-first chapter-rows row-introduction"
             data-revealer-color="#5087c7">
-            <div  [@itemFallAnimation] class="views-field views-field-field-image img-chapter">
+            <div [@itemFallAnimation] class="views-field views-field-field-image img-chapter">
               <div class="field-content">
                 <img typeof="foaf:Image" class="img-responsive" src="assets/png/microphone.png" alt="">
               </div>
             </div>
-            <div [@itemFallAnimation] class="views-field views-field-title title-chapter" name="img_name" (mouseover)="testFunc()" >
+            <div [@itemFallAnimation] class="views-field views-field-title title-chapter" name="img_name" (mouseover)="testFunc()">
               <span class="field-content">
                 <a href="music">Music</a>
               </span>
@@ -25,14 +25,12 @@
                   <li>
                     <a href="beyonce">Beyonce</a>
                   </li>
-                  <li>
-                    <button (click)="setTopic('livenation')">Test</button>
-                  </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div  [@itemFallAnimation] class="views-row views-row-2 views-row-even chapter-rows row-connections" data-revealer-color="#775592">
+          <div [@itemFallAnimation] class="views-row views-row-2 views-row-even chapter-rows row-connections"
+            data-revealer-color="#775592">
             <div class="views-field views-field-field-image img-chapter">
               <div class="field-content">
                 <img typeof="foaf:Image" class="img-responsive" src="assets/png/movies.jpg" alt="">
@@ -62,7 +60,8 @@
               </div>
             </div>
           </div>
-          <div  [@itemFallAnimation] class="views-row views-row-3 views-row-odd chapter-rows row-partnership" data-revealer-color="#00a7b7">
+          <div [@itemFallAnimation] class="views-row views-row-3 views-row-odd chapter-rows row-partnership"
+            data-revealer-color="#00a7b7">
             <div class="views-field views-field-field-image img-chapter">
               <div class="field-content">
                 <img typeof="foaf:Image" class="img-responsive" src="assets/png/sports.png" alt="">
@@ -86,7 +85,8 @@
               </div>
             </div>
           </div>
-          <div [@itemFallAnimation] class="views-row views-row-4 views-row-even chapter-rows row-finance" data-revealer-color="#7ac143">
+          <div [@itemFallAnimation] class="views-row views-row-4 views-row-even chapter-rows row-finance"
+            data-revealer-color="#7ac143">
             <div class="views-field views-field-field-image img-chapter">
               <div class="field-content">
                 <img typeof="foaf:Image" class="img-responsive" src="assets/png/travel.png" alt="">
@@ -100,14 +100,20 @@
             <div class="views-field views-field-field-sub-chapters title-subchapters">
               <div class="field-content" style="height: 246px;">
                 <ul>
-                  <li><a href="">Country 1</a></li>
+                  <li>
+                    <button (click)="setTopic('livenation')">Test</button>
+                  </li>
+                  <li>
+                    <button (click)="setTopic('mlb')">Test2</button>
+                  </li>
                   <li><a href="">Country 2</a></li>
                   <li><a href="">Country 3</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div [@itemFallAnimation] class="views-row views-row-5 views-row-odd chapter-rows row-measurement" data-revealer-color="#dd6a61">
+          <div [@itemFallAnimation] class="views-row views-row-5 views-row-odd chapter-rows row-measurement"
+            data-revealer-color="#dd6a61">
             <div class="views-field views-field-field-image img-chapter">
               <div class="field-content">
                 <img typeof="foaf:Image" class="img-responsive" src="assets/png/education.png" alt="">
