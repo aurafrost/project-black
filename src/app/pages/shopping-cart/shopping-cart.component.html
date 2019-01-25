@@ -1,13 +1,16 @@
 <div class="container ng-star-inserted">
   <div class="row">
-    <div class="col-8">
+    <div class="col-sm-">
+      <test-shop></test-shop>
+    </div>
+    <div class="col-sm">
       <div  class="row">
         <div *ngFor="let item of cart" class="col-4 ng-star-inserted">
           <cart-item [item]="item"></cart-item>
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-sm">
       <app-cart-calculator _ngcontent-c11="" _nghost-c12="" ng-reflect-products="[object Object],[object Object">
         <h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Your cart</span><span class="badge badge-primary badge-pill">2</span></h4>
         <ul class="list-group mb-3">

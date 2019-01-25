@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
+import {Router} from '@angular/router';
+import {CategoriesService} from '../../core/services/categories/categories.service';
 
 @Component({
   selector: 'home',
@@ -8,45 +8,22 @@ import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  none = 'none';
-  title = 'socialappbeta111';
-  pictures = [
-    {
-      id: 1,
-      title: 'A natural view',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg'
-    },
-    {
-      id: 2,
-      title: 'Newspaper',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg'
-    },
-    {
-      id: 3,
-      title: 'Favourite pizza',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg'
-    },
-    {
-      id: 4,
-      title: 'Abstract design',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg'
-    },
-    {
-      id: 5,
-      title: 'Tech',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/NO9CN3QYR3.jpg'
-    },
-    {
-      id: 6,
-      title: 'Nightlife',
-      img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/X1UK6NLGRU.jpg'
-    },
-  ];
-
+  category = 'Business';
+  data = [];
   constructor(
-    private breakpointObserver: BreakpointObserver
+    private categoriesSerevice: CategoriesService,
+    private router: Router
   ) { }
+
   ngOnInit() {
   }
 
+  getCategoryDetails(category) {
+    this.category = category;
+    this.categoriesSerevice.getHomePageCategory(category)
+      .subscribe(data => {
+        console.log(data);
+        this.data = data;
+      });
+  }
 }
