@@ -39,9 +39,11 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component'
 import { SportsComponent } from './pages/categories/sports/sports.component';
+import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
+  {path: 'cart', component: ShoppingCartComponent},
 {path: 'about', component: AboutComponent},
 {path: 'account', component: AccountComponent},
 {path: 'content', component: ContentComponent},
