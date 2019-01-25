@@ -37,7 +37,7 @@ export class OrganizationComponent implements OnInit {
       this.temp.innerText = data.title;
       //set background
       this.temp = document.getElementById('page');
-      this.temp.style.height = "2000px";
+      this.temp.style.height = "1000px";
       this.temp.style.backgroundImage = "url(" + data.bg + ")";
       this.temp.style.backgroundRepeat = "repeat";
       //set video
@@ -89,5 +89,10 @@ export class OrganizationComponent implements OnInit {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(name).style.display = "block";
     evt.currentTarget.className += " active";
+  }
+
+  ngOnDestroy() {
+    this.temp = document.getElementById('page');
+    this.temp.style.backgroundImage = "";
   }
 }
