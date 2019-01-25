@@ -25,6 +25,7 @@ import { SearchComponent } from './shared/search/search.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { AuthService } from './core/services/auth/auth.service';
 import { UserService } from './core/services/user/user.service';
+import { ImageService } from './core/services/image/image.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -97,10 +98,6 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
-import { ShoppingListComponent } from './pages/profile/shopping-list/shopping-list.component';
-import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import {CartService} from './core/services/cart/cart.service';
-import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.component';
 
 
 @NgModule({
@@ -160,10 +157,7 @@ import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.com
     CalendarComponent,
     ZbHomeSlider2Component,
     TestDisplayComponent,
-    ProfileContentComponent,
-    ShoppingListComponent,
-    ShoppingCartComponent,
-    CartItemComponent
+    ProfileContentComponent
   ],
   imports: [
     BrowserModule,
@@ -215,7 +209,7 @@ import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.com
     AuthGuard,
     AuthService,
     UserService,
-    CartService,
+    ImageService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
