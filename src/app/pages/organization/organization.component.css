@@ -1,7 +1,5 @@
 div#page{
     width:100%;
-    background-image: url("https://i.ytimg.com/vi/eOMnnlA0how/maxresdefault.jpg");
-    background-repeat: repeat;
     z-index: -1;
 }
 span{
