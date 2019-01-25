@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from 'src/app/core/services/image/image.service';
+import { Image } from 'src/app/core/models/Image';
 
 @Component({
   selector: 'livenation',
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./livenation.component.css']
 })
 export class LivenationComponent implements OnInit {
-
-  constructor() { }
+  image:any;
+  constructor(private service:ImageService) { 
+    this.image=service.getImage();
+    console.log("Document? "+service.getImage());
+    console.log("Image object: "+this.image.toString());
+  }
 
   ngOnInit() {
   }
