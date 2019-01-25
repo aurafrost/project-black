@@ -10,8 +10,8 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth;
-  $auth;
+    public auth = new BehaviorSubject<Object>({});
+    $auth = this.auth.asObservable();
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,12 +20,9 @@ export class AuthService {
     private ngZone: NgZone, // categories to remove outside scope warning
     private userService: UserService
   ) {
-    this.auth = new BehaviorSubject<Object>({});
-    this.$auth = this.auth.asObservable();
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      console.log("auth");
-      console.log(this.auth);
+      console.log(this.auth.value);
       if (this.auth.next) {
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
@@ -38,6 +35,10 @@ export class AuthService {
 
   get authenticated(): boolean {
     return this.auth != null;
+  }
+
+  getAuth() {
+    return this.auth;
   }
 
   // get currentUser(): any {
