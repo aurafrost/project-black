@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
+import { getNativeByIndex } from '@angular/core/src/render3/util';
 
 @Component({
   selector: 'organization',
@@ -7,32 +8,68 @@ import { ImageService } from 'src/app/core/services/image/image.service';
   styleUrls: ['./organization.component.css']
 })
 export class OrganizationComponent implements OnInit {
-  temp:HTMLElement;
-  topic:string;
-  constructor(private service:ImageService) { 
+  temp: HTMLElement;
+  topic: string;
+  constructor(private service: ImageService) {
   }
 
   ngOnInit() {
     //check topic
     console.log(this.service.getTopic());
-    this.topic=this.service.getTopic();
+    this.topic = this.service.getTopic();
 
+    this.getBaseElements();
+
+    //nav elements
+    this.getElements(1);
+    this.getElements(2);
+    this.getElements(3);
+    this.getElements(4);
+    this.getElements(5);
+  }
+
+  getBaseElements() {
     //get image doc
-    this.service.getImage(this.topic).subscribe(data=>{
-      //set image
-      this.temp=document.getElementById('i1');
-      this.temp.setAttribute('src',data.image);
-      //set href
-      this.temp=document.getElementById('h1');
-      this.temp.setAttribute('href',data.href);
-      //set text
-      this.temp=document.getElementById('t1');
-      this.temp.innerText=data.text;
+    this.service.getImage(this.topic).subscribe(data => {
+      //base elements
+      //set title
+      this.temp = document.getElementById('title');
+      this.temp.innerText = data.title;
+      //set background
+      this.temp = document.getElementById('page');
+      this.temp.style.height = "2000px";
+      this.temp.style.backgroundImage = "url(" + data.bg + ")";
+      this.temp.style.backgroundRepeat = "repeat";
+      //set video
+      this.temp = document.getElementById('videoframe');
+      this.temp.setAttribute('src', data.video);
+      //set fb
+      this.temp = document.getElementById('fb');
+      this.temp.setAttribute('data-href', data.facebook);
+      //set twitter
+      this.temp = document.getElementById('twitter');
+      this.temp.setAttribute('href', data.twitter);
     });
   }
-  subscribe(name){
+
+  getElements(id) {
+    this.service.getImagePath(this.topic, "nav/nav" + id).subscribe(data => {
+      //set image
+      this.temp = document.getElementById('i' + id);
+      this.temp.setAttribute('src', data.image);
+      //set href
+      this.temp = document.getElementById('h' + id);
+      this.temp.setAttribute('href', data.href);
+      //set text
+      this.temp = document.getElementById('t' + id);
+      this.temp.innerText = data.text;
+    });
+  }
+
+  subscribe(name) {
 
   }
+
   tabby(evt, name) {
     // Declare all variables
     var i, tabcontent, tablinks;

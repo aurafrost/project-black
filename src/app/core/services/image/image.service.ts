@@ -20,7 +20,11 @@ export class ImageService {
     return this.topic;
   }
 
-  getImage(link){
-    return this.db.doc<Image>(link+'/livenation').valueChanges();
+  getImage(base){
+    return this.db.doc<Image>('image/'+base).valueChanges();
+  }
+  
+  getImagePath(base,path){
+    return this.db.doc<Image>('image/'+base+"/"+path).valueChanges();
   }
 }
