@@ -52,8 +52,8 @@
     <div class="tab2">
       <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
       <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
-      <button id="eventssbtn" class="tablinks2" (click)="tabby2(event, 'EventsTab')">Events</button>
-      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar</button>
+      <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
+      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
       <button class="tablinks2" (click)="tabby2(event, '')">X</button>
     </div>
     <!-- Shop -->
@@ -79,15 +79,16 @@
     </div>
     <!-- News -->
     <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
-      
+      placeholder for news. No news is good news.
     </div>
-    <!-- Events -->
-    <div id="EventsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
-
+    <!-- About -->
+    <div id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      <!-- Placeholder using About us page. Not intended to stay. -->
+      <about></about>
     </div>
     <!-- Calendar -->
     <div id="CalendarTab" class="tabcontent2" style="width: 100%; overflow: auto;">
-
+      <calendar></calendar>
     </div>
   </div>
   
