@@ -14,14 +14,17 @@ export class ImageService {
   topic: string;
   constructor(private db: AngularFirestore) { }
 
-  setTopic(name) {
-    this.topic = name;
-    // this.db.doc('image/topic').update(name);
+  setTopic(name){
+    // this.topic=name;
+    const data={
+      topic:name,
+    }
+    this.db.doc('image/topic').update(data);
   }
 
-  getTopic() {
-    return this.topic;
-    // return this.db.doc<Topic>('image/topic').valueChanges();
+  getTopic(){
+    // return this.topic;
+    return this.db.doc<Topic>('image/topic').valueChanges();
   }
 
   getImage(base) {
@@ -32,7 +35,11 @@ export class ImageService {
     return this.db.doc<Image>('image/' + base + "/" + path).valueChanges();
   }
 
-  getShopList(base) {
+  getNavList(base){
+    return this.db.collection<Image>('image/'+base+'/nav').valueChanges();
+  }
+
+  getShopList(base){
     // return this.db.doc<Product>('image/'+base+"/"+path).valueChanges();
     return this.db.collection<Product>('image/' + base + '/shop').valueChanges();
   }

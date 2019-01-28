@@ -20,7 +20,7 @@ export class UserService {
     private afstore: AngularFirestore,
     private ss: SubscriptionService
   ) {
-    this.userCollection = this.afstore.collection('test-users');
+    this.userCollection = this.afstore.collection('Users');
 
     this.users = this.userCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
@@ -75,6 +75,7 @@ export class UserService {
   getUserById(userId){
 
   }
+
 
   getAllUsers(){
     //this.users = this.afstore.collection('test-users').valueChanges();
