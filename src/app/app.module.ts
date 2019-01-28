@@ -98,7 +98,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -156,7 +155,7 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     CalendarComponent,
     ZbHomeSlider2Component,
     TestDisplayComponent,
-    ProfileContentComponent
+    ProfileContentComponent,
   ],
   imports: [
     BrowserModule,
