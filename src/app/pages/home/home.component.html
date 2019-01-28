@@ -1,15 +1,10 @@
-<!--<div style="background-color: black" [ngStyle]="{'padding': (isMinWidth | async).matches ? '0 5rem' : '0'}" >-->
-  <!--<slideshow-->
-    <!--[backgroundPosition]="none"-->
-    <!--[autoPlay]="true"-->
-    <!--[minHeight]="(isHandset | async).matches ? '300px' : '500px'"-->
-    <!--[imageUrls]="imageArr">-->
-  <!--</slideshow>-->
-<!--</div>-->
-<!--<slideshow *ngIf="isHandset" [minHeight]="'560px'" [imageUrls]="imageArr"></slideshow>-->
-<!--<home-slider></home-slider>-->
-<!--<home-about></home-about>-->
-<zb-test-home></zb-test-home>
-<!-- <iframe width="420" height="315" 
-    src="https://www.youtube.com/embed/a9RqjDlhxtc?autoplay=1" allow="autoplay; encrypted-media">
-  </iframe> -->
+<body class="home blog woocommerce-js group-blog infinite-scroll" cz-shortcut-listen="true">
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+<div id="page" class="hfeed site">
+  <div id="content" class="site-content">
+    <home-slideshow2 [data]="data" ></home-slideshow2>
+    <home-slider2 (onCategorySelect)="getCategoryDetails($event)"></home-slider2>
+  </div>
+</div>
+</body>

@@ -41,9 +41,11 @@ import { TestDisplayComponent } from './test-firebase-subactivity/test-display/t
 import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
+import {ZbTestProfileComponent} from './pages/zb-test-profile/zb-test-profile.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
+  // {path: 'profile/:id', component: ZbTestProfileComponent},
   {path: 'cart', component: ShoppingCartComponent},
 {path: 'about', component: AboutComponent},
 {path: 'account', component: AccountComponent},
@@ -52,7 +54,7 @@ const routes: Routes = [
 {path: 'support', component: SupportComponent},
 {path: 'terms', component: ImageComponent},
 {path: 'login-register', component: LoginRegisterComponent},
-{path: 'profile', component: ProfileComponent},
+{path: 'profile', component: ProfileComponent, pathMatch: 'full'},
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent},
 {path: 'beyonce', component: BeyonceComponent},
