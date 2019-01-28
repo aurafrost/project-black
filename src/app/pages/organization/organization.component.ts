@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Product';
+import { NavItem } from 'src/app/core/models/NavItem';
 
 @Component({
   selector: 'organization',
@@ -11,6 +12,7 @@ import { Product } from 'src/app/core/models/Product';
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
   shopList: Product[];
+  navList: NavItem[];
   constructor(private service: ImageService, private router: Router) {
   }
 
@@ -28,11 +30,7 @@ export class OrganizationComponent implements OnInit {
     this.getBaseElements();
 
     //nav elements
-    this.getElements(1);
-    this.getElements(2);
-    this.getElements(3);
-    this.getElements(4);
-    this.getElements(5);
+    this.getNavElements();
 
     //get shop list
     this.getShopList();
@@ -65,19 +63,11 @@ export class OrganizationComponent implements OnInit {
     });
   }
 
-  getElements(id) {
+  getNavElements() {
     this.service.getTopic().subscribe(t => {
-      this.service.getImagePath(t.topic, "nav/nav" + id).subscribe(data => {
-        //set image
-        this.temp = document.getElementById('i' + id);
-        this.temp.setAttribute('src', data.image);
-        //set href
-        this.temp = document.getElementById('h' + id);
-        this.temp.setAttribute('href', data.href);
-        //set text
-        this.temp = document.getElementById('t' + id);
-        this.temp.innerText = data.text;
-      });
+      this.service.getNavList(t.topic).subscribe(data=>{
+        this.navList=data;
+      })
     });
   }
 
@@ -85,10 +75,8 @@ export class OrganizationComponent implements OnInit {
     this.service.getTopic().subscribe(t => {
       this.service.getShopList(t.topic).subscribe(data => {
         this.shopList = data;
-        console.log(this.shopList)
       });
     });
-    // this.shopList=this.service.getShopList();
   }
 
   subscribe(name) {

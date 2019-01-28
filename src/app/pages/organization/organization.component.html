@@ -3,30 +3,8 @@
 
   <!-- Nav bar links -->
   <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
-    <li class="nav-item">
-      <a id="h1" class="nav-link" href=""><img id="i1" src="" alt="image failed to load" height="40px">
-        <div id="t1"></div>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a id="h2" class="nav-link" href=""><img id="i2" src="" alt="image failed to load" height="40px">
-        <div id="t2"></div>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a id="h3" class="nav-link" href=""><img id="i3" src="" alt="image failed to load" height="40px">
-        <div id="t3"></div>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a id="h4" class="nav-link" href=""><img id="i4" src="" alt="image failed to load" height="40px">
-        <div id="t4"></div>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a id="h5" class="nav-link" href=""><img id="i5" src="" alt="image failed to load" height="40px">
-        <div id="t5"></div>
-      </a>
+    <li class="nav-item" *ngFor="let navItem of navList">
+      <a class="nav-link" href="{{navItem.href}}"><img src="{{navItem.image}}" alt="image failed to load" height="40px"><div>{{navItem.text}}</div></a>
     </li>
   </ul>
 
