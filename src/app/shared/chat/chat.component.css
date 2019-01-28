@@ -1,3 +1,10 @@
+.chatIcon {
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+
 .chatContainer {
     background-color: #ddd;
         position: fixed;
