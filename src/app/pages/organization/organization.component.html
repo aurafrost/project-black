@@ -40,19 +40,18 @@
   <!-- Container beside video -->
   <div class="animated bounceIn" id="sidevideo">
     <div class="tab">
-      <button class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
-      <button class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
+      <button id="fbbtn" class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
+      <button id="twitterbtn" class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
       <button class="tablinks" (click)="tabby(event, '')">X</button>
     </div>
     <!-- Facebook API -->
-    <div id="Facebook" class="tabcontent" style="float:left; width: 100%">
+    <div id="Facebook" class="tabcontent" style="width: 100%">
       <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href=""
         data-hide-cover="false"></div>
     </div>
     <!-- Twitter API -->
-    <div id="Twitter" class="tabcontent" style="float:right; width: 100%">
-      <a id="twitter" class="twitter-timeline" data-theme="dark" href="">Tweets
-        by Live Nation</a>
+    <div id="Twitter" class="tabcontent" style="width: 100%">
+      <a id="twitter" class="twitter-timeline" data-theme="dark" href="">Tweets</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>

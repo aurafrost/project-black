@@ -46,12 +46,12 @@ export class OrganizationComponent implements OnInit {
       //set video
       this.temp = document.getElementById('videoframe');
       this.temp.setAttribute('src', data.video);
-      //set fb
-      this.temp = document.getElementById('fb');
-      this.temp.setAttribute('data-href', data.facebook);
-      //set twitter
-      this.temp = document.getElementById('twitter');
-      this.temp.setAttribute('href', data.twitter);
+      // //set fb
+      // this.temp = document.getElementById('fb');
+      // this.temp.setAttribute('data-href', data.facebook);
+      // //set twitter
+      // this.temp = document.getElementById('twitter');
+      // this.temp.setAttribute('href', data.twitter);
     });
   }
 
@@ -91,7 +91,20 @@ export class OrganizationComponent implements OnInit {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(name).style.display = "block";
-    evt.currentTarget.className += " active";
+    //check if null to avoid error msgs
+    if(evt){
+      evt.currentTarget.className += " active";
+    }
+
+    //load apis?
+    this.service.getImage(this.topic).subscribe(data => {
+      //set fb
+      this.temp = document.getElementById('fb');
+      this.temp.setAttribute('data-href', data.facebook);
+      //set twitter
+      this.temp = document.getElementById('twitter');
+      this.temp.setAttribute('href', data.twitter);
+    })
   }
 
   ngOnDestroy() {
