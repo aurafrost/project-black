@@ -13,18 +13,31 @@
               <!-- fadeInUpBig -->
               <li [ngClass]="message.userId == userId ? 'usersMessage' : 'othersMessage'" class="animated">
                 <div class="container d-flex flex-column" style="">
-                  <div class="row">
-                    <i class="ml-1 mt-1 fas fa-user-astronaut fa-2x"></i>
-                    <!-- <i class="fas fa-user-circle"></i> -->
-
+                  <div *ngIf="message.userId == userId;else otherUser" class="row">
                     <div class="col align-content-start">
-                      <span class="float-left">
-                        <strong>{{message.userId}} </strong> </span>
+                      <span class="float-right">
+                        <strong>You</strong> <i class="ml-2 fas fa-user-circle fa-2x"></i>
+
+                      </span>
+
                     </div>
+
                   </div>
+
+                  <ng-template #otherUser>
+                    <div class="row">
+                      <i class="ml-1 mt-1 fas fa-user-astronaut fa-2x"></i>
+                      <!-- <i class="fas fa-user-circle"></i> -->
+                      <div class="col align-content-start">
+                        <span class="float-left">
+                          <strong>{{message.userId}}</strong>
+                        </span>
+                      </div>
+                    </div>
+                  </ng-template>
                   <div class="row " style="flex-wrap: nowrap">
-                    <div class="col mb-2 mt-1" style='width: 300px;
-                      flex-wrap: nowrap;'>
+                    <div class="col mb-2 mt-1 " style='width: 300px;
+                      flex-wrap: nowrap; display: inline-block; text-align: left;'>
                       {{message.message}}
                     </div>
                   </div>
