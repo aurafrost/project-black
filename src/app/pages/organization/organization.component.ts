@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
-import { getNativeByIndex } from '@angular/core/src/render3/util';
 import { Router } from '@angular/router';
 
 @Component({

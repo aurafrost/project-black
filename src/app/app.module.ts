@@ -103,6 +103,7 @@ import { OrganizationComponent } from './pages/organization/organization.compone
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { ChatComponent } from './shared/chat/chat.component';
+import { FacebookComponent } from './shared/facebook/facebook.component';
 
 
 @NgModule({
@@ -167,7 +168,8 @@ import { ChatComponent } from './shared/chat/chat.component';
     OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
-    ChatComponent
+    ChatComponent,
+    FacebookComponent
   ],
   imports: [
     BrowserModule,
