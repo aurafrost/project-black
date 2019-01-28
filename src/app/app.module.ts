@@ -104,7 +104,6 @@ import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.compone
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
-import { FacebookComponent } from './shared/facebook/facebook.component';
 
 
 @NgModule({
@@ -169,8 +168,7 @@ import { FacebookComponent } from './shared/facebook/facebook.component';
     OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
-    ChatComponent,
-    FacebookComponent
+    ChatComponent
   ],
   imports: [
     BrowserModule,
