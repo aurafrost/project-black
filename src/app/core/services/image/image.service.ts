@@ -11,7 +11,7 @@ import { Product } from '../../models/Product';
   providedIn: 'root'
 })
 export class ImageService {
-  topic:string;
+  topic: string;
   constructor(private db: AngularFirestore) { }
 
   setTopic(name){
@@ -27,12 +27,12 @@ export class ImageService {
     return this.db.doc<Topic>('image/topic').valueChanges();
   }
 
-  getImage(base){
-    return this.db.doc<Image>('image/'+base).valueChanges();
+  getImage(base) {
+    return this.db.doc<Image>('image/' + base).valueChanges();
   }
-  
-  getImagePath(base,path){
-    return this.db.doc<Image>('image/'+base+"/"+path).valueChanges();
+
+  getImagePath(base, path) {
+    return this.db.doc<Image>('image/' + base + "/" + path).valueChanges();
   }
 
   getNavList(base){
@@ -41,6 +41,6 @@ export class ImageService {
 
   getShopList(base){
     // return this.db.doc<Product>('image/'+base+"/"+path).valueChanges();
-    return this.db.collection<Product>('image/'+base+'/shop').valueChanges();
+    return this.db.collection<Product>('image/' + base + '/shop').valueChanges();
   }
 }
