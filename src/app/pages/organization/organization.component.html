@@ -49,20 +49,20 @@
 
   <!-- Container under video -->
   <div class="animated bounceIn" id="undervideo">
-    <div class="tab">
-      <button id="shopbtn" class="tablinks" (click)="tabby(event, 'ShopTab')">Shop</button>
-      <button id="newsbtn" class="tablinks" (click)="tabby(event, 'NewsTab')">News</button>
-      <button id="eventssbtn" class="tablinks" (click)="tabby(event, 'EventsTab')">Events</button>
-      <button id="calendarbtn" class="tablinks" (click)="tabby(event, 'CalendarTab')">Calendar</button>
-      <button class="tablinks" (click)="tabby(event, '')">X</button>
+    <div class="tab2">
+      <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
+      <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
+      <button id="eventssbtn" class="tablinks2" (click)="tabby2(event, 'EventsTab')">Events</button>
+      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar</button>
+      <button class="tablinks2" (click)="tabby2(event, '')">X</button>
     </div>
     <!-- Shop -->
-    <div id="ShopTab" class="tabcontent" style="width: 100%; overflow: auto;">
+    <div id="ShopTab" class="tabcontent2" style="width: 100%; overflow: auto;">
       <div style="text-align: center;">Shop</div>
       <table class="animated bounceIn" id="shop">
           <tr>
-            <th>Name and Price</th>
-            <td *ngFor="let product of shopList">{{product.name}} - {{product.price}}</td>
+            <th>Name</th>
+            <td *ngFor="let product of shopList">{{product.name}}</td>
           </tr>
           <tr>
             <th>Image</th>
@@ -70,18 +70,23 @@
               <img src="{{product.image}}" alt="image failed to load" style="height:100px;">
             </td>
           </tr>
+          <tr>
+            <th>Price</th>
+            <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
+            </td>
+          </tr>
         </table>
     </div>
     <!-- News -->
-    <div id="NewsTab" class="tabcontent" style="width: 100%; overflow: auto;">
+    <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
       
     </div>
     <!-- Events -->
-    <div id="EventsTab" class="tabcontent" style="width: 100%; overflow: auto;">
+    <div id="EventsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
 
     </div>
     <!-- Calendar -->
-    <div id="CalendarTab" class="tabcontent" style="width: 100%; overflow: auto;">
+    <div id="CalendarTab" class="tabcontent2" style="width: 100%; overflow: auto;">
 
     </div>
   </div>

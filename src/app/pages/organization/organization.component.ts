@@ -47,7 +47,7 @@ export class OrganizationComponent implements OnInit {
         this.temp.innerText = data.title;
         //set background
         this.temp = document.getElementById('page');
-        this.temp.style.height = "2000px";
+        this.temp.style.height = "1500px";
         this.temp.style.backgroundImage = "url(" + data.bg + ")";
         this.temp.style.backgroundRepeat = "repeat";
         //set video
@@ -95,6 +95,30 @@ export class OrganizationComponent implements OnInit {
 
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    //check if null to avoid error msgs
+    if (evt) {
+      evt.currentTarget.className += " active";
+    }
+  }
+
+  tabby2(evt, name) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent2");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks2");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
