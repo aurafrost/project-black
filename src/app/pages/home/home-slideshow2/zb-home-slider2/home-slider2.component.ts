@@ -6,9 +6,9 @@ import {animate, state, style, transition, trigger, query, stagger} from '@angul
 import {AnimationBuilder} from '@angular/animations';
 
 @Component({
-  selector: 'zb-home-slider2',
-  templateUrl: './zb-home-slider2.component.html',
-  styleUrls: ['./zb-home-slider2.component.css'],
+  selector: 'home-slider2',
+  templateUrl: './home-slider2.component.html',
+  styleUrls: ['./home-slider2.component.css'],
   animations: [
     trigger('onHover', [
       state('hover', style({
@@ -40,7 +40,7 @@ import {AnimationBuilder} from '@angular/animations';
   ]
 })
 
-export class ZbHomeSlider2Component implements OnInit {
+export class HomeSlider2Component implements OnInit {
   @Output() onCategorySelect: EventEmitter<any> = new EventEmitter<any>();
   @Input() init;
   currentCategory = 1;

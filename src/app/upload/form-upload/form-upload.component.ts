@@ -12,12 +12,12 @@ export class FormUploadComponent implements OnInit {
   selectedFiles: FileList;
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
-
-  constructor(private uploadimageService: UploadimageService) { }
-
+ 
+  constructor(private uploadService: UploadimageService) { }
+ 
   ngOnInit() {
   }
-
+ 
   selectFile(event) {
     const file = event.target.files.item(0);
  
@@ -33,7 +33,6 @@ export class FormUploadComponent implements OnInit {
     this.selectedFiles = undefined;
  
     this.currentFileUpload = new FileUpload(file);
-    this.uploadimageService.pushFileToStorage(this.currentFileUpload, this.progress);
+    this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
   }
 }
-
