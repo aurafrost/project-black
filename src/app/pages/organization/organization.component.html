@@ -58,9 +58,9 @@
     </div>
     <!-- Facebook API -->
     <div id="Facebook" class="tabcontent" style="width: 100%">
+      <div>Facebook API</div>
       <!-- <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/facebook"
         data-hide-cover="false"></div> -->
-      <div>Facebook API</div>
       <facebook></facebook>
     </div>
     <!-- Twitter API -->
@@ -71,28 +71,45 @@
   </div>
 
   <!-- Container under video -->
-  <!-- <table class="table table-hover table-responsive animated bounceIn" id="undervideo">
-    <thead>
-      <tr>
-        <th scope="col">Artist</th>
-        <th scope="col">Jackson Browne</th>
-        <th scope="col">Aerosmith</th>
-        <th scope="col">Bad Suns</th>
-        <th scope="col">Styx</th>
-        <th scope="col">King Crimson</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Photo</th>
-        <td><img src="https://media.livenation.com/artists/41580/41580-homepage-5747172.jpg?1544819802" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/41401/41401-homepage-5480889.jpg?1542652750" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/248884/248884-homepage-5979691.jpg?1547583586" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/41993/41993-homepage-5720362.jpg?1544522878" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/128292/128292-homepage-6029362.jpg?1548267910" alt="photo"></td>
-      </tr>
-    </tbody>
-  </table> -->
+  <div class="animated bounceIn" id="undervideo">
+    <div class="tab">
+      <button id="shopbtn" class="tablinks" (click)="tabby(event, 'ShopTab')">Shop</button>
+      <button id="newsbtn" class="tablinks" (click)="tabby(event, 'NewsTab')">News</button>
+      <button id="eventssbtn" class="tablinks" (click)="tabby(event, 'EventsTab')">Events</button>
+      <button id="calendarbtn" class="tablinks" (click)="tabby(event, 'CalendarTab')">Calendar</button>
+      <button class="tablinks" (click)="tabby(event, '')">X</button>
+    </div>
+    <!-- Shop -->
+    <div id="ShopTab" class="tabcontent" style="width: 100%; overflow: auto;">
+      <div style="text-align: center;">Shop</div>
+      <table class="animated bounceIn" id="shop">
+          <tr>
+            <th>Name and Price</th>
+            <td *ngFor="let product of shopList">{{product.name}} - {{product.price}}</td>
+          </tr>
+          <tr>
+            <th>Image</th>
+            <td *ngFor="let product of shopList">
+              <img src="{{product.image}}" alt="image failed to load" style="height:100px;">
+            </td>
+          </tr>
+        </table>
+    </div>
+    <!-- News -->
+    <div id="NewsTab" class="tabcontent" style="width: 100%; overflow: auto;">
+      
+    </div>
+    <!-- Events -->
+    <div id="EventsTab" class="tabcontent" style="width: 100%; overflow: auto;">
+
+    </div>
+    <!-- Calendar -->
+    <div id="CalendarTab" class="tabcontent" style="width: 100%; overflow: auto;">
+
+    </div>
+  </div>
+  
   <!-- Below line separates page styling to prevent issues. Forces footer down. -->
   <div style="clear:both;"></div>
+
 </div>

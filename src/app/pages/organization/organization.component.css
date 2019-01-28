@@ -54,6 +54,7 @@ div#video{
     overflow: auto;
     margin-left: 2%; 
     margin-right: 2%;
+    max-height: 500px;
 }
 tr,td,th{
     border: 1px solid;

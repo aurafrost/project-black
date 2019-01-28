@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/core/models/Product';
 
 @Component({
   selector: 'organization',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
   topic: string;
+  shopList: Product[];
+  shopItem: Product;
   constructor(private service: ImageService, private router: Router) {
   }
 
@@ -17,8 +20,11 @@ export class OrganizationComponent implements OnInit {
     //check topic
     console.log(this.service.getTopic());
     this.topic = this.service.getTopic();
+    // this.service.getTopic().subscribe(data=>{
+    //   this.topic=<string>data.topic;
+    // });
     if(this.topic==null){
-      this.router.navigate(['/']);
+      this.router.navigate(['/explore']);
     }
     this.getBaseElements();
 
@@ -28,6 +34,9 @@ export class OrganizationComponent implements OnInit {
     this.getElements(3);
     this.getElements(4);
     this.getElements(5);
+
+    //get shop list
+    this.getShopList();
   }
 
   getBaseElements() {
@@ -39,7 +48,7 @@ export class OrganizationComponent implements OnInit {
       this.temp.innerText = data.title;
       //set background
       this.temp = document.getElementById('page');
-      this.temp.style.height = "1000px";
+      this.temp.style.height = "2000px";
       this.temp.style.backgroundImage = "url(" + data.bg + ")";
       this.temp.style.backgroundRepeat = "repeat";
       //set video
@@ -66,6 +75,14 @@ export class OrganizationComponent implements OnInit {
       this.temp = document.getElementById('t' + id);
       this.temp.innerText = data.text;
     });
+  }
+
+  getShopList(){
+    this.service.getShopList(this.topic).subscribe(data=>{
+      this.shopList=data;
+      console.log(this.shopList)
+    });
+    // this.shopList=this.service.getShopList();
   }
 
   subscribe(name) {
