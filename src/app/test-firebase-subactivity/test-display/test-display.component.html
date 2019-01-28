@@ -1,21 +1,21 @@
 <div>
-  <table *ngFor="let user of users">
+  <table *ngFor="let user of userArr">
     <tr>
       <td>Name</td><td>{{user.fname}} {{user.lname}}</td>
     </tr>
     <tr>
-      <td>Subscriptions:</td>
+      <td>Subscriptions: </td>
       <td>
         <ul>
           <li *ngFor="let sub of user.subscriptions">
-            {{sub}}
+            {{sub.celebId}}
           </li>
         </ul>
       </td>
     </tr>
   </table>
 
-  <input type="button" (click)="click(1)" value="Click Me 1"><br>
+  <input type="button" (click)="click(3)" value="Click Me 1"><br>
   <input type="button" (click)="click(2)" value="Click Me 2"><br>
   <input type="button" (click)="clickRemove(1)" value="Click Me Remove 1"><br>
   <input type="button" (click)="clickRemove(2)" value="Click Me Remove 2"><br>

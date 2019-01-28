@@ -1,0 +1,18 @@
+<div id="page" style="position: relative">
+  <div id="textSpace" style="background-color: black; position: relative;transform-style: preserve-3d;transition: transform 1s;">
+    <h1 #header class="jumbotron jumbotron-fluid">{{title}}</h1>
+    <div id="instruction">{{instruction}}</div>
+    <section id="ballrow">
+      <img (mouseenter)="changeInstruction($event)" (mouseleave)="setNormInstruction()" routerLink="/nba" class="ball" id="Basketball" src="/assets/png/basketball.png" alt="basketball">
+      <img (mouseenter)="changeInstruction($event)" (mouseleave)="setNormInstruction()" routerLink="/mlb" class="ball" id="Baseball" src="/assets/png/baseball.png" alt="baseball">
+      <img (mouseenter)="changeInstruction($event)" (mouseleave)="setNormInstruction()" routerLink="/football" class="ball" id="Football" src="/assets/png/football.png" alt="football">
+      <img (mouseenter)="changeInstruction($event)" (mouseleave)="setNormInstruction()" routerLink="/mls" class="ball" id="Soccer" src="/assets/png/soccer.png" alt="soccerball">
+      <img (mouseenter)="changeInstruction($event)" (mouseleave)="setNormInstruction()" routerLink="/cricket" class="ball" id="Cricket" src="/assets/png/cricket.png" alt="cricket bat and ball">
+    </section>  
+    <!-- <img [@flyRight]='state' id="plane-left" src="assets/png/plane-left.png">
+    <img [@flyMiddle]='state' id="plane-middle" src="assets/png/plane-middle.png"/>
+    <img [@flyLeft]='state' id="plane-right" src="assets/png/plane-right.png"/> -->
+  </div>
+  <!--<img id="bg" src="../../../../assets/travel.jpg" alt="failed to load bg">-->
+
+</div>

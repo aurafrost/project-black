@@ -97,12 +97,15 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {HomeSlider2Component} from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
+import { SportsComponent } from './pages/categories/sports/sports.component';
+import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { ZbTestProfileComponent } from './pages/zb-test-profile/zb-test-profile.component';
 import { ProductDialogComponent } from './pages/zb-test-profile/product-dialog/product-dialog.component';
 import {AngularFireStorage} from '@angular/fire/storage';
-
+import { SubscriptionService } from './core/services/sub/subscription.service';
+import { ChatComponent } from './shared/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -156,10 +159,13 @@ import {AngularFireStorage} from '@angular/fire/storage';
     HomeSlider2Component,
     TestDisplayComponent,
     ProfileContentComponent,
+    SportsComponent,
+    OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
     ZbTestProfileComponent,
     ProductDialogComponent
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -216,7 +222,8 @@ import {AngularFireStorage} from '@angular/fire/storage';
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-    }
+    },
+    SubscriptionService
   ],
   entryComponents: [SignInComponent, ProductDialogComponent],
   bootstrap: [AppComponent],
