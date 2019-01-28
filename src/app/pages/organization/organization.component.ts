@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Product';
@@ -36,6 +36,10 @@ export class OrganizationComponent implements OnInit {
     this.getShopList();
   }
 
+  fbLink: string;
+  twitterLink: string;
+  @ViewChild('fb') facebookAPI: ElementRef;
+  @ViewChild('twitter') twitterAPI: ElementRef;
   getBaseElements() {
     this.service.getTopic().subscribe(t => {
       //get image doc
@@ -54,11 +58,15 @@ export class OrganizationComponent implements OnInit {
         this.temp = document.getElementById('videoframe');
         this.temp.setAttribute('src', data.video);
         //set fb
-        this.temp = document.getElementById('fb');
-        this.temp.setAttribute('data-href', data.facebook);
+        console.log("test Facebook path")
+        console.log(data.facebook)
+        this.facebookAPI.nativeElement.setAttribute('data-href', data.facebook);
+        this.fbLink = data.facebook;
         //set twitter
-        this.temp = document.getElementById('twitter');
-        this.temp.setAttribute('href', data.twitter);
+        // this.temp = document.getElementById('twitter');
+        // this.temp.setAttribute('href', data.twitter);
+        this.twitterAPI.nativeElement.setAttribute('href', data.twitter);
+        this.twitterLink = data.twitter;
       });
     });
   }
@@ -105,6 +113,7 @@ export class OrganizationComponent implements OnInit {
     if (evt) {
       evt.currentTarget.className += " active";
     }
+
   }
 
   ngOnDestroy() {
