@@ -3,7 +3,7 @@ export class User {
   public fname?;
   public lname?;
   public email?;
-  public subscriptions?:any[];
+  public subscriptions?:Object[];
   public cart?: any [];
 
   constructor(uid?, email?, fname?, lname?, subscriptions?, cart?) {
