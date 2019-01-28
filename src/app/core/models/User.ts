@@ -5,9 +5,9 @@ export class User {
   public email?;
   public events?: any [];
   public role?;
-  public subscriptions?:Object[];
+  public subscriptions?: Object[];
 
-  constructor(uid?, email?, fname?, lname?, role?, subscriptions?) {
+  constructor(uid?, email?, fname?, lname?, role?, subscriptions?, events?) {
     this.uid = uid;
     this.fname = fname;
     this.lname = lname;

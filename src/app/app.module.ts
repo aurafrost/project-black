@@ -164,7 +164,7 @@ import { ChatComponent } from './shared/chat/chat.component';
     ShoppingCartComponent,
     TestShopComponent,
     ZbTestProfileComponent,
-    ProductDialogComponent
+    ProductDialogComponent,
     ChatComponent
   ],
   imports: [

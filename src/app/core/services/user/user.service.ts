@@ -76,9 +76,6 @@ export class UserService {
     this.userDoc.delete();
   }
 
-  getUserById(userId){
-
-  }
   getAllUsers(){
     //this.users = this.afstore.collection('test-users').valueChanges();
     return this.users;
