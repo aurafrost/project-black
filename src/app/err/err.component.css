@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    padding: 0 0;
+}
+
+.link {
+    padding-left: 40px;
+    color: steelblue;
+    cursor: default;
+}
+
+.link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

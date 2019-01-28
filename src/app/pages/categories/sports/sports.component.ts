@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'sports',
@@ -6,20 +6,23 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./sports.component.css']
 })
 export class SportsComponent implements OnInit {
-  title = "Sports";
-
+  title = "Sports Navigation";
+  instruction = "";
+  @ViewChild('header') headerBlock: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeTitle(event){
-    this.title = event.target.id;
+  changeInstruction(event){
+    this.headerBlock.nativeElement.style.marginBottom = '0px';
+    this.instruction = "Click to view the " + event.target.id + " page!";
   }
 
-  setNormTitle(){
-    this.title = "Sports";
+  setNormInstruction(){
+    this.instruction = "";
+    this.headerBlock.nativeElement.style.marginBottom = '32px';
   }
 
 }
