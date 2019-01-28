@@ -69,9 +69,16 @@
   }
 
   .usersMessage {
-      border: 2px solid green;
+      /* border: 2px solid green;
+       */
+       background-color: cornflowerblue;
+       color: white;
+       
   }
 
   .othersMessage {
-      border: 2px dashed blue;
+      /* border: 2px dashed blue;
+       */
+       background-color: #bbb;
+       color: black;
   }

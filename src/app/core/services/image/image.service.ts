@@ -11,29 +11,29 @@ import { Product } from '../../models/Product';
   providedIn: 'root'
 })
 export class ImageService {
-  topic:string;
+  topic: string;
   constructor(private db: AngularFirestore) { }
 
-  setTopic(name){
-    this.topic=name;
+  setTopic(name) {
+    this.topic = name;
     // this.db.doc('image/topic').update(name);
   }
 
-  getTopic(){
+  getTopic() {
     return this.topic;
     // return this.db.doc<Topic>('image/topic').valueChanges();
   }
 
-  getImage(base){
-    return this.db.doc<Image>('image/'+base).valueChanges();
-  }
-  
-  getImagePath(base,path){
-    return this.db.doc<Image>('image/'+base+"/"+path).valueChanges();
+  getImage(base) {
+    return this.db.doc<Image>('image/' + base).valueChanges();
   }
 
-  getShopList(base){
+  getImagePath(base, path) {
+    return this.db.doc<Image>('image/' + base + "/" + path).valueChanges();
+  }
+
+  getShopList(base) {
     // return this.db.doc<Product>('image/'+base+"/"+path).valueChanges();
-    return this.db.collection<Product>('image/'+base+'/shop').valueChanges();
+    return this.db.collection<Product>('image/' + base + '/shop').valueChanges();
   }
 }
