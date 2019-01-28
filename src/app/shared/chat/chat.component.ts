@@ -48,7 +48,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    console.log('view checked');
+    //console.log('view checked');
     this.messageChatArea.scrollToOffset(10000);
 
   }
