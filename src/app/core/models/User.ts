@@ -3,15 +3,15 @@ export class User {
   public fname?;
   public lname?;
   public email?;
-  public subscriptions?:any[];
-  public cart?: any [];
+  public subscriptions?: any[];
+  public events?: any [];
 
-  constructor(uid?, email?, fname?, lname?, subscriptions?, cart?) {
+  constructor(uid?, email?, fname?, lname?, subscriptions?, events?) {
     this.uid = uid;
     this.fname = fname;
     this.lname = lname;
     this.email = email;
     this.subscriptions = subscriptions;
-    this.cart = cart;
+    this.events = events;
   }
 }

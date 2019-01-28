@@ -12,4 +12,8 @@ export class TestShopComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUserProduct () {
+
+  }
+
 }

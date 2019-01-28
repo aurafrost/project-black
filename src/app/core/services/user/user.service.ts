@@ -4,6 +4,7 @@ import {} from '@angular/cli';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {User} from '../../models/User';
+import {take} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,17 +27,17 @@ export class UserService {
         data.uid = a.payload.doc.id;
         return data;
       });
-    })
+    });
 
     this.users.subscribe(u => {
       this.userArr = u;
-    })
+    });
 
     this.authObj = JSON.parse(localStorage.getItem('auth'));
   }
 
-  getUser() {
-    // return this.user;
+  getUserById(id) {
+    return this.afstore.doc(`Users/${id}`).valueChanges().pipe(take(1));
   }
 
   getUsers() {
@@ -110,10 +111,6 @@ export class UserService {
     //this.afDatabase.object(`Users/${userId}`).remove();
     this.userDoc = this.userCollection.doc(userId);
     this.userDoc.delete();
-  }
-
-  getUserById(userId){
-
   }
 
   getAllUsers(){

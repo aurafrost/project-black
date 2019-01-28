@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ZbTestGenrePageComponent } from './zb-test-genre-page.component';
+import { ProductDialogComponent } from './product-dialog.component';
 
-describe('ZbTestGenrePageComponent', () => {
-  let component: ZbTestGenrePageComponent;
-  let fixture: ComponentFixture<ZbTestGenrePageComponent>;
+describe('ProductDialogComponent', () => {
+  let component: ProductDialogComponent;
+  let fixture: ComponentFixture<ProductDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ZbTestGenrePageComponent ]
+      declarations: [ ProductDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZbTestGenrePageComponent);
+    fixture = TestBed.createComponent(ProductDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -99,6 +99,9 @@ import {HomeSlider2Component} from './pages/home/home-slideshow2/zb-home-slider2
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
+import { ZbTestProfileComponent } from './pages/zb-test-profile/zb-test-profile.component';
+import { ProductDialogComponent } from './pages/zb-test-profile/product-dialog/product-dialog.component';
+import {AngularFireStorage} from '@angular/fire/storage';
 
 
 @NgModule({
@@ -154,7 +157,9 @@ import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.com
     TestDisplayComponent,
     ProfileContentComponent,
     ShoppingCartComponent,
-    TestShopComponent
+    TestShopComponent,
+    ZbTestProfileComponent,
+    ProductDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -203,6 +208,7 @@ import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.com
     NgbModalModule,
   ],
   providers: [
+    AngularFireStorage,
     AuthGuard,
     AuthService,
     UserService,
@@ -212,7 +218,7 @@ import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.com
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  entryComponents: [SignInComponent],
+  entryComponents: [SignInComponent, ProductDialogComponent],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
