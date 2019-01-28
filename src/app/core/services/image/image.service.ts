@@ -15,13 +15,16 @@ export class ImageService {
   constructor(private db: AngularFirestore) { }
 
   setTopic(name){
-    this.topic=name;
-    // this.db.doc('image/topic').update(name);
+    // this.topic=name;
+    const data={
+      topic:name,
+    }
+    this.db.doc('image/topic').update(data);
   }
 
   getTopic(){
-    return this.topic;
-    // return this.db.doc<Topic>('image/topic').valueChanges();
+    // return this.topic;
+    return this.db.doc<Topic>('image/topic').valueChanges();
   }
 
   getImage(base){
