@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./livenation.component.css']
 })
 export class LivenationComponent implements OnInit {
-
-  constructor() { }
+  temp:HTMLElement;
+  constructor() { 
+  }
 
   ngOnInit() {
   }

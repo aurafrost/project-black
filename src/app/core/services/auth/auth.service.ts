@@ -10,9 +10,9 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth;
-  $auth;
-
+    public auth = new BehaviorSubject<Object>({});
+    $auth = this.auth.asObservable();
+    private userList: User[]; 
   constructor(
     private afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -20,12 +20,9 @@ export class AuthService {
     private ngZone: NgZone, // categories to remove outside scope warning
     private userService: UserService
   ) {
-    this.auth = new BehaviorSubject<Object>({});
-    this.$auth = this.auth.asObservable();
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      console.log("auth");
-      console.log(this.auth);
+      
       if (this.auth.next) {
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
@@ -34,10 +31,19 @@ export class AuthService {
         this.auth = null;
       }
     });
+
+    this.userService.getAllUsers().subscribe(ul => {
+      this.userList = ul;
+    })
+
   }
 
   get authenticated(): boolean {
     return this.auth != null;
+  }
+
+  getAuth() {
+    return this.auth;
   }
 
   // get currentUser(): any {
@@ -51,17 +57,29 @@ export class AuthService {
   signIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth.user.emailVerified) {
-            if (auth) {
-              localStorage.setItem('auth', JSON.stringify(auth.user));
-              console.log(JSON.parse(localStorage.getItem('auth')));
-            } else {
-              localStorage.setItem('auth', null);
-              console.log(localStorage.getItem('auth'));
+        if (1) {//auth.user.emailVerified) {
+          console.log(auth.user);
+          if (auth) {
+            localStorage.setItem('auth', JSON.stringify(auth.user));
+            console.log(JSON.parse(localStorage.getItem('auth')));
+          } else {
+            localStorage.setItem('auth', null);
+            console.log(localStorage.getItem('auth'));
+          }
+            
+          console.log(this.userList)
+          this.userList.forEach(user => {
+            if(user.uid === auth.user.uid)
+            {
+              if(user.role === "celeb")
+                this.router.navigate(['sports']);
+              else if(user.role === "user")
+                this.router.navigate([''])
+              else
+                this.router.navigate(['travel'])
             }
-          this.ngZone.run(() => {
-            this.router.navigate(['home']);
-          });
+          })
+
         }
       }).catch((err) => {
         window.alert(err.message);

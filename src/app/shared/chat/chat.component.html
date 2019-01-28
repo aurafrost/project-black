@@ -1,0 +1,68 @@
+<div class="chatContainer text-center">
+  <div class="text-center">
+    <div class="dropdown text-center ">
+      <div class="chatIcon mt-2">
+        <h5 class="">Chat <i class="far fa-comment fa-1x"></i> </h5>
+      </div>
+      <div class="dropdown-content">
+        <div class="chatArea">
+
+          <cdk-virtual-scroll-viewport #messageChatArea autosize id=chatScroll [itemSize]="20" minBufferPx="1200"
+            maxBufferPx="1200" class="">
+            <div *cdkVirtualFor="let message of messages | async; let i = index; trackBy: trackByIdx">
+              <!-- fadeInUpBig -->
+              <li [ngClass]="message.userId == userId ? 'usersMessage' : 'othersMessage'" class="animated">
+                <div class="container d-flex flex-column" style="">
+                  <div *ngIf="message.userId == userId;else otherUser" class="row">
+                    <div class="col align-content-start">
+                      <span class="float-right">
+                        <strong>You</strong> <i class="ml-2 mt-1 fas fa-user-circle fa-2x"></i>
+
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <ng-template #otherUser>
+                    <div class="row">
+                      <i class="ml-1 mt-1 fas fa-user-astronaut fa-2x"></i>
+                      <!-- <i class="fas fa-user-circle"></i> -->
+                      <div class="col align-content-start">
+                        <span class="float-left">
+                          <strong>{{message.userId}}</strong>
+                        </span>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <div class="row " style="flex-wrap: nowrap">
+                    <div class="col mb-2 mt-1 " style='width: 300px;
+                      flex-wrap: nowrap; display: inline-block; text-align: left;'>
+                      {{message.message}}
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col" style=''>
+                      <i class="float-right"> {{message.date | date:'short'}}</i>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <!-- date: {{message.date | date:'short'}}, message: {{message.message}}, from: {{message.userId}} -->
+            </div>
+          </cdk-virtual-scroll-viewport>
+
+
+          <input #sendMessageInput id=sendMessageInput (keyup.enter)="sendMessage($event)" type="text" style="width: 70%">
+          Send<i class="fas fa-arrow-up"></i>
+          Username: <input #sendMessageInput id=sendMessageInput [(ngModel)]="userId" type="text" style="width: 70%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

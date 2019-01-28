@@ -4,39 +4,49 @@ import {} from '@angular/cli';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {User} from '../../models/User';
+import { SubscriptionService } from '../sub/subscription.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private userCollection:AngularFirestoreCollection<User>;
+  private userCollection: AngularFirestoreCollection<User>;
   private users: Observable<User[]>;
   private userArr: User[];
   private userDoc: AngularFirestoreDocument<User>;
   private authObj;
-
+  private SubObs: Observable<any>;
   constructor(
-    private afstore: AngularFirestore
-  ) { 
-    this.userCollection = this.afstore.collection('test-users');
+    private afstore: AngularFirestore,
+    private ss: SubscriptionService
+  ) {
+    this.userCollection = this.afstore.collection('Users');
 
     this.users = this.userCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as User;
         data.uid = a.payload.doc.id;
         return data;
-      })
+      });
     })
 
-    this.users.subscribe(u => {
-      this.userArr = u;
-    })
-
+    // this.users.subscribe(u => {
+    //   this.userArr = u;
+    //   this.userArr.forEach(user => {
+    //     console.log(this.ss.getSubCollection(user.uid))
+    //     this.SubObs = this.ss.getSubCollection(user.uid);
+    //     this.SubObs.subscribe(l => {
+    //       console.log(l);
+    //       user.subscriptions = l;
+    //     })
+    //   })
+    //   console.log(this.userArr);
+    // })
     this.authObj = JSON.parse(localStorage.getItem('auth'));
   }
 
   getUser() {
-    //return this.user;
+    // return this.user;
   }
 
   getUsers() {
@@ -54,56 +64,6 @@ export class UserService {
     
   }
 
-  addSub(subId) {
-    this.authObj = JSON.parse(localStorage.getItem('auth'));
-    if(this.authObj == null)
-      return;
-
-    let tempSubs = [];
-    //this.userCollection.doc(userId).set()
-
-    this.users.subscribe(u => {
-      this.userArr = u;
-    })
-    console.log(this.userArr);
-    for(let user of this.userArr){
-      if(user.uid === this.authObj.uid) 
-      {
-        tempSubs = [...user.subscriptions];
-        tempSubs.push(subId);
-        user.subscriptions = tempSubs;
-        this.userCollection.doc(this.authObj.uid).set(user);
-      }
-    }
-  }
-
-  removeSub(subId) {
-    this.authObj = JSON.parse(localStorage.getItem('auth'));
-    if(this.authObj == null)
-      return;
-
-    let tempSubs = [];
-    //this.userCollection.doc(userId).set()
-
-    this.users.subscribe(u => {
-      this.userArr = u;
-    });
-
-    for(let user of this.userArr){
-      if(user.uid === this.authObj.uid)
-      {
-        tempSubs = [...user.subscriptions];
-        let spot = tempSubs.indexOf(subId);
-        if(spot == -1)
-          return;
-        
-        tempSubs.splice(spot, 1);
-        user.subscriptions = tempSubs;
-        this.userCollection.doc(this.authObj.uid).set(user);
-      }
-    }
-  }
-
   //currently implemented in service, but DO NOT USE
   //is not accessable from site and will not remove user login information from auth service
   deleteUser(userId) {
@@ -115,6 +75,7 @@ export class UserService {
   getUserById(userId){
 
   }
+
 
   getAllUsers(){
     //this.users = this.afstore.collection('test-users').valueChanges();

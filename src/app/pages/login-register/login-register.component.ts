@@ -91,7 +91,9 @@ export class LoginRegisterComponent implements OnInit {
       this.userFormData.value.email,
       this.userFormData.value.fname,
       this.userFormData.value.lname,
-      new Array()
+      "user",
+      [],
+      []
     );
 
     console.log(user);

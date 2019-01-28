@@ -25,6 +25,7 @@ import { SearchComponent } from './shared/search/search.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { AuthService } from './core/services/auth/auth.service';
 import { UserService } from './core/services/user/user.service';
+import { ImageService } from './core/services/image/image.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -97,6 +98,12 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
+import { SportsComponent } from './pages/categories/sports/sports.component';
+import { OrganizationComponent } from './pages/organization/organization.component';
+import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
+import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
+import { SubscriptionService } from './core/services/sub/subscription.service';
+import { ChatComponent } from './shared/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -156,6 +163,11 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     ZbHomeSlider2Component,
     TestDisplayComponent,
     ProfileContentComponent,
+    SportsComponent,
+    OrganizationComponent,
+    ShoppingCartComponent,
+    TestShopComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -207,10 +219,12 @@ import { ProfileContentComponent } from './pages/profile/profile-content/profile
     AuthGuard,
     AuthService,
     UserService,
+    ImageService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
-    }
+    },
+    SubscriptionService
   ],
   entryComponents: [SignInComponent],
   bootstrap: [AppComponent],
