@@ -4,19 +4,29 @@
   <!-- Nav bar links -->
   <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
     <li class="nav-item">
-      <a id="h1" class="nav-link" href=""><img id="i1" src="" alt="image failed to load" height="40px"> <div id="t1"></div></a>
+      <a id="h1" class="nav-link" href=""><img id="i1" src="" alt="image failed to load" height="40px">
+        <div id="t1"></div>
+      </a>
     </li>
     <li class="nav-item">
-      <a id="h2" class="nav-link" href=""><img id="i2" src="" alt="image failed to load" height="40px"> <div id="t2"></div></a>
+      <a id="h2" class="nav-link" href=""><img id="i2" src="" alt="image failed to load" height="40px">
+        <div id="t2"></div>
+      </a>
     </li>
     <li class="nav-item">
-      <a id="h3" class="nav-link" href=""><img id="i3" src="" alt="image failed to load" height="40px"> <div id="t3"></div></a>
+      <a id="h3" class="nav-link" href=""><img id="i3" src="" alt="image failed to load" height="40px">
+        <div id="t3"></div>
+      </a>
     </li>
     <li class="nav-item">
-      <a id="h4" class="nav-link" href=""><img id="i4" src="" alt="image failed to load" height="40px"> <div id="t4"></div></a>
+      <a id="h4" class="nav-link" href=""><img id="i4" src="" alt="image failed to load" height="40px">
+        <div id="t4"></div>
+      </a>
     </li>
     <li class="nav-item">
-      <a id="h5" class="nav-link" href=""><img id="i5" src="" alt="image failed to load" height="40px"> <div id="t5"></div></a>
+      <a id="h5" class="nav-link" href=""><img id="i5" src="" alt="image failed to load" height="40px">
+        <div id="t5"></div>
+      </a>
     </li>
   </ul>
 
@@ -25,8 +35,10 @@
 
   <!-- Welcome text -->
   <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
-    <h1 class="animated bounceIn"><div id="title"></div> <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
-        | +</button></h1><br>
+    <h1 class="animated bounceIn">
+      <div id="title"></div> <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
+        | +</button>
+    </h1><br>
   </span>
 
   <!-- Below line separates page styling to prevent issues -->
@@ -40,19 +52,20 @@
   <!-- Container beside video -->
   <div class="animated bounceIn" id="sidevideo">
     <div class="tab">
-      <button class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
-      <button class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
+      <button id="fbbtn" class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
+      <button id="twitterbtn" class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
       <button class="tablinks" (click)="tabby(event, '')">X</button>
     </div>
     <!-- Facebook API -->
-    <div id="Facebook" class="tabcontent" style="float:left; width: 100%">
-      <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href=""
-        data-hide-cover="false"></div>
+    <div id="Facebook" class="tabcontent" style="width: 100%">
+      <!-- <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/facebook"
+        data-hide-cover="false"></div> -->
+      <div>Facebook API</div>
+      <facebook></facebook>
     </div>
     <!-- Twitter API -->
-    <div id="Twitter" class="tabcontent" style="float:right; width: 100%">
-      <a id="twitter" class="twitter-timeline" data-theme="dark" href="">Tweets
-        by Live Nation</a>
+    <div id="Twitter" class="tabcontent" style="width: 100%">
+      <a id="twitter" class="twitter-timeline" data-theme="dark" href="https://www.twitter.com">Tweets</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
-import { getNativeByIndex } from '@angular/core/src/render3/util';
 import { Router } from '@angular/router';
 
 @Component({
@@ -91,7 +90,10 @@ export class OrganizationComponent implements OnInit {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(name).style.display = "block";
-    evt.currentTarget.className += " active";
+    //check if null to avoid error msgs
+    if(evt){
+      evt.currentTarget.className += " active";
+    }
   }
 
   ngOnDestroy() {
