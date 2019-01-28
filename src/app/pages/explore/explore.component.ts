@@ -95,9 +95,13 @@ export class ExploreComponent implements OnInit {
   testFunc() {
     console.log(ViewChild.name)
   }
-
+  async delay(num){
+    return new Promise(resolve =>setTimeout(resolve,num));
+  }
   setTopic(name){
     this.service.setTopic(name);
+    //wait for db to update current topic
+    this.delay(2000);
     this.router.navigate(['organization']);
   }
 

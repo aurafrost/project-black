@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
-import { getNativeByIndex } from '@angular/core/src/render3/util';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/core/models/Product';
+import { NavItem } from 'src/app/core/models/NavItem';
 
 @Component({
   selector: 'organization',
@@ -10,62 +11,71 @@ import { Router } from '@angular/router';
 })
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
-  topic: string;
+  shopList: Product[];
+  navList: NavItem[];
   constructor(private service: ImageService, private router: Router) {
   }
 
   ngOnInit() {
     //check topic
-    console.log(this.service.getTopic());
-    this.topic = this.service.getTopic();
-    if(this.topic==null){
-      this.router.navigate(['/']);
-    }
+    this.service.getTopic().subscribe(data => {
+      console.log("Current Topic from db: " + data.topic);
+      if (data.topic == null) {
+        this.router.navigate(['/explore']);
+      }
+    });
+    // this.topic = this.service.getTopic();
+
+    //get base elements
     this.getBaseElements();
 
     //nav elements
-    this.getElements(1);
-    this.getElements(2);
-    this.getElements(3);
-    this.getElements(4);
-    this.getElements(5);
+    this.getNavElements();
+
+    //get shop list
+    this.getShopList();
   }
 
   getBaseElements() {
-    //get image doc
-    this.service.getImage(this.topic).subscribe(data => {
-      //base elements
-      //set title
-      this.temp = document.getElementById('title');
-      this.temp.innerText = data.title;
-      //set background
-      this.temp = document.getElementById('page');
-      this.temp.style.height = "1000px";
-      this.temp.style.backgroundImage = "url(" + data.bg + ")";
-      this.temp.style.backgroundRepeat = "repeat";
-      //set video
-      this.temp = document.getElementById('videoframe');
-      this.temp.setAttribute('src', data.video);
-      //set fb
-      this.temp = document.getElementById('fb');
-      this.temp.setAttribute('data-href', data.facebook);
-      //set twitter
-      this.temp = document.getElementById('twitter');
-      this.temp.setAttribute('href', data.twitter);
+    this.service.getTopic().subscribe(t => {
+      //get image doc
+      this.service.getImage(t.topic).subscribe(data => {
+        //base elements
+        //set title
+        console.log("In getBase(): " + t.topic)
+        this.temp = document.getElementById('title');
+        this.temp.innerText = data.title;
+        //set background
+        this.temp = document.getElementById('page');
+        this.temp.style.height = "1500px";
+        this.temp.style.backgroundImage = "url(" + data.bg + ")";
+        this.temp.style.backgroundRepeat = "repeat";
+        //set video
+        this.temp = document.getElementById('videoframe');
+        this.temp.setAttribute('src', data.video);
+        //set fb
+        this.temp = document.getElementById('fb');
+        this.temp.setAttribute('data-href', data.facebook);
+        //set twitter
+        this.temp = document.getElementById('twitter');
+        this.temp.setAttribute('href', data.twitter);
+      });
     });
   }
 
-  getElements(id) {
-    this.service.getImagePath(this.topic, "nav/nav" + id).subscribe(data => {
-      //set image
-      this.temp = document.getElementById('i' + id);
-      this.temp.setAttribute('src', data.image);
-      //set href
-      this.temp = document.getElementById('h' + id);
-      this.temp.setAttribute('href', data.href);
-      //set text
-      this.temp = document.getElementById('t' + id);
-      this.temp.innerText = data.text;
+  getNavElements() {
+    this.service.getTopic().subscribe(t => {
+      this.service.getNavList(t.topic).subscribe(data=>{
+        this.navList=data;
+      })
+    });
+  }
+
+  getShopList() {
+    this.service.getTopic().subscribe(t => {
+      this.service.getShopList(t.topic).subscribe(data => {
+        this.shopList = data;
+      });
     });
   }
 
@@ -91,7 +101,34 @@ export class OrganizationComponent implements OnInit {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(name).style.display = "block";
-    evt.currentTarget.className += " active";
+    //check if null to avoid error msgs
+    if (evt) {
+      evt.currentTarget.className += " active";
+    }
+  }
+
+  tabby2(evt, name) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent2");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks2");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    //check if null to avoid error msgs
+    if (evt) {
+      evt.currentTarget.className += " active";
+    }
   }
 
   ngOnDestroy() {

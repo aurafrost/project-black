@@ -3,20 +3,8 @@
 
   <!-- Nav bar links -->
   <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
-    <li class="nav-item">
-      <a id="h1" class="nav-link" href=""><img id="i1" src="" alt="image failed to load" height="40px"> <div id="t1"></div></a>
-    </li>
-    <li class="nav-item">
-      <a id="h2" class="nav-link" href=""><img id="i2" src="" alt="image failed to load" height="40px"> <div id="t2"></div></a>
-    </li>
-    <li class="nav-item">
-      <a id="h3" class="nav-link" href=""><img id="i3" src="" alt="image failed to load" height="40px"> <div id="t3"></div></a>
-    </li>
-    <li class="nav-item">
-      <a id="h4" class="nav-link" href=""><img id="i4" src="" alt="image failed to load" height="40px"> <div id="t4"></div></a>
-    </li>
-    <li class="nav-item">
-      <a id="h5" class="nav-link" href=""><img id="i5" src="" alt="image failed to load" height="40px"> <div id="t5"></div></a>
+    <li class="nav-item" *ngFor="let navItem of navList">
+      <a class="nav-link" href="{{navItem.href}}"><img src="{{navItem.image}}" alt="image failed to load" height="40px"><div>{{navItem.text}}</div></a>
     </li>
   </ul>
 
@@ -25,8 +13,10 @@
 
   <!-- Welcome text -->
   <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
-    <h1 class="animated bounceIn"><div id="title"></div> <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
-        | +</button></h1><br>
+    <h1 class="animated bounceIn">
+      <div id="title"></div> <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
+        | +</button>
+    </h1><br>
   </span>
 
   <!-- Below line separates page styling to prevent issues -->
@@ -40,46 +30,68 @@
   <!-- Container beside video -->
   <div class="animated bounceIn" id="sidevideo">
     <div class="tab">
-      <button class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
-      <button class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
+      <button id="fbbtn" class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
+      <button id="twitterbtn" class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
       <button class="tablinks" (click)="tabby(event, '')">X</button>
     </div>
     <!-- Facebook API -->
-    <div id="Facebook" class="tabcontent" style="float:left; width: 100%">
+    <div id="Facebook" class="tabcontent" style="width: 100%">
+      <div>Facebook API</div>
       <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href=""
         data-hide-cover="false"></div>
     </div>
     <!-- Twitter API -->
-    <div id="Twitter" class="tabcontent" style="float:right; width: 100%">
-      <a id="twitter" class="twitter-timeline" data-theme="dark" href="">Tweets
-        by Live Nation</a>
+    <div id="Twitter" class="tabcontent" style="width: 100%">
+      <a id="twitter" class="twitter-timeline" data-theme="dark" href="https://www.twitter.com">Tweets</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
 
   <!-- Container under video -->
-  <!-- <table class="table table-hover table-responsive animated bounceIn" id="undervideo">
-    <thead>
-      <tr>
-        <th scope="col">Artist</th>
-        <th scope="col">Jackson Browne</th>
-        <th scope="col">Aerosmith</th>
-        <th scope="col">Bad Suns</th>
-        <th scope="col">Styx</th>
-        <th scope="col">King Crimson</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Photo</th>
-        <td><img src="https://media.livenation.com/artists/41580/41580-homepage-5747172.jpg?1544819802" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/41401/41401-homepage-5480889.jpg?1542652750" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/248884/248884-homepage-5979691.jpg?1547583586" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/41993/41993-homepage-5720362.jpg?1544522878" alt="photo"></td>
-        <td><img src="https://media.livenation.com/artists/128292/128292-homepage-6029362.jpg?1548267910" alt="photo"></td>
-      </tr>
-    </tbody>
-  </table> -->
+  <div class="animated bounceIn" id="undervideo">
+    <div class="tab2">
+      <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
+      <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
+      <button id="eventssbtn" class="tablinks2" (click)="tabby2(event, 'EventsTab')">Events</button>
+      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar</button>
+      <button class="tablinks2" (click)="tabby2(event, '')">X</button>
+    </div>
+    <!-- Shop -->
+    <div id="ShopTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      <div style="text-align: center;">Shop</div>
+      <table class="animated bounceIn" id="shop">
+          <tr>
+            <th>Name</th>
+            <td *ngFor="let product of shopList">{{product.name}}</td>
+          </tr>
+          <tr>
+            <th>Image</th>
+            <td *ngFor="let product of shopList">
+              <img src="{{product.image}}" alt="image failed to load" style="height:100px;">
+            </td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
+            </td>
+          </tr>
+        </table>
+    </div>
+    <!-- News -->
+    <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      
+    </div>
+    <!-- Events -->
+    <div id="EventsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+
+    </div>
+    <!-- Calendar -->
+    <div id="CalendarTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+
+    </div>
+  </div>
+  
   <!-- Below line separates page styling to prevent issues. Forces footer down. -->
   <div style="clear:both;"></div>
+
 </div>
