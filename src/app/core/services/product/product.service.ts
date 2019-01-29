@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   getProductById(userId, productId) {
-    return this.afFirestore.doc(`Users/${userId}/products/${productId}`).valueChanges().pipe(take(1));
+    return this.afFirestore.doc(`Users/${userId}/products/${productId}`).get(); // valueChanges().pipe(take(1));
   }
 
   addProductById(authId, product) {
@@ -31,5 +31,9 @@ export class ProductService {
 
   getCartItems(auth) {
     return this.afFirestore.collection(`Users/${auth.uid}/cart`).valueChanges();
+  }
+
+  removeCartItem(authId, productId) {
+    this.afFirestore.doc(`Users/${authId}/cart/${productId}`).delete();
   }
 }
