@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import {User} from '../../models/User';
 import {take} from 'rxjs/operators';
 import { SubscriptionService } from '../sub/subscription.service';
+import { Topic } from '../../models/Topic';
 
 @Injectable({
   providedIn: 'root'
@@ -53,9 +54,21 @@ export class UserService {
     return this.afstore.doc(`Users/${id}`).valueChanges().pipe(take(1));
   }
 
-  //-Jimmy: used in the Beyonce page
+  //-Jimmy: used for personality page
   getUser(id){
     return this.afstore.doc<User>(`Users/${id}`).valueChanges();
+  }
+
+  setProfile(name){
+    // this.topic=name;
+    const data={
+      topic:name,
+    }
+    this.afstore.doc('image/ptopic').update(data);
+  }
+
+  getProfile(){
+    return this.afstore.doc<Topic>('image/ptopic').valueChanges();
   }
 
   getUsers() {

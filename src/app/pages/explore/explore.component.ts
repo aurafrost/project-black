@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { transition, trigger, query, style, stagger, animate, keyframes, sequence } from '@angular/animations';
 import { ImageService } from 'src/app/core/services/image/image.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'explore',
@@ -62,7 +63,8 @@ export class ExploreComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private router: Router,
-    private service: ImageService
+    private service: ImageService,
+    private uservice: UserService,
   ) {
     this.matIconRegistry.addSvgIcon('people_outline',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/sharp-people_outline-24px.svg'));
@@ -103,6 +105,12 @@ export class ExploreComponent implements OnInit {
     //wait for db to update current topic
     this.delay(2000);
     this.router.navigate(['organization']);
+  }
+  setProfile(name){
+    this.uservice.setProfile(name);
+    //wait for db to update current topic
+    this.delay(2000);
+    this.router.navigate(['personality']);
   }
 
 }

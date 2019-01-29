@@ -1,13 +1,13 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {User} from '../../../core/models/User';
-import {AngularFireList} from '@angular/fire/database';
-import {UserService} from '../../../core/services/user/user.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { User } from '../../../core/models/User';
+import { AngularFireList } from '@angular/fire/database';
+import { UserService } from '../../../core/services/user/user.service';
 
 @Component({
-  selector: 'beyonce',
-  templateUrl: './beyonce.component.html',
-  styleUrls: ['./beyonce.component.css'],
+  selector: 'personality',
+  templateUrl: './personality.component.html',
+  styleUrls: ['./personality.component.css'],
   animations: [
     trigger('listAnimation', [
       transition('*<=>*', [
@@ -47,7 +47,7 @@ import {UserService} from '../../../core/services/user/user.service';
     ]),
   ]
 })
-export class BeyonceComponent implements OnInit {
+export class PersonalityComponent implements OnInit {
   user: User;
   temp: HTMLElement;
   postList;
@@ -57,10 +57,12 @@ export class BeyonceComponent implements OnInit {
   }
 
   ngOnInit() {
-    //get user
-    this.service.getUser("beyonce").subscribe(data=>{
-      this.user=data;
-    });
+    this.service.getProfile().subscribe(t => {
+      //get user
+      this.service.getUser(t.topic).subscribe(data => {
+        this.user = data;
+      });
+    })
   }
 
   ngAfterViewInit() {

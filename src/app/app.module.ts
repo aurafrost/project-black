@@ -84,7 +84,7 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
-import { BeyonceComponent } from './pages/categories/beyonce/beyonce.component';
+import { PersonalityComponent } from './pages/categories/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
@@ -131,7 +131,7 @@ import {ProductService} from './core/services/product/product.service';
     ExploreComponent,
     JayzComponent,
     TomcruiseComponent,
-    BeyonceComponent,
+    PersonalityComponent,
     WillemdafoeComponent,
     VerifyEmailComponent,
     NascarComponent,
