@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ImageService } from 'src/app/core/services/image/image.service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Product';
 import { NavItem } from 'src/app/core/models/NavItem';
+import { Image } from 'src/app/core/models/Image';
+import { NewsApiService } from 'src/app/core/services/news-api.service';
 
 @Component({
   selector: 'organization',
@@ -11,9 +13,17 @@ import { NavItem } from 'src/app/core/models/NavItem';
 })
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
+  featuredList: Image[];
   shopList: Product[];
   navList: NavItem[];
-  constructor(private service: ImageService, private router: Router) {
+
+  //for news
+  mArticles:Array<any>;
+  mSources:Array<any>;
+  constructor(
+    private service: ImageService, 
+    private router: Router, 
+    private newsapi:NewsApiService) {
   }
 
   ngOnInit() {
@@ -23,6 +33,8 @@ export class OrganizationComponent implements OnInit {
       if (data.topic == null) {
         this.router.navigate(['/explore']);
       }
+      //load news articles
+      this.newsapi.initArticles(data.topic).subscribe(data => this.mArticles = data['articles']);
     });
     // this.topic = this.service.getTopic();
 
@@ -34,7 +46,13 @@ export class OrganizationComponent implements OnInit {
 
     //get shop list
     this.getShopList();
+
+    //load news sources
+    // this.newsapi.initSources().subscribe(data => this.mSources = data['sources']); 
   }
+
+  facebookLink: string = "";
+  twitterLink: string = "";
 
   getBaseElements() {
     this.service.getTopic().subscribe(t => {
@@ -54,11 +72,14 @@ export class OrganizationComponent implements OnInit {
         this.temp = document.getElementById('videoframe');
         this.temp.setAttribute('src', data.video);
         //set fb
-        this.temp = document.getElementById('fb');
-        this.temp.setAttribute('data-href', data.facebook);
+        console.log("test Facebook path")
+        console.log(data.facebook)
+        
+        this.facebookLink = data.facebook;
         //set twitter
-        this.temp = document.getElementById('twitter');
-        this.temp.setAttribute('href', data.twitter);
+        // this.temp = document.getElementById('twitter');
+        // this.temp.setAttribute('href', data.twitter);
+        this.twitterLink = data.twitter;
       });
     });
   }
@@ -73,10 +94,21 @@ export class OrganizationComponent implements OnInit {
 
   getShopList() {
     this.service.getTopic().subscribe(t => {
+      this.service.getList(t.topic,"featured").subscribe(data => {
+        this.featuredList=data;
+      })
+    });
+    this.service.getTopic().subscribe(t => {
       this.service.getShopList(t.topic).subscribe(data => {
         this.shopList = data;
       });
     });
+  }
+
+  //not implemented. keeping in case though.
+  searchArticles(source){
+    console.log("selected source is: "+source);
+    this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
 
   subscribe(name) {
@@ -105,6 +137,7 @@ export class OrganizationComponent implements OnInit {
     if (evt) {
       evt.currentTarget.className += " active";
     }
+
   }
 
   tabby2(evt, name) {

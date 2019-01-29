@@ -47,7 +47,6 @@ import { ExploreComponent } from './pages/explore/explore.component';
 import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
-import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
@@ -85,6 +84,7 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
+import { PersonalityComponent } from './pages/categories/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
@@ -131,7 +131,7 @@ import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list
     ExploreComponent,
     JayzComponent,
     TomcruiseComponent,
-    BeyonceComponent,
+    PersonalityComponent,
     WillemdafoeComponent,
     VerifyEmailComponent,
     NascarComponent,

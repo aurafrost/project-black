@@ -12,7 +12,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
-import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
@@ -30,6 +29,7 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
+import { PersonalityComponent } from "./pages/categories/personality/personality.component";
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
@@ -45,7 +45,7 @@ import {AuthGuard} from './core/guard/auth.guard';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
-  {path: 'cart', component: ShoppingCartComponent},
+{path: 'cart', component: ShoppingCartComponent},
 {path: 'about', component: AboutComponent},
 {path: 'account', component: AccountComponent},
 {path: 'content', component: ContentComponent},
@@ -55,8 +55,7 @@ const routes: Routes = [
 {path: 'login-register', component: LoginRegisterComponent},
 {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full', canActivate: [AuthGuard]},
 {path: 'explore', component: ExploreComponent},
-{path: 'search', component: SearchComponent},
-{path: 'beyonce', component: BeyonceComponent},
+{path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
 {path: 'jay-z', component: JayzComponent},
 {path: 'tomcruise', component: TomcruiseComponent},
 {path: 'willemdafoe', component: WillemdafoeComponent},
@@ -68,7 +67,7 @@ const routes: Routes = [
 {path: 'music', component: MusicComponent},
 {path: 'movies', component: MoviestvComponent},
 {path: 'football', component: FootballComponent},
-{path: 'beyonce', component: BeyonceComponent},
+{path: 'personality', component: PersonalityComponent},
 {path: 'bollywood', component: BollywoodComponent},
 {path: 'cricket', component: CricketComponent},
 {path: 'discovery', component: DiscoveryComponent},

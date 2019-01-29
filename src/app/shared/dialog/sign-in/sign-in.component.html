@@ -11,9 +11,10 @@
         <input matInput [(ngModel)]="password" type="password" placeholder="Password" name="password"/>
       </mat-form-field>
 
-      <mat-dialog-actions>
-        <button (click)="login()" mat-raised-button type="submit" mat-button>Login</button>
-      </mat-dialog-actions>
+      <div mat-dialog-actions>
+        <button (click)="login()" mat-raised-button type="submit" mat-button mat-dialog-close>Login</button>  <a href="forgotpassword">Forgot Password?</a>
+      </div>
+      
     </form>
   </mat-dialog-content>
 </div>
