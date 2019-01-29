@@ -4,7 +4,7 @@ import {ProductService} from '../../core/services/product/product.service';
 import {ActivatedRoute} from '@angular/router';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {MatDialog, MatDialogRef} from '@angular/material';
-import {ProductDialogComponent} from './product-dialog/product-dialog.component';
+import {ProductDialogComponent} from '../profile/shopping-list/product-dialog/product-dialog.component';
 import {SignInComponent} from '../../shared/dialog/sign-in/sign-in.component';
 import {Product} from '../../core/models/Product';
 
