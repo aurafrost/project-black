@@ -1,0 +1,44 @@
+.card {
+  margin-left: auto;
+}
+
+.container {
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+
+
+.primary-btn {
+  background-color: rgba(218,68,83,.7);
+  color: ghostwhite;
+  margin-right: .5rem;
+}
+
+.primary-btn:hover,
+.primary-btn.hover {
+  background-color: #DA4453;
+  color: ghostwhite;
+
+}
+
+.secondary-btn {
+  background-color: #363636;
+  color: ghostwhite;
+}
+
+.secondary-btn.hover,
+.secondary-btn:hover {
+  color: #DA4453;
+}
+
+.ct {
+  overflow: hidden;
+}
+
+.scroll {
+  height: 45rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

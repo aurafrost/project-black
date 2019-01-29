@@ -34,12 +34,11 @@ export class AuthService {
 
     this.userService.getAllUsers().subscribe(ul => {
       this.userList = ul;
-    })
+    });
 
   }
 
   get authenticated(): boolean {
-    console.log(this.auth)
     return this.auth.value != null;
   }
 
