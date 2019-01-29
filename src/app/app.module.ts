@@ -102,10 +102,11 @@ import { OrganizationComponent } from './pages/organization/organization.compone
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { ZbTestProfileComponent } from './pages/zb-test-profile/zb-test-profile.component';
-import { ProductDialogComponent } from './pages/zb-test-profile/product-dialog/product-dialog.component';
+import { ProductDialogComponent } from './pages/profile/shopping-list/product-dialog/product-dialog.component';
 import {AngularFireStorage} from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
+import {ProductService} from './core/services/product/product.service';
 
 @NgModule({
   declarations: [
@@ -216,6 +217,7 @@ import { ChatComponent } from './shared/chat/chat.component';
   providers: [
     AngularFireStorage,
     AuthGuard,
+    ProductService,
     AuthService,
     UserService,
     ImageService,
