@@ -1,4 +1,4 @@
-<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+<div class="content-container" style="background-color:  #ac6169" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
   <swiper class="swiper-container" *ngIf="type == 'component' && show" [userSwiperClass] fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div *ngFor="let item of data; let i of index" class="swiper-slide">
       <div class="h-100" style="width: 100%">

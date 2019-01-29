@@ -24,10 +24,9 @@
             <div class="card-body">
               <p class="card-text"></p>
             </div>
-            <!--<button mat-button class="secondary-btn">Remove from Cart</button>-->
             <div class="card-footer text-muted">
               ${{item.price}}
-              <button mat-button class="secondary-btn float-right">Remove</button>
+              <button (click)="removeItem(item)" mat-button class="secondary-btn float-right">Remove</button>
             </div>
           </div>
         </div>

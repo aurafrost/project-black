@@ -28,8 +28,10 @@ export class ShoppingCartComponent implements OnInit {
         console.log(data);
         data.map((i: Product, index) => {
           this._productService.getProductById(i.ownerId, i.productId)
-            .subscribe(product => {
-              const prod: Product = product;
+            .subscribe((product) => {
+              const prod = <Product>product.data();
+              prod.productId = product.id;
+              prod.productId = data[index].productId;
               console.log(prod);
               this.cart[index] = prod;
               this.sum += prod.price;
@@ -37,5 +39,9 @@ export class ShoppingCartComponent implements OnInit {
         });
         console.log(this.cart);
       });
+  }
+
+  removeItem(product: Product) {
+    this._productService.removeCartItem(this.auth.uid, product.productId);
   }
 }
