@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Product';
 import { NavItem } from 'src/app/core/models/NavItem';
 import { Image } from 'src/app/core/models/Image';
+import { NewsApiService } from 'src/app/core/services/news-api.service';
 
 @Component({
   selector: 'organization',
@@ -15,7 +16,14 @@ export class OrganizationComponent implements OnInit {
   featuredList: Image[];
   shopList: Product[];
   navList: NavItem[];
-  constructor(private service: ImageService, private router: Router) {
+
+  //for news
+  mArticles:Array<any>;
+  mSources:Array<any>;
+  constructor(
+    private service: ImageService, 
+    private router: Router, 
+    private newsapi:NewsApiService) {
   }
 
   ngOnInit() {
@@ -25,6 +33,8 @@ export class OrganizationComponent implements OnInit {
       if (data.topic == null) {
         this.router.navigate(['/explore']);
       }
+      //load news articles
+      this.newsapi.initArticles(data.topic).subscribe(data => this.mArticles = data['articles']);
     });
     // this.topic = this.service.getTopic();
 
@@ -34,10 +44,11 @@ export class OrganizationComponent implements OnInit {
     //nav elements
     this.getNavElements();
 
-
-
     //get shop list
     this.getShopList();
+
+    //load news sources
+    // this.newsapi.initSources().subscribe(data => this.mSources = data['sources']); 
   }
 
   facebookLink: string = "";
@@ -92,6 +103,12 @@ export class OrganizationComponent implements OnInit {
         this.shopList = data;
       });
     });
+  }
+
+  //not implemented. keeping in case though.
+  searchArticles(source){
+    console.log("selected source is: "+source);
+    this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
 
   subscribe(name) {
