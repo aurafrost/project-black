@@ -1,9 +1,9 @@
 <div id="page">
     <header-comp id="header"></header-comp>
     <page-nav></page-nav>
-    <div id="body">
+    <div id="body" style="overflow-x: hidden;">
        <router-outlet></router-outlet>
     </div>
-    <chat *ngIf="homepage"></chat>
+    <chat ></chat>
     <footer-comp id="footer"></footer-comp>
 </div>

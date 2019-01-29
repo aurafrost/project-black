@@ -14,6 +14,10 @@ body {
 
 /* PAGE HEADER & MENU */
 
+ .container-fluid {
+ background-color: rgb(127, 127, 127);
+ }
+
 #page_header {
 	margin : 0px auto 0px;
 	width : 689px;
@@ -319,4 +323,15 @@ li {
 	float : none;	
 	font-size : 1px;
 	line-height : 0px;
-}   
+}
+
+/*Shopping list*/
+ /*.container-fluid {*/
+   /*overflow: hidden;*/
+ /*}*/
+
+ /*.scroll {*/
+   /*height: 45rem;*/
+   /*overflow-y: scroll;*/
+   /*overflow-x: hidden;*/
+ /*}*/
