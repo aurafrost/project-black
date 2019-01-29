@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../core/services/user/user.service';
 import {ProductService} from '../../../core/services/product/product.service';
 import {MatDialog, MatDialogRef} from '@angular/material';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'shopping-list',
@@ -38,30 +39,42 @@ export class ShoppingListComponent implements OnInit {
         this.user = data;
         console.log(data);
       });
-    this._productService.getProductsByUser(this.uidParam)
-      .subscribe(data => {
-        this.products = data;
-        console.log(data);
-      });
+    this._productService.getProductsByUser(this.uidParam).subscribe( data => {
+      this.products =     data.map(i => {
+          return {
+            id: i.payload.doc.id,
+            ...i.payload.doc.data()
+          };
+        });
+    });
+
+    console.log(this.products);
+
+    // data => {
+        // this.products = data;
+        // console.log(data);
+      // });
   }
 
   openDialog() {
     this.productDialogRef = this._dialog.open(ProductDialogComponent, {
       data: {
-        auth: this.auth
+        auth: this.auth,
+        user: this.user
       }
     });
   }
 
-  onAddToCartClick(productId, userId) {
-    this.addItem = this._productService.getProductById(productId, userId)
-      .subscribe(data => {
-        this.addItem = data;
-        this.addProductToCart(this.addItem);
-      });
-  }
+  // onAddToCartClick(productId, userId) {
+  //   this.addItem = this._productService.getProductById(productId, userId)
+  //     .subscribe(data => {
+  //       this.addItem = data;
+  //       this.addProductToCart(this.addItem);
+  //     });
+  // }
 
-  addProductToCart(item) {
-    this._productService.addProductToCart('', item);
+  addProductToCart(product) {
+    console.log(product);
+    this._productService.addProductToCart(this.auth.uid, product);
   }
 }
