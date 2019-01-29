@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import { ChatMessage } from './chatMessage';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'chat',
@@ -12,18 +13,19 @@ import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 })
 export class ChatComponent implements OnInit, AfterViewChecked {
-  userId = 'Anonymous';
+  userId = JSON.parse(localStorage.getItem('auth')) ? JSON.parse(localStorage.getItem('auth')).email : 'Anonymous';
   items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
   messages: any;
   messagesCollection: AngularFirestoreCollection<ChatMessage>;
-
   @ViewChild('sendMessageInput')
   sendMessageInput: ElementRef;
+  router;
 
   @ViewChild('messageChatArea')
   messageChatArea: CdkVirtualScrollViewport;
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, router: Router) {
+    this.router = router;
   }
 
   ngOnInit() {
@@ -50,6 +52,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() {
     //console.log('view checked');
     this.messageChatArea.scrollToOffset(10000);
+    // console.log('url: ' + this.homepage);
 
   }
 
