@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    return this.auth != null;
+    return this.auth.value != null;
   }
 
   getAuth() {
@@ -102,7 +102,7 @@ export class AuthService {
   signOut() {
     return this.afAuth.auth.signOut()
       .then(() => {
-        this.auth.next(null);
+        this.auth = null;
         localStorage.removeItem('auth');
         // this.auth.next(null);
         this.router.navigate(['']);
