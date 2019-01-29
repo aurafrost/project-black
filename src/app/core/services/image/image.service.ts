@@ -39,6 +39,10 @@ export class ImageService {
     return this.db.collection<Image>('image/'+base+'/nav').valueChanges();
   }
 
+  getList(base,list){
+    return this.db.collection<Image>('image/' + base + '/' + list).valueChanges();
+  }
+
   getShopList(base){
     // return this.db.doc<Product>('image/'+base+"/"+path).valueChanges();
     return this.db.collection<Product>('image/' + base + '/shop').valueChanges();

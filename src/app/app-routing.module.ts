@@ -12,7 +12,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
-import { BeyonceComponent } from './celebrities/beyonce/beyonce.component';
 import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
 import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
@@ -30,6 +29,7 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
+import { BeyonceComponent } from "./pages/categories/beyonce/beyonce.component";
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
@@ -56,7 +56,6 @@ const routes: Routes = [
 {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full', canActivate: [AuthGuard]},
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
-{path: 'beyonce', component: BeyonceComponent},
 {path: 'jay-z', component: JayzComponent},
 {path: 'tomcruise', component: TomcruiseComponent},
 {path: 'willemdafoe', component: WillemdafoeComponent},

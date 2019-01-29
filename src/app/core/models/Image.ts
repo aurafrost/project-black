@@ -7,8 +7,8 @@ export class Image{
     image:string;
     href:string;
     text:string;
-    
-    constructor(title?,bg?,facebook?,twitter?,video?,image?,href?,text?){
+    name:string
+    constructor(title?,bg?,facebook?,twitter?,video?,image?,href?,text?,name?){
         this.title=title;
         this.bg=bg;
         this.facebook=facebook;
@@ -17,5 +17,6 @@ export class Image{
         this.image=image;
         this.href=href;
         this.text=text;
+        this.name=name;
     }
 }
