@@ -45,7 +45,7 @@ import {AuthGuard} from './core/guard/auth.guard';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
-  {path: 'cart', component: ShoppingCartComponent},
+{path: 'cart', component: ShoppingCartComponent},
 {path: 'about', component: AboutComponent},
 {path: 'account', component: AccountComponent},
 {path: 'content', component: ContentComponent},
@@ -55,7 +55,7 @@ const routes: Routes = [
 {path: 'login-register', component: LoginRegisterComponent},
 {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full', canActivate: [AuthGuard]},
 {path: 'explore', component: ExploreComponent},
-{path: 'search', component: SearchComponent},
+{path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
 {path: 'beyonce', component: BeyonceComponent},
 {path: 'jay-z', component: JayzComponent},
 {path: 'tomcruise', component: TomcruiseComponent},
