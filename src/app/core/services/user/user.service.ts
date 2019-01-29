@@ -53,6 +53,11 @@ export class UserService {
     return this.afstore.doc(`Users/${id}`).valueChanges().pipe(take(1));
   }
 
+  //-Jimmy: used in the Beyonce page
+  getUser(id){
+    return this.afstore.doc<User>(`Users/${id}`).valueChanges();
+  }
+
   getUsers() {
     //return this.afDatabase.list(`/Users/`);
     //return this.afstore.collection()
