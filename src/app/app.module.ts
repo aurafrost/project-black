@@ -86,7 +86,7 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { PersonalityComponent } from './pages/categories/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
-import { StatsComponent } from './pages/stats/stats.component';
+
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 
@@ -106,7 +106,11 @@ import {AngularFireStorage} from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
 import {ProductService} from './core/services/product/product.service';
-import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list.component';
+import { LchartComponent } from './Analytics/lchart/lchart.component';
+import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -166,7 +170,8 @@ import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list
     TestShopComponent,
     ProductDialogComponent,
     ChatComponent,
-    ShoppingListComponent
+    LchartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -213,6 +218,7 @@ import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list
     }),
     FlatpickrModule.forRoot(),
     NgbModalModule,
+    ChartsModule
   ],
   providers: [
     AngularFireStorage,
