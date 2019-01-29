@@ -3,6 +3,7 @@ import { ImageService } from 'src/app/core/services/image/image.service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Product';
 import { NavItem } from 'src/app/core/models/NavItem';
+import { Image } from 'src/app/core/models/Image';
 
 @Component({
   selector: 'organization',
@@ -11,6 +12,7 @@ import { NavItem } from 'src/app/core/models/NavItem';
 })
 export class OrganizationComponent implements OnInit {
   temp: HTMLElement;
+  featuredList: Image[];
   shopList: Product[];
   navList: NavItem[];
   constructor(private service: ImageService, private router: Router) {
@@ -31,6 +33,8 @@ export class OrganizationComponent implements OnInit {
 
     //nav elements
     this.getNavElements();
+
+
 
     //get shop list
     this.getShopList();
@@ -72,6 +76,11 @@ export class OrganizationComponent implements OnInit {
   }
 
   getShopList() {
+    this.service.getTopic().subscribe(t => {
+      this.service.getList(t.topic,"featured").subscribe(data => {
+        this.featuredList=data;
+      })
+    });
     this.service.getTopic().subscribe(t => {
       this.service.getShopList(t.topic).subscribe(data => {
         this.shopList = data;

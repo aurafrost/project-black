@@ -4,7 +4,9 @@
   <!-- Nav bar links -->
   <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
     <li class="nav-item" *ngFor="let navItem of navList">
-      <a class="nav-link" href="{{navItem.href}}"><img src="{{navItem.image}}" alt="image failed to load" height="40px"><div>{{navItem.text}}</div></a>
+      <a class="nav-link" href="{{navItem.href}}"><img src="{{navItem.image}}" alt="image failed to load" height="40px">
+        <div>{{navItem.text}}</div>
+      </a>
     </li>
   </ul>
 
@@ -50,32 +52,49 @@
   <!-- Container under video -->
   <div class="animated bounceIn" id="undervideo">
     <div class="tab2">
+      <button id="featuredbtn" class="tablinks2" (click)="tabby2(event, 'FeaturedTab')">Featured</button>
       <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
       <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
       <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
       <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
       <button class="tablinks2" (click)="tabby2(event, '')">X</button>
     </div>
+    <!-- Featured -->
+    <div id="FeaturedTab" class="tabcontent2" style="width:100%; overflow:auto;">
+      <div style="text-align: center;">Featured Artists</div>
+      <table class="animated bounceIn" id="featured">
+        <tr>
+          <th>Name</th>
+          <td *ngFor="let feature of featuredList">{{feature.name}}</td>
+        </tr>
+        <tr>
+          <th>Image</th>
+          <td *ngFor="let feature of featuredList">
+            <img src="{{feature.image}}" alt="image failed to load" style="height:200px;">
+          </td>
+        </tr>
+      </table>
+    </div>
     <!-- Shop -->
     <div id="ShopTab" class="tabcontent2" style="width: 100%; overflow: auto;">
       <div style="text-align: center;">Shop</div>
       <table class="animated bounceIn" id="shop">
-          <tr>
-            <th>Name</th>
-            <td *ngFor="let product of shopList">{{product.name}}</td>
-          </tr>
-          <tr>
-            <th>Image</th>
-            <td *ngFor="let product of shopList">
-              <img src="{{product.image}}" alt="image failed to load" style="height:100px;">
-            </td>
-          </tr>
-          <tr>
-            <th>Price</th>
-            <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
-            </td>
-          </tr>
-        </table>
+        <tr>
+          <th>Name</th>
+          <td *ngFor="let product of shopList">{{product.name}}</td>
+        </tr>
+        <tr>
+          <th>Image</th>
+          <td *ngFor="let product of shopList">
+            <img src="{{product.image}}" alt="image failed to load" style="height:200px;">
+          </td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
+          </td>
+        </tr>
+      </table>
     </div>
     <!-- News -->
     <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
@@ -91,7 +110,7 @@
       <calendar></calendar>
     </div>
   </div>
-  
+
   <!-- Below line separates page styling to prevent issues. Forces footer down. -->
   <div style="clear:both;"></div>
 
