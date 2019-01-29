@@ -29,16 +29,36 @@ export class OrganizationComponent implements OnInit {
   }
 
   ngOnInit() {
-    //check topic
-    this.service.getTopic().subscribe(data => {
-      console.log("Current Topic from db: " + data.topic);
-      if (data.topic == null) {
-        this.router.navigate(['/explore']);
-      }
+    //check if subscribed
+    this.service.getTopic().subscribe(t => {
+
+      //check topic
+      console.log("Current Topic from db: " + t.topic);
+      // if (t.topic == null) {
+      //   this.router.navigate(['/explore']);
+      // }
+
       //load news articles
-      this.newsapi.initArticles(data.topic).subscribe(data => this.mArticles = data['articles']);
+      this.newsapi.initArticles(t.topic).subscribe(mdata => this.mArticles = mdata['articles']);
+
+      //load news sources
+      // this.newsapi.initSources().subscribe(data => this.mSources = data['sources']); 
+
+      //check subscriptions
+      this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
+        if (data) {
+          document.getElementById('unsubbtn').style.display = "inline";
+          document.getElementById('subbtn').style.display = "none";
+        }
+        else {
+          document.getElementById('nav').style.display = "none";
+          document.getElementById('video').style.display = "none";
+          document.getElementById('sidevideo').style.display = "none";
+          document.getElementById('tabset').style.display = "none";
+          document.getElementById('undervideo').style.display = "none";
+        }
+      });
     });
-    // this.topic = this.service.getTopic();
 
     //get base elements
     this.getBaseElements();
@@ -48,9 +68,6 @@ export class OrganizationComponent implements OnInit {
 
     //get shop list
     this.getShopList();
-
-    //load news sources
-    // this.newsapi.initSources().subscribe(data => this.mSources = data['sources']); 
   }
 
   facebookLink: string = "";
@@ -120,18 +137,19 @@ export class OrganizationComponent implements OnInit {
 
   //if not subscribed
   subscribe() {
-    document.getElementById('subbtn').style.display="none";
-    document.getElementById('unsubbtn').style.display = "inline";
     this.service.getTopic().subscribe(t => {
       //need to replace temp with current user later
       this.uservice.addSub("temp", t.topic);
-    })
+    });
+    document.getElementById('subbtn').style.display = "none";
+    document.getElementById('unsubbtn').style.display = "inline";
+    this.ngOnInit();
   }
 
   //if already subscribed
   unsubscribe() {
     document.getElementById('unsubbtn').style.display = "none";
-    document.getElementById('subbtn').style.display="inline";
+    document.getElementById('subbtn').style.display = "inline";
     this.service.getTopic().subscribe(t => {
       //need to replace temp with current user later
       this.uservice.removeSub("temp", t.topic);
