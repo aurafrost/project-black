@@ -1,0 +1,98 @@
+<!-- Background image -->
+<div id="page">
+
+  <!-- Nav bar links -->
+  <ul class="nav nav-pills nav-fill animated fadeInDown" style="position: relative; height: 20%; background-color: #363636">
+    <li class="nav-item" *ngFor="let navItem of navList">
+      <a class="nav-link" href="{{navItem.href}}"><img src="{{navItem.image}}" alt="image failed to load" height="40px"><div>{{navItem.text}}</div></a>
+    </li>
+  </ul>
+
+  <!-- Below line separates page styling to prevent issues -->
+  <div style="clear:both;"></div>
+
+  <!-- Welcome text -->
+  <span style="overflow:hidden; position:relative; text-align: center; color:black;"><br>
+    <h1 class="animated bounceIn">
+      <div id="title"></div> <button class="btn btn-success" id="subbtn" (click)="subscribe('name')">Subscribe
+        | +</button>
+    </h1><br>
+  </span>
+
+  <!-- Below line separates page styling to prevent issues -->
+  <div style="clear:both;"></div>
+
+  <!-- Video -->
+  <div id="video">
+    <iframe id="videoframe" class="animated bounceIn" width="100%" height="100%" src="" allow="autoplay; encrypted-media"></iframe>
+  </div>
+
+  <!-- Container beside video -->
+  <div class="animated bounceIn" id="sidevideo">
+    <div class="tab">
+      <button id="fbbtn" class="tablinks" (click)="tabby(event, 'Facebook')">Facebook</button>
+      <button id="twitterbtn" class="tablinks" (click)="tabby(event, 'Twitter')">Twitter</button>
+      <button class="tablinks" (click)="tabby(event, '')">X</button>
+    </div>
+    <!-- Facebook API -->
+    <div id="Facebook" class="tabcontent" style="width: 100%">
+      <div>Facebook API</div>
+      <div id="fb" style="width: 100%" class="fb-page" data-tabs="timeline,events,messages" data-href=""
+        data-hide-cover="false"></div>
+    </div>
+    <!-- Twitter API -->
+    <div id="Twitter" class="tabcontent" style="width: 100%">
+      <a id="twitter" class="twitter-timeline" data-theme="dark" href="https://www.twitter.com">Tweets</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>
+
+  <!-- Container under video -->
+  <div class="animated bounceIn" id="undervideo">
+    <div class="tab2">
+      <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
+      <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
+      <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
+      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
+      <button class="tablinks2" (click)="tabby2(event, '')">X</button>
+    </div>
+    <!-- Shop -->
+    <div id="ShopTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      <div style="text-align: center;">Shop</div>
+      <table class="animated bounceIn" id="shop">
+          <tr>
+            <th>Name</th>
+            <td *ngFor="let product of shopList">{{product.name}}</td>
+          </tr>
+          <tr>
+            <th>Image</th>
+            <td *ngFor="let product of shopList">
+              <img src="{{product.image}}" alt="image failed to load" style="height:100px;">
+            </td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
+            </td>
+          </tr>
+        </table>
+    </div>
+    <!-- News -->
+    <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      placeholder for news. No news is good news.
+    </div>
+    <!-- About -->
+    <div id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      <!-- Placeholder using About us page. Not intended to stay. -->
+      <about></about>
+    </div>
+    <!-- Calendar -->
+    <div id="CalendarTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+      <calendar></calendar>
+    </div>
+  </div>
+  
+  <!-- Below line separates page styling to prevent issues. Forces footer down. -->
+  <div style="clear:both;"></div>
+
+</div>

@@ -39,10 +39,6 @@ export class LoginRegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(1)
       ])),
-      username: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.minLength(1)
-      ])),
       email: new FormControl('', Validators.compose([
         Validators.required
       ])),
@@ -92,10 +88,12 @@ export class LoginRegisterComponent implements OnInit {
 
     const user = new User(
       null,
-      this.userFormData.value.username,
       this.userFormData.value.email,
       this.userFormData.value.fname,
-      this.userFormData.value.lname
+      this.userFormData.value.lname,
+      "user",
+      [],
+      []
     );
 
     console.log(user);

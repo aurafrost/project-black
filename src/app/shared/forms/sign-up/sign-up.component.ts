@@ -47,7 +47,6 @@ export class SignUpComponent implements OnInit {
   signUp() {
     const user = new User(
       null,
-        this.formData.value.username,
         this.formData.value.email,
         this.formData.value.fname,
         this.formData.value.lname

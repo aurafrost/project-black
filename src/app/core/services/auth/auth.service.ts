@@ -10,20 +10,20 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private auth = new BehaviorSubject<Object>(null);
-  $auth = this.auth.asObservable();
-
+    public auth = new BehaviorSubject<Object>({});
+    $auth = this.auth.asObservable();
+    private userList: User[]; 
   constructor(
     private afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
     private router: Router,
-    private ngZone: NgZone, // service to remove outside scope warning
+    private ngZone: NgZone, // categories to remove outside scope warning
     private userService: UserService
   ) {
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      console.log(auth);
-      if (auth) {
+      
+      if (this.auth.next) {
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
       } else {
@@ -31,10 +31,19 @@ export class AuthService {
         this.auth = null;
       }
     });
+
+    this.userService.getAllUsers().subscribe(ul => {
+      this.userList = ul;
+    })
+
   }
 
   get authenticated(): boolean {
     return this.auth != null;
+  }
+
+  getAuth() {
+    return this.auth;
   }
 
   // get currentUser(): any {
@@ -48,17 +57,29 @@ export class AuthService {
   signIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth.user.emailVerified) {
-            if (auth) {
-              localStorage.setItem('auth', JSON.stringify(auth.user));
-              console.log(JSON.parse(localStorage.getItem('auth')));
-            } else {
-              localStorage.setItem('auth', null);
-              console.log(localStorage.getItem('auth'));
+        if (1) {//auth.user.emailVerified) {
+          console.log(auth.user);
+          if (auth) {
+            localStorage.setItem('auth', JSON.stringify(auth.user));
+            console.log(JSON.parse(localStorage.getItem('auth')));
+          } else {
+            localStorage.setItem('auth', null);
+            console.log(localStorage.getItem('auth'));
+          }
+            
+          console.log(this.userList)
+          this.userList.forEach(user => {
+            if(user.uid === auth.user.uid)
+            {
+              if(user.role === "celeb")
+                this.router.navigate(['sports']);
+              else if(user.role === "user")
+                this.router.navigate([''])
+              else
+                this.router.navigate(['travel'])
             }
-          this.ngZone.run(() => {
-            this.router.navigate(['home']);
-          });
+          })
+
         }
       }).catch((err) => {
         window.alert(err.message);
@@ -72,12 +93,7 @@ export class AuthService {
           // TODO: open login model or redirect to login page
         });
         user.uid = auth.user.uid;
-        this.userService.createUser(auth.user.uid, user)
-          .then(res => {
-            console.log('user Added!');
-          }).catch(err => {
-            console.log(err.message);
-        });
+        this.userService.createUser(auth.user.uid, user);
       }).catch(err => {
         window.alert(err.message);
       });
@@ -86,9 +102,10 @@ export class AuthService {
   signOut() {
     return this.afAuth.auth.signOut()
       .then(() => {
+        this.auth.next(null);
         localStorage.removeItem('auth');
         // this.auth.next(null);
-        this.router.navigate(['home']);
+        this.router.navigate(['']);
       });
   }
 }

@@ -21,7 +21,7 @@
                             <mat-icon svgIcon="av_timer"></mat-icon> {{person.postsMonth}}
                           </li>
                       </ul>
-                  <button class="subscribe-btn" mat-raised-button>Subscribe</button>
+                  <button *ngIf="person.numSubs !== -1" class="subscribe-btn" mat-raised-button>Subscribe</button>
                 </div>
             </div>
           </div>

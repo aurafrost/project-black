@@ -14,11 +14,11 @@ export class TomcruiseComponent implements OnInit {
   htmlele:HTMLElement;
 
   constructor(private service:UserService) {
-    this.user = new User(null, 'Tom', 'tomcruise@test.com', 'Tom', 'Cruise');
+    this.user = new User(null, 'tomcruise@test.com', 'Tom', 'Cruise');
    }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
+    //this.user=this.categories.getUser();
     this.profile=document.getElementById("profile") as HTMLElement;
     this.profile.style.display="flex";   
     this.editBlock=document.getElementById("editBlock") as HTMLElement;
@@ -29,9 +29,8 @@ export class TomcruiseComponent implements OnInit {
   edit(){
     this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
     this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
     this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
-    //this.service.setUser(this.user.uid);
+    //this.categories.setUser(this.user.uid);
     this.ngOnInit();
   }
 

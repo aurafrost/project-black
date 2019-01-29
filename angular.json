@@ -24,7 +24,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/swiper/dist/css/swiper.min.css"
+              "node_modules/swiper/dist/css/swiper.min.css",
+              "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "node_modules/swiper/dist/js/swiper.min.js"

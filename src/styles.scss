@@ -2,8 +2,17 @@
 @import 'variables.scss';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~swiper/dist/css/swiper.min.css';
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 .justify-content-center {
   display: flex !important;
   justify-content: center !important;
+}
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
 }

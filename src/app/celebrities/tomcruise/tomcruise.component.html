@@ -7,7 +7,6 @@
                   <li class="list-group-item"><img id="avatar" src="../../../assets/png/cruise_200x200.png" alt="avatar here"></li>
                   <li class="list-group-item">First Name: {{user.fname}}</li>
                   <li class="list-group-item">Last Name: {{user.lname}}</li>
-                  <li class="list-group-item">Username: {{user.username}} </li>
                   <li class="list-group-item">Email: {{user.email}}</li>
               </ul>
               <br>
@@ -41,7 +40,6 @@
                   <h5 class="card-title">Editing Profile</h5>
                   <p class="card-text">First Name: <input type="text" value={{user.fname}} id="edit-fname" /></p>
                   <p class="card-text">Last Name: <input type="text" value={{user.lname}} id="edit-lname"/></p>
-                  <p class="card-text">Username: <input type="text" value={{user.username}} id="edit-uname"/></p>
                   <p class="card-text">Email: <input type="text" value={{user.email}} id="edit-email"/></p>
                   <button (click)="edit()">Submit</button>
               </div>

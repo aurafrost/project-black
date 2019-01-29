@@ -1,15 +1,12 @@
 <div class="container" id="container">
-    <h1 class="jumbotron jumbotron-fluid">Registration</h1>
-    <form [formGroup]="userFormData" (ngSubmit)="register()" method="POST">
+    <h1 class="jumbotron jumbotron-fluid animated bounceIn">Registration</h1>
+    <form [formGroup]="userFormData" (ngSubmit)="register()" method="POST" class="animated fadeInLeft">
       <h2>User Details</h2>
         <mat-form-field>
           <input matInput type="text" id="fname" formControlName="fname" placeholder="First Name"/>
         </mat-form-field><br>
         <mat-form-field>
           <input matInput type="text" id="lname" formControlName="lname" placeholder="Last Name"/>
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text" id="username" formControlName="username" placeholder="Username (Name other users see)"/>
         </mat-form-field><br>
         <mat-form-field>
           <input matInput type="email" id="email" formControlName="email" placeholder="Email Address"/>

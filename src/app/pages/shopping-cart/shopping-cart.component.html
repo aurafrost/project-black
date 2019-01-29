@@ -1,0 +1,51 @@
+<div class="container-fluid ng-star-inserted">
+  <div class="row">
+    <div class="col-sm">
+      <div>
+        <h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Your cart</span><span class="badge badge-primary badge-pill">{{cart.length}}</span></h4>
+        <ul class="list-group mb-3">
+          <li *ngFor="let  item of cart" class="list-group-item d-flex justify-content-between lh-condensed ng-star-inserted">
+            <div><h6 class="my-0">{{item.title}}</h6></div>
+            <span class="text-muted">${{item.price}}</span>
+          </li>
+        </ul>
+        <div class="list-group-item d-flex justify-content-between"><span>Total: </span><strong>${{this.sum}}</strong></div>
+        <button class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="row">
+        <div *ngFor="let item of cart" class="col-12 ng-star-inserted mb-1">
+          <div class="card text-center">
+            <div class="card-header">
+              {{item.title}}
+            </div>
+            <img src="{{item.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"></p>
+            </div>
+            <button class="btn btn-outline-primary">Remove from Cart</button>
+            <div class="card-footer text-muted">
+              ${{item.price}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <!--<div class="row">-->
+        <!--<div *ngFor="let product of products" class="col-12">-->
+          <!--<div class="card bg-dark text-white">-->
+            <!--<img src="{{product.img}}" class="card-img" alt="...">-->
+            <!--<div class="card-img-overlay">-->
+              <!--<h5 class="card-title">{{product.title}}</h5>-->
+              <!--<p class="card-text"></p>-->
+              <!--<p class="card-text">${{product.price}}</p>-->
+              <!--<button class="btn btn-outline-primary">Add to Cart</button>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>

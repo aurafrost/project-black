@@ -1,17 +1,33 @@
-div#page{
+#page{
     width:100%;
-    height: auto;
+    overflow: hidden;
+    height: 40rem;
+    background-image: url('/assets/nascar.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100%;
+    z-index: -1;
 }
+
+/* #gif {
+    background-image: url("/assets/O2st.gif");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position:center;
+    width: 40rem;
+    height: 13rem;
+    margin: 0 auto;
+    z-index: 100;
+    position: absolute;
+} */
 iframe{
-    display: none;
+    display: block;
 }
 img#bg{
-    opacity: .2;
     width:100%;
     height: auto;
 }
 div#textSpace{
-    position: absolute;
     top: 10%;
     width: 100%;
     text-align: center;

@@ -14,11 +14,11 @@ export class WillemdafoeComponent implements OnInit {
   htmlele:HTMLElement;
 
   constructor(private service:UserService) {
-    this.user = new User(null, 'Will', 'willemdafoe@test.com', 'Willem', 'Dafoe');
+    this.user = new User(null, 'willemdafoe@test.com', 'Willem', 'Dafoe');
    }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
+    //this.user=this.categories.getUser();
     this.profile=document.getElementById("profile") as HTMLElement;
     this.profile.style.display="flex";   
     this.editBlock=document.getElementById("editBlock") as HTMLElement;
@@ -29,9 +29,8 @@ export class WillemdafoeComponent implements OnInit {
   edit(){
     this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
     this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
     this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
-    //this.service.setUser(this.user.uid);
+    //this.categories.setUser(this.user.uid);
     this.ngOnInit();
   }
 

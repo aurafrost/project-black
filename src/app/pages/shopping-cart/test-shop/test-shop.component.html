@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let item" class="col-12">
+      <div class="card bg-dark text-white">
+        <img src="{{item.img}}" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">${{item.price}}</p>
+          <button class="btn btn-outline-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

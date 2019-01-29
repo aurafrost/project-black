@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { UserService } from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
 import { Observable } from 'rxjs';
@@ -49,83 +49,76 @@ import { transition, trigger, query, style, stagger, animate, keyframes, sequenc
     ]),
   ]
 })
-export class ProfileComponent implements OnInit, AfterViewInit {
-  user: User;
-  profile: HTMLElement;
-  editBlock: HTMLElement;
-  htmlele: HTMLElement;
-  list: AngularFireList<any[]>;
-  friendsList;
-  posts;
-  state = 'loading';
+export class ProfileComponent implements OnInit {
+  // user: User;
+  // htmlele: HTMLElement;
+  // list: AngularFireList<any[]>;
+  // friendsList;
+  // posts;
+  // state = 'loading';
+  // @ViewChild('profile') profileBlock: ElementRef;
+  // @ViewChild('editBlock') editBlock: ElementRef;
 
   constructor(private service: UserService) {
-    this.user = new User(null, 'testuser', 'test@test.com', 'Test', 'User');
+    // this.user = new User(null, 'test@test.com', 'Test', 'User');
   }
 
   ngOnInit() {
-    //this.user=this.service.getUser();
-    this.profile = document.getElementById("profile") as HTMLElement;
-    this.profile.style.display = "flex";
-    this.editBlock = document.getElementById("editBlock") as HTMLElement;
-    this.editBlock.style.display = "none";
+    //this.user=this.categories.getUser();
+    
+   // this.profileBlock.nativeElement.style.display = "flex";
+   // this.editBlock.nativeElement.style.display = "none";
 
     //get from server
-    this.getFromServer();
+    // this.getFromServer();
 
   }
 
-  ngAfterViewInit() {
-    this.state = 'loaded';
-  }
+  // ngAfterViewInit() {
+    // this.state = 'loaded';
+  // }
 
-  getFromServer() {
-    this.friendsList = ['../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png',
-      '../../../assets/png/avatar.png'];
-
-    this.posts = ['Cras justo odio'
-      , 'Dapibus ac facilisis'
-      , 'Morbi leo risus'
-      , 'Porta ac consectetur '
-      , 'Vestibulum at eros'
-      , 'Cras justo odio']
-  }
-
-
-  edit() {
-    this.user.fname = (document.getElementById("edit-fname") as HTMLInputElement).value;
-    this.user.lname = (document.getElementById("edit-lname") as HTMLInputElement).value;
-    this.user.username = (document.getElementById("edit-uname") as HTMLInputElement).value;
-    this.user.email = (document.getElementById("edit-email") as HTMLInputElement).value;
-    //this.service.setUser(this.user.uid);
-    this.ngOnInit();
-  }
-
-  showEdit() {
-    this.profile = document.getElementById("profile") as HTMLElement;
-    this.profile.style.display = "none";
-    this.editBlock = document.getElementById("editBlock") as HTMLElement;
-    this.editBlock.style.display = "block";
-  }
-
-  deletePost(id) {
-
-    console.log(id);
-    var r = confirm("Delete post?");
-    if (r == true) {
-      this.htmlele = document.getElementById(id) as HTMLElement;
-      this.htmlele.parentNode.removeChild(this.htmlele);
-    }
-  }
+  // getFromServer() {
+  //   this.friendsList = ['../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png',
+  //     '../../../assets/png/avatar.png'];
+  //
+  //   this.posts = ['Cras justo odio'
+  //     , 'Dapibus ac facilisis'
+  //     , 'Morbi leo risus'
+  //     , 'Porta ac consectetur '
+  //     , 'Vestibulum at eros'
+  //     , 'Cras justo odio']
+  // }
 
 
+  // edit() {
+
+    //this.categories.setUser(this.user.uid);
+    // this.ngOnInit();
+  // }
+
+  // showEdit() {
+  //   this.profileBlock.nativeElement.style.display = "none";
+  //   this.editBlock.nativeElement.style.display = "block";
+  // }
+
+  //will need refactoring
+  // deletePost(id) {
+  //
+  //   console.log(id);
+  //   var r = confirm("Delete post?");
+  //   if (r == true) {
+  //     this.htmlele = document.getElementById(id) as HTMLElement;
+  //     this.htmlele.parentNode.removeChild(this.htmlele);
+  //   }
+  // }
 }
