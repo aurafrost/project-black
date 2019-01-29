@@ -118,25 +118,24 @@ export class OrganizationComponent implements OnInit {
   //   this.temp = document.getElementById('subbtn');
   // }
 
+  //if not subscribed
   subscribe() {
-    this.temp = document.getElementById('subbtn');
-    //if already subscribed
-    if (this.temp.innerText == "Unsubscribe") {
-      this.service.getTopic().subscribe(t => {
-        this.uservice.removeSub("temp", t.topic);
-      })
-      this.temp.className = "btn btn-success";
-      this.temp.innerText = "Subscribe | +";
-    }
-    //if not subscribed
-    else {
-      this.service.getTopic().subscribe(t => {
-        //need to replace temp with current user later
-        this.uservice.addSub("temp", t.topic);
-      })
-      this.temp.className = "btn btn-danger";
-      this.temp.innerText = "Unsubscribe";
-    }
+    document.getElementById('subbtn').style.display="none";
+    document.getElementById('unsubbtn').style.display = "inline";
+    this.service.getTopic().subscribe(t => {
+      //need to replace temp with current user later
+      this.uservice.addSub("temp", t.topic);
+    })
+  }
+
+  //if already subscribed
+  unsubscribe() {
+    document.getElementById('unsubbtn').style.display = "none";
+    document.getElementById('subbtn').style.display="inline";
+    this.service.getTopic().subscribe(t => {
+      //need to replace temp with current user later
+      this.uservice.removeSub("temp", t.topic);
+    })
   }
 
   tabby(evt, name) {
