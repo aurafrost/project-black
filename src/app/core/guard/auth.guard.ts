@@ -16,11 +16,11 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (this.auth.auth.value != null) {return true; }
+    if (this._authService.auth.value != null) {return true; }
 
     console.log('access denied!');
     alert("User not logged in, please login or register");
-    this.router.navigate(['/login-register']);
+    this._router.navigate(['/login-register']);
     return false;
   }
 }
