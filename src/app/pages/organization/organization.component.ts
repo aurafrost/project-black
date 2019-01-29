@@ -36,10 +36,9 @@ export class OrganizationComponent implements OnInit {
     this.getShopList();
   }
 
-  fbLink: string;
-  twitterLink: string;
-  @ViewChild('fb') facebookAPI: ElementRef;
-  @ViewChild('twitter') twitterAPI: ElementRef;
+  facebookLink: string = "";
+  twitterLink: string = "";
+
   getBaseElements() {
     this.service.getTopic().subscribe(t => {
       //get image doc
@@ -60,12 +59,11 @@ export class OrganizationComponent implements OnInit {
         //set fb
         console.log("test Facebook path")
         console.log(data.facebook)
-        this.facebookAPI.nativeElement.setAttribute('data-href', data.facebook);
-        this.fbLink = data.facebook;
+        
+        this.facebookLink = data.facebook;
         //set twitter
         // this.temp = document.getElementById('twitter');
         // this.temp.setAttribute('href', data.twitter);
-        this.twitterAPI.nativeElement.setAttribute('href', data.twitter);
         this.twitterLink = data.twitter;
       });
     });
