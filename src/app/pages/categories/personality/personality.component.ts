@@ -64,6 +64,7 @@ export class PersonalityComponent implements OnInit {
       //get user
       this.service.getUser(t.topic).subscribe(data => {
         this.user = data;
+        console.log(this.user)
       });
       //init news
       this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
