@@ -31,7 +31,7 @@
       <button mat-flat-button (click)="doSearch()" style="margin: 0; padding: 0;">Search</button>
     </form>
     <button *ngIf="!auth" class="styled" mat-menu-item routerLink="/login-register">Register</button>
-    <button *ngIf="!auth" class="styled" mat-menu-item (click)="openDialog($event)">Login</button>
+    <button *ngIf="!auth" class="styled" mat-menu-item (click)="openDialog()">Login</button>
     <button (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
     </button>
@@ -43,7 +43,7 @@
   </mat-menu>
   <mat-toolbar *ngIf="(isMobile | async)?.matches">
     <button class="secondary-btn"  mat-button routerLink="/">Home</button>
-    <button class="secondary-btn"  mat-button routerLink="profile/{{auth.uid}}">Profile</button>
+    <button class="secondary-btn"  mat-button routerLink="profile/">Profile</button>
     <button id="hoverExplore" class="secondary-btn"  mat-button routerLink="explore">Explore</button>
     <button class="secondary-btn"  mat-button routerLink="content">Feed</button>
   </mat-toolbar>
