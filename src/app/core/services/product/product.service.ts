@@ -12,7 +12,7 @@ export class ProductService {
   ) { }
 
   getProductsByUser(userId) {
-    return this.afFirestore.collection(`Users/${userId}/products`).valueChanges();
+    return this.afFirestore.collection(`Users/${userId}/products`).snapshotChanges();
   }
 
   getProductById(userId, productId) {
@@ -24,8 +24,9 @@ export class ProductService {
     return this.afFirestore.collection(`Users/${authId}/products`).add(product);
   }
 
-  addProductToCart(authId, productId) {
-    return this.afFirestore.collection(`Users/${authId}/cart`).add(productId);
+  addProductToCart(authId, product) {
+    return this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
+      .set({productId: product.id, ownerId: product.ownerId});
   }
 
   getCartItems(auth) {

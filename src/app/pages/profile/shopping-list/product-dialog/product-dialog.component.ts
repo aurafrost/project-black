@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 
 import {AngularFireStorage} from '@angular/fire/storage';
@@ -30,6 +30,7 @@ export class ProductDialogComponent implements OnInit {
     private _productService: ProductService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
+    console.log(this.data);
     this.productFormData = this.formInit();
   }
 
@@ -75,6 +76,7 @@ export class ProductDialogComponent implements OnInit {
   upload() {
     console.log(this.url);
     const p: Product = {
+      ownerId: this.data.user.uid,
       img: this.url,
       title: this.productFormData.value.title,
       price: this.productFormData.value.price
