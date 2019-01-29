@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
   public email = '';
+  public emailTest = "";
   public password = '';
   
   constructor(
@@ -23,6 +24,8 @@ export class SignInComponent implements OnInit {
   }
 
   login() {
+    console.log(this.email)
+    
     this.authService.signIn(this.email, this.password)
       .then(res => {
         
