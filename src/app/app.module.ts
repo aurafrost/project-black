@@ -86,7 +86,7 @@ import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.co
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
-import { StatsComponent } from './pages/stats/stats.component';
+
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 
@@ -107,6 +107,11 @@ import {AngularFireStorage} from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
 import {ProductService} from './core/services/product/product.service';
+import { LchartComponent } from './Analytics/lchart/lchart.component';
+import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -166,7 +171,9 @@ import {ProductService} from './core/services/product/product.service';
     TestShopComponent,
     ZbTestProfileComponent,
     ProductDialogComponent,
-    ChatComponent
+    ChatComponent,
+    LchartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -213,6 +220,7 @@ import {ProductService} from './core/services/product/product.service';
     }),
     FlatpickrModule.forRoot(),
     NgbModalModule,
+    ChartsModule
   ],
   providers: [
     AngularFireStorage,

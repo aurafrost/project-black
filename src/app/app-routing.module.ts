@@ -42,6 +42,7 @@ import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import {AuthGuard} from './core/guard/auth.guard';
+import { LchartComponent } from './Analytics/lchart/lchart.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -75,6 +76,7 @@ const routes: Routes = [
 {path: 'formulaone', component: FormulaoneComponent},
 {path: 'jackiechan', component: JackiechanComponent},
 {path: 'livenation', component: LivenationComponent},
+{path: 'analytics', component: LchartComponent},
 {path: 'mlb', component: MlbComponent},
 {path: 'mls', component: MlsComponent},
 {path: 'nba', component: NbaComponent},
