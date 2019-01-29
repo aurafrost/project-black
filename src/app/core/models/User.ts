@@ -6,8 +6,9 @@ export class User {
   public events?: any [];
   public role?;
   public subscriptions?: Object[];
+  public bio?;
 
-  constructor(uid?, email?, fname?, lname?, role?, subscriptions?, events?) {
+  constructor(uid?, email?, fname?, lname?, role?, subscriptions?, events?, bio?) {
     this.uid = uid;
     this.fname = fname;
     this.lname = lname;
@@ -15,5 +16,6 @@ export class User {
     this.role = role;
     this.subscriptions = subscriptions;
     this.events = events;
+    this.bio=bio;
   }
 }

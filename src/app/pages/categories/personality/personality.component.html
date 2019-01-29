@@ -1,17 +1,17 @@
 <mat-card class="example-card"><h1 style="text-align: center;">Profile</h1>
   <!-- Header info -->
+  <!-- Image -->
+  <img style="width: 200px;" mat-card-image src="{{user.image}}" alt="User Photo">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div> <!-- What's the point in this line? -->
     <mat-card-title>Name: {{user.fname}} {{user.lname}}</mat-card-title>
     <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
   </mat-card-header>
-  <!-- Image -->
-  <img style="width: 200px;" mat-card-image src="{{user.image}}" alt="User Photo">
   <!-- Bio and Content -->
   <mat-card-content>
     <p>
-      <!-- {{user.bio}} -->
-      Temporary placeholder bio
+      {{user.bio}}
+      <!-- Temporary placeholder bio -->
     </p>
   </mat-card-content>
   <!-- Actions? -->
