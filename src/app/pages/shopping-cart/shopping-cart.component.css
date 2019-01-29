@@ -1,0 +1,30 @@
+.bkg-color {
+  background-color: gray;
+}
+
+.primary-badge {
+  color: #fff;
+  background-color:  #DA4453;
+}
+
+.primary-btn:hover,
+.primary-btn.hover {
+  background-color: #DA4453;
+  color: ghostwhite;
+}
+
+
+.primary-btn:disabled,
+.primary-btn.disabled {
+  color: ghostwhite;
+}
+
+.secondary-btn {
+  background-color: #363636;
+  color: ghostwhite;
+}
+
+.secondary-btn.hover,
+.secondary-btn:hover {
+  color: #DA4453;
+}
