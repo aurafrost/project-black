@@ -1,22 +1,82 @@
-<mat-card class="example-card"><h1 style="text-align: center;">Profile</h1>
-  <!-- Header info -->
-  <!-- Image -->
-  <img style="width: 200px;" mat-card-image src="{{user.image}}" alt="User Photo">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div> <!-- What's the point in this line? -->
-    <mat-card-title>Name: {{user.fname}} {{user.lname}}</mat-card-title>
-    <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
-  </mat-card-header>
-  <!-- Bio and Content -->
-  <mat-card-content>
-    <p>
-      {{user.bio}}
-      <!-- Temporary placeholder bio -->
-    </p>
-  </mat-card-content>
-  <!-- Actions? -->
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div id="page" style="margin-left: 2%; margin-right: 2%;">
+  <mat-card >
+    <h1 style="text-align: center;">Profile</h1>
+    <!-- Header info -->
+    <!-- Image -->
+    <mat-card-header style="border: 1px solid black">
+      <img mat-card-avatar src="{{user.image}}"> <!-- What's the point in this line? -->
+      <mat-card-title>Name: {{user.fname}} {{user.lname}}</mat-card-title>
+      <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- Bio and Content -->
+    <mat-card-content>
+      <!-- Container -->
+      <div class="animated bounceIn" id="bottomcon">
+        <div class="tab2">
+          <button id="featuredbtn" class="tablinks2" (click)="tabby2(event, 'FeaturedTab')">Featured</button>
+          <button id="worksbtn" class="tablinks2" (click)="tabby2(event, 'WorksTab')">Filmography/Music</button>
+          <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
+          <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
+          <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
+          <button class="tablinks2" (click)="tabby2(event, '')">X</button>
+        </div>
+        <!-- Featured -->
+        <!-- <div id="FeaturedTab" class="tabcontent2" style="width:100%; overflow:auto;">
+          <div style="text-align: center;">Featured</div>
+          <table class="animated bounceIn" id="featured">
+            <tr>
+              <th>Name</th>
+              <td *ngFor="let feature of featuredList">{{feature.name}}</td>
+            </tr>
+            <tr>
+              <th>Image</th>
+              <td *ngFor="let feature of featuredList">
+                <img src="{{feature.image}}" alt="image failed to load" style="height:200px;">
+              </td>
+            </tr>
+          </table>
+        </div> -->
+        <!-- Works -->
+        <!-- <div id="WorksTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+          <div style="text-align: center;">Shop</div>
+          <table class="animated bounceIn" id="shop">
+            <tr>
+              <th>Name</th>
+              <td *ngFor="let product of shopList">{{product.name}}</td>
+            </tr>
+            <tr>
+              <th>Image</th>
+              <td *ngFor="let product of shopList">
+                <img src="{{product.image}}" alt="image failed to load" style="height:200px;">
+              </td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy"
+                  (click)="purchase(id)">Purchase</button>
+              </td>
+            </tr>
+          </table>
+        </div> -->
+        <!-- News -->
+        <div id="NewsTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+          placeholder for news. No news is good news.
+        </div>
+        <!-- About -->
+        <div id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+          <!-- Placeholder using About us page. Not intended to stay. -->
+          {{user.bio}}
+        </div>
+        <!-- Calendar -->
+        <div id="CalendarTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+          <calendar></calendar>
+        </div>
+      </div>
+    </mat-card-content>
+    <!-- Actions? -->
+    <!-- <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+  </mat-card>
+</div>
