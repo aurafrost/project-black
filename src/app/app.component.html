@@ -4,6 +4,6 @@
     <div id="body" style="overflow-x: hidden;">
        <router-outlet></router-outlet>
     </div>
-    <chat ></chat>
+    <chat *ngIf="homepage" ></chat>
     <footer-comp id="footer"></footer-comp>
 </div>

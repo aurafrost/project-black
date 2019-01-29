@@ -10,7 +10,7 @@
       </mat-form-field>
       <button mat-button (click)="doSearch()" >Search</button>
     </form>
-    <button mat-icon-button [matMenuTriggerFor]="accountmenu">
+    <button *ngIf="auth" mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
     </button>
     <mat-menu #accountmenu="matMenu">
@@ -32,7 +32,7 @@
     </form>
     <button *ngIf="!auth" class="styled" mat-menu-item routerLink="/login-register">Register</button>
     <button *ngIf="!auth" class="styled" mat-menu-item (click)="openDialog()">Login</button>
-    <button (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
+    <button *ngIf="auth" (click) = "$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="accountmenu">
       <mat-icon svgIcon="account_circle"></mat-icon>
     </button>
     <mat-menu #accountmenu="matMenu">
