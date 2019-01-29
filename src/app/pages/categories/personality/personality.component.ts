@@ -1,7 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { User } from '../../../core/models/User';
-import { AngularFireList } from '@angular/fire/database';
 import { UserService } from '../../../core/services/user/user.service';
 
 @Component({
@@ -67,6 +66,30 @@ export class PersonalityComponent implements OnInit {
 
   ngAfterViewInit() {
     this.state = 'loaded';
+  }
+
+  tabby2(evt, name) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent2");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks2");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(name).style.display = "block";
+    //check if null to avoid error msgs
+    if (evt) {
+      evt.currentTarget.className += " active";
+    }
   }
 
 }
