@@ -5,6 +5,7 @@ import { Product } from 'src/app/core/models/Product';
 import { NavItem } from 'src/app/core/models/NavItem';
 import { Image } from 'src/app/core/models/Image';
 import { NewsApiService } from 'src/app/core/services/news-api.service';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'organization',
@@ -18,12 +19,13 @@ export class OrganizationComponent implements OnInit {
   navList: NavItem[];
 
   //for news
-  mArticles:Array<any>;
-  mSources:Array<any>;
+  mArticles: Array<any>;
+  mSources: Array<any>;
   constructor(
-    private service: ImageService, 
-    private router: Router, 
-    private newsapi:NewsApiService) {
+    private service: ImageService,
+    private uservice: UserService,
+    private router: Router,
+    private newsapi: NewsApiService) {
   }
 
   ngOnInit() {
@@ -74,7 +76,7 @@ export class OrganizationComponent implements OnInit {
         //set fb
         console.log("test Facebook path")
         console.log(data.facebook)
-        
+
         this.facebookLink = data.facebook;
         //set twitter
         // this.temp = document.getElementById('twitter');
@@ -86,16 +88,16 @@ export class OrganizationComponent implements OnInit {
 
   getNavElements() {
     this.service.getTopic().subscribe(t => {
-      this.service.getNavList(t.topic).subscribe(data=>{
-        this.navList=data;
+      this.service.getNavList(t.topic).subscribe(data => {
+        this.navList = data;
       })
     });
   }
 
   getShopList() {
     this.service.getTopic().subscribe(t => {
-      this.service.getList(t.topic,"featured").subscribe(data => {
-        this.featuredList=data;
+      this.service.getList(t.topic, "featured").subscribe(data => {
+        this.featuredList = data;
       })
     });
     this.service.getTopic().subscribe(t => {
@@ -106,13 +108,35 @@ export class OrganizationComponent implements OnInit {
   }
 
   //not implemented. keeping in case though.
-  searchArticles(source){
-    console.log("selected source is: "+source);
+  searchArticles(source) {
+    console.log("selected source is: " + source);
     this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
 
-  subscribe(name) {
+  //method to check subscriptions. not complete
+  // subCheck(){
+  //   this.temp = document.getElementById('subbtn');
+  // }
 
+  subscribe() {
+    this.temp = document.getElementById('subbtn');
+    //if already subscribed
+    if (this.temp.innerText == "Unsubscribe") {
+      this.service.getTopic().subscribe(t => {
+        this.uservice.removeSub("temp", t.topic);
+      })
+      this.temp.className = "btn btn-success";
+      this.temp.innerText = "Subscribe | +";
+    }
+    //if not subscribed
+    else {
+      this.service.getTopic().subscribe(t => {
+        //need to replace temp with current user later
+        this.uservice.addSub("temp", t.topic);
+      })
+      this.temp.className = "btn btn-danger";
+      this.temp.innerText = "Unsubscribe";
+    }
   }
 
   tabby(evt, name) {

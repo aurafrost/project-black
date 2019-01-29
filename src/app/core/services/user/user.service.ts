@@ -71,6 +71,21 @@ export class UserService {
     return this.afstore.doc<Topic>('image/ptopic').valueChanges();
   }
 
+  //not complete
+  addSub(user,topic){
+    const data={
+      name:topic,
+    }
+    this.afstore.doc('Users/'+user+'/subscriptions/'+topic).set(data);
+    console.log("Subscription for "+user+" to "+topic+" added.");
+  }
+
+  //also not complete
+  removeSub(user,topic){
+    this.afstore.doc('Users/'+user+'/subscriptions/'+topic).delete();
+    console.log("Subscription for "+user+" to "+topic+" removed.");
+  }
+
   getUsers() {
     //return this.afDatabase.list(`/Users/`);
     //return this.afstore.collection()
