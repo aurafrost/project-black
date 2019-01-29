@@ -10,7 +10,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-    public auth = new BehaviorSubject<Object>({});
+    public auth = new BehaviorSubject<Object>(null);
     $auth = this.auth.asObservable();
     private userList: User[]; 
   constructor(
@@ -39,6 +39,7 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
+    console.log(this.auth)
     return this.auth.value != null;
   }
 
@@ -102,7 +103,7 @@ export class AuthService {
   signOut() {
     return this.afAuth.auth.signOut()
       .then(() => {
-        this.auth = null;
+        this.auth.next(null);
         localStorage.removeItem('auth');
         // this.auth.next(null);
         this.router.navigate(['']);
