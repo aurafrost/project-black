@@ -75,7 +75,7 @@ export class LoginRegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.userFormData);
+    
 
     if (this.userFormData.status === 'INVALID') {
       return;
@@ -94,13 +94,14 @@ export class LoginRegisterComponent implements OnInit {
       "user",
       null,
       null,
+      null,
       null
     );
 
-    console.log(user);
+    
     this.authService.signUp(user, this.userFormData.value.password)
       .then(res => {
-        console.log(res);
+        
         this.router.navigate(['']);
       }).catch(err => console.log(err));
   }
