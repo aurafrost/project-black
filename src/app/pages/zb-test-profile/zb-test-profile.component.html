@@ -1,8 +1,8 @@
 <div class="container-fluid ng-star-inserted">
   <div class="row">
     <div class="col-sm-4">
+      <a (click)="openDialog()" class="btn btn-primary text-white">Add Product</a>
       <div class="row">
-        <a (click)="openDialog()" class="btn btn-primary text-white">Add Product</a>
         <div *ngFor="let product of products" class="col-12">
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{product.img}}" alt="Card image cap">

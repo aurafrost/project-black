@@ -3,12 +3,12 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 
 import {AngularFireStorage} from '@angular/fire/storage';
 
-import {ProductService} from '../../../core/services/product/product.service';
-import {Product} from '../../../core/models/Product';
+import {ProductService} from '../../../../core/services/product/product.service';
+import {Product} from '../../../../core/models/Product';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {finalize} from 'rxjs/operators';
-import {AuthService} from '../../../core/services/auth/auth.service';
+import {AuthService} from '../../../../core/services/auth/auth.service';
 
 @Component({
   selector: 'product-dialog',
