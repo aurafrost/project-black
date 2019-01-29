@@ -43,7 +43,6 @@ import { ErrComponent } from './err/err.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
-import { HomeSliderComponent } from './pages/home/home-slider/home-slider.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
@@ -56,11 +55,11 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 import { ImageComponent } from './upload/image/image.component';
 
-import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
-import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
-import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
-import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
-import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
+// import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
+// import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
+// import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
+// import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
+// import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -77,7 +76,7 @@ import { MusicComponent } from './pages/categories/music/music.component';
 import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
 import { FootballComponent } from './pages/categories/football/football.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { HomeSlideshow2Component } from './zb-test-components/zb-test-home/home-slideshow2/home-slideshow2.component';
+import { HomeSlideshow2Component } from './pages/home/home-slideshow2/home-slideshow2.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
@@ -96,15 +95,17 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import {ZbHomeSlider2Component} from './zb-test-components/zb-test-home/home-slideshow2/zb-home-slider2/zb-home-slider2.component';
+import {HomeSlider2Component} from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
 import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
 import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
+import { ZbTestProfileComponent } from './pages/zb-test-profile/zb-test-profile.component';
+import { ProductDialogComponent } from './pages/zb-test-profile/product-dialog/product-dialog.component';
+import {AngularFireStorage} from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
-
 
 @NgModule({
   declarations: [
@@ -126,17 +127,11 @@ import { ChatComponent } from './shared/chat/chat.component';
     SignUpComponent,
     SignInComponent,
     HomeAboutComponent,
-    HomeSliderComponent,
     ExploreComponent,
     JayzComponent,
     TomcruiseComponent,
     BeyonceComponent,
     WillemdafoeComponent,
-    ZbTestHomeComponent,
-    ZbTestGenreComponent,
-    PageNavComponent,
-    HomeTopSectionComponent,
-    ZbTestGenrePageComponent,
     VerifyEmailComponent,
     NascarComponent,
     TravelComponent,
@@ -161,13 +156,15 @@ import { ChatComponent } from './shared/chat/chat.component';
     JackiechanComponent,
     StatsComponent,
     CalendarComponent,
-    ZbHomeSlider2Component,
+    HomeSlider2Component,
     TestDisplayComponent,
     ProfileContentComponent,
     SportsComponent,
     OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
+    ZbTestProfileComponent,
+    ProductDialogComponent,
     ChatComponent
   ],
   imports: [
@@ -217,6 +214,7 @@ import { ChatComponent } from './shared/chat/chat.component';
     NgbModalModule,
   ],
   providers: [
+    AngularFireStorage,
     AuthGuard,
     AuthService,
     UserService,
@@ -227,7 +225,7 @@ import { ChatComponent } from './shared/chat/chat.component';
     },
     SubscriptionService
   ],
-  entryComponents: [SignInComponent],
+  entryComponents: [SignInComponent, ProductDialogComponent],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

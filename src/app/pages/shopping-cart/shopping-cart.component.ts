@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from '../../core/services/cart/cart.service';
 import {AuthService} from '../../core/services/auth/auth.service';
+import {UserService} from '../../core/services/user/user.service';
+import {ProductService} from '../../core/services/product/product.service';
+import {Product} from '../../core/models/Product';
 
 @Component({
   selector: 'shopping-cart',
@@ -10,23 +12,30 @@ import {AuthService} from '../../core/services/auth/auth.service';
 export class ShoppingCartComponent implements OnInit {
   private auth: any;
   private cart: any = [];
+  public sum: number = 0;
   constructor(
     private _authService: AuthService,
-    private _cartService: CartService
+    private _productService: ProductService
   ) { }
 
   ngOnInit() {
+    // Get Logged in Users Cart details
     this.auth = this._authService.getAuth().value;
+
     console.log(this.auth);
-    this._cartService.getCartItems(this.auth)
+    this._productService.getCartItems(this.auth)
       .subscribe(data => {
-        this.cart = data.map(i => {
-          return {
-            id: i.payload.doc.id,
-            ...i.payload.doc.data()
-          };
+        console.log(data);
+        data.map((i: Product, index) => {
+          this._productService.getProductById(i.ownerId, i.productId)
+            .subscribe(product => {
+              const prod: Product = product;
+              console.log(prod);
+              this.cart[index] = prod;
+              this.sum += prod.price;
+            });
         });
+        console.log(this.cart);
       });
-    
   }
 }

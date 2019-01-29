@@ -1,27 +1,28 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { CalendarEvent } from 'angular-calendar';
 
 import {
+  isSameMonth,
+  isSameDay,
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
   startOfDay,
   endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours
+  format
 } from 'date-fns';
+import { Observable } from 'rxjs';
 
-import { Subject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+interface Film {
+  id: number;
+  title: string;
+  release_date: string;
+}
 
-import {
-  CalendarEvent,
-  CalendarEventAction,
-  CalendarEventTimesChangedEvent,
-  CalendarView
-} from 'angular-calendar';
-
-const colors: any = {
+export const colors: any = {
   red: {
     primary: '#ad2121',
     secondary: '#FAE3E3'
@@ -36,6 +37,16 @@ const colors: any = {
   }
 };
 
+function getTimezoneOffsetString(date: Date): string {
+  const timezoneOffset = date.getTimezoneOffset();
+  const hoursOffset = String(
+    Math.floor(Math.abs(timezoneOffset / 60))
+  ).padStart(2, '0');
+  const minutesOffset = String(Math.abs(timezoneOffset % 60)).padEnd(2, '0');
+  const direction = timezoneOffset > 0 ? '-' : '+';
+  return `T00:00:00${direction}${hoursOffset}${minutesOffset}`;
+}
+
 @Component({
   selector: 'calendar', changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
@@ -43,86 +54,74 @@ const colors: any = {
 })
 
 export class CalendarComponent {
-  @ViewChild('modalContent')
-  modalContent: TemplateRef<any>;
-
-  view: CalendarView = CalendarView.Month;
-
-  CalendarView = CalendarView;
+  
+  view: string = 'month';
 
   viewDate: Date = new Date();
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
+  events$: Observable<Array<CalendarEvent<{ film: Film }>>>;
 
-  actions: CalendarEventAction[] = [
-    {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
-      }
-    },
-    {
-      label: '<i class="fa fa-fw fa-times"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter(iEvent => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      }
-    }
-  ];
+  activeDayIsOpen: boolean = false;
 
-  refresh: Subject<any> = new Subject();
+  constructor(private http: HttpClient) {}
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
+  ngOnInit(): void {
+    this.fetchEvents();
+  }
 
-  activeDayIsOpen: boolean = true;
+  fetchEvents(): void {
+    const getStart: any = {
+      month: startOfMonth,
+      week: startOfWeek,
+      day: startOfDay
+    }[this.view];
 
-  constructor(private modal: NgbModal) {}
+    const getEnd: any = {
+      month: endOfMonth,
+      week: endOfWeek,
+      day: endOfDay
+    }[this.view];
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    const params = new HttpParams()
+      .set(
+        'primary_release_date.gte',
+        format(getStart(this.viewDate), 'YYYY-MM-DD')
+      )
+      .set(
+        'primary_release_date.lte',
+        format(getEnd(this.viewDate), 'YYYY-MM-DD')
+      )
+      .set('api_key', '0ec33936a68018857d727958dca1424f');
+
+    this.events$ = this.http
+      .get('https://api.themoviedb.org/3/discover/movie', { params })
+      .pipe(
+        map(({ results }: { results: Film[] }) => {
+          return results.map((film: Film) => {
+            return {
+              title: film.title,
+              start: new Date(
+                film.release_date + getTimezoneOffsetString(this.viewDate)
+              ),
+              color: colors.yellow,
+              allDay: true,
+              meta: {
+                film
+              }
+            };
+          });
+        })
+      );
+  }
+
+  dayClicked({
+    date,
+    events
+  }: {
+    date: Date;
+    events: Array<CalendarEvent<{ film: Film }>>;
+  }): void {
     if (isSameMonth(date, this.viewDate)) {
-      this.viewDate = date;
       if (
         (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
         events.length === 0
@@ -130,38 +129,15 @@ export class CalendarComponent {
         this.activeDayIsOpen = false;
       } else {
         this.activeDayIsOpen = true;
+        this.viewDate = date;
       }
     }
   }
 
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
-
-  addEvent(): void {
-    this.events.push({
-      title: 'New event',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
-    });
-    this.refresh.next();
+  eventClicked(event: CalendarEvent<{ film: Film }>): void {
+    window.open(
+      `https://www.themoviedb.org/movie/${event.meta.film.id}`,
+      '_blank'
+    );
   }
 }

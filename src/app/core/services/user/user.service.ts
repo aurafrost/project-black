@@ -4,6 +4,7 @@ import {} from '@angular/cli';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {User} from '../../models/User';
+import {take} from 'rxjs/operators';
 import { SubscriptionService } from '../sub/subscription.service';
 
 @Injectable({
@@ -28,8 +29,11 @@ export class UserService {
         data.uid = a.payload.doc.id;
         return data;
       });
-    })
+    });
 
+    this.users.subscribe(u => {
+      this.userArr = u;
+    });
     // this.users.subscribe(u => {
     //   this.userArr = u;
     //   this.userArr.forEach(user => {
@@ -45,8 +49,8 @@ export class UserService {
     this.authObj = JSON.parse(localStorage.getItem('auth'));
   }
 
-  getUser() {
-    // return this.user;
+  getUserById(id) {
+    return this.afstore.doc(`Users/${id}`).valueChanges().pipe(take(1));
   }
 
   getUsers() {
@@ -71,11 +75,6 @@ export class UserService {
     this.userDoc = this.userCollection.doc(userId);
     this.userDoc.delete();
   }
-
-  getUserById(userId){
-
-  }
-
 
   getAllUsers(){
     //this.users = this.afstore.collection('test-users').valueChanges();

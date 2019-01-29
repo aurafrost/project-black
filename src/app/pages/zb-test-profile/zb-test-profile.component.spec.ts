@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeSliderComponent } from './home-slider.component';
+import { ZbTestProfileComponent } from './zb-test-profile.component';
 
-describe('HomeSliderComponent', () => {
-  let component: HomeSliderComponent;
-  let fixture: ComponentFixture<HomeSliderComponent>;
+describe('ZbTestProfileComponent', () => {
+  let component: ZbTestProfileComponent;
+  let fixture: ComponentFixture<ZbTestProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeSliderComponent ]
+      declarations: [ ZbTestProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeSliderComponent);
+    fixture = TestBed.createComponent(ZbTestProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
