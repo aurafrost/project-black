@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {UserService} from '../../core/services/user/user.service';
 import {ProductService} from '../../core/services/product/product.service';
+import {Product} from '../../core/models/Product';
 
 @Component({
   selector: 'shopping-cart',
@@ -20,16 +21,18 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
     // Get Logged in Users Cart details
     this.auth = this._authService.getAuth().value;
+
     console.log(this.auth);
     this._productService.getCartItems(this.auth)
       .subscribe(data => {
         console.log(data);
-        data.map((i, index) => {
+        data.map((i: Product, index) => {
           this._productService.getProductById(i.ownerId, i.productId)
             .subscribe(product => {
-              console.log(product);
-              this.cart[index] = product;
-              this.sum += product.price;
+              const prod: Product = product;
+              console.log(prod);
+              this.cart[index] = prod;
+              this.sum += prod.price;
             });
         });
         console.log(this.cart);
