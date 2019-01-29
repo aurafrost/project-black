@@ -26,7 +26,9 @@ export class ShoppingListComponent implements OnInit {
     private _userService: UserService,
     private _productService: ProductService,
     private _dialog: MatDialog
-  ) { }
+  ) {
+    this.uidParam = this._route.snapshot.params['id'];
+  }
 
   ngOnInit() {
     this.auth = this._authService.getAuth().value;
@@ -34,13 +36,13 @@ export class ShoppingListComponent implements OnInit {
     this.user = this._userService.getUserById(this.uidParam)
       .subscribe(data => {
         this.user = data;
+        console.log(data);
       });
     this._productService.getProductsByUser(this.uidParam)
       .subscribe(data => {
         this.products = data;
+        console.log(data);
       });
-    console.log(this.products);
-    console.log(this.user);
   }
 
   openDialog() {
