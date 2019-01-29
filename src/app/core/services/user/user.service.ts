@@ -97,8 +97,10 @@ export class UserService {
 
   createUser(userId, user) {
     //return this.afDatabase.object(`Users/${userId}`).set(user);
+    console.log("hit create")
+    console.log(user);
     this.userCollection.doc(userId).set(Object.assign({}, user));
-    
+    console.log("returned create")
   }
 
   //currently implemented in service, but DO NOT USE
