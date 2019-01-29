@@ -1,16 +1,11 @@
 <div id="container" style="overflow:hidden">
   <h1 class="animated bounceIn">Frequently Asked Questions</h1>
-  <ol class="animated fadeInDown">
-    <li>
-      Question: placeholder
-      <br><br>Answer: placeholder
+  <ol class="animated fadeInDown" async>
+    <li *ngFor="let faq of faqList">
+      Question: {{faq.question }}
+      <br><br>Answer: {{faq.answer }}
+      <hr>
     </li>
-    <hr>
-    <li>
-      Question: placeholder
-      <br><br>Answer: placeholder
-    </li>
-    <hr>
   </ol>  
 </div>
 
