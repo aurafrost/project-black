@@ -10,7 +10,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-    public auth = new BehaviorSubject<Object>({});
+    public auth = new BehaviorSubject<Object>(null);
     $auth = this.auth.asObservable();
     private userList: User[]; 
   constructor(
@@ -34,12 +34,13 @@ export class AuthService {
 
     this.userService.getAllUsers().subscribe(ul => {
       this.userList = ul;
-    })
+    });
 
   }
 
   get authenticated(): boolean {
-    return this.auth != null;
+    console.log(this.auth.value);
+    return this.auth.value != null;
   }
 
   getAuth() {
