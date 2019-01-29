@@ -157,7 +157,9 @@ a#item{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #363636;
-    width: 100%;
+    width: 96%;
+    margin-left: 2%; 
+    margin-right: 2%;
   }
   
   /* Style the buttons that are used to open the tab content */

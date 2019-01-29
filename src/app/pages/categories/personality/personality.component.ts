@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { User } from '../../../core/models/User';
 import { UserService } from '../../../core/services/user/user.service';
+import { NewsApiService } from 'src/app/core/services/news-api.service';
 
 @Component({
   selector: 'personality',
@@ -51,8 +52,11 @@ export class PersonalityComponent implements OnInit {
   temp: HTMLElement;
   postList;
   state = 'loading';
+  mArticles:Array<any>;
 
-  constructor(private service: UserService) {
+  constructor(
+    private service: UserService,
+    private newsapi: NewsApiService) {
   }
 
   ngOnInit() {
@@ -61,6 +65,8 @@ export class PersonalityComponent implements OnInit {
       this.service.getUser(t.topic).subscribe(data => {
         this.user = data;
       });
+      //init news
+      this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
     })
   }
 

@@ -50,15 +50,15 @@
   </div>
 
   <!-- Container under video -->
+  <div class="tab2">
+    <button id="featuredbtn" class="tablinks2" (click)="tabby2(event, 'FeaturedTab')">Featured</button>
+    <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
+    <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
+    <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
+    <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
+    <button class="tablinks2" (click)="tabby2(event, '')">X</button>
+  </div>
   <div class="animated bounceIn" id="undervideo">
-    <div class="tab2">
-      <button id="featuredbtn" class="tablinks2" (click)="tabby2(event, 'FeaturedTab')">Featured</button>
-      <button id="shopbtn" class="tablinks2" (click)="tabby2(event, 'ShopTab')">Shop</button>
-      <button id="newsbtn" class="tablinks2" (click)="tabby2(event, 'NewsTab')">News</button>
-      <button id="aboutbtn" class="tablinks2" (click)="tabby2(event, 'AboutTab')">About</button>
-      <button id="calendarbtn" class="tablinks2" (click)="tabby2(event, 'CalendarTab')">Calendar and Events</button>
-      <button class="tablinks2" (click)="tabby2(event, '')">X</button>
-    </div>
     <!-- Featured -->
     <div id="FeaturedTab" class="tabcontent2" style="width:100%; overflow:auto;">
       <div style="text-align: center;">Featured Artists</div>
