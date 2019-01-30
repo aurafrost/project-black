@@ -103,6 +103,7 @@ import {ProductService} from './core/services/product/product.service';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
+import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list.component';
 
 
 @NgModule({
@@ -160,7 +161,8 @@ import { ChartsModule } from 'ng2-charts';
     ProductDialogComponent,
     ChatComponent,
     LchartComponent,
-    BarChartComponent
+    BarChartComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
