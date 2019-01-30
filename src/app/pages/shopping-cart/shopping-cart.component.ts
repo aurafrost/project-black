@@ -31,7 +31,7 @@ export class ShoppingCartComponent implements OnInit {
             .subscribe((product) => {
               const prod = <Product>product.data();
               prod.productId = product.id;
-              prod.productId = data[index].productId;
+              // prod.productId = data[index].productId;
               console.log(prod);
               this.cart[index] = prod;
               this.sum += prod.price;
