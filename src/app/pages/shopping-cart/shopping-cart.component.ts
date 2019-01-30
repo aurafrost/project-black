@@ -30,13 +30,12 @@ export class ShoppingCartComponent implements OnInit {
         data.map((i: Product, index) => {
           this._productService.getProductById(i.ownerId, i.productId)
             .subscribe((product) => {
-              console.log(product);
-              // const prod = <Product>product.document.data();
-              // prod.productId = product.id;
+              const prod = <Product>product.data();
+              prod.productId = product.id;
               // prod.productId = data[index].productId;
-              // console.log(prod);
-              // this.cart[index] = prod;
-              // this.sum += prod.price;
+              console.log(prod);
+              this.cart[index] = prod;
+              this.sum += prod.price;
             });
         });
         console.log(this.cart);

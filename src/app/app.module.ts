@@ -46,9 +46,6 @@ import { HomeAboutComponent } from './pages/home/home-about/home-about.component
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
-import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
-import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
-import { JayzComponent } from './celebrities/jayz/jayz.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
@@ -84,13 +81,10 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
-import { PersonalityComponent } from './pages/categories/personality/personality.component';
+import { PersonalityComponent } from './pages/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
-
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
-
-
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -108,7 +102,6 @@ import { ChatComponent } from './shared/chat/chat.component';
 import {ProductService} from './core/services/product/product.service';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
-import { StatsComponent } from './pages/stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
 
 
@@ -133,10 +126,7 @@ import { ChartsModule } from 'ng2-charts';
     SignInComponent,
     HomeAboutComponent,
     ExploreComponent,
-    JayzComponent,
-    TomcruiseComponent,
     PersonalityComponent,
-    WillemdafoeComponent,
     VerifyEmailComponent,
     NascarComponent,
     TravelComponent,
@@ -159,7 +149,6 @@ import { ChartsModule } from 'ng2-charts';
     BollywoodComponent,
     CricketComponent,
     JackiechanComponent,
-    StatsComponent,
     CalendarComponent,
     HomeSlider2Component,
     TestDisplayComponent,
