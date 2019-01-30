@@ -56,9 +56,9 @@ export class OrganizationComponent implements OnInit {
 
           document.getElementById('nav').style.display = "flex";
           document.getElementById('video').style.display = "flex";
-          document.getElementById('sidevideo').style.display = "flex";
+          document.getElementById('sidevideo').style.display = "inline";
           document.getElementById('tabset').style.display = "flex";
-          document.getElementById('undervideo').style.display = "flex";
+          document.getElementById('undervideo').style.display = "inline";
         }
         else {
           console.log("hit btn change")

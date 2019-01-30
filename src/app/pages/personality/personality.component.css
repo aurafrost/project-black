@@ -1,6 +1,6 @@
 /* Style the tab */
 .tab2 {
-    overflow: hidden;
+    overflow: auto;
     border: 1px solid #ccc;
     background-color: #363636;
     width: 100%;
