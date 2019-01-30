@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   getProductById(userId, productId) {
-    return this.afFirestore.doc(`Users/${userId}/products/${productId}`).get(); // valueChanges().pipe(take(1));
+    return this.afFirestore.doc(`Users/${userId}/products/${productId}`).snapshotChanges(); // valueChanges().pipe(take(1));
   }
 
   addProductById(authId, product) {

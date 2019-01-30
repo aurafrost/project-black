@@ -84,6 +84,7 @@
   bottom: 0;
   left: 0;
   overflow: hidden;
+  background-color: #363636;
 }
 
 .swiper-slide, .swiper-slide:active {

@@ -1,9 +1,16 @@
 .card {
   margin-left: auto;
+  background-color: #ac6169;
+  color: ghostwhite;
 }
 
-.container {
-  padding-top: 1rem;
+.card-footer{
+  background-color: #363636;
+}
+
+.container,
+.sticky-btn {
+  /*padding-top: 1rem;*/
   position: sticky;
   top: 0;
 }
