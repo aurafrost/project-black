@@ -3,6 +3,7 @@ import {AuthService} from '../../core/services/auth/auth.service';
 import {UserService} from '../../core/services/user/user.service';
 import {ProductService} from '../../core/services/product/product.service';
 import {Product} from '../../core/models/Product';
+import { DocumentSnapshot } from 'angularfire2/firestore';
 
 @Component({
   selector: 'shopping-cart',

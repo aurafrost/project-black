@@ -13,7 +13,7 @@ export class PersonalityComponent implements OnInit {
   user: User;
   temp: HTMLElement;
   mArticles: Array<any>;
-
+  personReady: Promise<boolean>;
   constructor(
     private service: ImageService,
     private uservice: UserService,
@@ -21,25 +21,30 @@ export class PersonalityComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.uservice.getProfile().subscribe(t => {
-      //get profile
-      this.uservice.getUser(t.topic).subscribe(data => {
-        this.user = data;
-        console.log("Personality loaded: " + this.user)
-        //check subscriptions
-        this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
-          if (data) {
-            document.getElementById('unsubbtn').style.display = "inline";
-            document.getElementById('subbtn').style.display = "none";
-          }
-          else {
-            document.getElementById('content-container').style.display = "none";
-          }
+    this.personReady = new Promise((resolve, reject) => {
+      this.uservice.getProfile().subscribe(t => {
+        //get profile
+        this.uservice.getUser(t.topic).subscribe(data => {
+          this.user = data;
+          console.log(this.user);
+          console.log("Personality loaded: " + this.user)
+          //check subscriptions
+          resolve(true);
+          this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
+            if (data) {
+              document.getElementById('subbtn').style.display = "none";
+              document.getElementById('unsubbtn').style.display = "inline";
+            }
+            else {
+              document.getElementById('content-container').style.display = "none";
+            }
+          });
         });
-      });
-      //init news
-      this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
-    })
+        //init news
+        this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
+      })
+    });
+
   }
 
   //if not subscribed
