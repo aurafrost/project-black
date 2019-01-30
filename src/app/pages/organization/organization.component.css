@@ -12,14 +12,6 @@
   background-size: cover;
 }
 
-.title{
-    font-weight: bold;
-}
-
-#title {
-    min-height: 350px;
-}
-
 .img-article{
     height: 350px;
 }
