@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../core/models/User';
-import { UserService } from '../../../core/services/user/user.service';
+import { User } from 'src/app/core/models/User';
+import { UserService } from 'src/app/core/services/user/user.service';
 import { NewsApiService } from 'src/app/core/services/news-api.service';
 import { ImageService } from 'src/app/core/services/image/image.service';
 

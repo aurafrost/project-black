@@ -84,7 +84,7 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
-import { PersonalityComponent } from './pages/categories/personality/personality.component';
+import { PersonalityComponent } from './pages/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';

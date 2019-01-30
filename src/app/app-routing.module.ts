@@ -29,7 +29,7 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
-import { PersonalityComponent } from "./pages/categories/personality/personality.component";
+import { PersonalityComponent } from "./pages/personality/personality.component";
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
