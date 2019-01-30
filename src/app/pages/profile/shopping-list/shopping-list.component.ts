@@ -40,7 +40,7 @@ export class ShoppingListComponent implements OnInit {
         console.log(data);
       });
     this._productService.getProductsByUser(this.uidParam).subscribe( data => {
-      this.products =     data.map(i => {
+      this.products = data.map(i => {
           return {
             id: i.payload.doc.id,
             ...i.payload.doc.data()
