@@ -3,8 +3,9 @@
     <h1 style="text-align: center;">Profile</h1>
     <!-- Header info -->
     <!-- Image -->
-    <mat-card-header style="border: 1px solid black">
-      <img mat-card-avatar src="{{user.image}}"> <!-- What's the point in this line? -->
+    <mat-card-header  *ngIf="personReady | async" style="border: 1px solid black">
+      <img mat-card-avatar src="{{user.image}}">
+      <!--<img mat-card-avatar src="{{user.image}}"> <!-- What's the point in this line? -->
       <mat-card-title>Name: {{user.fname}} {{user.lname}}</mat-card-title>
       <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
     </mat-card-header>
@@ -92,7 +93,7 @@
           </mat-sidenav-container>
         </div>
         <!-- About -->
-        <div id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+        <div  *ngIf="personReady | async" id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
           <!-- Placeholder using About us page. Not intended to stay. -->
           {{user.bio}}
         </div>

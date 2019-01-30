@@ -3,6 +3,7 @@ import {AuthService} from '../../core/services/auth/auth.service';
 import {UserService} from '../../core/services/user/user.service';
 import {ProductService} from '../../core/services/product/product.service';
 import {Product} from '../../core/models/Product';
+import { DocumentSnapshot } from 'angularfire2/firestore';
 
 @Component({
   selector: 'shopping-cart',
@@ -29,12 +30,13 @@ export class ShoppingCartComponent implements OnInit {
         data.map((i: Product, index) => {
           this._productService.getProductById(i.ownerId, i.productId)
             .subscribe((product) => {
-              const prod = <Product>product.data();
-              prod.productId = product.id;
-              prod.productId = data[index].productId;
-              console.log(prod);
-              this.cart[index] = prod;
-              this.sum += prod.price;
+              console.log(product);
+              // const prod = <Product>product.document.data();
+              // prod.productId = product.id;
+              // prod.productId = data[index].productId;
+              // console.log(prod);
+              // this.cart[index] = prod;
+              // this.sum += prod.price;
             });
         });
         console.log(this.cart);

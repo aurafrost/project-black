@@ -3,6 +3,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
 import { User } from '../../../core/models/User';
 import { UserService } from '../../../core/services/user/user.service';
 import { NewsApiService } from 'src/app/core/services/news-api.service';
+import { Promise } from 'q';
 
 @Component({
   selector: 'personality',
@@ -53,22 +54,28 @@ export class PersonalityComponent implements OnInit {
   postList;
   state = 'loading';
   mArticles:Array<any>;
+  personReady: Promise<boolean>;
 
   constructor(
     private service: UserService,
     private newsapi: NewsApiService) {
+      console.log(this.personReady);
+      this.personReady = Promise((resolve, reject) => {
+        this.service.getProfile().subscribe(t => {
+          //get user
+          this.service.getUser(t.topic).subscribe(data => {
+            this.user = data;
+            resolve(true);
+          });
+          //init news
+          this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
+        })
+      });
+      
   }
 
   ngOnInit() {
-    this.service.getProfile().subscribe(t => {
-      //get user
-      this.service.getUser(t.topic).subscribe(data => {
-        this.user = data;
-        console.log(this.user)
-      });
-      //init news
-      this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
-    })
+    
   }
 
   ngAfterViewInit() {
