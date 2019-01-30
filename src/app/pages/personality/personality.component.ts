@@ -14,6 +14,7 @@ export class PersonalityComponent implements OnInit {
   temp: HTMLElement;
   mArticles: Array<any>;
   personReady: Promise<boolean>;
+  auth = JSON.parse(localStorage.getItem('auth'));
   constructor(
     private service: ImageService,
     private uservice: UserService,
@@ -21,16 +22,15 @@ export class PersonalityComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.auth);
     this.personReady = new Promise((resolve, reject) => {
       this.uservice.getProfile().subscribe(t => {
         //get profile
         this.uservice.getUser(t.topic).subscribe(data => {
           this.user = data;
-          console.log(this.user);
-          console.log("Personality loaded: " + this.user)
           //check subscriptions
           resolve(true);
-          this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
+          this.uservice.getUser(this.auth.uid + "/subscriptions/" + t.topic).subscribe(data => {
             if (data) {
               document.getElementById('subbtn').style.display = "none";
               document.getElementById('unsubbtn').style.display = "inline";
@@ -50,8 +50,9 @@ export class PersonalityComponent implements OnInit {
   //if not subscribed
   subscribe() {
     this.uservice.getTopic().subscribe(t => {
+      console.log(t)
       //need to replace temp with current user later
-      this.uservice.addSub("temp", t.topic);
+      this.uservice.addSub(this.auth.uid, t.topic);
     });
     document.getElementById('subbtn').style.display = "none";
     document.getElementById('unsubbtn').style.display = "inline";
@@ -64,7 +65,7 @@ export class PersonalityComponent implements OnInit {
     document.getElementById('subbtn').style.display = "inline";
     this.uservice.getTopic().subscribe(t => {
       //need to replace temp with current user later
-      this.uservice.removeSub("temp", t.topic);
+      this.uservice.removeSub(this.auth.uid, t.topic);
     })
   }
 

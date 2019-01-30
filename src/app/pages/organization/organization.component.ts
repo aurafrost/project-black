@@ -17,6 +17,7 @@ export class OrganizationComponent implements OnInit {
   featuredList: Image[];
   shopList: Product[];
   navList: NavItem[];
+  auth = JSON.parse(localStorage.getItem('auth'));
 
   //for news
   mArticles: Array<any>;
@@ -26,9 +27,11 @@ export class OrganizationComponent implements OnInit {
     private uservice: UserService,
     private router: Router,
     private newsapi: NewsApiService) {
+      this.router.onSameUrlNavigation = 'reload';
   }
 
   ngOnInit() {
+    console.log("on init hit")
     //check if subscribed
     this.service.getTopic().subscribe(t => {
 
@@ -45,12 +48,20 @@ export class OrganizationComponent implements OnInit {
       // this.newsapi.initSources().subscribe(data => this.mSources = data['sources']); 
 
       //check subscriptions
-      this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
+      this.uservice.getUser(this.auth.uid + "/subscriptions/" + t.topic).subscribe(data => {
         if (data) {
+          console.log("hit btn change")
           document.getElementById('unsubbtn').style.display = "inline";
           document.getElementById('subbtn').style.display = "none";
+
+          document.getElementById('nav').style.display = "flex";
+          document.getElementById('video').style.display = "flex";
+          document.getElementById('sidevideo').style.display = "flex";
+          document.getElementById('tabset').style.display = "flex";
+          document.getElementById('undervideo').style.display = "flex";
         }
         else {
+          console.log("hit btn change")
           document.getElementById('nav').style.display = "none";
           document.getElementById('video').style.display = "none";
           document.getElementById('sidevideo').style.display = "none";
@@ -68,6 +79,7 @@ export class OrganizationComponent implements OnInit {
 
     //get shop list
     this.getShopList();
+
   }
 
   facebookLink: string = "";
@@ -137,13 +149,15 @@ export class OrganizationComponent implements OnInit {
 
   //if not subscribed
   subscribe() {
-    this.service.getTopic().subscribe(t => {
-      //need to replace temp with current user later
-      this.uservice.addSub("temp", t.topic);
-    });
     document.getElementById('subbtn').style.display = "none";
     document.getElementById('unsubbtn').style.display = "inline";
-    this.ngOnInit(); //not calling this for some reason
+    console.log(this.router.onSameUrlNavigation)
+    this.service.getTopic().subscribe(t => {
+      //need to replace temp with current user later
+      this.uservice.addSub(this.auth.uid, t.topic);
+      console.log('hit router navigate')
+      this.router.navigate(['organization']);
+    });
   }
 
   //if already subscribed
@@ -152,7 +166,10 @@ export class OrganizationComponent implements OnInit {
     document.getElementById('subbtn').style.display = "inline";
     this.service.getTopic().subscribe(t => {
       //need to replace temp with current user later
-      this.uservice.removeSub("temp", t.topic);
+      this.uservice.removeSub(this.auth.uid, t.topic);
+      console.log('hit router navigate')
+      this.router.navigate(['organization']);
+      
     })
   }
 
