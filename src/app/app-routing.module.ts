@@ -12,9 +12,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
-import { JayzComponent } from './celebrities/jayz/jayz.component';
-import { TomcruiseComponent } from './celebrities/tomcruise/tomcruise.component';
-import { WillemdafoeComponent } from './celebrities/willemdafoe/willemdafoe.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { NascarComponent } from './pages/categories/nascar/nascar.component';
 import { TravelComponent } from './pages/categories/travel/travel.component';
@@ -35,7 +32,6 @@ import { LivenationComponent } from './pages/categories/livenation/livenation.co
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
-import { StatsComponent } from './pages/stats/stats.component';
 import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 import { SportsComponent } from './pages/categories/sports/sports.component';
@@ -57,9 +53,6 @@ const routes: Routes = [
 {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full', canActivate: [AuthGuard]},
 {path: 'explore', component: ExploreComponent},
 {path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
-{path: 'jay-z', component: JayzComponent},
-{path: 'tomcruise', component: TomcruiseComponent},
-{path: 'willemdafoe', component: WillemdafoeComponent},
 {path: 'forgotpassword', component: ForgotpasswordComponent},
 {path: 'nascar', component: NascarComponent},
 {path: 'travel', component: TravelComponent},
@@ -79,7 +72,6 @@ const routes: Routes = [
 {path: 'mlb', component: MlbComponent},
 {path: 'mls', component: MlsComponent},
 {path: 'nba', component: NbaComponent},
-{path: 'stats', component: StatsComponent},
 {path: 'calendar', component: CalendarComponent},
 {path: 'testDisplay', component: TestDisplayComponent},
 {path: 'sports', component: SportsComponent},
