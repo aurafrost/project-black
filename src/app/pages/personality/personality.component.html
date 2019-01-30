@@ -2,14 +2,19 @@
   <mat-card>
     <h1 style="text-align: center;">Profile</h1>
     <!-- Header info -->
-    <!-- Image -->
-    <mat-card-header style="border: 1px solid black">
-      <img mat-card-avatar src="{{user.image}}"> <!-- What's the point in this line? -->
-      <mat-card-title>Name: {{user.fname}} {{user.lname}}</mat-card-title>
+    <mat-card-header *ngIf="personReady | async" style="border: 1px solid black">
+      <!-- Avatar Image -->
+      <img mat-card-avatar src="{{user.image}}">
+      <mat-card-title>Name: {{user.fname}} {{user.lname}}
+        <button class="btn btn-success" data-toggle="modal" data-target="#subModal" id="subbtn">Subscribe | +</button>
+        <button style="display: none;" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" id="unsubbtn">Unsubscribe</button>
+      </mat-card-title>
       <mat-card-subtitle>Email: {{user.email}}</mat-card-subtitle>
     </mat-card-header>
+    <!-- Image -->
+    <img style="margin-left:0%; width: 100%;" mat-card-image src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/14/61/7856639324bb6f6.jpg" alt="profile image">
     <!-- Bio and Content -->
-    <mat-card-content>
+    <mat-card-content id="content-container">
       <!-- Container -->
       <div class="tab2">
         <button id="featuredbtn" class="tablinks2" (click)="tabby2(event, 'FeaturedTab')">Featured</button>
@@ -92,7 +97,7 @@
           </mat-sidenav-container>
         </div>
         <!-- About -->
-        <div id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
+        <div  *ngIf="personReady | async" id="AboutTab" class="tabcontent2" style="width: 100%; overflow: auto;">
           <!-- Placeholder using About us page. Not intended to stay. -->
           {{user.bio}}
         </div>
@@ -108,4 +113,46 @@
       <button mat-button>SHARE</button>
     </mat-card-actions> -->
   </mat-card>
+</div>
+
+<!-- Subscribe Modal -->
+<div class="modal fade" id="subModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Confirm Subscription? You will be billed for this subscription.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-success" (click)="subscribe()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Unsubscribe Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Unsubscribe? You will not be refunded for this subscription.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-danger" (click)="unsubscribe()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
 </div>
