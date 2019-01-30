@@ -143,7 +143,7 @@ export class OrganizationComponent implements OnInit {
     });
     document.getElementById('subbtn').style.display = "none";
     document.getElementById('unsubbtn').style.display = "inline";
-    this.ngOnInit();
+    this.ngOnInit(); //not calling this for some reason
   }
 
   //if already subscribed

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../core/models/User';
 import { UserService } from '../../../core/services/user/user.service';
 import { NewsApiService } from 'src/app/core/services/news-api.service';
+import { ImageService } from 'src/app/core/services/image/image.service';
 
 @Component({
   selector: 'personality',
@@ -11,22 +12,54 @@ import { NewsApiService } from 'src/app/core/services/news-api.service';
 export class PersonalityComponent implements OnInit {
   user: User;
   temp: HTMLElement;
-  mArticles:Array<any>;
+  mArticles: Array<any>;
 
   constructor(
-    private service: UserService,
+    private service: ImageService,
+    private uservice: UserService,
     private newsapi: NewsApiService) {
   }
 
   ngOnInit() {
-    this.service.getProfile().subscribe(t => {
-      //get user
-      this.service.getUser(t.topic).subscribe(data => {
+    this.uservice.getProfile().subscribe(t => {
+      //get profile
+      this.uservice.getUser(t.topic).subscribe(data => {
         this.user = data;
-        console.log(this.user)
+        console.log("Personality loaded: " + this.user)
+        //check subscriptions
+        this.uservice.getUser("temp/subscriptions/" + t.topic).subscribe(data => {
+          if (data) {
+            document.getElementById('unsubbtn').style.display = "inline";
+            document.getElementById('subbtn').style.display = "none";
+          }
+          else {
+            document.getElementById('content-container').style.display = "none";
+          }
+        });
       });
       //init news
       this.newsapi.initArticles(t.topic).subscribe(data => this.mArticles = data['articles']);
+    })
+  }
+
+  //if not subscribed
+  subscribe() {
+    this.uservice.getTopic().subscribe(t => {
+      //need to replace temp with current user later
+      this.uservice.addSub("temp", t.topic);
+    });
+    document.getElementById('subbtn').style.display = "none";
+    document.getElementById('unsubbtn').style.display = "inline";
+    this.ngOnInit(); //not calling for some reason
+  }
+
+  //if already subscribed
+  unsubscribe() {
+    document.getElementById('unsubbtn').style.display = "none";
+    document.getElementById('subbtn').style.display = "inline";
+    this.uservice.getTopic().subscribe(t => {
+      //need to replace temp with current user later
+      this.uservice.removeSub("temp", t.topic);
     })
   }
 

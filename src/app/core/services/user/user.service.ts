@@ -67,6 +67,10 @@ export class UserService {
     this.afstore.doc('image/ptopic').update(data);
   }
 
+  getTopic(){
+    return this.afstore.doc<Topic>('image/ptopic').valueChanges();
+  }
+
   getProfile(){
     return this.afstore.doc<Topic>('image/ptopic').valueChanges();
   }
@@ -85,6 +89,7 @@ export class UserService {
     this.afstore.doc('Users/'+user+'/subscriptions/'+topic).delete();
     console.log("Subscription for "+user+" to "+topic+" removed.");
   }
+  
 
   getUsers() {
     //return this.afDatabase.list(`/Users/`);
