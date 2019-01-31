@@ -18,6 +18,7 @@ export class UserService {
   private userDoc: AngularFirestoreDocument<User>;
   private authObj;
   private SubObs: Observable<any>;
+  auth = JSON.parse(localStorage.getItem('auth'));
   constructor(
     private afstore: AngularFirestore,
     private ss: SubscriptionService
@@ -64,15 +65,15 @@ export class UserService {
     const data={
       topic:name,
     }
-    this.afstore.doc('image/ptopic').update(data);
+    this.afstore.doc('Users/'+this.auth.uid).update(data);
   }
 
   getTopic(){
-    return this.afstore.doc<Topic>('image/ptopic').valueChanges();
+    return this.afstore.doc<Topic>('Users/'+this.auth.uid).valueChanges();
   }
 
   getProfile(){
-    return this.afstore.doc<Topic>('image/ptopic').valueChanges();
+    return this.afstore.doc<Topic>('Users/'+this.auth.uid).valueChanges();
   }
 
   //not complete

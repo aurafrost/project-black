@@ -12,6 +12,8 @@ import { Product } from '../../models/Product';
 })
 export class ImageService {
   topic: string;
+  auth = JSON.parse(localStorage.getItem('auth'));
+
   constructor(private db: AngularFirestore) { }
 
   setTopic(name){
@@ -19,12 +21,12 @@ export class ImageService {
     const data={
       topic:name,
     }
-    this.db.doc('image/topic').update(data);
+    this.db.doc('Users/'+this.auth.uid).update(data);
   }
 
   getTopic(){
     // return this.topic;
-    return this.db.doc<Topic>('image/topic').valueChanges();
+    return this.db.doc<Topic>('Users/'+this.auth.uid).valueChanges();
   }
 
   getImage(base) {
