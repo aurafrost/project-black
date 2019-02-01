@@ -36,6 +36,7 @@
   position: relative;
   overflow: auto;
   height: 30rem;
+  /*height: -webkit-fill-available !important;*/
   margin: 8px 16px;
   border-radius: 4px;
 
@@ -114,25 +115,24 @@
 }
 
 /* Style the video: 100% width and height to cover the entire window */
-.video {
+/*.img {*/
   /*position: fixed;*/
   /*right: 0;*/
   /*bottom: 0;*/
   /*min-width: 100%;*/
   /*min-height: 100%;*/
-}
+/*}*/
 
 .content2 {
-
 }
 
 /* Add some content at the bottom of the video/page */
 .content {
-  /*position: fixed;*/
+  position: absolute;
   bottom: 0;
   background: rgba(218,68,83,.5);
   color: #f1f1f1;
-  width: 100%;
+  /*width: 100%;*/
   padding: 20px;
 }
 
@@ -150,4 +150,33 @@
 #myBtn:hover {
   background: #ddd;
   color: black;
+}
+
+.logo {
+  top: 0;
+  position: absolute;
+  width: 14rem;
+  right: 0;
+  margin-right: 3rem;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.card {
+  background: rgba(218,68,83,0);
+  border: none;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.stat-img {
+  border-radius: .5rem;
 }

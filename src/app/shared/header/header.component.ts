@@ -6,6 +6,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {SignInComponent} from '../dialog/sign-in/sign-in.component';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'header-comp',
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
     .observe(['(min-width: 580px)']);
 
   constructor(
+    private http: Http,
     private breakpointObserver: BreakpointObserver,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
@@ -38,6 +40,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.auth);
+    this.http.get('https://jsonmock.hackerrank.com/datetime').subscribe(data => {
+
+    })
   }
 
   openDialog() {

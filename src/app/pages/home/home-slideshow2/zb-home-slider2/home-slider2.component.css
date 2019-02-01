@@ -116,7 +116,16 @@ mat-icon {
   fill: ghostwhite;
 }
 
+path {
+  color: ghostwhite;
+  fill: ghostwhite !important;
+}
+
 .swiper-slide, .swiper {
   /*height: fit-content !important;*/
   overflow: hidden!important;
+}
+
+.swiper-wrapper {
+  height: fit-content !important;
 }

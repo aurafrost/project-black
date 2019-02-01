@@ -1,0 +1,84 @@
+<!--<div class="container-fluid">-->
+  <!--<div class="row">-->
+    <!--<div *ngFor="let product of products" class="col-12">-->
+      <!--<div class="card ml-auto mr-auto mt-1 mb-1" style="max-height: 10rem; max-width: 30rem">-->
+        <!--<div class="row">-->
+          <!--<div class="col-4" style="width: 18rem;">-->
+            <!--<img class="" src="{{product.img}}" alt="Card image cap">-->
+          <!--</div>-->
+          <!--<div class="col">-->
+            <!--<div class="container h-100 text-center">-->
+              <!--<h5 class="">{{product.title}}</h5>-->
+              <!--<p class="">Some quick example text to build.</p>-->
+              <!--<div class="text-white price">-->
+                <!--${{product.price}}-->
+              <!--</div>-->
+              <!--<button mat-button (click)="addProductToCart(product)" class="secondary-btn">Add to cart</button>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="text-center mt-3 animated fadeInDown">
+  <button mat-raised-button (click)="openDialog()" class="primary-btn">Add Product</button>
+</div>
+
+
+<cdk-virtual-scroll-viewport itemSize="100" class="">
+  <li *cdkVirtualFor="let post of products; let i = index; trackBy: trackByIdx"
+      class="container animated flipInX feedPost align-items-end mx-auto">
+
+    <div class="row text-center">
+      <div class="col-3">
+        <!--<img id=profileImg class="" src={{post.profileUrl}} style="max-width: 70px; max-height: 70px;">-->
+      </div>
+      <div class="col-6">
+        <span id='profileName' class="">
+          {{post.title}}
+        </span>
+      </div>
+
+      <div class="col-3" style="font-size: 12px;">
+        <span class="float-right">
+          ${{post.price}}
+        </span>
+      </div>
+
+
+
+    </div>
+
+    <div class="row mt-3 text-center">
+      <div class="col-12">
+        <p>Description and details of the product to purchase.</p>
+      </div>
+      <!--{{post.post}}-->
+    </div>
+
+    <div class="row mt-4">
+      <div class="col d-flex mx-auto justify-content-center">
+        <img src={{post.img}} class="" style="width: auto;
+                            max-width: 300px;
+                            height: auto;
+                            max-height: 150px;">
+      </div>
+    </div>
+
+    <div class="row mt-4 mb-0 mx-auto">
+      <div class="col-4 mx-auto text-center">
+        <a (click)="addProductToCart(product)" class="">Add To Cart <i class="fas fa-plus fa-1x"></i></a>
+        <!--<button mat-button (click)="addProductToCart(product)" class="secondary-btn">Add to cart</button>-->
+      </div>
+
+      <div class="col-4 mx-auto text-center">
+      </div>
+
+      <div class="col-4 mx-auto text-center">
+        <a class="">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+      </div>
+    </div>
+  </li>
+</cdk-virtual-scroll-viewport>

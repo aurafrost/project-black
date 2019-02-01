@@ -1,53 +1,31 @@
-<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto" style="min-width: 65rem;">
   <swiper class="swiper-container" *ngIf="type == 'component' && show" [userSwiperClass] fxFlex="auto" [config]="config"  [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
     <div *ngFor="let item of data; let i of index" class="swiper-slide">
-      <div class="h-100" style="width: 100%">
+      <div class="container-fluid h-100" style="width: 100%">
         <div class="row h-100" style="width: inherit; margin: 0">
-          <div class="card-container col-lg-6">
-            <video autoplay muted loop class="video">
-              <source src="{{item.webm}}" type="video/webm">
+          <div class="col-12">
+            <video id="myVideo" autoplay muted loop class="video">
+              <source *ngIf="item.webm" src="{{item.webm}}" type="video/webm">
               <source src="{{item.mp4}}" type="video/mp4">
             </video>
-          </div>
-          <div class="content2 col-lg-6">
-            <h1>Stats</h1>
-          </div>
-          <div class="col-lg-12">
-            <!-- Optional: some overlay text to describe the video -->
-            <div class="content">
-              <h1>Heading</h1>
-              <p>Lorem ipsum...</p>
+            <div class="content" style="right: 0">
+                 <!--[ngStyle]="{right: (headerFlip | async)?.matches ? null : 0}">-->
+              <!--<h1>{{item.heading}}</h1>-->
+              <img style="max-height: 10rem; max-width: 10rem;" src="{{item.logo}}"/>
+              <!--<p>{{item.caption}}</p>-->
             </div>
+
+            <ul class="list-unstyled" style="position: absolute">
+              <li class="media mb-2"  *ngFor="let feat of item.stats">
+                <img style="width: 10rem; height: 5rem" src="{{feat.img}}" class="mr-3 stat-img" alt="..." *ngIf="feat">
+                <div class="media-body" *ngIf="feat">
+                  <h5 class="mt-0 mb-1">{{feat.title}}</h5>
+                  {{feat.caption}}
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-
-            <!--&lt;!&ndash; Optional: some overlay text to describe the video &ndash;&gt;-->
-            <!--<div class="content">-->
-              <!--<h1>Heading</h1>-->
-              <!--<p>Lorem ipsum...</p>-->
-              <!--&lt;!&ndash; Use a button to pause/play the video with JavaScript &ndash;&gt;-->
-              <!--&lt;!&ndash;<button id="myBtn" onclick="myFunction()">Pause</button>&ndash;&gt;-->
-            <!--</div>-->
-          <!--</div>-->
-          <!--<div class="col-lg-8">-->
-            <!--<div class="row h-50">-->
-              <!--<div class="col-sm-6">-->
-                <!--row-1 col-2 row 1 col-1-->
-              <!--</div>-->
-              <!--<div class="col-sm-6">-->
-                <!--row-1 col-2 row 1 col-2-->
-              <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row h-50">-->
-              <!--<div class="col-sm-6">-->
-                <!--row-1 col-2 row 2 col-1-->
-              <!--</div>-->
-              <!--<div class="col-sm-6">-->
-                <!--row-1 col-2 row 2 col-2-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
       </div>
     </div>
   </swiper>

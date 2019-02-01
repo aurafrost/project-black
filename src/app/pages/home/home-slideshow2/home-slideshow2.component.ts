@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {animate, AnimationBuilder, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import { SwiperConfigInterface, SwiperCoverflowEffectInterface} from 'ngx-swiper-wrapper';
+import {Observable} from 'rxjs';
+import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
 
 @Component({
@@ -42,6 +44,10 @@ export class HomeSlideshow2Component implements OnInit {
   @Input('data') data = [];
   public type = 'component';
   public disabled = false;
+  // public features: any = [];
+  headerFlip: Observable<BreakpointState> = this.breakpointObserver
+    .observe(['(min-width: 991px)']);
+
 
   public  swiperCoverflowEffect: SwiperCoverflowEffectInterface = {
     depth: 100,
@@ -65,9 +71,11 @@ export class HomeSlideshow2Component implements OnInit {
   };
 
   constructor(
+    private breakpointObserver: BreakpointObserver
   ) { }
 
   ngOnInit() {
+    console.log(this.data);
   }
 
   public onIndexChange(index: number): void {
@@ -76,5 +84,9 @@ export class HomeSlideshow2Component implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
+  }
+
+  log(val) {
+    console.log(val);
   }
 }
