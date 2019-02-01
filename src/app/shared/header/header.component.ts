@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
     .observe(['(min-width: 580px)']);
 
   constructor(
-    private http: Http,
     private breakpointObserver: BreakpointObserver,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
@@ -40,9 +39,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.auth);
-    this.http.get('https://jsonmock.hackerrank.com/datetime').subscribe(data => {
-
-    })
   }
 
   openDialog() {
