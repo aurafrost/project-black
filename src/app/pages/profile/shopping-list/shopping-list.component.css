@@ -1,11 +1,12 @@
 .card {
   margin-left: auto;
-  background-color: #ac6169;
-  color: ghostwhite;
+  margin-right: auto;
+  /*background-color: #ac6169;*/
+  /*color: ghostwhite;*/
 }
 
 .card-footer{
-  background-color: #363636;
+  /*background-color: #363636;*/
 }
 
 .container,
@@ -41,11 +42,11 @@
 }
 
 .ct {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .scroll {
-  height: 45rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /*height: 45rem;*/
+  /*overflow-y: scroll;*/
+  /*overflow-x: hidden;*/
 }

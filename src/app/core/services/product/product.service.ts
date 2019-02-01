@@ -15,6 +15,11 @@ export class ProductService {
     return this.afFirestore.collection(`Users/${userId}/products`).snapshotChanges();
   }
 
+  getProducts(userId) {
+    return this.afFirestore.collection(`Users/${userId}/products`).valueChanges();
+  }
+
+
   getProductById(userId, productId) {
     return this.afFirestore.doc(`Users/${userId}/products/${productId}`).snapshotChanges(); // valueChanges().pipe(take(1));
   }

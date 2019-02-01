@@ -95,7 +95,7 @@ import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
-import { ProductDialogComponent } from './pages/profile/shopping-list/product-dialog/product-dialog.component';
+import { ProductDialogComponent } from './pages/personality2/shopping-list/product-dialog/product-dialog.component';
 import {AngularFireStorage} from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
@@ -103,7 +103,8 @@ import {ProductService} from './core/services/product/product.service';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list.component';
+import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping-list.component';
+import { Personality2Component } from './pages/personality2/personality2.component';
 
 
 @NgModule({
@@ -162,7 +163,8 @@ import {ShoppingListComponent} from './pages/profile/shopping-list/shopping-list
     ChatComponent,
     LchartComponent,
     BarChartComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    Personality2Component
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,9 @@
 
 <div id="page" class="hfeed site">
   <div id="content" class="site-content" style="background-color: #7f7f7f;">
-    <home-slideshow2 [data]="data" ></home-slideshow2>
+    <div style="height: fit-content;">
+      <home-slideshow2 [data]="data" ></home-slideshow2>
+    </div>
     <home-slider2 (onCategorySelect)="getCategoryDetails($event)"></home-slider2>
   </div>
 </div>
