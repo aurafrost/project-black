@@ -105,6 +105,7 @@ import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping-list.component';
 import { Personality2Component } from './pages/personality2/personality2.component';
+import { NewsComponent } from './pages/personality2/news/news.component';
 
 
 @NgModule({
@@ -164,7 +165,8 @@ import { Personality2Component } from './pages/personality2/personality2.compone
     LchartComponent,
     BarChartComponent,
     ShoppingListComponent,
-    Personality2Component
+    Personality2Component,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
