@@ -17,7 +17,6 @@
                     <div class="col align-content-start">
                       <span class="float-right">
                         <strong>You</strong> <i class="ml-2 mt-1 fas fa-user-circle fa-2x"></i>
-
                       </span>
 
                     </div>
@@ -25,6 +24,18 @@
                   </div>
 
                   <ng-template #otherUser>
+                    <div *ngIf="message.userId === 'jackiechan@fake.com'; else notJackie" class="row">
+                      <img id='profilePic' src='https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NTU2MzE2NDE4MzExNjkx/jackie-chan-9542080-1-402.jpg' 
+                      >
+                      <!-- <i class="fas fa-user-circle"></i> -->
+                      <div class="col align-content-start">
+                        <span class="float-left">
+                          <strong>{{message.userId}}</strong>
+                        </span>
+                      </div>
+                    </div>
+                    <ng-template #notJackie>
+
                     <div class="row">
                       <i class="ml-1 mt-1 fas fa-user-astronaut fa-2x"></i>
                       <!-- <i class="fas fa-user-circle"></i> -->
@@ -34,6 +45,7 @@
                         </span>
                       </div>
                     </div>
+                    </ng-template>
                   </ng-template>
                   <div class="row " style="flex-wrap: nowrap">
                     <div class="col mb-2 mt-1 " style='width: 300px;
