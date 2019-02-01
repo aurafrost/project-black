@@ -105,7 +105,7 @@
   <div class="animated bounceIn" id="undervideo">
     <!-- Featured -->
     <div id="FeaturedTab" class="tabcontent2" style="width:100%; overflow:auto;">
-      <div style="text-align: center;">Featured Artists</div>
+      <div style="text-align: center;">Featured</div>
       <table class="animated bounceIn" id="featured">
         <tr>
           <th>Name</th>
@@ -136,7 +136,7 @@
         </tr>
         <tr>
           <th>Price</th>
-          <td *ngFor="let product of shopList">{{product.price}} <button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button>
+          <td *ngFor="let product of shopList">{{product.price}} <a href="{{product.href}}"><button class="btn btn-success sm" id="buy" (click)="purchase(id)">Purchase</button></a>
           </td>
         </tr>
       </table>
