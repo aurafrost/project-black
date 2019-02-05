@@ -119,4 +119,9 @@ export class UserService {
     //this.users = this.afstore.collection('test-users').valueChanges();
     return this.users;
   }
+
+  getUsersByCategory(category) {
+    return this.afstore.collection('Users', ref => ref.where('category', '==', category))
+      .valueChanges();
+  }
 }

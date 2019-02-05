@@ -32,8 +32,27 @@
           <mat-tab label="Calender">
             <calendar></calendar>
           </mat-tab>
+          <mat-tab label="Analytics">
+            <lchart></lchart>
+          </mat-tab>
         </mat-tab-group>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div class="cardInner">
+  <div [style.grid-area]="'header'">
+    Header
+  </div>
+  <div [style.grid-area]="'side'">
+    Side
+  </div>
+  <div [style.grid-area]="'content'">
+    Content
+  </div>
+  <div [style.grid-area]="'footer'">
+    Footer
   </div>
 </div>

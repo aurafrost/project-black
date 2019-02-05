@@ -21,10 +21,8 @@
   </div>
   <mat-menu style="padding-bottom: 0;" #menu="matMenu">
     <button *ngIf="!(isMobile | async)?.matches" routerLink="/" mat-menu-item>Home</button>
-    <!--<button *ngIf="auth && !(isMobile | async)?.matches" routerLink="profile/NBRvKajFDNTqdb7DJEK9naE5MwT2" mat-menu-item>Profile</button>-->
     <button *ngIf="auth && !(isMobile | async)?.matches" routerLink="content" mat-menu-item>Feed</button>
     <button *ngIf="auth && !(isMobile | async)?.matches" routerLink="explore" mat-menu-item>Explore</button>
-    <button *ngIf="auth && !(isMobile | async)?.matches" routerLink="analytics" mat-menu-item>Analytics</button>
     <form (click) = "$event.stopPropagation()" mat-menu-item class="example-form">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Search" (keyup)="applyTerm($event)">
@@ -47,6 +45,5 @@
     <!--<button *ngIf="auth" class="secondary-btn"  mat-button routerLink="profile/{{auth.uid}}">Profile</button>-->
     <button *ngIf="auth"  id="hoverExplore" class="secondary-btn"  mat-button routerLink="explore">Explore</button>
     <button *ngIf="auth"  class="secondary-btn"  mat-button routerLink="content">Feed</button>
-    <button *ngIf="auth"  class="secondary-btn"  mat-button routerLink="analytics">Analytics</button>
   </mat-toolbar>
 </mat-toolbar>

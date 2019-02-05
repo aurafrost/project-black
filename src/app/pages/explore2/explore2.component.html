@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <mat-form-field>
+    <mat-select (selectionChange)="changeCategory()" [(value)]="selected" placeholder="Select Category">
+      <mat-option *ngFor="let cat of categories" [value]="cat.value">
+        {{cat.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+<mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
+  <mat-grid-tile class="flip-card" [@cardFlip]="currentIndex == i ? 'hover' : 'unhover'" *ngFor="let item of data; let i of index" style="background-color: lightgray">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{item.image}}" class="logo">
+        </div>
+        <div class="flip-card-back">
+          <h5>{{item.fname}} {{item.lname}}</h5>
+          <p></p>
+          <a routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>
+        </div>
+      </div>
+  </mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
+</mat-grid-list>
