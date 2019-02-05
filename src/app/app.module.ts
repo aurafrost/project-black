@@ -104,6 +104,7 @@ import { ChartsModule } from 'ng2-charts';
 import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping-list.component';
 import { Personality2Component } from './pages/personality2/personality2.component';
 import { Explore2Component } from './pages/explore2/explore2.component';
+import { NewsComponent } from './pages/personality2/news/news.component';
 
 
 @NgModule({
@@ -162,7 +163,8 @@ import { Explore2Component } from './pages/explore2/explore2.component';
     BarChartComponent,
     ShoppingListComponent,
     Personality2Component,
-    Explore2Component
+    Explore2Component,
+    NewsComponent
   ],
   imports: [
     MatGridListModule,
