@@ -11,7 +11,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -33,7 +32,7 @@ import { RouterModule } from '@angular/router';
 import {
   MatButtonModule, MatCardModule,
   MatDialogModule, MatExpansionModule,
-  MatFormFieldModule, MatIconModule,
+  MatFormFieldModule, MatGridListModule, MatIconModule,
   MatInputModule,
   MatMenuModule, MatRadioModule,
   MatSelectModule, MatSliderModule, MatSlideToggleModule, MatTabsModule,
@@ -83,14 +82,13 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { PersonalityComponent } from './pages/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
-import { CalendarComponent } from './pages/profile/calendar/calendar.component';
+import { CalendarComponent } from './pages/personality2/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {HomeSlider2Component} from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
-import { ProfileContentComponent } from './pages/profile/profile-content/profile-content.component';
 import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
@@ -105,13 +103,13 @@ import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping-list.component';
 import { Personality2Component } from './pages/personality2/personality2.component';
+import { Explore2Component } from './pages/explore2/explore2.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent,
     LoginRegisterComponent,
     HeaderComponent,
     FooterComponent,
@@ -154,7 +152,6 @@ import { Personality2Component } from './pages/personality2/personality2.compone
     CalendarComponent,
     HomeSlider2Component,
     TestDisplayComponent,
-    ProfileContentComponent,
     SportsComponent,
     OrganizationComponent,
     ShoppingCartComponent,
@@ -164,9 +161,11 @@ import { Personality2Component } from './pages/personality2/personality2.compone
     LchartComponent,
     BarChartComponent,
     ShoppingListComponent,
-    Personality2Component
+    Personality2Component,
+    Explore2Component
   ],
   imports: [
+    MatGridListModule,
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,

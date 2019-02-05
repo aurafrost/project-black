@@ -9,7 +9,6 @@ import { SupportComponent } from './pages/support/support.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
@@ -26,20 +25,20 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
-import { PersonalityComponent } from "./pages/personality/personality.component";
+import { PersonalityComponent } from './pages/personality/personality.component';
 import { Personality2Component} from './pages/personality2/personality2.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
 import { MlbComponent } from './pages/categories/mlb/mlb.component';
 import { MlsComponent } from './pages/categories/mls/mls.component';
 import { NbaComponent } from './pages/categories/nba/nba.component';
-import { CalendarComponent } from './pages/profile/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 import { SportsComponent } from './pages/categories/sports/sports.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import {AuthGuard} from './core/guard/auth.guard';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
+import {Explore2Component} from './pages/explore2/explore2.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -51,9 +50,8 @@ const routes: Routes = [
 {path: 'support', component: SupportComponent},
 {path: 'terms', component: ImageComponent},
 {path: 'login-register', component: LoginRegisterComponent},
-{path: 'personality/:id', component: Personality2Component, canActivate: [AuthGuard]},
-// {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full', canActivate: [AuthGuard]},
-{path: 'explore', component: ExploreComponent},
+{path: 'profile/:id', component: Personality2Component, canActivate: [AuthGuard]},
+{path: 'explore', component: Explore2Component},
 {path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
 {path: 'forgotpassword', component: ForgotpasswordComponent},
 {path: 'nascar', component: NascarComponent},
@@ -74,7 +72,6 @@ const routes: Routes = [
 {path: 'mlb', component: MlbComponent},
 {path: 'mls', component: MlsComponent},
 {path: 'nba', component: NbaComponent},
-{path: 'calendar', component: CalendarComponent},
 {path: 'testDisplay', component: TestDisplayComponent},
 {path: 'sports', component: SportsComponent},
 {path: 'organization', component: OrganizationComponent},
