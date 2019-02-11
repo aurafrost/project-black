@@ -26,6 +26,8 @@ export class ShoppingCartComponent implements OnInit {
     this._productService.getCartItems(this.auth)
       .subscribe(data => {
         console.log(data);
+        this.cart = [];
+        this.sum = 0;
         data.map((i: Product, index) => {
           this._productService.getProductById(i.ownerId, i.productId)
             .subscribe((product) => {
@@ -43,5 +45,9 @@ export class ShoppingCartComponent implements OnInit {
 
   removeItem(product: Product) {
     this._productService.removeCartItem(this.auth.uid, product.productId);
+  }
+
+  logCart(){
+    console.log(this.cart)
   }
 }
