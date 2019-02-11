@@ -3,6 +3,8 @@ import {MediaChange, MediaObserver} from '@angular/flex-layout';
 import {Subscription} from 'rxjs';
 import {UserService} from '../../core/services/user/user.service';
 import {animate, query, stagger, state, style, transition, trigger} from '@angular/animations';
+import {SubscribeService} from '../../core/services/subscribe/subscribe.service';
+import {AuthService} from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'explore2',
@@ -26,6 +28,8 @@ import {animate, query, stagger, state, style, transition, trigger} from '@angul
   ]
 })
 export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
+  auth: any;
+  subscriptions: any[];
   currentState = 'initial';
   watcher: Subscription;
   activeMediaQuery = '';
@@ -40,9 +44,20 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   ];
 
   constructor(
+    private _authService: AuthService,
+    private _subscribeService: SubscribeService,
     private _userService: UserService,
     private _mediaObserver: MediaObserver
   ) {
+    // this.auth = this._authService.getAuth().value;
+    // console.log(this.auth);
+    // this._subscribeService.setSubscriptions(this.auth);
+
+    this._subscribeService.$subscribers.subscribe(data => {
+      console.log(data);
+      this.subscriptions = data;
+    });
+
     this.watcher = _mediaObserver.media$.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
       console.log(change.mediaQuery);
@@ -66,6 +81,10 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
 
   ngAfterContentInit() {
 
+  }
+
+  containsId = (id): boolean => {
+    return this.subscriptions.some(function(i) { return i.subscriberId === id; });
   }
 
   ngOnDestroy() {

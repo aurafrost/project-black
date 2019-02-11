@@ -5,27 +5,29 @@ import {Router} from '@angular/router';
 import {UserService} from '../user/user.service';
 import {User} from '../../models/User';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {SubscribeService} from '../subscribe/subscribe.service';
 
-  @Injectable({
+@Injectable({
   providedIn: 'root'
 })
 export class AuthService {
     public auth = new BehaviorSubject<Object>(null);
     $auth = this.auth.asObservable();
-    private userList: User[]; 
-  constructor(
-    private afAuth: AngularFireAuth,
-    private afDatabase: AngularFireDatabase,
-    private router: Router,
-    private ngZone: NgZone, // categories to remove outside scope warning
-    private userService: UserService
-  ) {
+    private userList: User[];
+    constructor(
+      private subscriberService: SubscribeService,
+      private afAuth: AngularFireAuth,
+      private afDatabase: AngularFireDatabase,
+      private router: Router,
+      private ngZone: NgZone, // categories to remove outside scope warning
+      private userService: UserService
+    ) {
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      
       if (this.auth.next) {
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
+        this.subscriberService.setSubscriptions(auth);
       } else {
         localStorage.setItem('auth', null);
         this.auth = null;
@@ -35,7 +37,6 @@ export class AuthService {
     this.userService.getAllUsers().subscribe(ul => {
       this.userList = ul;
     });
-
   }
 
   get authenticated(): boolean {
@@ -57,7 +58,7 @@ export class AuthService {
   signIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (1) {//auth.user.emailVerified) {
+        if (1) { // auth.user.emailVerified) {
           console.log(auth.user);
           if (auth) {
             localStorage.setItem('auth', JSON.stringify(auth.user));
@@ -66,19 +67,19 @@ export class AuthService {
             localStorage.setItem('auth', null);
             console.log(localStorage.getItem('auth'));
           }
-            
+
           console.log(this.userList)
           this.userList.forEach(user => {
-            if(user.uid === auth.user.uid)
+            if (user.uid === auth.user.uid)
             {
-              if(user.role === "celeb")
+              if (user.role === "celeb")
                 this.router.navigate(['sports']);
-              else if(user.role === "user")
-                this.router.navigate([''])
+              else if (user.role === "user")
+                this.router.navigate(['']);
               else
-                this.router.navigate(['travel'])
+                this.router.navigate(['travel']);
             }
-          })
+          });
 
         }
       }).catch((err) => {

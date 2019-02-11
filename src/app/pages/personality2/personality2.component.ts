@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../core/services/user/user.service';
-import {ProductService} from '../../core/services/product/product.service';
 
 @Component({
   selector: 'personality2',
