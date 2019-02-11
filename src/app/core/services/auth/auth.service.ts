@@ -22,15 +22,18 @@ export class AuthService {
       private ngZone: NgZone, // categories to remove outside scope warning
       private userService: UserService
     ) {
+      this.router.onSameUrlNavigation = "reload";
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
-      if (this.auth.next) {
+      if (auth) {
+        console.log("IF hit")
         this.auth.next(auth);
         localStorage.setItem('auth', JSON.stringify(auth));
         this.subscriberService.setSubscriptions(auth);
       } else {
+        console.log("ELSE hit")
         localStorage.setItem('auth', null);
-        this.auth = null;
+        this.auth.next(null);
       }
     });
 
