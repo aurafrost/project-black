@@ -59,3 +59,23 @@ mat-grid-tile {
   color: white;
   transform: rotateY(180deg);
 }
+
+.secondary-btn {
+  background-color: #252525;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: .5rem;
+}
+
+.secondary-btn.hover,
+.secondary-btn:hover {
+  color: #DA4453;
+}
+
+.bt-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: .5rem;
+}

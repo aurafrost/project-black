@@ -15,17 +15,11 @@
         </div>
         <div class="flip-card-back">
           <h5>{{item.fname}} {{item.lname}}</h5>
-          <p></p>
-          <a routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>
+          <subscribe-btn [subscibeId]="item.uid"></subscribe-btn>
+          <!--<button class="secondary-btn"  mat-button>Subscribe</button>-->
+          <!--<a *ngIf="subscriptions && containsId(item.uid)" class="bt-right" routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>-->
+          <a class="bt-right" routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>
         </div>
       </div>
   </mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
-  <mat-grid-tile style="background-color: lightgray"></mat-grid-tile>
 </mat-grid-list>

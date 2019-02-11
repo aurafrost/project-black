@@ -39,6 +39,7 @@ import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.compone
 import {AuthGuard} from './core/guard/auth.guard';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import {Explore2Component} from './pages/explore2/explore2.component';
+import {SubscribeGuard} from './core/guard/subscribe.guard';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -50,7 +51,7 @@ const routes: Routes = [
 {path: 'support', component: SupportComponent},
 {path: 'terms', component: ImageComponent},
 {path: 'login-register', component: LoginRegisterComponent},
-{path: 'profile/:id', component: Personality2Component, canActivate: [AuthGuard]},
+{path: 'profile/:id', component: Personality2Component, canActivate: [SubscribeGuard]},
 {path: 'explore', component: Explore2Component},
 {path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
 {path: 'forgotpassword', component: ForgotpasswordComponent},

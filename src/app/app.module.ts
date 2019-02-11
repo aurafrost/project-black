@@ -105,6 +105,8 @@ import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping
 import { Personality2Component } from './pages/personality2/personality2.component';
 import { Explore2Component } from './pages/explore2/explore2.component';
 import { NewsComponent } from './pages/personality2/news/news.component';
+import { SubscribeBtnComponent } from './shared/subscribe-btn/subscribe-btn.component';
+import {SubscribeGuard} from './core/guard/subscribe.guard';
 
 
 @NgModule({
@@ -164,7 +166,8 @@ import { NewsComponent } from './pages/personality2/news/news.component';
     ShoppingListComponent,
     Personality2Component,
     Explore2Component,
-    NewsComponent
+    NewsComponent,
+    SubscribeBtnComponent
   ],
   imports: [
     MatGridListModule,
@@ -217,6 +220,7 @@ import { NewsComponent } from './pages/personality2/news/news.component';
   providers: [
     AngularFireStorage,
     AuthGuard,
+    SubscribeGuard,
     ProductService,
     AuthService,
     UserService,
