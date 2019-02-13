@@ -38,7 +38,7 @@ export class SubscribeGuard implements CanActivate {
       return true;
     }
     console.log('access denied!');
-    alert('Please Subscriber to the account first!');
+    alert('Please Subscribe to the account first!');
     return false;
   }
 }

@@ -8,18 +8,31 @@
   </mat-form-field>
 </mat-toolbar>
 <mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
-  <mat-grid-tile class="flip-card" [@cardFlip]="currentIndex == i ? 'hover' : 'unhover'" *ngFor="let item of data; let i of index" style="background-color: lightgray">
+  <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
       <div class="flip-card-inner">
         <div class="flip-card-front">
+          <button mat-raised-button="" *ngIf="cardFillIndex === item.uid" class="bt-left" (click)="onClick(item.uid)">close</button>
           <img src="{{item.image}}" class="logo">
         </div>
-        <div class="flip-card-back">
-          <h5>{{item.fname}} {{item.lname}}</h5>
-          <subscribe-btn [subscibeId]="item.uid"></subscribe-btn>
-          <!--<button class="secondary-btn"  mat-button>Subscribe</button>-->
-          <!--<a *ngIf="subscriptions && containsId(item.uid)" class="bt-right" routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>-->
-          <a class="bt-right" routerLink="/profile/{{item.uid}}" style="color: black">Go to profile</a>
+        <div class="flip-card-back" cc>
+          <subscribe-btn class="secondary-btn" [subscibeId]="item.uid"></subscribe-btn>
+          <button mat-button class="secondary-btn" (click)="onClick(item.uid, item.image)">Details</button>
+          <button mat-button *ngIf="subscriptions && containsId(item.uid)" class="secondary-btn" routerLink="/profile/{{item.uid}}">profile</button>
         </div>
       </div>
   </mat-grid-tile>
+  <div class="zoomCard"
+       [ngStyle]="{'background-image': 'url('+itemImage+')'}"
+       [@cardZoom]="cardFillIndex ? 'end' : 'initial'">
+    <button mat-raised-button class="bt-left" (click)="onClick(null, null)">close</button>
+  </div>
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
 </mat-grid-list>
