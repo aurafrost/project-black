@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NewsApiService } from 'src/app/core/services/news-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/core/services/user/user.service';
+import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
+
 
 @Component({
   selector: 'news',
@@ -11,6 +13,7 @@ import { UserService } from 'src/app/core/services/user/user.service';
 export class NewsComponent implements OnInit {
   public uidParam;
   public user: any;
+  @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
 
   //for news
   mArticles: Array<any>;
