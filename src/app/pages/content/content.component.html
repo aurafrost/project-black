@@ -2,9 +2,9 @@
   <button (click)="addPost()" class="btn btn-success">Add a Post</button>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="100" class="">
+<cdk-virtual-scroll-viewport itemSize="autosize" class="">
   <li [ngStyle]="{'background-color': post.color}" (click)=displayId(i) *cdkVirtualFor="let post of posts | async; let i = index; trackBy: trackByIdx"
-    class="container animated flipInX feedPost align-items-end mx-auto">
+    class="container feedPost align-items-end mx-auto">
 
     <div class="row">
       <div class="col-3">
