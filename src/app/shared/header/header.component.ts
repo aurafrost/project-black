@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit {
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
     this.authService.$auth.subscribe(auth => {
       this.auth = auth;
+      console.log(this.auth)
     });
   }
 

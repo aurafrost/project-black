@@ -52,6 +52,7 @@ export class ProductDialogComponent implements OnInit {
         console.log(data);
         this.url = fileRef.getDownloadURL()
           .subscribe(url => {
+            console.log(url)
             this.url = url;
           });
       });

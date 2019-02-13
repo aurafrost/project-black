@@ -17,5 +17,5 @@
 
   <input type="file" (change)="selectFile($event)" />
 
-  <button [disabled]="!url" mat-raised-button id="controlBtn submit" type="submit" value="Submit" style="width: 75px; background-color: rgb(42, 180, 134);">Add</button>
+  <input [disabled]="!url" mat-raised-button mat-dialog-close id="controlBtn submit" type="submit" value="Add" class="btn btn-success"/>
 </form>
