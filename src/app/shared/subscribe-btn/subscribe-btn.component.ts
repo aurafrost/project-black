@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SubscribeService} from '../../core/services/subscribe/subscribe.service';
 import {AuthService} from '../../core/services/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'subscribe-btn',
@@ -13,6 +14,7 @@ export class SubscribeBtnComponent implements OnInit {
   isSubscribed: boolean;
 
   constructor(
+    private _router: Router,
     private _authService: AuthService,
     private _subscribeService: SubscribeService
   ) { }
@@ -21,6 +23,7 @@ export class SubscribeBtnComponent implements OnInit {
     this.auth = this._authService.getAuth().value;
     this._subscribeService.checkIfSubscribed(this.auth.uid, this.subscribeId)
       .subscribe(item => {
+        // console.log(item.payload.exists);
         this.isSubscribed = item.payload.exists;
     });
   }
@@ -30,6 +33,9 @@ export class SubscribeBtnComponent implements OnInit {
     if (this.isSubscribed) {
       this._subscribeService.removeSubscription(this.auth.uid, this.subscribeId);
       this._subscribeService.setSubscriptions(this.auth.uid);
+      if (this._router.url.split('/')[1] === 'profile') {
+        this._router.navigate(['/']);
+      }
     } else {
       this._subscribeService.addSubscription(this.auth.uid, this.subscribeId);
       this._subscribeService.setSubscriptions(this.auth.uid);

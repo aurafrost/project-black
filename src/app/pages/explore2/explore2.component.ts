@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterContentInit, ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MediaChange, MediaObserver} from '@angular/flex-layout';
 import {Subscription} from 'rxjs';
 import {UserService} from '../../core/services/user/user.service';
@@ -11,21 +11,28 @@ import {AuthService} from '../../core/services/auth/auth.service';
   templateUrl: './explore2.component.html',
   styleUrls: ['./explore2.component.css'],
   animations: [
-    trigger('cardFlip', [
-      state('hover', style({
-        transform: 'rotateY(180deg)'
+    trigger('cardZoom', [
+      state('end', style({
+        zIndex: '1',
+        width: '100%',
+        height: '100%',
+        bottom: '0px',
+        top: '0px',
+        left: '0',
+        position: 'fixed',
+        opacity: '1'
       })),
-      state('unhover', style({
-
+      state('initial', style({
       })),
-      transition('hover => unhover', [
+      transition('initial => end', [
         animate('.3s')
       ]),
-      transition('unhover => hover', [
-        animate('.3s')
+      transition('initial => end', [
+        animate('0s')
       ])
-    ]),
-  ]
+    ])
+  ],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   auth: any;
@@ -34,6 +41,8 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   watcher: Subscription;
   activeMediaQuery = '';
   currentIndex = '';
+  itemImage = '';
+  cardFillIndex = '';
   cols = 8;
   selected = '';
   data = [];
@@ -103,7 +112,19 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }
 
-  onClick(index) {
-    this.currentIndex = index;
+  onClick(uid, image) {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log(uid);
+    if (this.cardFillIndex === uid) {
+      this.cardFillIndex = null;
+      this.itemImage = null;
+      // this.cardFillState = 'end';
+    } else  {
+      this.cardFillIndex = uid;
+      this.itemImage = image;
+      // this.cardFillState = 'initial';
+    }
+    console.log(this.cardFillIndex);
   }
 }

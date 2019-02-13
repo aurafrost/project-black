@@ -31,7 +31,11 @@ export class HeaderComponent implements OnInit {
   ) {
     this.matIconRegistry.addSvgIcon('account_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
+    // this.auth = this.authService.getAuth().value;
+
     this.authService.$auth.subscribe(auth => {
+      console.log('HEADER AUTH CHANGE');
+      console.log(auth);
       this.auth = auth;
       console.log(this.auth)
     });

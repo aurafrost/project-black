@@ -1,9 +1,6 @@
 .secondary-btn {
+  color: ghostwhite;
   background-color: #252525;
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*margin: .5rem;*/
 }
 
 .secondary-btn.hover,

@@ -17,7 +17,8 @@ mat-grid-tile {
 }
 
 .flip-card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: lightgray;
+  /*background-color: rgba(255, 255, 255, 0.5);*/
   /*border: 1px solid #f1f1f1;*/
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -54,18 +55,19 @@ mat-grid-tile {
 
 /* Style the back side */
 .flip-card-back {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: .5rem;
-  background-color: #DA4453;
+  background-color: rgba(0,0,0,.85);
   color: white;
   transform: rotateY(180deg);
 }
 
 .secondary-btn {
   background-color: #252525;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: .5rem;
+  display: block;
+  width: 100%;
 }
 
 .secondary-btn.hover,
@@ -74,8 +76,35 @@ mat-grid-tile {
 }
 
 .bt-right {
+  color: ghostwhite;
   position: absolute;
   right: 0;
   bottom: 0;
   margin: .5rem;
+  background-color: #252525;
+}
+
+.bt-left {
+  color: ghostwhite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: .5rem;
+  background-color: #252525;
+}
+
+.fl-left {
+  float: left;
+}
+
+.zoomCard {
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: .5rem;
+  background-color: #DA4453;
 }
