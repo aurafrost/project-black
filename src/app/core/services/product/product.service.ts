@@ -25,6 +25,7 @@ export class ProductService {
   }
 
   addProductById(authId, product) {
+    console.log(authId)
     console.log(product);
     return this.afFirestore.collection(`Users/${authId}/products`).add(product);
   }
