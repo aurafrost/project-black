@@ -70,4 +70,8 @@ export class ShoppingListComponent implements OnInit {
     console.log(product);
     this._productService.addProductToCart(this.auth.uid, product);
   }
+
+  deleteProduct(product) {
+    console.log(product)
+  }
 }

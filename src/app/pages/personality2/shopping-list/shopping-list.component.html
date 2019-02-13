@@ -1,4 +1,4 @@
-<div class="text-center mt-3 animated fadeInDown">
+<div *ngIf="auth.uid == uidParam" class="text-center mt-3 animated fadeInDown">
   <button mat-raised-button (click)="openDialog()" class="primary-btn">Add Product</button>
 </div>
 
@@ -48,7 +48,7 @@
       </div>
 
       <div class="col-4 mx-auto text-center">
-        <a class="">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+        <a *ngIf="auth.uid == uidParam" class="" style="cursor: pointer;" (click)="deleteProduct(post)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
       </div>
     </div>
   </li>

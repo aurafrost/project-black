@@ -25,6 +25,7 @@ export class ProductDialogComponent implements OnInit {
   productFormData: FormGroup;
 
   constructor(
+
     private _authService: AuthService,
     private afStorage: AngularFireStorage,
     private _productService: ProductService,
@@ -75,7 +76,7 @@ export class ProductDialogComponent implements OnInit {
   }
 
   upload() {
-    console.log(this.url);
+    console.log("UPLOAD HIT");
     const p: Product = {
       ownerId: this.data.user.uid,
       img: this.url,
