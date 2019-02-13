@@ -24,6 +24,8 @@ export class Personality2Component implements OnInit {
   ngOnInit() {
     this.auth = this._authService.getAuth().value;
     console.log(this.uidParam);
+    console.log("AUTH")
+    console.log(this.auth)
     this.user = this._userService.getUserById(this.uidParam)
       .subscribe(data => {
         this.user = data;

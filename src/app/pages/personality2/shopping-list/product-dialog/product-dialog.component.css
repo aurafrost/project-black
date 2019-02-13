@@ -1,0 +1,9 @@
+#submitBtn {
+    padding: 0 0;
+    max-width: 85px;
+    min-width: 85px;
+}
+#submitInput {
+    min-width: 85px;
+    max-width: 85px;
+}

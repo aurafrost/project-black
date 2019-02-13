@@ -1,5 +1,5 @@
 <div class="text-center mt-3 animated fadeInDown">
-  <button (click)="addPost()" class="btn btn-success">Add a Post</button>
+  <button *ngIf="auth.uid == uidParam" (click)="addPost()" class="btn btn-success">Add a Post</button>
 </div>
 
 <cdk-virtual-scroll-viewport itemSize="autosize" class="">
@@ -41,7 +41,7 @@
 
     <div class="row mt-4 mb-0 mx-auto">
       <div class="col-4 mx-auto text-center">
-        <span (click)=liked(i) class="text-center">
+        <span style="cursor: pointer;" (click)=liked(i) class="text-center">
           Like
           <i *ngIf="post.liked; else emptyHeart" class="animated heartBeat fas fa-heart fa-1x"></i>
           <ng-template #emptyHeart><i class="animated  far fa-heart"></i>
@@ -51,7 +51,7 @@
       </div>
 
       <div class="col-4 mx-auto text-center">
-        <div class="dropdown text-center">
+        <div style="cursor: pointer;" class="dropdown text-center">
           Color <i class="fas fa-bars fa-1x"></i>
           <div class="dropdown-content">
             <a class="dropdown-item colorOption" (click)="changeColor(i, 'lightcoral')" id='redSelector'></a>
@@ -66,7 +66,7 @@
 
       <!-- <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div> -->
       <!-- <div class="col-3 mx-auto"> Share <i class="fas fa-share fa-1x"></i></div> -->
-      <div class="col-4 mx-auto text-center"> <a class="" (click)=deleteNote(i)>Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+      <div class="col-4 mx-auto text-center"> <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" class="" (click)=deleteNote(i)>Delete <i class="fas fa-trash-alt fa-1x"></i></a>
       </div>
     </div>
   </li>

@@ -4,6 +4,8 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { isFakeMousedownFromScreenReader } from '@angular/cdk/a11y';
 import * as faker from '../../../app/faker.js';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'content',
@@ -17,7 +19,8 @@ export class ContentComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport)
   viewport: CdkVirtualScrollViewport;
   faker = faker;
-
+  public uidParam;
+  private auth: any;
   snapshot;
   postDoc: AngularFirestoreDocument<Post>;
 
@@ -25,9 +28,14 @@ export class ContentComponent implements OnInit {
 
   newContent = "type note here";
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore,
+              private _route: ActivatedRoute,
+              private _authService: AuthService) {
+                this.uidParam = this._route.snapshot.params['id'];
+               }
 
   ngOnInit() {
+    this.auth = this._authService.getAuth().value;
     this.postsCollection = this.db.collection('posts', ref => ref.orderBy('date', 'desc'));
     this.posts = this.postsCollection.valueChanges();
     this.snapshot = this.postsCollection.snapshotChanges().subscribe(res => {
@@ -91,6 +99,7 @@ export class ContentComponent implements OnInit {
   }
   deleteNote(index) {
     // get noteRef at this id
+    //console.log(this.uidParam)
     let id = this.snapshot[index].payload.doc.id;
     this.postsCollection.doc(id).delete();
   }
