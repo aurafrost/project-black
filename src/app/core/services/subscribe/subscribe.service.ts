@@ -20,7 +20,6 @@ export class SubscribeService {
       .subscribe(data => {
         if (this.subscribers.next && data.length > 0) {
           this.subscribers.next(data);
-          console.log('SUBSCRIBERS');
           console.log(data);
         }
       });
