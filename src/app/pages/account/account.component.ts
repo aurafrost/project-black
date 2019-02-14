@@ -37,6 +37,7 @@ export class AccountComponent implements OnInit {
     this.service.getUser(this.uid).subscribe(data=>{
       // this.cardNum=data.cardNum;
       // this.cardCVV=data.cardCVV;
+      // this.cardName=data.cardName;
       this.cardName=data.fname+" "+data.lname;
       this.email=data.email;
     });
@@ -46,7 +47,6 @@ export class AccountComponent implements OnInit {
     //this.user=this.categories.getUser();
     this.displayBlock.nativeElement.style.display = "block";
     this.editBlock.nativeElement.style.display = "none";
-    console.log(JSON.parse(localStorage.getItem('auth')))
   }
 
   edit(){
@@ -56,7 +56,7 @@ export class AccountComponent implements OnInit {
     this.user.cardCVV = this.cardCVV;
     this.user.cardName = this.cardName;
     this.user.email = this.email;
-
+    //Might need to add card fields to user. cardName could be split into fname and lname maybe?
     this.service.alterUser(this.cardNum,this.cardCVV,this.cardName,this.email);
     this.ngOnInit();
     console.log("done editing")

@@ -62,9 +62,9 @@ export class UserService {
 
   alterUser(cardnum,cardcvv,cardname,email){
     const data={
-      cardnum:cardnum,
-      cardcvv:cardcvv,
-      cardname:cardname,
+      cardNum:cardnum,
+      cardCVV:cardcvv,
+      cardName:cardname,
       email:email,
     }
     this.afstore.doc('Users/'+this.auth.uid).update(data);
