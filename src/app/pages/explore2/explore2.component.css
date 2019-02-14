@@ -102,9 +102,12 @@ mat-grid-tile {
   left: 0;
   position: fixed;
   opacity: 0;
-  background-size: contain;
-  background-position: center;
+  /*background-size: contain;*/
+  /*background-position: center;*/
   background-repeat: no-repeat;
+  background-size: 10rem;
+  background-position-y: 1rem;
+  background-position-x: 1rem;
   padding: .5rem;
   background-color: #DA4453;
 }

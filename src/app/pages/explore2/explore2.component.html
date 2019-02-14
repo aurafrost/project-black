@@ -21,9 +21,8 @@
         </div>
       </div>
   </mat-grid-tile>
-  <div class="zoomCard"
-       [ngStyle]="{'background-image': 'url('+itemImage+')'}"
-       [@cardZoom]="cardFillIndex ? 'end' : 'initial'">
+  <div class="zoomCard" [ngStyle]="{'background-image': 'url('+itemImage+')'}" [@cardZoom]="cardFillIndex ? 'end' : 'initial'">
+
     <button mat-raised-button class="bt-left" (click)="onClick(null, null)">close</button>
   </div>
   <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
