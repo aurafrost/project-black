@@ -31,8 +31,28 @@ export class ProductService {
   }
 
   addProductToCart(authId, product) {
-    return this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
-      .set({productId: product.id, ownerId: product.ownerId});
+    let doc;
+    let out;
+    this.afFirestore.doc(`Users/${authId}/cart/${product.id}`).snapshotChanges().subscribe(doc => {
+      console.log(doc);
+      
+
+      if(product.quantity == null || Number.isNaN(product.quantity))
+      {
+        console.log("HIT TOP")
+        out = this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
+        .set({productId: product.id, ownerId: product.ownerId, quantity: 1});
+      }
+      else
+      {
+        console.log("HIT BOTTOM")
+        out = this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
+        .set({productId: product.id, ownerId: product.ownerId, quantity: product.quantity+1});
+      }
+    });
+    console.log(doc);
+
+    return out;
   }
 
   getCartItems(auth) {
