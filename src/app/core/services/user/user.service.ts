@@ -60,6 +60,16 @@ export class UserService {
     return this.afstore.doc<User>(`Users/${id}`).valueChanges();
   }
 
+  alterUser(cardnum,cardcvv,cardname,email){
+    const data={
+      cardnum:cardnum,
+      cardcvv:cardcvv,
+      cardname:cardname,
+      email:email,
+    }
+    this.afstore.doc('Users/'+this.auth.uid).update(data);
+  }
+
   setProfile(name){
     // this.topic=name;
     const data={
@@ -76,7 +86,6 @@ export class UserService {
     return this.afstore.doc<Topic>('Users/'+this.auth.uid).valueChanges();
   }
 
-  //not complete
   addSub(user,topic){
     const data={
       name:topic,
@@ -85,7 +94,6 @@ export class UserService {
     console.log("Subscription for "+user+" to "+topic+" added.");
   }
 
-  //also not complete
   removeSub(user,topic){
     this.afstore.doc('Users/'+user+'/subscriptions/'+topic).delete();
     console.log("Subscription for "+user+" to "+topic+" removed.");
