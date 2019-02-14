@@ -3,7 +3,6 @@ import {UserService} from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
 import {AuthService} from '../../core/services/auth/auth.service';
 
-
 @Component({
   selector: 'account',
   templateUrl: './account.component.html',
@@ -11,9 +10,6 @@ import {AuthService} from '../../core/services/auth/auth.service';
 })
 export class AccountComponent implements OnInit {
   uid=JSON.parse(localStorage.getItem('auth')).uid;
-  firebaseUser=<User>this.service.getUserById(this.uid).subscribe(data=>{
-    
-  });
   user = {
     cardNum: 1234098756786543,
     cardCVV: 111,
@@ -63,10 +59,8 @@ export class AccountComponent implements OnInit {
   }
   
   showEdit(){
-
     this.displayBlock.nativeElement.style.display = "none";
     this.editBlock.nativeElement.style.display = "block";
-
   }
 
   deleteAccount(){
