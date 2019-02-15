@@ -60,6 +60,7 @@ export class UserService {
     return this.afstore.doc<User>(`Users/${id}`).valueChanges();
   }
 
+  //-Jimmy/aurafrost: used for editing on the account page.
   alterUser(cardnum,cardcvv,cardname,email){
     const data={
       cardNum:cardnum,
