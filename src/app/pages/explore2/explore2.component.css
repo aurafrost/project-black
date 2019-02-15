@@ -75,13 +75,17 @@ mat-grid-tile {
   color: #DA4453;
 }
 
-.bt-right {
+.t-right {
   color: ghostwhite;
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
   margin: .5rem;
   background-color: #252525;
+}
+
+.t-right:hover {
+  color: #DA4453;
 }
 
 .bt-left {
@@ -98,10 +102,12 @@ mat-grid-tile {
 }
 
 .zoomCard {
+  color: ghostwhite;
   top: 0;
   left: 0;
   position: fixed;
-  opacity: 0;
+  opacity: 1;
+  z-index: -1;
   /*background-size: contain;*/
   /*background-position: center;*/
   background-repeat: no-repeat;
@@ -109,5 +115,10 @@ mat-grid-tile {
   background-position-y: 1rem;
   background-position-x: 1rem;
   padding: .5rem;
-  background-color: #DA4453;
+  /*background-color: #DA4453;*/
+  background-color: rgba(0,0,0,.85);
+}
+
+.zoom-img {
+  width: 150px;
 }

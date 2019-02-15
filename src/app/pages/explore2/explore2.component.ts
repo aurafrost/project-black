@@ -20,19 +20,16 @@ import {AuthService} from '../../core/services/auth/auth.service';
         top: '0px',
         left: '0',
         position: 'fixed',
-        opacity: '1'
+        opacity: '1',
+        display: 'block'
       })),
       state('initial', style({
       })),
-      transition('initial => end', [
+      transition('initial <=> end', [
         animate('.3s')
       ]),
-      transition('initial => end', [
-        animate('0s')
-      ])
     ])
   ],
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   auth: any;
@@ -41,7 +38,7 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   watcher: Subscription;
   activeMediaQuery = '';
   currentIndex = '';
-  itemImage = '';
+  item: any;
   cardFillIndex = '';
   cols = 8;
   selected = '';
@@ -112,19 +109,20 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }
 
-  onClick(uid, image) {
+  onClick(item, uid) {
     event.preventDefault();
     event.stopPropagation();
-    console.log(uid);
+    console.log(item);
     if (this.cardFillIndex === uid) {
+      document.getElementById('page').style.overflowY = 'auto';
       this.cardFillIndex = null;
-      this.itemImage = null;
-      // this.cardFillState = 'end';
+      this.item = item;
     } else  {
+      document.getElementById('page').style.overflowY = 'hidden';
       this.cardFillIndex = uid;
-      this.itemImage = image;
-      // this.cardFillState = 'initial';
+      this.item = item;
     }
+    document.getElementById('page').style.overflowY = 'auto';
     console.log(this.cardFillIndex);
   }
 }
