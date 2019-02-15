@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar style="{background-color: white}">
   <mat-form-field>
     <mat-select (selectionChange)="changeCategory()" [(value)]="selected" placeholder="Select Category">
       <mat-option *ngFor="let cat of categories" [value]="cat.value">
@@ -11,20 +11,39 @@
   <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <button mat-raised-button="" *ngIf="cardFillIndex === item.uid" class="bt-left" (click)="onClick(item.uid)">close</button>
+          <button mat-raised-button="" *ngIf="cardFillIndex === item.uid" class="bt-left" (click)="onClick(item, item.uid)">close</button>
           <img src="{{item.image}}" class="logo">
         </div>
-        <div class="flip-card-back" cc>
+        <div class="flip-card-back">
           <subscribe-btn class="secondary-btn" [subscibeId]="item.uid"></subscribe-btn>
-          <button mat-button class="secondary-btn" (click)="onClick(item.uid, item.image)">Details</button>
+          <button mat-button class="secondary-btn" (click)="onClick(item, item.uid)">Details</button>
           <button mat-button *ngIf="subscriptions && containsId(item.uid)" class="secondary-btn" routerLink="/profile/{{item.uid}}">profile</button>
         </div>
       </div>
   </mat-grid-tile>
-  <div class="zoomCard"
-       [ngStyle]="{'background-image': 'url('+itemImage+')'}"
-       [@cardZoom]="cardFillIndex ? 'end' : 'initial'">
-    <button mat-raised-button class="bt-left" (click)="onClick(null, null)">close</button>
+  <div class="zoomCard" [@cardZoom]="cardFillIndex ? 'end' : 'initial'" style="overflow-y: auto">
+    <div *ngIf="item">
+      <div class="container">
+        <!--<h1>{{item.fname}} {{item.lname}}</h1>-->
+        <div class="card p-1 d-inline-block">
+          <img class="zoom-img" src="{{item.image}}">
+
+        </div>
+        <div class="d-inline-block mb-3" style="color: ghostwhite;">
+          {{item.bio}}
+        </div>
+        <div class="card mb-3" style="color: black">
+          Recent Products
+        </div>
+        <div class="card mb-3" style="color: black;">
+          Recent news
+        </div>
+        <div class="card mb-3" style="color: black">
+          Recent events
+        </div>
+      </div>
+    </div>
+    <button mat-raised-button class="t-right" (click)="onClick(null, item.uid)">close</button>
   </div>
   <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
   <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
