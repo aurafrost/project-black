@@ -108,7 +108,6 @@ import { NewsComponent } from './pages/personality2/news/news.component';
 import { SubscribeBtnComponent } from './shared/subscribe-btn/subscribe-btn.component';
 import {SubscribeGuard} from './core/guard/subscribe.guard';
 
-
 @NgModule({
   declarations: [
     AppComponent,
