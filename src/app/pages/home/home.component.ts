@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.categoriesSerevice.getHomePageCategory('Sports')
+      .subscribe(data => {
+        console.log(data);
+        this.data = data;
+      });
   }
 
   getCategoryDetails(category) {

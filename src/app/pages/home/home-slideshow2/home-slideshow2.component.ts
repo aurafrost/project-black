@@ -44,6 +44,7 @@ export class HomeSlideshow2Component implements OnInit {
   @Input('data') data = [];
   public type = 'component';
   public disabled = false;
+  swiper = {};
   // public features: any = [];
   headerFlip: Observable<BreakpointState> = this.breakpointObserver
     .observe(['(min-width: 991px)']);
@@ -61,13 +62,15 @@ export class HomeSlideshow2Component implements OnInit {
     mousewheel: true,
     scrollbar: true,
     autoHeight: true,
+    autoplay: true,
     pagination: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 'auto',
     coverflowEffect: this.swiperCoverflowEffect,
     effect: 'coverflow',
-    speed: 2000
+    speed: 2000,
+    observer: true
   };
 
   constructor(
@@ -88,5 +91,9 @@ export class HomeSlideshow2Component implements OnInit {
 
   log(val) {
     console.log(val);
+  }
+
+  public update() {
+
   }
 }

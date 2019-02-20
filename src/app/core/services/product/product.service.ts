@@ -30,6 +30,11 @@ export class ProductService {
     return this.afFirestore.collection(`Users/${authId}/products`).add(product);
   }
 
+  // Only returns the 3 latest items
+  getLatestProducts(userId) {
+    return this.afFirestore.collection(`Users/${userId}/products`, ref => ref.limit(3)).valueChanges();
+  }
+
   addProductToCart(authId, product) {
     let doc;
     let out;

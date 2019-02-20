@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements AfterContentChecked {
   homepage = false;
-  constructor(private router: Router ) { 
-  }
+  constructor(private router: Router ) { }
 
   ngAfterContentChecked() {
     this.homepage = this.router.url === '/' ? false : true;

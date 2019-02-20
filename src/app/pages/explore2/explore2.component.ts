@@ -5,6 +5,7 @@ import {UserService} from '../../core/services/user/user.service';
 import {animate, query, stagger, state, style, transition, trigger} from '@angular/animations';
 import {SubscribeService} from '../../core/services/subscribe/subscribe.service';
 import {AuthService} from '../../core/services/auth/auth.service';
+import {ProductService} from '../../core/services/product/product.service';
 
 @Component({
   selector: 'explore2',
@@ -39,6 +40,7 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
   activeMediaQuery = '';
   currentIndex = '';
   item: any;
+  categoryList = null;
   cardFillIndex = '';
   cols = 8;
   selected = '';
@@ -53,7 +55,8 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     private _authService: AuthService,
     private _subscribeService: SubscribeService,
     private _userService: UserService,
-    private _mediaObserver: MediaObserver
+    private _mediaObserver: MediaObserver,
+    private _productService: ProductService
   ) {
     // this.auth = this._authService.getAuth().value;
     // console.log(this.auth);
@@ -124,5 +127,24 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     }
     document.getElementById('page').style.overflowY = 'auto';
     console.log(this.cardFillIndex);
+  }
+
+  getCategory(category, item) {
+    console.log(item);
+    switch (category) {
+      case 'post':
+        return null;
+      case 'news':
+        return null;
+      case 'product':
+        return this._productService.getLatestProducts(item.uid).subscribe(data => {
+          console.log(data);
+          this.categoryList = data;
+        });
+      case 'event':
+        return null;
+      default:
+        return null;
+    }
   }
 }

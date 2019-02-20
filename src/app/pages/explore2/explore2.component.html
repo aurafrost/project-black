@@ -21,29 +21,72 @@
         </div>
       </div>
   </mat-grid-tile>
-  <div class="zoomCard" [@cardZoom]="cardFillIndex ? 'end' : 'initial'" style="overflow-y: auto">
-    <div *ngIf="item">
-      <div class="container">
-        <!--<h1>{{item.fname}} {{item.lname}}</h1>-->
-        <div class="card p-1 d-inline-block">
-          <img class="zoom-img" src="{{item.image}}">
-
+  <div class="zoomCard" *ngIf="item" [@cardZoom]="cardFillIndex ? 'end' : 'initial'" style="overflow-y: auto">
+    <button mat-raised-button class="t-right" (click)="onClick(null, item.uid)">close</button>
+    <div class="container">
+      <!--<h1>{{item.fname}} {{item.lname}}</h1>-->
+      <div class="card p-1 mb-3 d-inline-block">
+        <img class="zoom-img" src="{{item.image}}">
+      </div>
+      <div class="d-inline-block mb-3" style="color: ghostwhite;">
+        {{item.bio}}
+      </div>
+    </div>
+    <div class="container text-dark">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="card bg-light mb-3">
+            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+            <ul class="list-group category_block">
+              <li class="list-group-item"><a style="cursor: pointer">Post</a></li>
+              <li class="list-group-item"><a style="cursor: pointer">News</a></li>
+              <li class="list-group-item"><a (click)="getCategory('product', item)" style="cursor: pointer">Products</a></li>
+              <li class="list-group-item"><a style="cursor: pointer">Events</a></li>
+            </ul>
+          </div>
+          <div class="card bg-light mb-3">
+            <div class="card-header bg-success text-white text-uppercase">Popular product</div>
+            <div class="card-body">
+              <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
+              <h5 class="card-title">Product title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="bloc_left_price">99.00 $</p>
+            </div>
+          </div>
         </div>
-        <div class="d-inline-block mb-3" style="color: ghostwhite;">
-          {{item.bio}}
-        </div>
-        <div class="card mb-3" style="color: black">
-          Recent Products
-        </div>
-        <div class="card mb-3" style="color: black;">
-          Recent news
-        </div>
-        <div class="card mb-3" style="color: black">
-          Recent events
+        <div class="col">
+          <div class="row">
+            <div *ngFor="let it of categoryList" class="col-12 col-md-6 col-lg-4 mb-3">
+              <div class="card">
+                <img style="max-height: 10rem;" class="card-img-top" src={{it.img}} alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title"><a title="View Product">{{it.title}}</a></h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="bloc_left_price">${{it.price}}</p>
+                </div>
+              </div>
+            </div>
+            <!--<div class="col-12">-->
+              <!--<nav aria-label="...">-->
+                <!--<ul class="pagination">-->
+                  <!--<li class="page-item disabled">-->
+                    <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+                  <!--</li>-->
+                  <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+                  <!--<li class="page-item active">-->
+                    <!--<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>-->
+                  <!--</li>-->
+                  <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                  <!--<li class="page-item">-->
+                    <!--<a class="page-link" href="#">Next</a>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</nav>-->
+            <!--</div>-->
+          </div>
         </div>
       </div>
     </div>
-    <button mat-raised-button class="t-right" (click)="onClick(null, item.uid)">close</button>
   </div>
   <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
   <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
