@@ -6,6 +6,8 @@ import {animate, query, stagger, state, style, transition, trigger} from '@angul
 import {SubscribeService} from '../../core/services/subscribe/subscribe.service';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {ProductService} from '../../core/services/product/product.service';
+import {NewsApiService} from '../../core/services/news-api.service';
+import {GetResponse} from '../../core/models/GetResponse';
 
 @Component({
   selector: 'explore2',
@@ -33,6 +35,7 @@ import {ProductService} from '../../core/services/product/product.service';
   ],
 })
 export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
+  category = null;
   auth: any;
   subscriptions: any[];
   currentState = 'initial';
@@ -56,7 +59,8 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     private _subscribeService: SubscribeService,
     private _userService: UserService,
     private _mediaObserver: MediaObserver,
-    private _productService: ProductService
+    private _productService: ProductService,
+    private _newsService: NewsApiService
   ) {
     // this.auth = this._authService.getAuth().value;
     // console.log(this.auth);
@@ -119,26 +123,31 @@ export class Explore2Component implements OnInit, AfterContentInit, OnDestroy {
     if (this.cardFillIndex === uid) {
       document.getElementById('page').style.overflowY = 'auto';
       this.cardFillIndex = null;
+      this.categoryList = null;
       this.item = item;
     } else  {
       document.getElementById('page').style.overflowY = 'hidden';
       this.cardFillIndex = uid;
       this.item = item;
     }
-    document.getElementById('page').style.overflowY = 'auto';
-    console.log(this.cardFillIndex);
+    // document.getElementById('page').style.overflowY = 'auto';
+    // console.log(this.cardFillIndex);
   }
 
   getCategory(category, item) {
     console.log(item);
+    this.category = category;
     switch (category) {
       case 'post':
         return null;
       case 'news':
-        return null;
+        return this._newsService.getLatestNews(`${item.fname}, ${item.lname}`).subscribe(data => {
+          const getRes = <GetResponse>data;
+          console.log(getRes.articles.slice(0, 3));
+          this.categoryList = getRes.articles.slice(0, 3);
+        });
       case 'product':
         return this._productService.getLatestProducts(item.uid).subscribe(data => {
-          console.log(data);
           this.categoryList = data;
         });
       case 'event':
