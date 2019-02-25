@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {BehaviorSubject} from 'rxjs';
 import {AuthService} from '../auth/auth.service';
+import {async} from 'rxjs/internal/scheduler/async';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,13 @@ export class SubscribeService {
   $subscribers = this.subscribers.asObservable();
   constructor(
     private _afStore: AngularFirestore,
-  ) {
-  }
+  ) {}
 
   setSubscriptions(auth) {
     this._afStore.collection(`Users/${auth.uid}/subscriptions`).valueChanges()
       .subscribe(data => {
         if (this.subscribers.next && data.length > 0) {
           this.subscribers.next(data);
-          console.log(data);
         }
       });
   }

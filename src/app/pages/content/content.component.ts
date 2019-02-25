@@ -6,6 +6,8 @@ import { isFakeMousedownFromScreenReader } from '@angular/cdk/a11y';
 import * as faker from '../../../app/faker.js';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../core/services/auth/auth.service';
+import {MatDialog, MatDialogRef} from '@angular/material';
+import {PostDialogComponent} from './post-dialog/post-dialog.component';
 
 @Component({
   selector: 'content',
@@ -23,25 +25,28 @@ export class ContentComponent implements OnInit {
   private auth: any;
   snapshot;
   postDoc: AngularFirestoreDocument<Post>;
-
+  postDialogRef: MatDialogRef<PostDialogComponent>;
   postsCollection: AngularFirestoreCollection<Post>;
 
   newContent = "type note here";
 
-  constructor(private db: AngularFirestore,
-              private _route: ActivatedRoute,
-              private _authService: AuthService) {
-                this.uidParam = this._route.snapshot.params['id'];
-               }
+  constructor(
+    private db: AngularFirestore,
+    private _route: ActivatedRoute,
+    private _authService: AuthService,
+    private _dialog: MatDialog
+  ) {
+    this.uidParam = this._route.snapshot.params['id'];
+  }
 
   ngOnInit() {
     this.auth = this._authService.getAuth().value;
-    this.postsCollection = this.db.collection('posts', ref => ref.orderBy('date', 'desc'));
+    this.postsCollection = this.db.collection(`Users/${this.uidParam}/post`, ref => ref.orderBy('date', 'desc'));
     this.posts = this.postsCollection.valueChanges();
-    this.snapshot = this.postsCollection.snapshotChanges().subscribe(res => {
-      this.snapshot = res;
-      console.log(this.snapshot);
-    });
+    // this.snapshot = this.postsCollection.snapshotChanges().subscribe(res => {
+    //   this.snapshot = res;
+    //   console.log(this.snapshot);
+    // });
     // this.faker.personas();
   }
 
@@ -56,6 +61,14 @@ export class ContentComponent implements OnInit {
 
   trackByIdx(i) {
     return i;
+  }
+
+  openDialog() {
+    this.postDialogRef = this._dialog.open(PostDialogComponent, {
+      data: {
+        auth: this.auth,
+      }
+    });
   }
 
   addPost() {
@@ -81,8 +94,6 @@ export class ContentComponent implements OnInit {
   }
 
   changeColor(index, color) {
-  
-
     // get noteRef at this id
     let id = this.snapshot[index].payload.doc.id;
     this.postDoc = this.db.doc('posts/' + id);

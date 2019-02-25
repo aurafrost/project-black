@@ -40,13 +40,14 @@ import {AuthGuard} from './core/guard/auth.guard';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import {Explore2Component} from './pages/explore2/explore2.component';
 import {SubscribeGuard} from './core/guard/subscribe.guard';
+import {FeedComponent} from './pages/feed/feed.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
 {path: 'cart', component: ShoppingCartComponent},
 {path: 'about', component: AboutComponent},
 {path: 'account', component: AccountComponent},
-{path: 'content', component: ContentComponent},
+{path: 'content', component: FeedComponent},
 {path: 'faq', component: FaqComponent},
 {path: 'support', component: SupportComponent},
 {path: 'terms', component: ImageComponent},
