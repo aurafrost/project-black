@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-12 col-md-3">
           <div class="card rounded-0 bg-light mb-3">
-            <div class="card-header rounded-0 bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
             <ul class="list-group category_block">
               <li class="list-group-item rounded-0"><a style="cursor: pointer">Post</a></li>
               <li class="list-group-item rounded-0"><a (click)="getCategory('news', item)" style="cursor: pointer">News</a></li>
@@ -45,7 +45,7 @@
             </ul>
           </div>
           <div class="card rounded-0 bg-light mb-3">
-            <div class="card-header rounded-0 bg-success text-white text-uppercase">Popular product</div>
+            <div class="card-header bg-success text-white text-uppercase">Popular product</div>
             <div class="card-body rounded-0">
               <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
               <h5 class="card-title">Product title</h5>
@@ -57,20 +57,22 @@
         <div class="col">
           <div class="row">
             <div *ngFor="let it of categoryList" class="col-12 col-md-6 col-lg-4 mb-3">
-              <div *ngIf="category === 'product'" style="height: 100%" class="card rounded-0">
-                <img class="card-img-top" src={{it.img}} alt="Card image cap">
+              <div *ngIf="category === 'product'" style="height: 100%" class="card rounded-0 bounceIn">
+                <div class="d-flex mx-auto justify-content-center">
+                  <img style="width: auto; max-width: 300px; height: auto; max-height: 150px;" class="card-img-top" src={{it.img}} alt="Card image cap">
+                </div>
                 <div class="card-body rounded-0">
-                  <h4 class="card-title"><a title="View Product">{{it.title}}</a></h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="bloc_left_price">${{it.price}}</p>
+                  <h4 style="font-size: 14px" class="card-title"><a title="View Product">{{it.title}}</a></h4>
+                  <p style="font-size: 12px" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p style="position: absolute;bottom: 0; margin: .5rem;" class="bloc_left_price">${{it.price}}</p>
                 </div>
               </div>
-              <div *ngIf="category === 'news'" style="height: 100%" class="card rounded-0">
+              <div *ngIf="category === 'news'" style="height: 100%" class="card rounded-0 bounceIn">
                 <img class="card-img-top" src={{it.urlToImage}} alt="Card image cap">
                 <div class="card-body rounded-0">
-                  <h4 class="card-title"><a title="View Product">{{it.title}}</a></h4>
-                  <p class="card-text">{{it.description}}</p>
-                  <a *ngIf="it.author" class="bloc_left_price" href={{it.url}}>Author: {{it.author}}</a>
+                  <h4 style="font-size: 14px" class="card-title"><a title="View Product">{{it.title}}</a></h4>
+                  <p style="font-size: 12px" class="card-text">{{it.description}}</p>
+                  <a style="position: absolute;bottom: 0; margin: .5rem;" *ngIf="it.author" class="bloc_left_price" href={{it.url}}>{{it.author}}</a>
                 </div>
               </div>
             </div>

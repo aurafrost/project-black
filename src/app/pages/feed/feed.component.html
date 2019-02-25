@@ -1,0 +1,49 @@
+<cdk-virtual-scroll-viewport itemSize="autosize" class="">
+  <li *cdkVirtualFor="let post of feed; let i = index; trackBy: trackByIdx(i)" class="container feedPost align-items-end mx-auto">
+    <div class="row">
+      <!--<div class="col-3">-->
+      <!--<img id=profileImg class="" src={{post.profileUrl}} style="max-width: 70px; max-height: 70px;">-->
+      <!--</div>-->
+      <div class="col-6">
+        <span id='profileName' class="mx-auto">
+          {{post.title}}
+        </span>
+      </div>
+
+      <div class="col-3" style="font-size: 12px;">
+        <span class="float-right">
+          {{post.date | date:'short'}}
+        </span>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col d-flex mx-auto justify-content-center">
+        <img src={{post.img}} class="" style="width: auto;
+                            max-width: 300px;
+                            height: auto;
+                            max-height: 150px;">
+      </div>
+    </div>
+    <div class="row mt-3">
+      {{post.caption}}
+    </div>
+    <div class="row mt-4 mb-0 mx-auto">
+      <div class="col-4 mx-auto text-center">
+        <span style="cursor: pointer;" (click)=likePost(post.id) class="text-center">
+          Like
+          <!--<i *ngIf="post.liked; else emptyHeart" class="animated heartBeat fas fa-heart fa-1x"></i>-->
+          <!--<ng-template #emptyHeart><i class="animated  far fa-heart"></i>-->
+          <!--</ng-template>-->
+        </span>
+      </div>
+
+      <div class="col-4 mx-auto text-center">
+      </div>
+
+      <!-- <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div> -->
+      <!-- <div class="col-3 mx-auto"> Share <i class="fas fa-share fa-1x"></i></div> -->
+      <div class="col-4 mx-auto text-center"> <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" (click)=deletePost(post.id)>Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+      </div>
+    </div>
+  </li>
+</cdk-virtual-scroll-viewport>

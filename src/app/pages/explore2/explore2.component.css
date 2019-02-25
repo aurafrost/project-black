@@ -122,3 +122,8 @@ mat-grid-tile {
 .zoom-img {
   width: 150px;
 }
+
+.card-header {
+  background-color: #363636 !important;
+  color: #DA4453 !important;
+}

@@ -26,12 +26,15 @@ export class AuthService {
     // Save auth user data to local storage
     this.afAuth.authState.subscribe(auth => {
       if (auth) {
-        console.log("IF hit")
-        this.auth.next(auth);
-        localStorage.setItem('auth', JSON.stringify(auth));
-        this.subscriberService.setSubscriptions(auth);
+        this.userService.getUserById(auth.uid).subscribe(data => {
+          this.auth.next({
+            ...auth,
+            role: data.role
+          });
+          localStorage.setItem('auth', JSON.stringify(auth));
+          this.subscriberService.setSubscriptions(auth);
+        });
       } else {
-        console.log("ELSE hit")
         localStorage.setItem('auth', null);
         this.auth.next(null);
       }
@@ -62,7 +65,6 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (1) { // auth.user.emailVerified) {
-          console.log(auth.user);
           if (auth) {
             localStorage.setItem('auth', JSON.stringify(auth.user));
             console.log(JSON.parse(localStorage.getItem('auth')));

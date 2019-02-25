@@ -107,6 +107,8 @@ import { Explore2Component } from './pages/explore2/explore2.component';
 import { NewsComponent } from './pages/personality2/news/news.component';
 import { SubscribeBtnComponent } from './shared/subscribe-btn/subscribe-btn.component';
 import {SubscribeGuard} from './core/guard/subscribe.guard';
+import { PostDialogComponent } from './pages/content/post-dialog/post-dialog.component';
+import { FeedComponent } from './pages/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -166,7 +168,9 @@ import {SubscribeGuard} from './core/guard/subscribe.guard';
     Personality2Component,
     Explore2Component,
     NewsComponent,
-    SubscribeBtnComponent
+    SubscribeBtnComponent,
+    PostDialogComponent,
+    FeedComponent
   ],
   imports: [
     MatGridListModule,
@@ -230,7 +234,7 @@ import {SubscribeGuard} from './core/guard/subscribe.guard';
     },
     SubscriptionService
   ],
-  entryComponents: [SignInComponent, ProductDialogComponent],
+  entryComponents: [SignInComponent, ProductDialogComponent, PostDialogComponent],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
