@@ -77,6 +77,7 @@ export class ProductDialogComponent implements OnInit {
 
   upload() {
     console.log("UPLOAD HIT");
+    console.log(this.url  )
     const p: Product = {
       ownerId: this.data.user.uid,
       img: this.url,
