@@ -1,4 +1,4 @@
-<mat-toolbar style="{background-color: white}">
+<mat-toolbar >
   <mat-form-field>
     <mat-select (selectionChange)="changeCategory()" [(value)]="selected" placeholder="Select Category">
       <mat-option *ngFor="let cat of categories" [value]="cat.value">
@@ -8,6 +8,7 @@
   </mat-form-field>
 </mat-toolbar>
 <mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
+  <div *ngIf="selected == ''" style="height: 240px;"></div>
   <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -16,8 +17,8 @@
         </div>
         <div class="flip-card-back">
           <subscribe-btn class="secondary-btn" [subscibeId]="item.uid"></subscribe-btn>
-          <button mat-button class="secondary-btn" (click)="onClick(item, item.uid)">Details</button>
-          <button mat-button *ngIf="subscriptions && containsId(item.uid)" class="secondary-btn" routerLink="/profile/{{item.uid}}">profile</button>
+          <button mat-button *ngIf="subscriptions && !containsId(item.uid)" class="secondary-btn" (click)="onClick(item, item.uid)">Details</button>
+          <button mat-button *ngIf="subscriptions && containsId(item.uid)" class="secondary-btn" routerLink="/profile/{{item.uid}}">Profile</button>
         </div>
       </div>
   </mat-grid-tile>
