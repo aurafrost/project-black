@@ -1,9 +1,9 @@
 <cdk-virtual-scroll-viewport itemSize="autosize" class="">
   <li *cdkVirtualFor="let post of feed; let i = index; trackBy: trackByIdx(i)" class="container feedPost align-items-end mx-auto">
     <div class="row">
-      <!--<div class="col-3">-->
-      <!--<img id=profileImg class="" src={{post.profileUrl}} style="max-width: 70px; max-height: 70px;">-->
-      <!--</div>-->
+      <div class="col-3">
+      <img id=profileImg class="" src={{users[post.ownerId].image}} style="max-width: 70px; max-height: 70px;">
+      </div>
       <div class="col-6">
         <span id='profileName' class="mx-auto">
           {{post.title}}

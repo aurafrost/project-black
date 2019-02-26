@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {ActivatedRoute} from '@angular/router';
 import {AuthService} from '../../core/services/auth/auth.service';
-import {Post} from '../content/post';
+import {Post} from '../../core/models/Post';
 import {SubscribeService} from '../../core/services/subscribe/subscribe.service';
 import {PostService} from '../../core/services/post/post.service';
+import {take} from 'rxjs/operators';
+import {User} from '../../core/models/User';
 
 @Component({
   selector: 'feed',
@@ -13,9 +15,9 @@ import {PostService} from '../../core/services/post/post.service';
 })
 export class FeedComponent implements OnInit {
   auth: any = null;
+  users: any = [];
   feed: any = [];
   subscribers: any = null;
-  feedCollection: AngularFirestoreCollection<Post>;
   constructor(
     private db: AngularFirestore,
     private _route: ActivatedRoute,
@@ -30,14 +32,26 @@ export class FeedComponent implements OnInit {
     this.subscribers = this._subscriberService.getSubscribers().value;
 
     if (this.subscribers) {
-     this.subscribers.map(data => {
-        return this._afStore.collection(`Users/${data.subscriberId}/post`).valueChanges()
+      // Gets the subscribed users
+      this.subscribers.map(user => {
+        return this._afStore.doc(`Users/${user.subscriberId}`).valueChanges().pipe(take(1))
+          .subscribe(u => {
+            const _user = <User>u;
+            this.users[_user.uid] = { ...u };
+            console.log(this.users);
+          });
+      });
+      // Gets the feed
+      this.subscribers.map(data => {
+        return this._afStore.collection(`Users/${data.subscriberId}/post`).valueChanges().pipe(take(1))
           .subscribe(post => {
             this.feed = [...this.feed, ...post];
             console.log(this.feed);
-        });
-        // const posts = this._afStore.collection(`Users/${data.subscriberId}/post`).valueChanges();
-        // this.feed = [...this.feed, ...posts];
+            this.feed.sort((a, b) => {
+              return b.date - a.date;
+            });
+            console.log(this.feed);
+          });
       });
     }
   }

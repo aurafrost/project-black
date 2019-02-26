@@ -109,6 +109,8 @@ import { SubscribeBtnComponent } from './shared/subscribe-btn/subscribe-btn.comp
 import {SubscribeGuard} from './core/guard/subscribe.guard';
 import { PostDialogComponent } from './pages/content/post-dialog/post-dialog.component';
 import { FeedComponent } from './pages/feed/feed.component';
+import {CalendarHeaderComponent} from './pages/personality2/calendar/calendar.utils/calendar-header-component';
+import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -170,7 +172,9 @@ import { FeedComponent } from './pages/feed/feed.component';
     NewsComponent,
     SubscribeBtnComponent,
     PostDialogComponent,
-    FeedComponent
+    FeedComponent,
+    CalendarHeaderComponent,
+    CartItemComponent
   ],
   imports: [
     MatGridListModule,
