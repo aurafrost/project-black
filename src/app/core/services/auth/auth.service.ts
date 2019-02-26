@@ -6,12 +6,15 @@ import {UserService} from '../user/user.service';
 import {User} from '../../models/User';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {SubscribeService} from '../subscribe/subscribe.service';
+import {Auth} from '../../models/Auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-    public auth = new BehaviorSubject<Object>(null);
+    public auth = new BehaviorSubject<Object>({
+      role: null
+    });
     $auth = this.auth.asObservable();
     private userList: User[];
     constructor(
@@ -27,9 +30,10 @@ export class AuthService {
     this.afAuth.authState.subscribe(auth => {
       if (auth) {
         this.userService.getUserById(auth.uid).subscribe(data => {
+          const d = <Auth>data;
           this.auth.next({
             ...auth,
-            role: data.role
+            role: d.role
           });
           localStorage.setItem('auth', JSON.stringify(auth));
           this.subscriberService.setSubscriptions(auth);
