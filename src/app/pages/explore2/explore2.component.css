@@ -127,3 +127,13 @@ mat-grid-tile {
   background-color: #363636 !important;
   color: #DA4453 !important;
 }
+
+#fillerDiv {
+  height: 350px;
+}
+
+@media (min-width: 450px) {
+  #fillerDiv {
+    height: 250px;
+  }
+}
