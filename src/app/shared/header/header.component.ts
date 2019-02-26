@@ -6,7 +6,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {SignInComponent} from '../dialog/sign-in/sign-in.component';
-import {Auth} from '../../core/models/Auth';
+
 
 @Component({
   selector: 'header-comp',
