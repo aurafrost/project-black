@@ -7,8 +7,8 @@
     </mat-select>
   </mat-form-field>
 </mat-toolbar>
+<div *ngIf="selected == ''" id="fillerDiv"></div>
 <mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
-  <div *ngIf="selected == ''" style="height: 240px;"></div>
   <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
       <div class="flip-card-inner">
         <div class="flip-card-front">
