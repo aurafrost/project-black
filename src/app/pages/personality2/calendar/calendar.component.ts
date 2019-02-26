@@ -93,17 +93,19 @@ export class CalendarComponent {
       )
       .set('api_key', '0ec33936a68018857d727958dca1424f');
 
+    //where I need to make changes for individual events
     this.events$ = this.http
       .get('https://api.themoviedb.org/3/discover/movie', { params })
       .pipe(
         map(({ results }: { results: Film[] }) => {
           return results.map((film: Film) => {
+            console.log(film)
             return {
               title: film.title,
               start: new Date(
                 film.release_date + getTimezoneOffsetString(this.viewDate)
               ),
-              color: colors.yellow,
+              color: colors.blue,
               allDay: true,
               meta: {
                 film
@@ -135,9 +137,12 @@ export class CalendarComponent {
   }
 
   eventClicked(event: CalendarEvent<{ film: Film }>): void {
-    window.open(
-      `https://www.themoviedb.org/movie/${event.meta.film.id}`,
-      '_blank'
-    );
+    // window.open(
+    //   `https://www.themoviedb.org/movie/${event.meta.film.id}`,
+    //   '_blank'
+    // );
+    this.events$.subscribe(film => {
+      console.log(film)
+    })
   }
 }
