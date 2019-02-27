@@ -132,7 +132,7 @@ export class CalendarComponent implements OnInit {
       console.log(this.events$)
       col.map(doc => {
         console.log("HIT SUB")
-        let docObj:{} = doc.payload.doc.data()
+        let docObj:Event = doc.payload.doc.data() as Event;
         let e:CalendarEvent = {
           
           title: docObj.title,
