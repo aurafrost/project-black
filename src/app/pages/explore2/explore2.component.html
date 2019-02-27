@@ -7,7 +7,7 @@
     </mat-select>
   </mat-form-field>
 </mat-toolbar>
-<div *ngIf="selected == ''" id="fillerDiv"></div>
+<div *ngIf="selected == ''" id="fillerDiv">Select a Category to view all the joined celebrities and organizations</div>
 <mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
   <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
       <div class="flip-card-inner">

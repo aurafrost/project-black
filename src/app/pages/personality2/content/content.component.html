@@ -16,7 +16,7 @@
         </span>
       </div>
 
-      <div class="col-3" style="font-size: 12px;">
+      <div class="col-6" style="font-size: 12px;">
         <span class="float-right">
           {{post.date | date:'short'}}
         </span>
@@ -30,7 +30,7 @@
                             max-height: 150px;">
       </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3 justify-content-center">
       {{post.caption}}
     </div>
     <div class="row mt-4 mb-0 mx-auto">
@@ -38,9 +38,9 @@
         <like-btn [userId]="post.ownerId" [postId]="post.id"></like-btn>
       </div>
 
-      <div class="col-4 mx-auto text-center">
+      <!--<div class="col-4 mx-auto text-center">-->
 
-      </div>
+      <!--</div>-->
 
       <div class="col-4 mx-auto text-center">
         <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" (click)="deleteNote(post.id)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
