@@ -48,7 +48,7 @@
       </div>
 
       <div class="col-4 mx-auto text-center">
-        <a *ngIf="auth.uid == uidParam" class="" style="cursor: pointer;" (click)="deleteProduct(post)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+        <a *ngIf="auth.uid == uidParam" class="" style="cursor: pointer;" (click)="deleteProduct(post.id)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
       </div>
     </div>
   </li>

@@ -39,22 +39,11 @@
       </div>
 
       <div class="col-4 mx-auto text-center">
-        <div style="cursor: pointer;" class="dropdown text-center">
-          Color <i class="fas fa-bars fa-1x"></i>
-          <div class="dropdown-content">
-            <a class="dropdown-item colorOption" (click)="changeColor(i, 'lightcoral')" id='redSelector'></a>
-            <a class="dropdown-item colorOption" (click)="changeColor(i, 'cadetblue')" id='blueSelector'></a>
-            <a class="dropdown-item colorOption" (click)="changeColor(i, 'yellow')" id='yellowSelector'></a>
-            <a class="dropdown-item colorOption" (click)="changeColor(i, 'lightgreen')" id='greenSelector'></a>
-            <a class="dropdown-item colorOption" (click)="changeColor(i, 'pink')" id='pinkSelector'></a>
-          </div>
-        </div>
+
       </div>
 
-
-      <!-- <div class="col align-self-end"> Comment <i class="far fa-comment fa-1x"></i></div> -->
-      <!-- <div class="col-3 mx-auto"> Share <i class="fas fa-share fa-1x"></i></div> -->
-      <div class="col-4 mx-auto text-center"> <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" class="" (click)=deleteNote(i)>Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+      <div class="col-4 mx-auto text-center">
+        <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" (click)="deleteNote(post.id)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
       </div>
     </div>
   </li>

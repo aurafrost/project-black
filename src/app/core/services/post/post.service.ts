@@ -18,8 +18,8 @@ export class PostService {
     return this._afStore.doc(`Users/${authId}/post/${post.id}`).set(post);
   }
 
-  deletePost(authId, id) {
-    return this._afStore.doc(`Users/${authId}/post/${id}`).delete();
+  deletePost(authId, postId) {
+    return this._afStore.doc(`Users/${authId}/post/${postId}`).delete();
   }
 
   likePost(authId, id) {

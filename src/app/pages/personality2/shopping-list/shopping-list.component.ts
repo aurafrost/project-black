@@ -71,7 +71,7 @@ export class ShoppingListComponent implements OnInit {
     this._productService.addProductToCart(this.auth.uid, product);
   }
 
-  deleteProduct(product) {
-    console.log(product)
+  deleteProduct(productId) {
+    this._productService.deleteProduct(this.auth.uid, productId);
   }
 }

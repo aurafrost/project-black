@@ -1,9 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA} from '@angular/material';
-import {AuthService} from '../../../core/services/auth/auth.service';
-import {PostService} from '../../../core/services/post/post.service';
-import {Post} from '../../../core/models/Post';
+import {AuthService} from '../../../../core/services/auth/auth.service';
+import {PostService} from '../../../../core/services/post/post.service';
+import {Post} from '../../../../core/models/Post';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';

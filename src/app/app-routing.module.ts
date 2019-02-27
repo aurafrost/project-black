@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { AccountComponent } from './pages/account/account.component';
-import { ContentComponent } from './pages/content/content.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ErrComponent } from './err/err.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ExploreComponent } from './pages/explore/explore.component';
 import { SearchComponent } from './shared/search/search.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { NascarComponent } from './pages/categories/nascar/nascar.component';
@@ -25,7 +23,6 @@ import { BollywoodComponent } from './pages/categories/bollywood/bollywood.compo
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
 import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
-import { PersonalityComponent } from './pages/personality/personality.component';
 import { Personality2Component} from './pages/personality2/personality2.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { LivenationComponent } from './pages/categories/livenation/livenation.component';
@@ -63,7 +60,6 @@ const routes: Routes = [
 {path: 'music', component: MusicComponent},
 {path: 'movies', component: MoviestvComponent},
 {path: 'football', component: FootballComponent},
-{path: 'personality', component: PersonalityComponent},
 {path: 'bollywood', component: BollywoodComponent},
 {path: 'cricket', component: CricketComponent},
 {path: 'discovery', component: DiscoveryComponent},
