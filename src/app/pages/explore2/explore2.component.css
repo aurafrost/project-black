@@ -130,6 +130,7 @@ mat-grid-tile {
 
 #fillerDiv {
   height: 350px;
+  text-align: center;
 }
 
 @media (min-width: 450px) {

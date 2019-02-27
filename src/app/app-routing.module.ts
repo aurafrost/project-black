@@ -47,7 +47,7 @@ const routes: Routes = [
 {path: 'content', component: FeedComponent},
 {path: 'faq', component: FaqComponent},
 {path: 'support', component: SupportComponent},
-{path: 'terms', component: ImageComponent},
+{path: 'terms', component: TermsComponent},
 {path: 'login-register', component: LoginRegisterComponent},
 {path: 'profile/:id', component: Personality2Component, canActivate: [SubscribeGuard]},
 {path: 'explore', component: Explore2Component},

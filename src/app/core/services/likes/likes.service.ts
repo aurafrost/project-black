@@ -62,7 +62,7 @@ export class LikesService {
             likeCount: 1
           });
         }
-      }).then(res => console.log(res)).catch(err => console.log(err));
+      }).catch(err => console.log(err));
     });
   }
 
@@ -82,9 +82,7 @@ export class LikesService {
               likeCount: 0
             });
           }
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        }).catch(err => console.log(err));
     });
   }
 }
