@@ -5,23 +5,23 @@
         class="btn btn-primary"
         mwlCalendarPreviousView
         [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="viewDateChange.next(viewDate)">
+        [(viewDate)]="viewDate">
+        <!-- (viewDateChange)="viewDateChange.next(viewDate)" -->
         Previous
       </div>
       <div
         class="btn btn-outline-secondary"
         mwlCalendarToday
-        [(viewDate)]="viewDate"
-        (viewDateChange)="viewDateChange.next(viewDate)">
+        [(viewDate)]="viewDate">
+        <!-- (viewDateChange)="viewDateChange.next(viewDate)" -->
         Today
       </div>
       <div
         class="btn btn-primary"
         mwlCalendarNextView
         [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="viewDateChange.next(viewDate)">
+        [(viewDate)]="viewDate">
+        <!-- (viewDateChange)="viewDateChange.next(viewDate)" -->
         Next
       </div>
     </div>

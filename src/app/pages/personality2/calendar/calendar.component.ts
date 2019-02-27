@@ -1,7 +1,10 @@
 import { Component, ChangeDetectionStrategy, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { from , of} from 'rxjs';
+import { map } from 'rxjs/operators'
 import { CalendarEvent } from 'angular-calendar';
+import {ActivatedRoute} from '@angular/router';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 import {
   isSameMonth,
@@ -16,10 +19,10 @@ import {
 } from 'date-fns';
 import { Observable } from 'rxjs';
 
-interface Film {
-  id: number;
+interface Event {
+  id: string;
   title: string;
-  release_date: string;
+  date: string;
 }
 
 export const colors: any = {
@@ -48,24 +51,30 @@ function getTimezoneOffsetString(date: Date): string {
 }
 
 @Component({
-  selector: 'calendar', changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'calendar', changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
 
-export class CalendarComponent {
-  
+export class CalendarComponent implements OnInit {
+  uidParam
   view: string = 'month';
 
   viewDate: Date = new Date();
 
-  events$: Observable<Array<CalendarEvent<{ film: Film }>>>;
+  events$: Observable<Array<CalendarEvent<{ e: Event }>>> = null;
 
   activeDayIsOpen: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+              private _afStore: AngularFirestore,
+              private _route: ActivatedRoute) {
+    this.uidParam = this._route.snapshot.params['id'];
+
+  }
 
   ngOnInit(): void {
+    this.events$ = new Observable<Array<CalendarEvent<{e:Event}>>>();
     this.fetchEvents();
   }
 
@@ -82,38 +91,65 @@ export class CalendarComponent {
       day: endOfDay
     }[this.view];
 
-    const params = new HttpParams()
-      .set(
-        'primary_release_date.gte',
-        format(getStart(this.viewDate), 'YYYY-MM-DD')
-      )
-      .set(
-        'primary_release_date.lte',
-        format(getEnd(this.viewDate), 'YYYY-MM-DD')
-      )
-      .set('api_key', '0ec33936a68018857d727958dca1424f');
+    // const params = new HttpParams()
+    //   .set(
+    //     'primary_release_date.gte',
+    //     format(getStart(this.viewDate), 'YYYY-MM-DD')
+    //   )
+    //   .set(
+    //     'primary_release_date.lte',
+    //     format(getEnd(this.viewDate), 'YYYY-MM-DD')
+    //   )
+    //   .set('api_key', '0ec33936a68018857d727958dca1424f');
 
     //where I need to make changes for individual events
-    this.events$ = this.http
-      .get('https://api.themoviedb.org/3/discover/movie', { params })
-      .pipe(
-        map(({ results }: { results: Film[] }) => {
-          return results.map((film: Film) => {
-            console.log(film)
-            return {
-              title: film.title,
-              start: new Date(
-                film.release_date + getTimezoneOffsetString(this.viewDate)
-              ),
-              color: colors.blue,
-              allDay: true,
-              meta: {
-                film
-              }
-            };
-          });
-        })
-      );
+    // this.events$ = this.http
+    //   .get('https://api.themoviedb.org/3/discover/movie', { params })
+    //   .pipe(
+    //     map(({ results }: { results: Event[] }) => {
+    //       return results.map((e: Event) => {
+    //         //console.log(e)
+    //         return {
+    //           title: e.title,
+    //           start: new Date(
+    //             e.date + getTimezoneOffsetString(this.viewDate)
+    //           ),
+    //           color: colors.blue,
+    //           allDay: true,
+    //           meta: {
+    //             e
+    //           }
+    //         };
+    //       });
+    //     })
+    //   );
+
+
+
+    let arr: Array<CalendarEvent<{e:Event}>> = new Array<CalendarEvent<{e:Event}>>();
+    this._afStore.collection(`Users/${this.uidParam}/events`).snapshotChanges()
+    .subscribe(col => {
+      console.log(this.events$)
+      col.map(doc => {
+        console.log("HIT SUB")
+        let docObj:{} = doc.payload.doc.data()
+        let e:CalendarEvent = {
+          
+          title: docObj.title,
+          start: new Date(
+            docObj.date + getTimezoneOffsetString(this.viewDate)
+          ),
+          color: colors.blue,
+          allDay: true,
+          meta: {
+            docObj
+          }
+        }
+        arr.push(e)
+      })
+      this.events$ = of(arr);
+      console.log(this.events$)
+    });
   }
 
   dayClicked({
@@ -121,7 +157,7 @@ export class CalendarComponent {
     events
   }: {
     date: Date;
-    events: Array<CalendarEvent<{ film: Film }>>;
+    events: Array<CalendarEvent<{ e: Event }>>;
   }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -136,13 +172,11 @@ export class CalendarComponent {
     }
   }
 
-  eventClicked(event: CalendarEvent<{ film: Film }>): void {
+  eventClicked(event: CalendarEvent<{ e: Event }>): void {
     // window.open(
     //   `https://www.themoviedb.org/movie/${event.meta.film.id}`,
     //   '_blank'
     // );
-    this.events$.subscribe(film => {
-      console.log(film)
-    })
+    
   }
 }
