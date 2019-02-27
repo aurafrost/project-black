@@ -105,12 +105,14 @@ import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping
 import { Personality2Component } from './pages/personality2/personality2.component';
 import { Explore2Component } from './pages/explore2/explore2.component';
 import { NewsComponent } from './pages/personality2/news/news.component';
-import { SubscribeBtnComponent } from './shared/subscribe-btn/subscribe-btn.component';
+import { SubscribeBtnComponent } from './shared/buttons/subscribe-btn/subscribe-btn.component';
 import {SubscribeGuard} from './core/guard/subscribe.guard';
 import { PostDialogComponent } from './pages/content/post-dialog/post-dialog.component';
 import { FeedComponent } from './pages/feed/feed.component';
 import {CalendarHeaderComponent} from './pages/personality2/calendar/calendar.utils/calendar-header-component';
 import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.component';
+import { LikeBtnComponent } from './shared/buttons/like-btn/like-btn.component';
+import {LikesService} from './core/services/likes/likes.service';
 
 @NgModule({
   declarations: [
@@ -170,11 +172,12 @@ import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.compo
     Personality2Component,
     Explore2Component,
     NewsComponent,
-    SubscribeBtnComponent,
     PostDialogComponent,
     FeedComponent,
     CalendarHeaderComponent,
-    CartItemComponent
+    CartItemComponent,
+    LikeBtnComponent,
+    SubscribeBtnComponent,
   ],
   imports: [
     MatGridListModule,
@@ -232,6 +235,7 @@ import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.compo
     AuthService,
     UserService,
     ImageService,
+    LikesService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
