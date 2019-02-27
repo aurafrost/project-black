@@ -40,16 +40,11 @@ export class ProductService {
     let out;
     this.afFirestore.doc(`Users/${authId}/cart/${product.id}`).snapshotChanges().subscribe(doc => {
       console.log(doc);
-      
-
-      if(product.quantity == null || Number.isNaN(product.quantity))
-      {
+      if (product.quantity == null || Number.isNaN(product.quantity)) {
         console.log("HIT TOP")
         out = this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
         .set({productId: product.id, ownerId: product.ownerId, quantity: 1});
-      }
-      else
-      {
+      } else {
         console.log("HIT BOTTOM")
         out = this.afFirestore.doc(`Users/${authId}/cart/${product.id}`)
         .set({productId: product.id, ownerId: product.ownerId, quantity: product.quantity+1});
@@ -66,5 +61,9 @@ export class ProductService {
 
   removeCartItem(authId, productId) {
     this.afFirestore.doc(`Users/${authId}/cart/${productId}`).delete();
+  }
+
+  deleteProduct(authId, productId) {
+     this.afFirestore.doc(`Users/${authId}/products/${productId}`).delete();
   }
 }

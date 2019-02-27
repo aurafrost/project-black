@@ -18,7 +18,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { SupportComponent } from './pages/support/support.component';
 import { AccountComponent } from './pages/account/account.component';
 import { TermsComponent } from './pages/terms/terms.component';
-import { ContentComponent } from './pages/content/content.component';
+import { ContentComponent } from './pages/personality2/content/content.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SearchComponent } from './shared/search/search.component';
 import { AuthGuard } from './core/guard/auth.guard';
@@ -42,25 +42,12 @@ import { ErrComponent } from './err/err.component';
 import { SignUpComponent } from './shared/forms/sign-up/sign-up.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
-import { ExploreComponent } from './pages/explore/explore.component';
 import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 import { ImageComponent } from './upload/image/image.component';
-
-// import { ZbTestHomeComponent } from './zb-test-components/zb-test-home/zb-test-home.component';
-// import { ZbTestGenreComponent } from './zb-test-components/zb-test-genre/zb-test-genre.component';
-// import { PageNavComponent } from './zb-test-components/zb-test-home/page-nav/page-nav.component';
-// import { HomeTopSectionComponent } from './zb-test-components/zb-test-home/home-top-section/home-top-section.component';
-// import { ZbTestGenrePageComponent } from './zb-test-components/zb-test-genre-page/zb-test-genre-page.component';
-
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  direction: 'horizontal',
-  slidesPerView: 'auto'
-};
-
 import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { NascarComponent } from './pages/categories/nascar/nascar.component';
@@ -80,7 +67,6 @@ import { MlsComponent } from './pages/categories/mls/mls.component';
 import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
 import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
 import { CricketComponent } from './pages/categories/cricket/cricket.component';
-import { PersonalityComponent } from './pages/personality/personality.component';
 import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { CalendarComponent } from './pages/personality2/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
@@ -107,12 +93,18 @@ import { Explore2Component } from './pages/explore2/explore2.component';
 import { NewsComponent } from './pages/personality2/news/news.component';
 import { SubscribeBtnComponent } from './shared/buttons/subscribe-btn/subscribe-btn.component';
 import {SubscribeGuard} from './core/guard/subscribe.guard';
-import { PostDialogComponent } from './pages/content/post-dialog/post-dialog.component';
+import { PostDialogComponent } from './pages/personality2/content/post-dialog/post-dialog.component';
 import { FeedComponent } from './pages/feed/feed.component';
 import {CalendarHeaderComponent} from './pages/personality2/calendar/calendar.utils/calendar-header-component';
 import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.component';
 import { LikeBtnComponent } from './shared/buttons/like-btn/like-btn.component';
 import {LikesService} from './core/services/likes/likes.service';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
+
 
 @NgModule({
   declarations: [
@@ -133,8 +125,6 @@ import {LikesService} from './core/services/likes/likes.service';
     SignUpComponent,
     SignInComponent,
     HomeAboutComponent,
-    ExploreComponent,
-    PersonalityComponent,
     VerifyEmailComponent,
     NascarComponent,
     TravelComponent,

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../core/services/auth/auth.service';
 import {LikesService} from '../../../core/services/likes/likes.service';
+import {Post} from '../../../core/models/Post';
 
 @Component({
   selector: 'like-btn',
@@ -29,8 +30,9 @@ export class LikeBtnComponent implements OnInit {
       });
     this._likeService.getLikeCount(this.userId, this.postId)
       .subscribe(data => {
-        if (data && data.likeCount) {
-          this.likeCount = data.likeCount;
+        const p = <Post> data;
+        if (p && p.likeCount) {
+          this.likeCount = p.likeCount;
         } else {
           this.likeCount = 0;
         }
