@@ -35,12 +35,7 @@
     </div>
     <div class="row mt-4 mb-0 mx-auto">
       <div class="col-4 mx-auto text-center">
-        <span style="cursor: pointer;" (click)=liked(i) class="text-center">
-          Like
-          <!--<i *ngIf="post.liked; else emptyHeart" class="animated heartBeat fas fa-heart fa-1x"></i>-->
-          <!--<ng-template #emptyHeart><i class="animated  far fa-heart"></i>-->
-          <!--</ng-template>-->
-        </span>
+        <like-btn [userId]="post.ownerId" [postId]="post.id"></like-btn>
       </div>
 
       <div class="col-4 mx-auto text-center">

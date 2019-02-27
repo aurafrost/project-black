@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {BehaviorSubject} from 'rxjs';
-import {AuthService} from '../auth/auth.service';
-import {async} from 'rxjs/internal/scheduler/async';
 
 @Injectable({
   providedIn: 'root'
@@ -25,27 +23,11 @@ export class SubscribeService {
   }
 
   getSubscribers() {
-    console.log(this.subscribers);
     return this.subscribers;
-  }
-
-  isSubscribed(subscriberId): boolean {
-    console.log(this.subscribers.value);
-    const isSub = this.subscribers.value.includes(subscriberId);
-    console.log(isSub);
-    return isSub;
   }
 
   checkIfSubscribed(authId, subscriberId) {
     return this._afStore.doc(`Users/${authId}/subscriptions/${subscriberId}`).snapshotChanges();
-  }
-
-  checkSubscribed(auth, subscriberId) {
-    this._afStore.doc(`Users/${auth.uid}/subscriptions/${subscriberId}`).snapshotChanges()
-      .subscribe(i => {
-        console.log(i.payload.exists);
-        return i.payload.exists;
-      });
   }
 
   addSubscription(authId, subscriberId) {
