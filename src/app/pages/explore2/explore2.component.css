@@ -1,0 +1,140 @@
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  padding: .5rem;
+}
+
+mat-toolbar {
+  color: ghostwhite;
+  background-color: rgba(0,0,0,.85);
+  padding: 3rem;
+  margin-bottom: 1rem;
+}
+
+mat-grid-tile {
+  box-shadow: inset 0 0 10px #000000;
+  cursor: pointer;
+}
+
+.flip-card {
+  background-color: lightgray;
+  /*background-color: rgba(255, 255, 255, 0.5);*/
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  box-shadow: inset 0 0 10px #000000;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: rgba(255, 255, 255, 0.5);;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: .5rem;
+  background-color: rgba(0,0,0,.85);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.secondary-btn {
+  background-color: #252525;
+  display: block;
+  width: 100%;
+}
+
+.secondary-btn.hover,
+.secondary-btn:hover {
+  color: #DA4453;
+}
+
+.t-right {
+  color: ghostwhite;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: .5rem;
+  background-color: #252525;
+}
+
+.t-right:hover {
+  color: #DA4453;
+}
+
+.bt-left {
+  color: ghostwhite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: .5rem;
+  background-color: #252525;
+}
+
+.fl-left {
+  float: left;
+}
+
+.zoomCard {
+  color: ghostwhite;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 1;
+  z-index: -1;
+  /*background-size: contain;*/
+  /*background-position: center;*/
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  background-position-y: 1rem;
+  background-position-x: 1rem;
+  padding: .5rem;
+  /*background-color: #DA4453;*/
+  background-color: rgba(0,0,0,.85);
+}
+
+.zoom-img {
+  width: 150px;
+}
+
+.card-header {
+  background-color: #363636 !important;
+  color: #DA4453 !important;
+}
+
+#fillerDiv {
+  height: 350px;
+  text-align: center;
+}
+
+@media (min-width: 450px) {
+  #fillerDiv {
+    height: 250px;
+  }
+}

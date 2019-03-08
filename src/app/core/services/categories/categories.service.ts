@@ -12,6 +12,6 @@ export class CategoriesService {
 
   getHomePageCategory(category) {
     console.log(category);
-    return this.afDatabase.list(`hompage/${category}/videos`).valueChanges();
+    return this.afDatabase.list(`hompage/${category}`).valueChanges();
   }
 }

@@ -2,9 +2,12 @@
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
 <div id="page" class="hfeed site">
-  <div id="content" class="site-content">
-    <home-slideshow2 [data]="data" ></home-slideshow2>
-    <home-slider2 (onCategorySelect)="getCategoryDetails($event)"></home-slider2>
+  <div id="content" class="site-content" style="background-color: rgba(0,0,0,.85);">
+    <!--style="background-color: rgb(54, 54, 54);"-->
+    <div class="home-swiper-container" style="height: fit-content;">
+      <home-slideshow2 style="margin-top: 0.5rem" [data]="data" ></home-slideshow2>
+    </div>
+    <home-slider2 style="background-color: rgb(170, 170, 170);" (onCategorySelect)="getCategoryDetails($event)"></home-slider2>
   </div>
 </div>
 </body>

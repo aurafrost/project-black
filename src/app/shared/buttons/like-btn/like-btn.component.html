@@ -1,0 +1,6 @@
+<span style="cursor: pointer;" (click)="toggleLike()" class="text-center">
+  Like
+  <i *ngIf="isLiked; else emptyHeart" class="animated heartBeat fas fa-heart fa-1x"></i>
+  <ng-template #emptyHeart><i class="animated far fa-heart"></i></ng-template>
+  <span class="ml-2">{{likeCount}}</span>
+</span>

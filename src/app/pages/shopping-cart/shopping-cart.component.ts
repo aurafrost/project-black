@@ -12,7 +12,7 @@ import {Product} from '../../core/models/Product';
 export class ShoppingCartComponent implements OnInit {
   private auth: any;
   private cart: any = [];
-  public sum: number = 0;
+  public sum = 0;
   constructor(
     private _authService: AuthService,
     private _productService: ProductService
@@ -26,16 +26,53 @@ export class ShoppingCartComponent implements OnInit {
     this._productService.getCartItems(this.auth)
       .subscribe(data => {
         console.log(data);
-        data.map((i: Product, index) => {
+        this.cart = [];
+        this.sum = 0;
+        let index = 0;
+        console.log(data)
+        data.map((i: Product) => {
+          console.log(i)
+
           this._productService.getProductById(i.ownerId, i.productId)
-            .subscribe(product => {
-              const prod: Product = product;
-              console.log(prod);
-              this.cart[index] = prod;
-              this.sum += prod.price;
+            .subscribe((product) => {
+              console.log(i)
+              //loop here since same product
+              if(i.quantity == null)
+              {
+                const prod = <Product> product.payload.data();
+                this.cart[index] = <Product> {
+                  productId: product.payload.id,
+                  quantity: i.quantity,
+                  ...product.payload.data()
+                };
+                this.sum += prod.price;
+                index++;
+              }
+
+              for(let w = 0; w < i.quantity; w++)
+              {
+                const prod = <Product> product.payload.data();
+                this.cart[index] = <Product> {
+                  productId: product.payload.id,
+                  quantity: i.quantity,
+                  ...product.payload.data()
+                };
+                this.sum += prod.price;
+                index++;
+              }
             });
+
+          
         });
         console.log(this.cart);
       });
+  }
+
+  removeItem(product: Product) {
+    this._productService.removeCartItem(this.auth.uid, product.productId);
+  }
+
+  logCart(){
+    console.log(this.cart)
   }
 }

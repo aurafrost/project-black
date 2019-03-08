@@ -1,0 +1,45 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar m-1">
+            <a>
+              <img class="img" src="{{user.image}}" />
+            </a>
+            <a *ngIf="auth.uid === user.uid" class="edit-img" style="cursor: pointer">Edit</a>
+          </div>
+          <div *ngIf="auth.uid !== user.uid" class="card-header">
+            <subscribe-btn [subscibeId]="uidParam"></subscribe-btn>
+          </div>
+          <div class="card-body">
+            <h6 class="card-category text-gray">Occupation</h6>
+            <h4 class="card-title">{{user.fname}} {{user.lname}}</h4>
+            <p class="card-description">
+              {{user.bio}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <mat-tab-group>
+          <mat-tab label="Feed">
+            <content></content>
+          </mat-tab>
+          <mat-tab label="News">
+            <news></news>
+          </mat-tab>
+          <mat-tab label="Shop">
+            <shopping-list></shopping-list>
+          </mat-tab>
+          <mat-tab label="Calender">
+            <calendar></calendar>
+          </mat-tab>
+          <mat-tab *ngIf="auth.uid === user.uid" label="Analytics">
+            <lchart></lchart>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

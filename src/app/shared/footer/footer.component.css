@@ -1,21 +1,17 @@
 button {
     width: 25%;
 }
-
 button:hover,
 button.cdk-focused {
     background-color: #ccc;
 }
-
 li {
     list-style: none;
 }
-
 a {
     color: #da4453; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+    text-decoration: inherit; /* no underline */
 }
-
 span {
     /* font-size: 2em; */
     margin: 10px 15px;

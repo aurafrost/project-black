@@ -1,0 +1,111 @@
+<mat-toolbar >
+  <mat-form-field>
+    <mat-select (selectionChange)="changeCategory()" [(value)]="selected" placeholder="Select Category">
+      <mat-option *ngFor="let cat of categories" [value]="cat.value">
+        {{cat.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+<div *ngIf="selected == ''" id="fillerDiv">Select a Category to view all the joined celebrities and organizations</div>
+<mat-grid-list class="container" #grid [cols]="cols" gutterSize="16px">
+  <mat-grid-tile class="flip-card" *ngFor="let item of data; let i of index;" [ngStyle]="{'width': cardFillIndex == item.uid ? '100%': null}">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <button mat-raised-button="" *ngIf="cardFillIndex === item.uid" class="bt-left" (click)="onClick(item, item.uid)">close</button>
+          <img src="{{item.image}}" class="logo">
+        </div>
+        <div class="flip-card-back">
+          <subscribe-btn class="secondary-btn" [subscibeId]="item.uid"></subscribe-btn>
+          <button mat-button *ngIf="subscriptions && !containsId(item.uid)" class="secondary-btn" (click)="onClick(item, item.uid)">Details</button>
+          <button mat-button *ngIf="subscriptions && containsId(item.uid)" class="secondary-btn" routerLink="/profile/{{item.uid}}">Profile</button>
+        </div>
+      </div>
+  </mat-grid-tile>
+  <div class="zoomCard" *ngIf="item" [@cardZoom]="cardFillIndex ? 'end' : 'initial'" style="overflow-y: auto">
+    <button mat-raised-button class="t-right" (click)="onClick(null, item.uid)">close</button>
+    <div class="container">
+      <!--<h1>{{item.fname}} {{item.lname}}</h1>-->
+      <div class="card p-1 mb-3 d-inline-block">
+        <img class="zoom-img" src="{{item.image}}">
+      </div>
+      <div class="d-inline-block mb-3" style="color: ghostwhite;">
+        {{item.bio}}
+      </div>
+    </div>
+    <div class="container text-dark">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="card rounded-0 bg-light mb-3">
+            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+            <ul class="list-group category_block">
+              <li class="list-group-item rounded-0"><a style="cursor: pointer">Post</a></li>
+              <li class="list-group-item rounded-0"><a (click)="getCategory('news', item)" style="cursor: pointer">News</a></li>
+              <li class="list-group-item rounded-0"><a (click)="getCategory('product', item)" style="cursor: pointer">Products</a></li>
+              <li class="list-group-item rounded-0"><a style="cursor: pointer">Events</a></li>
+            </ul>
+          </div>
+          <div class="card rounded-0 bg-light mb-3">
+            <div class="card-header bg-success text-white text-uppercase">Popular product</div>
+            <div class="card-body rounded-0">
+              <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
+              <h5 class="card-title">Product title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="bloc_left_price">99.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div *ngFor="let it of categoryList" class="col-12 col-md-6 col-lg-4 mb-3">
+              <div *ngIf="category === 'product'" style="height: 100%" class="card rounded-0 bounceIn">
+                <div class="d-flex mx-auto justify-content-center">
+                  <img style="width: auto; max-width: 300px; height: auto; max-height: 150px;" class="card-img-top" src={{it.img}} alt="Card image cap">
+                </div>
+                <div class="card-body rounded-0">
+                  <h4 style="font-size: 14px" class="card-title"><a title="View Product">{{it.title}}</a></h4>
+                  <p style="font-size: 12px" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p style="position: absolute;bottom: 0; margin: .5rem;" class="bloc_left_price">${{it.price}}</p>
+                </div>
+              </div>
+              <div *ngIf="category === 'news'" style="height: 100%" class="card rounded-0 bounceIn">
+                <img class="card-img-top" src={{it.urlToImage}} alt="Card image cap">
+                <div class="card-body rounded-0">
+                  <h4 style="font-size: 14px" class="card-title"><a title="View Product">{{it.title}}</a></h4>
+                  <p style="font-size: 12px" class="card-text">{{it.description}}</p>
+                  <a style="position: absolute;bottom: 0; margin: .5rem;" *ngIf="it.author" class="bloc_left_price" href={{it.url}}>{{it.author}}</a>
+                </div>
+              </div>
+            </div>
+            <!--<div class="col-12">-->
+              <!--<nav aria-label="...">-->
+                <!--<ul class="pagination">-->
+                  <!--<li class="page-item disabled">-->
+                    <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+                  <!--</li>-->
+                  <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+                  <!--<li class="page-item active">-->
+                    <!--<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>-->
+                  <!--</li>-->
+                  <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                  <!--<li class="page-item">-->
+                    <!--<a class="page-link" href="#">Next</a>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</nav>-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+  <!--<mat-grid-tile style="background-color: lightgray"></mat-grid-tile>-->
+</mat-grid-list>

@@ -1,0 +1,9 @@
+.secondary-btn {
+  color: ghostwhite;
+  background-color: #252525;
+}
+
+.secondary-btn.hover,
+.secondary-btn:hover {
+  color: #DA4453;
+}

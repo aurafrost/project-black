@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import {User} from '../../models/User';
 import {take} from 'rxjs/operators';
 import { SubscriptionService } from '../sub/subscription.service';
+import { Topic } from '../../models/Topic';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class UserService {
   private userDoc: AngularFirestoreDocument<User>;
   private authObj;
   private SubObs: Observable<any>;
+  auth = JSON.parse(localStorage.getItem('auth'));
   constructor(
     private afstore: AngularFirestore,
     private ss: SubscriptionService
@@ -53,6 +55,52 @@ export class UserService {
     return this.afstore.doc(`Users/${id}`).valueChanges().pipe(take(1));
   }
 
+  //-Jimmy: used for personality page
+  getUser(id){
+    return this.afstore.doc<User>(`Users/${id}`).valueChanges();
+  }
+
+  //-Jimmy/aurafrost: used for editing on the account page.
+  alterUser(cardnum,cardcvv,cardname,email){
+    const data={
+      cardNum:cardnum,
+      cardCVV:cardcvv,
+      cardName:cardname,
+      email:email,
+    }
+    this.afstore.doc('Users/'+this.auth.uid).update(data);
+  }
+
+  setProfile(name){
+    // this.topic=name;
+    const data={
+      topic:name,
+    }
+    this.afstore.doc('Users/'+this.auth.uid).update(data);
+  }
+
+  getTopic(){
+    return this.afstore.doc<Topic>('Users/'+this.auth.uid).valueChanges();
+  }
+
+  getProfile(){
+    return this.afstore.doc<Topic>('Users/'+this.auth.uid).valueChanges();
+  }
+
+  addSub(user,topic){
+    const data={
+      name:topic,
+    }
+    this.afstore.doc('Users/'+user+'/subscriptions/'+topic).set(data);
+    console.log("Subscription for "+user+" to "+topic+" added.");
+  }
+
+  removeSub(user,topic){
+    this.afstore.doc('Users/'+user+'/subscriptions/'+topic).delete();
+    console.log("Subscription for "+user+" to "+topic+" removed.");
+  }
+  
+
   getUsers() {
     //return this.afDatabase.list(`/Users/`);
     //return this.afstore.collection()
@@ -79,5 +127,10 @@ export class UserService {
   getAllUsers(){
     //this.users = this.afstore.collection('test-users').valueChanges();
     return this.users;
+  }
+
+  getUsersByCategory(category) {
+    return this.afstore.collection('Users', ref => ref.where('category', '==', category))
+      .valueChanges();
   }
 }

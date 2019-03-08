@@ -39,8 +39,8 @@
   /*height: 13rem;*/
   min-height: 160px;
   margin: 8px 16px;
-  border-radius: 4px;
-  background-color: #7f7f7f !important;
+  /*border-radius: 4px;*/
+  background-color: rgb(54, 54, 54);
 }
 
 .action-container {
@@ -84,11 +84,12 @@
   bottom: 0;
   left: 0;
   overflow: hidden;
+  background-color: rgb(170, 170, 170);
 }
 
 .swiper-slide, .swiper-slide:active {
   color: #aaa;
-  background-color: #F2F2F2;
+  background-color: rgb(170, 170, 170);
 }
 
 .swiper-slide-active {
@@ -97,22 +98,40 @@
 }
 
 .card-container {
-  background-color: #F2F2F2;
+  background-color: rgb(170, 170, 170);
 }
 
 /*Card*/
 mat-card {
+  color: black;
   text-align: center;
-  background-color: #F2F2F2;
+  background-color: rgb(170, 170, 170);
 }
 
 mat-icon {
   height: auto;
   width: auto;
   cursor: pointer;
+  /*color: ghostwhite;*/
+  /*fill: ghostwhite;*/
+}
+
+path {
+  /*color: ghostwhite;*/
+  /*fill: ghostwhite !important;*/
 }
 
 .swiper-slide, .swiper {
   /*height: fit-content !important;*/
-  overflow: hidden!important;
+  overflow: hidden !important;
+}
+
+.swiper-wrapper {
+  height: fit-content !important;
+}
+
+.content-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
 }

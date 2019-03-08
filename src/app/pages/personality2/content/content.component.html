@@ -1,0 +1,50 @@
+<div class="text-center mt-3 animated fadeInDown">
+  <button *ngIf="auth.uid == uidParam" (click)="openDialog()" class="btn btn-success">Add a Post</button>
+</div>
+
+<cdk-virtual-scroll-viewport itemSize="autosize" class="">
+  <li [ngStyle]="{'background-color': post.color}" (click)=displayId(i) *cdkVirtualFor="let post of posts | async; let i = index; trackBy: trackByIdx"
+    class="container feedPost align-items-end mx-auto">
+
+    <div class="row">
+      <!--<div class="col-3">-->
+        <!--<img id=profileImg class="" src={{post.profileUrl}} style="max-width: 70px; max-height: 70px;">-->
+      <!--</div>-->
+      <div class="col-6">
+        <span id='profileName' class="mx-auto">
+          {{post.title}}
+        </span>
+      </div>
+
+      <div class="col-6" style="font-size: 12px;">
+        <span class="float-right">
+          {{post.date | date:'short'}}
+        </span>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col d-flex mx-auto justify-content-center">
+        <img src={{post.img}} class="" style="width: auto;
+                            max-width: 300px;
+                            height: auto;
+                            max-height: 150px;">
+      </div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      {{post.caption}}
+    </div>
+    <div class="row mt-4 mb-0 mx-auto">
+      <div class="col-4 mx-auto text-center">
+        <like-btn [userId]="post.ownerId" [postId]="post.id"></like-btn>
+      </div>
+
+      <!--<div class="col-4 mx-auto text-center">-->
+
+      <!--</div>-->
+
+      <div class="col-4 mx-auto text-center">
+        <a *ngIf="auth.uid == uidParam" style="cursor: pointer;" (click)="deleteNote(post.id)">Delete <i class="fas fa-trash-alt fa-1x"></i></a>
+      </div>
+    </div>
+  </li>
+</cdk-virtual-scroll-viewport>

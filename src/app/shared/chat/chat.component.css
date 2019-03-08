@@ -6,13 +6,15 @@
 }
 
 .chatContainer {
-    background-color: #ddd;
-        position: fixed;
-        height: 40px;
-        bottom: 0;
-        right: 7.5%;
-        width: 250px;
-    
+  box-shadow: 0 2px 7px #bbb;
+  border-radius: .5rem .5rem 0 0;
+  background-color: #363636;
+  position: fixed;
+  height: 40px;
+  bottom: 0;
+  right: 7.5%;
+  width: 250px;
+  z-index: 100;
 }
 
 #messageChatArea {
@@ -21,7 +23,7 @@
 
 .chatArea {
     width: 300px;
-    height: 625px;
+    height: 650px;
     background-color: #fff;
   }
 
@@ -56,7 +58,7 @@
   }
 
   #chatScroll {
-        height: 550px;
+        height: 610px;
         width: 100%;
   }
   input {
@@ -79,6 +81,17 @@
   .othersMessage {
       /* border: 2px dashed blue;
        */
-       background-color: #bbb;
+       background-color: #ddd;
        color: black;
+  }
+  
+  #profilePic {
+      margin: 2px 5px;
+      height:18%;
+      width: 18%;
+      border-radius: 50%;
+  }
+
+  i, h5 {
+    color: ghostwhite;
   }

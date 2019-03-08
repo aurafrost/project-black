@@ -1,15 +1,16 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, AfterContentChecked} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  
+export class AppComponent implements AfterContentChecked {
+  homepage = false;
+  constructor(private router: Router ) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngAfterContentChecked() {
+    this.homepage = this.router.url === '/' ? false : true;
   }
 }

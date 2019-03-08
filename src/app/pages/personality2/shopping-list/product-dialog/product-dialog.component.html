@@ -1,0 +1,23 @@
+<form [formGroup]="productFormData" (ngSubmit)="upload()" method="POST" class="animated fadeInLeft">
+  <h2>Add Product</h2>
+  <mat-form-field>
+    <input matInput type="text" id="title" formControlName="title" placeholder="Title"/>
+  </mat-form-field><br>
+  <mat-form-field>
+    <input matInput type="number" id="price" formControlName="price" placeholder="0.00"/>
+  </mat-form-field><br>
+
+  <div class="progress">
+    <div class="progress-bar progress-bar-info progress-bar-striped"
+         role="progressbar" attr.aria-valuenow="{{uploadPercent | async}}"
+         aria-valuemin="0" aria-valuemax="100"
+         [ngStyle]="{width:uploadPercent+'%'}">
+      {{uploadPercent}}%</div>
+  </div>
+
+  <input type="file" (change)="selectFile($event)" />
+
+  <button type="submit" [disabled]="!url" mat-raised-button mat-dialog-close id="submitBtn" class="btn btn-success">
+    <input class="btn btn-success"  [disabled]="!url" id="submitInput" type="submit" value="Add" />
+  </button>
+</form>

@@ -20,7 +20,7 @@ export class SubscriptionService {
 
   getSubCollection(userId) {
     console.log("hit ss " + userId);
-    this.SubCollection = this.afs.collection('test-users/' + userId + '/subscriptions/');
+    this.SubCollection = this.afs.collection('Users/' + userId + '/subscriptions/');
 
     return this.SubCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
@@ -35,7 +35,7 @@ export class SubscriptionService {
     if(this.authObj == null)
       return;
 
-    this.SubCollection = this.afs.collection('test-users/' + this.authObj.uid + '/subscriptions/');
+    this.SubCollection = this.afs.collection('Users/' + this.authObj.uid + '/subscriptions/');
     //this.userCollection.doc(userId).set()
 
     this.SubCollection.doc("" + subId).set({celebId:subId});
@@ -46,7 +46,7 @@ export class SubscriptionService {
     if(this.authObj == null)
       return;
 
-    this.SubCollection = this.afs.collection('test-users/' + this.authObj.uid + '/subscriptions/');
+    this.SubCollection = this.afs.collection('Users/' + this.authObj.uid + '/subscriptions/');
     //this.userCollection.doc(userId).set()
 
     this.SubCollection.doc("" + subId).delete();

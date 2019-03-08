@@ -6,4 +6,5 @@ h1{
     align-content: center;
     align-items: center;
     text-align: center;
+    min-height: 400px;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {UserService} from '../../core/services/user/user.service';
 import { User } from 'src/app/core/models/User';
+import {AuthService} from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'account',
@@ -8,6 +9,7 @@ import { User } from 'src/app/core/models/User';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
+  uid=JSON.parse(localStorage.getItem('auth')).uid;
   user = {
     cardNum: 1234098756786543,
     cardCVV: 111,
@@ -22,11 +24,19 @@ export class AccountComponent implements OnInit {
   email;
   constructor(
     private service:UserService,
+    private _authService: AuthService,
   ) { 
     this.cardNum = this.user.cardNum;
     this.cardCVV = this.user.cardCVV;
-    this.cardName = this.user.cardName;
-    this.email = this.user.email;
+    // this.cardName = this.user.cardName;
+    // this.email = this.user.email;
+    this.service.getUser(this.uid).subscribe(data=>{
+      // this.cardNum=data.cardNum;
+      // this.cardCVV=data.cardCVV;
+      // this.cardName=data.cardName;
+      this.cardName=data.fname+" "+data.lname;
+      this.email=data.email;
+    });
   }
 
   ngOnInit() {
@@ -42,16 +52,15 @@ export class AccountComponent implements OnInit {
     this.user.cardCVV = this.cardCVV;
     this.user.cardName = this.cardName;
     this.user.email = this.email;
-
+    //Might need to add card fields to user. cardName could be split into fname and lname maybe?
+    this.service.alterUser(this.cardNum,this.cardCVV,this.cardName,this.email);
     this.ngOnInit();
     console.log("done editing")
   }
   
   showEdit(){
-
     this.displayBlock.nativeElement.style.display = "none";
     this.editBlock.nativeElement.style.display = "block";
-
   }
 
   deleteAccount(){

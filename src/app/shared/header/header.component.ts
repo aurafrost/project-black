@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import {AuthService} from '../../core/services/auth/auth.service';
 import {SignInComponent} from '../dialog/sign-in/sign-in.component';
 
+
 @Component({
   selector: 'header-comp',
   templateUrl: './header.component.html',
@@ -31,8 +32,13 @@ export class HeaderComponent implements OnInit {
   ) {
     this.matIconRegistry.addSvgIcon('account_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/svg/baseline-account_circle-24px.svg'));
+    // this.auth = this.authService.getAuth().value;
+
     this.authService.$auth.subscribe(auth => {
+      console.log('HEADER AUTH CHANGE');
+      console.log(auth);
       this.auth = auth;
+      console.log(this.auth);
     });
   }
 
