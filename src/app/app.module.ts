@@ -82,7 +82,6 @@ import { CalendarHeaderComponent } from './pages/personality2/calendar/calendar.
 import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.component';
 import { LikeBtnComponent } from './shared/buttons/like-btn/like-btn.component';
 import { LikesService } from './core/services/likes/likes.service';
-import { PageNavComponent } from './shared/page-nav/page-nav.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -176,7 +175,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SlideshowModule,
     ScrollingModule,
     SwiperModule,
-    PageNavComponent,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
