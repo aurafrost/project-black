@@ -14,7 +14,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
   styleUrls: ['./shopping-list.component.scss']
 })
 export class ShoppingListComponent implements OnInit {
-  private auth: any;
+  auth: any;
   public uidParam;
   public user: any;
   public products: any = [];

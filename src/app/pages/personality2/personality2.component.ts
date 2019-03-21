@@ -9,7 +9,7 @@ import {UserService} from '../../core/services/user/user.service';
   styleUrls: ['./personality2.component.css']
 })
 export class Personality2Component implements OnInit {
-  private auth: any;
+  auth: any;
   public uidParam;
   public user: any;
 
