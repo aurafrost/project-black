@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,55 +50,38 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
 import { ImageComponent } from './upload/image/image.component';
 import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
-import { NascarComponent } from './pages/categories/nascar/nascar.component';
-import { TravelComponent } from './pages/categories/travel/travel.component';
-import { EducationComponent } from './pages/categories/education/education.component';
-import { FoodComponent } from './pages/categories/food/food.component';
-import { MusicComponent } from './pages/categories/music/music.component';
-import { MoviestvComponent } from './pages/categories/moviestv/moviestv.component';
-import { FootballComponent } from './pages/categories/football/football.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HomeSlideshow2Component } from './pages/home/home-slideshow2/home-slideshow2.component';
-import { LivenationComponent } from './pages/categories/livenation/livenation.component';
-import { DiscoveryComponent } from './pages/categories/discovery/discovery.component';
-import { MlbComponent } from './pages/categories/mlb/mlb.component';
-import { NbaComponent } from './pages/categories/nba/nba.component';
-import { MlsComponent } from './pages/categories/mls/mls.component';
-import { FormulaoneComponent } from './pages/categories/formulaone/formulaone.component';
-import { BollywoodComponent } from './pages/categories/bollywood/bollywood.component';
-import { CricketComponent } from './pages/categories/cricket/cricket.component';
-import { JackiechanComponent } from './pages/categories/jackiechan/jackiechan.component';
 import { CalendarComponent } from './pages/personality2/calendar/calendar.component';
 import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import {HomeSlider2Component} from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
-import { SportsComponent } from './pages/categories/sports/sports.component';
+import { HomeSlider2Component } from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
 import { OrganizationComponent } from './pages/organization/organization.component';
-import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { ProductDialogComponent } from './pages/personality2/shopping-list/product-dialog/product-dialog.component';
-import {AngularFireStorage} from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { SubscriptionService } from './core/services/sub/subscription.service';
 import { ChatComponent } from './shared/chat/chat.component';
-import {ProductService} from './core/services/product/product.service';
+import { ProductService } from './core/services/product/product.service';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
 import { BarChartComponent } from './Analytics/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import {ShoppingListComponent} from './pages/personality2/shopping-list/shopping-list.component';
+import { ShoppingListComponent } from './pages/personality2/shopping-list/shopping-list.component';
 import { Personality2Component } from './pages/personality2/personality2.component';
 import { Explore2Component } from './pages/explore2/explore2.component';
 import { NewsComponent } from './pages/personality2/news/news.component';
 import { SubscribeBtnComponent } from './shared/buttons/subscribe-btn/subscribe-btn.component';
-import {SubscribeGuard} from './core/guard/subscribe.guard';
+import { SubscribeGuard } from './core/guard/subscribe.guard';
 import { PostDialogComponent } from './pages/personality2/content/post-dialog/post-dialog.component';
 import { FeedComponent } from './pages/feed/feed.component';
-import {CalendarHeaderComponent} from './pages/personality2/calendar/calendar.utils/calendar-header-component';
-import {CartItemComponent} from './pages/shopping-cart/cart-item/cart-item.component';
+import { CalendarHeaderComponent } from './pages/personality2/calendar/calendar.utils/calendar-header-component';
+import { CartItemComponent } from './pages/shopping-cart/cart-item/cart-item.component';
 import { LikeBtnComponent } from './shared/buttons/like-btn/like-btn.component';
-import {LikesService} from './core/services/likes/likes.service';
+import { LikesService } from './core/services/likes/likes.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -126,31 +109,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SignInComponent,
     HomeAboutComponent,
     VerifyEmailComponent,
-    NascarComponent,
-    TravelComponent,
-    EducationComponent,
-    FoodComponent,
-    MusicComponent,
-    MoviestvComponent,
-    FootballComponent,
     FormUploadComponent,
     ListUploadComponent,
     HomeSlideshow2Component,
     ImageComponent,
     DetailsUploadComponent,
-    LivenationComponent,
-    DiscoveryComponent,
-    MlbComponent,
-    NbaComponent,
-    MlsComponent,
-    FormulaoneComponent,
-    BollywoodComponent,
-    CricketComponent,
-    JackiechanComponent,
     CalendarComponent,
     HomeSlider2Component,
     TestDisplayComponent,
-    SportsComponent,
     OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
