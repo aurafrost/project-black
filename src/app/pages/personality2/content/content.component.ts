@@ -19,7 +19,7 @@ export class ContentComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport)
   viewport: CdkVirtualScrollViewport;
   public uidParam;
-  private auth: any;
+  auth: any;
   postDialogRef: MatDialogRef<PostDialogComponent>;
   postsCollection: AngularFirestoreCollection<Post>;
 

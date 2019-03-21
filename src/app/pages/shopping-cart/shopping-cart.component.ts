@@ -10,8 +10,8 @@ import {Product} from '../../core/models/Product';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  private auth: any;
-  private cart: any = [];
+  public auth: any;
+  public cart: any = [];
   public sum = 0;
   constructor(
     private _authService: AuthService,

@@ -44,22 +44,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeAboutComponent } from './pages/home/home-about/home-about.component';
 import { SignInComponent } from './shared/dialog/sign-in/sign-in.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
-import { FormUploadComponent } from './upload/form-upload/form-upload.component';
-import { ListUploadComponent } from './upload/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
-import { ImageComponent } from './upload/image/image.component';
 import { VerifyEmailComponent } from './shared/forms/verify-email/verify-email.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HomeSlideshow2Component } from './pages/home/home-slideshow2/home-slideshow2.component';
 import { CalendarComponent } from './pages/personality2/calendar/calendar.component';
-import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeSlider2Component } from './pages/home/home-slideshow2/zb-home-slider2/home-slider2.component';
-import { OrganizationComponent } from './pages/organization/organization.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { TestShopComponent } from './pages/shopping-cart/test-shop/test-shop.component';
 import { ProductDialogComponent } from './pages/personality2/shopping-list/product-dialog/product-dialog.component';
@@ -109,15 +103,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SignInComponent,
     HomeAboutComponent,
     VerifyEmailComponent,
-    FormUploadComponent,
-    ListUploadComponent,
     HomeSlideshow2Component,
-    ImageComponent,
-    DetailsUploadComponent,
     CalendarComponent,
     HomeSlider2Component,
-    TestDisplayComponent,
-    OrganizationComponent,
     ShoppingCartComponent,
     TestShopComponent,
     ProductDialogComponent,

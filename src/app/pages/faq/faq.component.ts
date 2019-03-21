@@ -7,7 +7,7 @@ import { FaqService } from '../../core/services/faq/faq.service';
   styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit, AfterContentChecked {
-  private faqList: Object[] = null;
+  faqList: Object[] = null;
 
   constructor(private faqserv: FaqService) { 
     

@@ -14,6 +14,7 @@ import {User} from '../../core/models/User';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
+  i:any;
   auth: any = null;
   users: any = [];
   feed: any = [];

@@ -1,5 +1,5 @@
 <cdk-virtual-scroll-viewport itemSize="autosize" class="">
-  <mat-card class="example-card" *cdkVirtualFor="let article of mArticles; let i = index; trackBy: trackByIdx">
+  <mat-card class="example-card" *cdkVirtualFor="let article of mArticles; let i = index; trackBy">
     <i>
       <mat-card-header>
         <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}"

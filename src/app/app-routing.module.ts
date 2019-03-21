@@ -11,8 +11,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './shared/search/search.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { Personality2Component} from './pages/personality2/personality2.component';
-import { TestDisplayComponent } from './test-firebase-subactivity/test-display/test-display.component';
-import { OrganizationComponent } from './pages/organization/organization.component';
 import {ShoppingCartComponent} from './pages/shopping-cart/shopping-cart.component';
 import {AuthGuard} from './core/guard/auth.guard';
 import { LchartComponent } from './Analytics/lchart/lchart.component';
@@ -35,8 +33,6 @@ const routes: Routes = [
 {path: 'search', component: SearchComponent, pathMatch: 'prefix', canActivate: [AuthGuard]},
 {path: 'forgotpassword', component: ForgotpasswordComponent},
 {path: 'analytics', component: LchartComponent},
-{path: 'testDisplay', component: TestDisplayComponent},
-{path: 'organization', component: OrganizationComponent},
 {path: '**', component: ErrComponent}
 ];
 
